@@ -84,7 +84,7 @@ def open_text_member(zip_file, member_name):
     return io.TextIOWrapper(binary_member, encoding="utf-8-sig", newline="")
 
 
-def filter_zip_to_writer(zip_path, writer, write_header, bounds):
+def filter_zip_to_writer(zip_path, writer, write_header, bounds, max_sog=None):
     min_lat, max_lat, min_lon, max_lon = bounds
     with zipfile.ZipFile(zip_path, "r") as z:
         csv_names = [name for name in z.namelist() if name.lower().endswith(".csv")]
@@ -109,20 +109,41 @@ def filter_zip_to_writer(zip_path, writer, write_header, bounds):
             count = 0
             matched = 0
 
+            # Find indices for Lat, Lon, SOG (Indices can vary slightly by DMA version)
+            try:
+                lat_idx = header.index("Latitude")
+                lon_idx = header.index("Longitude")
+                sog_idx = header.index("SOG")
+            except ValueError:
+                # Fallback to standard indices if header names differ
+                lat_idx, lon_idx, sog_idx = 3, 4, 5
+
             for row in reader:
-                if len(row) < 5:
+                if len(row) <= max(lat_idx, lon_idx, sog_idx):
                     continue
 
                 count += 1
                 try:
-                    lat = float(row[3].replace(",", "."))
-                    lon = float(row[4].replace(",", "."))
+                    lat = float(row[lat_idx].replace(",", "."))
+                    lon = float(row[lon_idx].replace(",", "."))
                 except (ValueError, IndexError):
                     continue
 
-                if min_lat <= lat <= max_lat and min_lon <= lon <= max_lon:
-                    writer.writerow(row)
-                    matched += 1
+                # Regional Filter
+                if not (min_lat <= lat <= max_lat and min_lon <= lon <= max_lon):
+                    continue
+
+                # Optional Speed Filter
+                if max_sog is not None:
+                    try:
+                        sog = float(row[sog_idx].replace(",", "."))
+                        if sog > max_sog:
+                            continue
+                    except (ValueError, IndexError):
+                        continue
+
+                writer.writerow(row)
+                matched += 1
 
                 if count % 1000000 == 0:
                     print(f"Processed {count / 1e6:.1f}M rows from current ZIP, found {matched} matches...")
@@ -130,11 +151,14 @@ def filter_zip_to_writer(zip_path, writer, write_header, bounds):
             return count, matched, write_header
 
 
-def stream_and_filter(year, month, bounds=None):
-    if bounds is None:
-        bounds = load_region_bounds("european_master")
+def stream_and_filter(year, month, region_name="european_master", max_sog=None):
+    bounds = load_region_bounds(region_name)
     
-    output_file = os.path.join(AIS_RAW_DIR, f"European_Waters_{year}_{month:02d}.csv")
+    # Construct filename based on filters
+    region_suffix = region_name.replace("_", "-").title()
+    sog_suffix = f"_SogMax{max_sog}" if max_sog is not None else ""
+    output_file = os.path.join(AIS_RAW_DIR, f"{region_suffix}_{year}_{month:02d}{sog_suffix}.csv")
+    
     temp_output = output_file + ".tmp"
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
@@ -144,6 +168,7 @@ def stream_and_filter(year, month, bounds=None):
         return
 
     print(f"Found {len(keys)} ZIP file(s) for {year}-{month:02d}.")
+    print(f"Filter: Region={region_name}, MaxSOG={max_sog if max_sog else 'None'}")
 
     total_rows = 0
     total_matches = 0
@@ -159,7 +184,9 @@ def stream_and_filter(year, month, bounds=None):
                 print(f"[{index}/{len(keys)}] Processing {key}...")
                 try:
                     tmp_zip_path = download_zip(key)
-                    rows, matches, write_header = filter_zip_to_writer(tmp_zip_path, writer, write_header, bounds)
+                    rows, matches, write_header = filter_zip_to_writer(
+                        tmp_zip_path, writer, write_header, bounds, max_sog=max_sog
+                    )
                 finally:
                     if tmp_zip_path and os.path.exists(tmp_zip_path):
                         os.remove(tmp_zip_path)
