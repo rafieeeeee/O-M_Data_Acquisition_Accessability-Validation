@@ -1,0 +1,11 @@
+regions:
+  european_master:
+    lat_min: 46.5
+    lat_max: 60.0
+    lon_min: -4.5
+    lon_max: 15.0
+  german_bight:
+    lat_min: 53.0
+    lat_max: 56.0
+    lon_min: 6.0
+    lon_max: 9.0

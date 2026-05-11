@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.tmp
+temp_check.zip
+tool-outputs/
+Data/Raw/
+Data/Interim/
+Data/Processed/
+!Data/README.md
