@@ -4,3 +4,6 @@ requests
 pyyaml
 duckdb
 pyarrow
+xarray
+scipy
+netCDF4

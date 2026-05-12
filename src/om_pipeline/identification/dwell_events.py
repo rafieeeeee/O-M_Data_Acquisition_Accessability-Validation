@@ -128,6 +128,11 @@ def identify_vessels(
 
     print("Building event sequences and consolidating MMSI metadata...")
     all_pings = pd.concat(potential_matches)
+    
+    # Strict Assignment: Drop duplicate pings (same MMSI/Timestamp) keeping the nearest foundation
+    all_pings = all_pings.sort_values(['MMSI', 'Timestamp', 'dist'])
+    all_pings = all_pings.drop_duplicates(subset=['MMSI', 'Timestamp'], keep='first')
+    
     all_pings['Timestamp'] = pd.to_datetime(all_pings['Timestamp'], dayfirst=True)
     all_pings = all_pings.sort_values(['MMSI', 'Timestamp'])
 
@@ -152,10 +157,13 @@ def identify_vessels(
     all_pings['Draught'] = all_pings['MMSI'].map(mmsi_meta['Draught'])
 
     # Identify events: Consecutive pings at same foundation within 30 minutes
-    all_pings['time_diff'] = all_pings.groupby(['MMSI', 'found_id'])['Timestamp'].diff().dt.total_seconds() / 60
-    # New event starts if time_diff > 30 mins OR it's a new (MMSI, found_id) pair
-    all_pings['new_event'] = (all_pings['time_diff'] > 30) | (all_pings['time_diff'].isna())
-    all_pings['event_id'] = all_pings.groupby(['MMSI', 'found_id'])['new_event'].cumsum()
+    # Strict Sequencing: Sort by MMSI/Timestamp and detect changes in found_id OR time gaps
+    all_pings['time_diff'] = all_pings.groupby('MMSI')['Timestamp'].diff().dt.total_seconds() / 60
+    all_pings['found_changed'] = all_pings.groupby('MMSI')['found_id'].shift() != all_pings['found_id']
+    
+    # New event starts if time_diff > 30 mins OR foundation changed OR it's a new MMSI
+    all_pings['new_event'] = (all_pings['time_diff'] > 30) | (all_pings['found_changed']) | (all_pings['time_diff'].isna())
+    all_pings['event_id'] = all_pings.groupby('MMSI')['new_event'].cumsum()
 
     # Aggregate events
     events = all_pings.groupby(['MMSI', 'Name', 'Ship type', 'wind_farm', 'found_id', 'event_id'], dropna=False).agg({
@@ -173,6 +181,14 @@ def identify_vessels(
     # Filter by minimum duration (15 minutes)
     valid_events = events[events['duration_min'] >= 15].copy()
     
+    # Event Classification
+    def classify_event(dur):
+        if dur < 720: return "Transfer"
+        if dur <= 1440: return "Extended"
+        return "Stationary/Construction"
+    
+    valid_events['event_class'] = valid_events['duration_min'].apply(classify_event)
+    
     # Save Events
     base_name = os.path.basename(ais_file).replace('.csv', '')
     events_path = os.path.join(INTERIM_DIR, f"OM_Events_{base_name}.csv")
@@ -181,11 +197,22 @@ def identify_vessels(
 
     # Derive Registry
     registry = valid_events.groupby(['MMSI', 'Name', 'Ship type', 'wind_farm'], dropna=False).agg({
-        'duration_min': 'sum',
+        'duration_min': ['sum', 'median'],
         'event_id': 'count',
         'length': 'first',
         'draught': 'max'
-    }).rename(columns={'duration_min': 'Total_Dwell_Time', 'event_id': 'Event_Count'}).sort_values('Total_Dwell_Time', ascending=False)
+    })
+    registry.columns = ['Total_Dwell_Time', 'Median_Duration', 'Event_Count', 'length', 'draught']
+    registry = registry.reset_index()
+    
+    # Empirical Vessel Type
+    def classify_vessel(row):
+        if 10 <= row['length'] <= 40 and row['Median_Duration'] < 120:
+            return "Probable CTV"
+        return row['Ship type']
+    
+    registry['empirical_type'] = registry.apply(classify_vessel, axis=1)
+    registry = registry.sort_values('Total_Dwell_Time', ascending=False)
     
     registry_path = os.path.join(INTERIM_DIR, f"Fleet_Registry_{base_name}.csv")
     registry.to_csv(registry_path)

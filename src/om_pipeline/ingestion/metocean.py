@@ -61,6 +61,40 @@ class MetoceanIngestor:
         """
         Upscale 1-hour metocean data to 10-minute resolution.
         Uses Cubic Spline for Hs/Tp and Circular Interpolation for Direction.
+        
+        Args:
+            df_hourly (pd.DataFrame): Must contain 'time', 'hs', 'tp', 'wave_direction'
+        Returns:
+            pd.DataFrame: 10-minute upscaled dataframe.
         """
-        # TODO: Implement temporal alignment logic
-        pass
+        if df_hourly.empty:
+            return pd.DataFrame(columns=['time', 'hs', 'tp', 'wave_direction'])
+            
+        df = df_hourly.copy()
+        df = df.set_index('time')
+        
+        # Pre-calculate u, v components for wave_direction
+        if 'wave_direction' in df.columns:
+            r = np.radians(df['wave_direction'])
+            df['u'] = np.cos(r)
+            df['v'] = np.sin(r)
+            
+        # Resample to 10-minute frequency
+        df_10m = df.resample('10min').asfreq()
+        
+        # Interpolate scalars with cubic spline
+        for col in ['hs', 'tp']:
+            if col in df_10m.columns:
+                df_10m[col] = df_10m[col].interpolate(method='cubicspline')
+                
+        # Interpolate vectors linearly
+        if 'u' in df_10m.columns and 'v' in df_10m.columns:
+            df_10m['u'] = df_10m['u'].interpolate(method='linear')
+            df_10m['v'] = df_10m['v'].interpolate(method='linear')
+            
+            # Reconstruct angle
+            df_10m['wave_direction'] = np.degrees(np.arctan2(df_10m['v'], df_10m['u'])) % 360
+            df_10m = df_10m.drop(columns=['u', 'v'])
+            
+        df_10m = df_10m.reset_index()
+        return df_10m

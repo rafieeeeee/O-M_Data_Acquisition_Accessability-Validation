@@ -1,7 +1,7 @@
 # Roadmap: Empirical Multi-Parameter Operational Limits for 15MW+ Offshore Wind O&M
 
 ## Thesis Objective
-To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 1.5m$) with a dynamic, multi-parameter ( $H_s, T_p, \theta$ ) non-linear boundary surface. This model will be "vessel-aware," incorporating dimensions and technology (Gangway/DP) to optimize fleet sizing and O&M costs for 15MW+ offshore wind assets.
+To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 1.5m$) with a dynamic, multi-parameter ( $H_s, T_p, \theta$, wind, current ) non-linear boundary surface. This model will be "vessel-aware," incorporating dimensions and technology (Gangway/DP) to optimize fleet sizing and O&M costs for 15MW+ offshore wind assets.
 
 ---
 
@@ -36,14 +36,21 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 
 - [x] **Event-Based Identification:** 
     - [x] Identify "Dwell Events" (SOG < 0.5 kn, Proximity < 100m, Duration >= 15 min).
-    - [x] Cluster by `MMSI + found_id` to prevent foundation-to-foundation event collapse.
-- [ ] **Temporal Alignment:** 
-    - Upscale NORA3 (1-hour) to 10-minute resolution using **Cubic Spline Interpolation**.
-    - Downsample/Align AIS trajectories to the rigid 10-minute SCADA/FINO clock.
-- [ ] **The "SCADA Handshake":** 
-    - Use RAVE/DPR data to label events as **Success** (Active Maintenance) or **Wait-on-Weather (WoW)** based on turbine status.
+    - [x] Catalog registered via DuckDB for SQL analysis.
+- [ ] **Metocean Extraction & Upscaling:**
+    - [x] Implement cache-aware NORA3 THREDDS extraction.
+    - [x] Implement Cubic Spline (scalars) and Circular Vector (direction) upscaling to 10-minutes.
+    - [ ] Extend the metocean backbone beyond wave-only NORA3 parameters to include wind and current once the wave backbone passes QA.
+    - [ ] Run `extract_metocean.py` across the full seasonal dataset to generate the backbone.
+- [ ] **Data Quality Assurance (QA):**
+    - [ ] Run row count, schema, and alignment sanity checks on the NORA3 Backbone.
+- [ ] **The AIS + Metocean Join:**
+    - [ ] Create a formal module in `src/om_pipeline/` to merge `dwell_events` and the 10-minute backbone based on `found_id` and timestamps.
+- [ ] **The "SCADA Handshake" & Feature Engineering:** 
+    - Use RAVE/DPR data to label events as **Success** (Active Maintenance) or **Wait-on-Weather (WoW)**.
+    - Compute event-level aggregates (mean/max Hs, Tp, direction).
 - [ ] **Feature Matrix Construction:** Create a master CSV/Parquet file containing:
-    - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Vessel_Heading | Target_Status]`
+    - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
 
 ---
 

@@ -35,7 +35,10 @@ The pipeline operates in two modes to balance storage efficiency with auditabili
 
 ## Metocean & Synchronization
 - **FINO1:** 10-minute ground-truth wave spectra ($H_s, T_p, \theta$).
-- **NORA3:** Hourly 3km hindcast, upscaled to 10-minute using cubic splines and circular interpolation for direction.
+- **NORA3 Extraction:** Hourly 3km hindcast data is pulled from MET Norway's THREDDS server. The current implemented backbone extracts wave parameters only: significant wave height (`hs`), peak period (`tp`), and wave direction (`wave_direction`). Extraction is driven by a local DuckDB catalog, fetching exact calendar month blocks (plus a 2-hour padding overlap) to maximize local cache hits for events occurring in the same temporal window.
+- **Future Metocean Scope:** Wind and current are required for the final workability model but are intentionally deferred until the wave-only NORA3 backbone has passed QA. Add wind as speed/direction or vector components (`u10`, `v10`) and current as speed/direction or vector components if a reliable hindcast/source is available. Preserve the same cache/interpolation contract when extending the schema.
+- **Upscaling Strategy:** NORA3 hourly arrays are upscaled to 10-minute intervals using **Cubic Splines** for scalar variables ($H_s, T_p$) and **Circular Vector Interpolation** for the wave direction ($\theta$). 
+- **Backbone Join:** The extraction of the Metocean backbone (`Metocean_NORA3_Backbone.csv`) is completely separated from the AIS join (`events + metocean`). This allows for rigorous row-count and boundary QA on the metocean arrays before initiating the complex event-level synchronization.
 - **SCADA Handshake:** Taxonomy-based labeling (Success, Standby, Aborted) by cross-referencing vessel proximity with turbine status.
 
 ## Ingestion Logic & Safety

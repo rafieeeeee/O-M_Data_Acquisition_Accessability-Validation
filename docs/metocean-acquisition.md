@@ -19,33 +19,47 @@ FINO1 provides high-fidelity, 10-minute wave records at the Alpha Ventus pilot s
 
 ## 2. NORA3 (Regional Hindcast)
 
-NORA3 provides regional wave fields and serves as a backup or scaling source.
+NORA3 provides regional wave and atmospheric fields. It is our primary source for scale-up across the European fleet.
 
-- **Access Method:** MET Norway THREDDS Data Server.
-- **Base URL:** [thredds.met.no](https://thredds.met.no/thredds/catalog/windsurfer/mywavewam3km_files/catalog.html)
-- **Usage/Licensing Guidance:** [MET Norway Data Policy](https://www.met.no/en/free-met-data/Licensing) (Creative Commons Attribution 4.0 International).
-- **Protocols:** OPeNDAP or NCSS (NetCDF Subset Service).
-- **Variables:**
+- **Access Method:** MET Norway THREDDS Data Server via OPeNDAP Point Extraction.
+- **Endpoints:**
+    - **2024+ Monthly Subsets:** `nora3_subset_wave/wave_tser/` (Preferred for speed and reliability).
+    - **Legacy Global Aggregation:** `windsurfer/mywavewam3km_files/aggregate/nora3_wave_agg.nc`.
+- **Variables (Current):**
     - `hs`: Significant wave height (m).
     - `tp`: Peak wave period (s).
-    - `mwd`: Mean wave direction (degrees).
-- **Spatial Resolution:** 3 km grid.
-- **Temporal Resolution:** 1-hour intervals.
-- **Download Strategy:** 
-    - Use `metocean-api` or OPeNDAP to extract specific coordinates.
-    - **Policy:** One-at-a-time requests with identifying User-Agent and local caching. Access must be rate-limited, serialized, and cache-aware following MET Norway terms.
-- **Interpolation:** Use cubic spline interpolation to upscale 1-hour blocks to the 10-minute backbone.
+    - `thq`: Mean wave direction (degrees).
+- **Spatial Strategy:** 
+    - **Foundation-Level Extraction:** We do NOT download regional grids. We perform 1D time-series extraction for specific grid cells containing turbine foundations (`found_id`).
+    - **Rotated Grid Handling:** 2024+ monthly files use a curvilinear grid (`rlat`/`rlon`). The pipeline uses a 2D nearest-neighbor search to map foundation lat/lon to grid indices.
+- **Server Etiquette & Caching (CRITICAL):**
+    - **Monthly Caching Policy:** To prevent redundant server load, raw NORA3 data is cached locally as CSVs (e.g., `nora3_raw_{lat}_{lon}_{YYYY_MM}.csv`).
+    - **Throttling:** Requests are serialized. The pipeline fetches data for one foundation-month group at a time.
+    - **Avoidance of Bulk Scans:** Extraction is strictly event-driven. We only fetch data for foundations and months where O&M activity has been identified in the AIS catalog.
+- **Interpolation:** 1-hour hourly data is upscaled to the 10-minute backbone using cubic spline (scalars) and circular vector interpolation (directions).
 
-## 3. Recommended Implementation Strategy
+## 3. Environment Expansion Roadmap (Wind & Current)
 
-### Pilot Validation (Alpha Ventus)
-- **Primary Source:** **FINO1** (10-minute ground truth).
-- **Secondary Source:** **NORA3** (Used to validate spatial consistency and fill gaps).
+Final workability surfaces require additional parameters beyond wave state.
 
-### Temporal Alignment
-- AIS dwell events should be snapped to the rigid 10-minute temporal grid.
-- Metocean data must be aligned to the same grid.
-- **Directional Data:** Treat wave direction $\theta$ as circular. Do not interpolate raw degrees directly; convert to unit vectors ($u = \cos(\theta), v = \sin(\theta)$), interpolate vectors, then reconstruct the angle.
+### Wind (NORA3 Atmospheric)
+- **Source:** MET Norway NORA3 Atmospheric hindcast.
+- **Target Variables:** Wind speed and direction at 10m and 100m (hub height).
+- **Status:** Planned. Needs verification of `tser` monthly subset availability to match wave extraction speed.
+
+### Current (CMEMS)
+- **Source:** Copernicus Marine Service (CMEMS).
+- **Product:** Atlantic-European North West Shelf - Ocean Physics Hindcast (NEMO).
+- **Target Variables:** Surface current speed and direction.
+- **Status:** Required for Stage 2. Implementation will require a separate CMEMS API client and authentication.
+
+## 4. Operational Synchronization
+
+The **AIS Backfill** (2010–2025) and **Metocean Extraction** are currently disjointed processes to manage system load and server etiquette.
+
+1. **AIS Runner Phase:** Identifies foundations and months of interest across the 15-year backfill.
+2. **Metocean Trigger Phase:** Triggered manually or at milestones to "fill" the environmental data for the newly identified events.
+3. **Backbone Join:** The final step merges the 10-minute AIS event sequences with the 10-minute Metocean backbone.
 
 ## 4. Blockers & Action Items
 - [ ] **Human Action Required:** Register for a BSH-Login account and request "Insitu" access.

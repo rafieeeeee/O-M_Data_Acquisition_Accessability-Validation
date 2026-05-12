@@ -12,6 +12,11 @@ dependencies = [
     "pandas",
     "numpy",
     "pyyaml",
+    "duckdb",
+    "pyarrow",
+    "xarray",
+    "scipy",
+    "netCDF4",
 ]
 
 [tool.setuptools.package-dir]
