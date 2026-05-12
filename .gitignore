@@ -9,3 +9,4 @@ Data/Raw/
 Data/Interim/
 Data/Processed/
 !Data/README.md
+Data/*.duckdb

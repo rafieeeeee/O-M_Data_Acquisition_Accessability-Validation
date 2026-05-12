@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from math import radians, cos, sin, asin, sqrt
 import os
+import time
 from ..common.paths import INTERIM_DIR
 
 def haversine(lon1, lat1, lon2, lat2):
@@ -13,7 +14,34 @@ def haversine(lon1, lat1, lon2, lat2):
     r = 6371000 # Meters
     return c * r
 
-def identify_vessels(ais_file, turbine_file):
+def format_progress(processed_rows, total_rows, matched_rows, started_at):
+    elapsed = max(time.time() - started_at, 0.001)
+    rows_per_sec = processed_rows / elapsed
+    message = (
+        f"Processed {processed_rows / 1e6:.1f}M rows"
+        f" | matches collected: {matched_rows:,}"
+        f" | {rows_per_sec:,.0f} rows/s"
+    )
+    if total_rows:
+        percent = min(processed_rows / total_rows, 1.0)
+        filled = int(percent * 30)
+        bar = "#" * filled + "-" * (30 - filled)
+        remaining_rows = max(total_rows - processed_rows, 0)
+        eta_min = remaining_rows / rows_per_sec / 60
+        message = (
+            f"[{bar}] {percent * 100:5.1f}% | "
+            f"{message} | ETA {eta_min:.1f} min"
+        )
+    return message
+
+
+def identify_vessels(
+    ais_file,
+    turbine_file,
+    chunk_size=500000,
+    progress_interval=5,
+    total_rows=None,
+):
     print(f"Loading Master European Turbine Database...")
     turbines = pd.read_csv(turbine_file)
     # Ensure foundation ID exists (column 0 or index)
@@ -37,13 +65,15 @@ def identify_vessels(ais_file, turbine_file):
     farm_metadata['lon_max'] += 0.01
     
     print(f"Loading AIS from {ais_file}...")
-    chunk_size = 500000
     reader = pd.read_csv(ais_file, chunksize=chunk_size)
     
     potential_matches = []
     chunk_count = 0
+    processed_rows = 0
+    started_at = time.time()
 
     for chunk in reader:
+        processed_rows += len(chunk)
         chunk.columns = [c.strip().replace('# ', '').replace('#', '') for c in chunk.columns]
         
         # Fast numeric conversion
@@ -53,7 +83,12 @@ def identify_vessels(ais_file, turbine_file):
         
         # Stationary filter
         stationary = chunk[chunk['SOG'] < 0.5].dropna(subset=['Latitude', 'Longitude'])
-        if stationary.empty: continue
+        if stationary.empty:
+            chunk_count += 1
+            if progress_interval and chunk_count % progress_interval == 0:
+                matched_rows = sum(len(match) for match in potential_matches)
+                print(format_progress(processed_rows, total_rows, matched_rows, started_at), flush=True)
+            continue
 
         # Spatial join (Vectorized optimization)
         for farm_name, meta in farm_metadata.iterrows():
@@ -83,17 +118,38 @@ def identify_vessels(ais_file, turbine_file):
                         potential_matches.append(success)
         
         chunk_count += 1
-        if chunk_count % 5 == 0:
-            print(f"Processed {chunk_count * chunk_size / 1e6:.1f}M rows...")
+        if progress_interval and chunk_count % progress_interval == 0:
+            matched_rows = sum(len(match) for match in potential_matches)
+            print(format_progress(processed_rows, total_rows, matched_rows, started_at), flush=True)
 
     if not potential_matches:
         print("No O&M activity detected.")
         return None, None
 
-    print("Building event sequences...")
+    print("Building event sequences and consolidating MMSI metadata...")
     all_pings = pd.concat(potential_matches)
     all_pings['Timestamp'] = pd.to_datetime(all_pings['Timestamp'], dayfirst=True)
     all_pings = all_pings.sort_values(['MMSI', 'Timestamp'])
+
+    # Resolve "Best" metadata per MMSI to handle missing names/types in some pings
+    def get_best_meta(series):
+        valid = series.dropna().unique()
+        valid = [v for v in valid if str(v).lower() not in ('', 'unknown', 'undefined')]
+        if not valid: return 'Unknown'
+        return max(set(valid), key=list(series).count) # Return most frequent
+
+    mmsi_meta = all_pings.groupby('MMSI').agg({
+        'Name': get_best_meta,
+        'Ship type': get_best_meta,
+        'Length': 'max',
+        'Draught': 'max'
+    })
+    
+    # Map back to all_pings
+    all_pings['Name'] = all_pings['MMSI'].map(mmsi_meta['Name'])
+    all_pings['Ship type'] = all_pings['MMSI'].map(mmsi_meta['Ship type'])
+    all_pings['Length'] = all_pings['MMSI'].map(mmsi_meta['Length'])
+    all_pings['Draught'] = all_pings['MMSI'].map(mmsi_meta['Draught'])
 
     # Identify events: Consecutive pings at same foundation within 30 minutes
     all_pings['time_diff'] = all_pings.groupby(['MMSI', 'found_id'])['Timestamp'].diff().dt.total_seconds() / 60
@@ -107,7 +163,7 @@ def identify_vessels(ais_file, turbine_file):
         'SOG': 'mean',
         'dist': 'min',
         'Length': 'first',
-        'Draught': 'max'
+        'Draught': 'first'
     })
     events.columns = ['start', 'end', 'ping_count', 'mean_sog', 'min_dist', 'length', 'draught']
     events = events.reset_index()

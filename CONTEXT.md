@@ -22,10 +22,27 @@ This project builds an empirical data pipeline to derive operational limits for 
 
 ## Data Pipeline Architecture
 
-### Funnel Approach
-1. **Tier 1 (Raw):** Stream and filter 10GB+ monthly archives into ~1GB regional CSVs.
-2. **Tier 2 (Interim):** Identify candidate O&M vessels using farm-level bounding boxes.
-3. **Tier 3 (Processed):** Validate via foundation proximity to build the "Fleet Registry" and "Event Matrix."
+### Funnel Approach (Hybrid)
+The pipeline operates in two modes to balance storage efficiency with auditability:
+1. **Mode A (Regional Slice):** Streams and filters large monthly archives into regional CSVs (e.g., German Bight). Retains all traffic below a speed threshold. Used for validation months.
+2. **Mode B (Farm-Candidate Extraction):** Extracts only AIS pings within a configurable buffer (e.g., 2nm) of known wind farm bounding boxes. Used for standard longitudinal slices to minimize disk footprint.
+
+### Processing Tiers
+1. **Tier 1 (Raw):** Ingested AIS CSVs (from Mode A or Mode B). Stored in `Data/Raw/`.
+2. **Tier 2 (Interim):** Identified candidate O&M vessels and consolidated dwell events. Stored in `Data/Interim/`.
+3. **Tier 3 (Processed):** Synchronized AIS, Metocean, and SCADA features in the "10-Minute Backbone". Stored in `Data/Processed/`.
+4. **Catalog Layer:** A local **DuckDB** database (`Data/catalog.duckdb`) provides a SQL interface for cross-slice analysis and feature engineering.
+
+## Metocean & Synchronization
+- **FINO1:** 10-minute ground-truth wave spectra ($H_s, T_p, \theta$).
+- **NORA3:** Hourly 3km hindcast, upscaled to 10-minute using cubic splines and circular interpolation for direction.
+- **SCADA Handshake:** Taxonomy-based labeling (Success, Standby, Aborted) by cross-referencing vessel proximity with turbine status.
+
+## Ingestion Logic & Safety
+- **Robust Headers:** Uses a synonym-based resolver (`Latitude`, `Longitude`, `SOG`) to handle multi-year DMA schema variations.
+- **Numeric Normalization:** Handles comma decimal delimiters common in European datasets.
+- **Counter-based Validation:** Each ingestion cycle tracks detailed metrics (scanned, kept, malformed skips) for provenance.
+- **Provenance:** Detailed pilot run metadata is preserved in `docs/provenance.md`.
 
 ## Technical Constraints
 - **Storage:** Data is stored locally on high-speed SSDs. Large archives are streamed to minimize disk footprint.
