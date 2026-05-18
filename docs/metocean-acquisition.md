@@ -23,8 +23,8 @@ NORA3 provides regional wave and atmospheric fields. It is our primary source fo
 
 - **Access Method:** MET Norway THREDDS Data Server via OPeNDAP Point Extraction.
 - **Endpoints:**
-    - **2024+ Monthly Subsets:** `nora3_subset_wave/wave_tser/` (Preferred for speed and reliability).
-    - **Legacy Global Aggregation:** `windsurfer/mywavewam3km_files/aggregate/nora3_wave_agg.nc`.
+    - **Legacy Global Aggregation:** `windsurfer/mywavewam3km_files/aggregate/nora3_wave_agg.nc` (current default for the 2010-2020 Wikinger SOV study).
+    - **2024+ Monthly Subsets:** `nora3_subset_wave/wave_tser/` (available as an explicit override if the study window shifts back to recent years).
 - **Variables (Current):**
     - `hs`: Significant wave height (m).
     - `tp`: Peak wave period (s).
@@ -61,6 +61,7 @@ The **AIS Backfill** (2010–2025) and **Metocean Extraction** are currently dis
 2. **Metocean Trigger Phase:** Triggered manually or at milestones to "fill" the environmental data for the newly identified events.
 3. **Backbone Join:** The final step merges the 10-minute AIS event sequences with the 10-minute Metocean backbone.
 
-## 4. Blockers & Action Items
+## 5. Blockers & Action Items
 - [ ] **Human Action Required:** Register for a BSH-Login account and request "Insitu" access.
-- [ ] **Technical Task:** Implement the circular interpolation utility for NORA3 upscaling.
+- [ ] **Technical Task:** Run `scripts/extract_metocean.py` across the completed event catalog and validate the output with `scripts/qa_metocean_backbone.py`.
+- [ ] **Technical Task:** Treat wave-backbone QA as a strict gate. Only after it passes should the schema expand to wind/current or the AIS + metocean join begin.

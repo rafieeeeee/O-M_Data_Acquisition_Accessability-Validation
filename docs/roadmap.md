@@ -12,22 +12,20 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [x] **Reproducibility Foundation:** Root `README.md`, `requirements.txt`, and `.gitignore` established.
 - [x] **Format Discovery:** Verified DMA AIS (CSV), NORA3 (NetCDF), and FINO1 schemas.
 - [x] **Turbine Data Preparation:** `Scripts/prepare_turbine_data.py` created to regenerate interim coordinate files.
-- [ ] **Lightweight Analytics Setup:** Configure a local **DuckDB** or **SQLite** environment for initial exploratory spatial queries.
+- [x] **Lightweight Analytics Setup:** Configure a local **DuckDB** catalog for exploratory spatial queries and pipeline view registration.
 
 ---
 
-## Phase 1: Data Acquisition (First Strike: German Bight)
-**Goal:** Acquire ground-truth data from the world's most instrumented offshore wind cluster.
+## Phase 1: Data Acquisition (Wikinger SOV Pilot)
+**Goal:** Acquire high-fidelity historical data for the modern, SOV-heavy Wikinger wind farm pilot site.
 
 - [/] **Logistics (AIS):** Download and process raw terrestrial AIS data from the **Danish Maritime Authority (DMA)**.
     - [x] **Automated Pipeline:** Hardened `stream_ais_filter.py` (Python-native HTTP/ZIP) and `identify_vessels_at_scale.py` (Event-based) implemented.
     - [x] **Repository Restructuring:** Implemented `src/om_pipeline` and agent-centric context layer.
-    - [ ] **Longitudinal Sampling:** Complete 6-month "Time Slices" from 2009 to 2024 (Jan & July of each year).
-- [ ] **Environment (In-Situ):** Access the **FINO1** database for 10-minute ground-truth wave spectra ( $H_s, T_p, \text{Direction}$ ).
-- [ ] **Environment (Hindcast):** Pull **NORA3** 3km-resolution NetCDF files for regional validation and scaling.
-- [ ] **Operations (SCADA/Structural):** 
-    - Apply for the **RAVE (Research at Alpha Ventus)** archive access.
-    - Download the **EDP "CARE to Compare"** dataset for anomaly/fault trigger training.
+    - [/] **Longitudinal Sampling:** Resumable farm-candidate backfill runner configured for the 2010–2020 historical period. Quarterly slices (`Jan/Apr/Jul/Oct`) are run first, followed by the remaining months to capture full seasonal transitions.
+- [ ] **Environment (In-Situ):** Access relevant Baltic/North Sea database for wave spectra.
+- [x] **Environment (Hindcast):** Pull wave-only **NORA3** 3km-resolution NetCDF data via MET Norway's legacy aggregate OPeNDAP endpoint (`windsurfer/mywavewam3km_files/aggregate/nora3_wave_agg.nc`) for the 2010-2020 Wikinger SOV study. The ingestion utilizes spatial coordinate rounding to 2 decimal places and month-level caching to share raw files across close-proximity turbines, with monitoring required because the aggregate endpoint is prone to timeouts.
+- [ ] **Operations (SCADA/Structural/DPR):** Obtain Wikinger daily progress reports (DPRs) or validation datasets for workability validation.
 
 ---
 
@@ -37,18 +35,18 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [x] **Event-Based Identification:** 
     - [x] Identify "Dwell Events" (SOG < 0.5 kn, Proximity < 100m, Duration >= 15 min).
     - [x] Catalog registered via DuckDB for SQL analysis.
-- [ ] **Metocean Extraction & Upscaling:**
+- [x] **Metocean Extraction & Upscaling:**
     - [x] Implement cache-aware NORA3 THREDDS extraction.
     - [x] Implement Cubic Spline (scalars) and Circular Vector (direction) upscaling to 10-minutes.
-    - [ ] Extend the metocean backbone beyond wave-only NORA3 parameters to include wind and current once the wave backbone passes QA.
-    - [ ] Run `extract_metocean.py` across the full seasonal dataset to generate the backbone.
-- [ ] **Data Quality Assurance (QA):**
-    - [ ] Run row count, schema, and alignment sanity checks on the NORA3 Backbone.
-- [ ] **The AIS + Metocean Join:**
-    - [ ] Create a formal module in `src/om_pipeline/` to merge `dwell_events` and the 10-minute backbone based on `found_id` and timestamps.
+    - [x] Extend the metocean backbone beyond wave-only NORA3 parameters to include wind and current once the wave backbone passes QA.
+    - [x] Run `extract_metocean.py` across the completed event catalog to generate the expanded wave, wind, and current backbone.
+- [x] **Data Quality Assurance (QA):**
+    - [x] Run row count, schema, missing-value, duplicate, span-continuity, and alignment sanity checks on the NORA3 Backbone. Passing this wave-only QA is a strict gate before wind/current expansion or AIS + metocean join work.
+- [x] **The AIS + Metocean Join:**
+    - [x] Create a formal module in `src/om_pipeline/` to merge `dwell_events` and the 10-minute backbone based on `found_id` and timestamps.
 - [ ] **The "SCADA Handshake" & Feature Engineering:** 
-    - Use RAVE/DPR data to label events as **Success** (Active Maintenance) or **Wait-on-Weather (WoW)**.
-    - Compute event-level aggregates (mean/max Hs, Tp, direction).
+    - [ ] **Wikinger strategic log sourcing (BLOCKED):** Pivot from legacy Alpha Ventus RAVE archives to secure Wikinger-specific Daily Progress Reports (DPRs) or SCADA logs to enable high-fidelity vessel status handshakes.
+    - [ ] Compute event-level aggregates (mean/max Hs, Tp, wind, current, direction, and relative profiles).
 - [ ] **Feature Matrix Construction:** Create a master CSV/Parquet file containing:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
 

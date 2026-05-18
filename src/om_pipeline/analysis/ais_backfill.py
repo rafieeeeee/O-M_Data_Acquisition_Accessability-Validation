@@ -25,8 +25,19 @@ def farm_candidate_base_name(year, month, region_name, max_sog, buffer_nm):
     return f"Farm-Candidates_{region_suffix}_{year}_{month:02d}{sog_suffix}_Buffer{buffer_nm}nm"
 
 
-def slice_paths(year, month, region_name="european_master", max_sog=2.0, buffer_nm=2.0):
-    base_name = farm_candidate_base_name(year, month, region_name, max_sog, buffer_nm)
+def regional_base_name(year, month, region_name, max_sog):
+    region_suffix = region_name.replace("_", "-").title()
+    sog_suffix = f"_SogMax{max_sog}" if max_sog is not None else ""
+    return f"{region_suffix}_{year}_{month:02d}{sog_suffix}"
+
+
+def slice_paths(year, month, region_name="european_master", max_sog=2.0, buffer_nm=2.0, mode="farm_candidate"):
+    if mode == "farm_candidate":
+        base_name = farm_candidate_base_name(year, month, region_name, max_sog, buffer_nm)
+    elif mode == "regional":
+        base_name = regional_base_name(year, month, region_name, max_sog)
+    else:
+        raise ValueError(f"Unsupported backfill mode: {mode}")
     raw_path = Path(AIS_RAW_DIR) / f"{base_name}.csv"
     events_path = Path(INTERIM_DIR) / f"OM_Events_{base_name}.csv"
     registry_path = Path(INTERIM_DIR) / f"Fleet_Registry_{base_name}.csv"
@@ -122,6 +133,7 @@ def process_slice(
     spec,
     *,
     region_name="european_master",
+    mode="farm_candidate",
     max_sog=2.0,
     buffer_nm=2.0,
     turbine_file=None,
@@ -134,7 +146,7 @@ def process_slice(
     force_identification=False,
     dry_run=False,
 ):
-    paths = slice_paths(spec.year, spec.month, region_name, max_sog, buffer_nm)
+    paths = slice_paths(spec.year, spec.month, region_name, max_sog, buffer_nm, mode=mode)
     raw_path, events_path, registry_path = paths
     manifest_path = manifest_path or Path(INTERIM_DIR) / "ais_backfill_manifest.csv"
 
@@ -168,7 +180,7 @@ def process_slice(
                 spec.month,
                 region_name=region_name,
                 max_sog=max_sog,
-                mode="farm_candidate",
+                mode=mode,
                 buffer_nm=buffer_nm,
                 turbine_file=turbine_file,
             )
@@ -225,6 +237,7 @@ def run_backfill(
     end_year=2025,
     phase="all",
     region_name="european_master",
+    mode="farm_candidate",
     max_sog=2.0,
     buffer_nm=2.0,
     turbine_file=None,
@@ -251,6 +264,7 @@ def run_backfill(
         status = process_slice(
             spec,
             region_name=region_name,
+            mode=mode,
             max_sog=max_sog,
             buffer_nm=buffer_nm,
             turbine_file=turbine_file,

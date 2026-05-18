@@ -6,8 +6,8 @@
 - Define the research gap: Moving from static theoretical O&M limits to dynamic, empirical "workability surfaces" using data fusion (AIS + Metocean + SCADA).
 
 ## 2. Sampling Strategy
-- **Temporal Scope:** Quarterly slices (e.g., Q1/Q3) were chosen over a continuous multi-year ingest due to the ~300GB/month size of European AIS, ensuring seasonal representation.
-- **Spatial Scope:** The "German Bight" serves as the primary pilot and default region. The "European Master Box" (46.5N–60.0N, -4.5E–15.0E) is available as an optional scaling mechanism.
+- **Temporal Scope:** The backfill strategy prioritizes quarterly slices (`Jan/Apr/Jul/Oct`) before filling the remaining months. This preserves seasonal coverage while allowing the pipeline to produce analyzable cohorts before the full 2010-2025 monthly corpus is complete.
+- **Spatial Scope:** The "German Bight" serves as the primary pilot and validation region. The "European Master Box" (46.5N-60.0N, -4.5E-15.0E) is the scaling region for Europe-wide farm-candidate extraction.
 
 ## 3. Filtering Thresholds & Heuristics
 - **Speed Filter (Two-Stage):** 
@@ -16,6 +16,7 @@
 - **Proximity Filter:** `100m radius`. Justification: Accounts for GPS drift, foundation dimensions, and typical safe operating distances during a transfer.
 - **Dwell Duration:** `Min 15 minutes`. Justification: Shorter intervals are likely noise or pass-bys; 15 minutes is the minimum time for a meaningful personnel transfer.
 - **Event Separation:** `30 minutes`. Justification: If a vessel drops AIS connection or briefly steps away and returns within 30 minutes, it is considered a single continuous maintenance event.
+- **Metocean Backbone:** NORA3 wave variables are extracted and QA'd as a foundation-time backbone before joining to AIS events. Wind and current are deferred until the wave-only backbone is stable.
 
 ## 4. Known Biases & Limitations
 - **AIS Spoofing/Dropouts:** Vessels may turn off AIS near foundations, leading to truncated event durations.

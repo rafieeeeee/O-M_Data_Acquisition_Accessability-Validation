@@ -80,6 +80,8 @@ def identify_vessels(
         chunk['Latitude'] = pd.to_numeric(chunk['Latitude'].astype(str).str.replace(',', '.'), errors='coerce')
         chunk['Longitude'] = pd.to_numeric(chunk['Longitude'].astype(str).str.replace(',', '.'), errors='coerce')
         chunk['SOG'] = pd.to_numeric(chunk['SOG'].astype(str).str.replace(',', '.'), errors='coerce')
+        chunk['Length'] = pd.to_numeric(chunk['Length'].astype(str).str.replace(',', '.'), errors='coerce')
+        chunk['Draught'] = pd.to_numeric(chunk['Draught'].astype(str).str.replace(',', '.'), errors='coerce')
         
         # Stationary filter
         stationary = chunk[chunk['SOG'] < 0.5].dropna(subset=['Latitude', 'Longitude'])

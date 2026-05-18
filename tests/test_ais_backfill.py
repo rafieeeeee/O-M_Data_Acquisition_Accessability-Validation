@@ -6,6 +6,7 @@ from om_pipeline.analysis.ais_backfill import (
     build_schedule,
     farm_candidate_base_name,
     log_slice,
+    slice_paths,
 )
 
 
@@ -51,6 +52,20 @@ def test_farm_candidate_base_name_matches_existing_naming_contract():
         farm_candidate_base_name(2024, 7, "european_master", 2.0, 2.0)
         == "Farm-Candidates_European-Master_2024_07_SogMax2.0_Buffer2.0nm"
     )
+
+
+def test_slice_paths_support_regional_mode():
+    raw_path, events_path, registry_path = slice_paths(
+        2024,
+        7,
+        region_name="european_master",
+        max_sog=2.0,
+        mode="regional",
+    )
+
+    assert raw_path.name == "European-Master_2024_07_SogMax2.0.csv"
+    assert events_path.name == "OM_Events_European-Master_2024_07_SogMax2.0.csv"
+    assert registry_path.name == "Fleet_Registry_European-Master_2024_07_SogMax2.0.csv"
 
 
 def test_log_slice_writes_resumable_manifest(tmp_path):

@@ -6,6 +6,7 @@ This project implements an empirical data pipeline to derive multi-parameter ope
 This repository is optimized for AI coding agents.
 - **[AGENTS.md](AGENTS.md)**: Rules of engagement and workflow mandates.
 - **[CONTEXT.md](CONTEXT.md)**: Deep dive into the O&M domain and pipeline logic.
+- **[docs/README.md](docs/README.md)**: Map of planning, methodology, provenance, and decision documents.
 - **[docs/adr/](docs/adr/)**: Architectural Decision Records.
 
 ## 📂 Project Structure
@@ -27,11 +28,20 @@ This repository is optimized for AI coding agents.
    ```
 3. **Run Ingestion:** Stream and filter AIS data for a specific month:
    ```bash
-   python3 scripts/stream_ais_filter.py 2024 7
+   python3 scripts/stream_ais_filter.py 2024 7 --region european_master --mode farm_candidate --max-sog 2.0
    ```
 4. **Identify Vessels:** Process the filtered AIS to find O&M vessels:
    ```bash
-   python3 scripts/identify_vessels_at_scale.py Data/Raw/AIS/European_Waters_2024_07.csv
+   python3 scripts/identify_vessels_at_scale.py Data/Raw/AIS/Farm-Candidates_European-Master_2024_07_SogMax2.0_Buffer2.0nm.csv
+   ```
+5. **Run the resumable backfill:** Process farm-candidate slices with manifest logging:
+   ```bash
+   python3 scripts/backfill_ais_slices.py --start-year 2010 --end-year 2020 --phase quarterly --mode farm_candidate --turbine-file Data/Interim/European_Turbine_Coordinates.csv
+   ```
+6. **Extract and QA the wave-only NORA3 backbone:** After the DuckDB catalog has dwell events and turbines registered:
+   ```bash
+   python3 scripts/extract_metocean.py --dry-run
+   python3 scripts/qa_metocean_backbone.py
    ```
 
 For the long-term project vision, see **[docs/roadmap.md](docs/roadmap.md)**.

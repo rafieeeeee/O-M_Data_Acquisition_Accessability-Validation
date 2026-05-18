@@ -3,15 +3,40 @@ import zipfile
 import tempfile
 import csv
 import io
+import itertools
 import os
 import shutil
 import xml.etree.ElementTree as ET
 import yaml
 import math
 import pandas as pd
-from ..common.paths import AIS_RAW_DIR, CONFIG_DIR, INTERIM_DIR
+from ..common.paths import AIS_RAW_DIR, CONFIG_DIR, INTERIM_DIR, TMP_DIR
 
 BUCKET_URL = "http://aisdata.ais.dk.s3.eu-central-1.amazonaws.com"
+LEGACY_AIS_HEADER = [
+    "Timestamp",
+    "Type of mobile",
+    "MMSI",
+    "Latitude",
+    "Longitude",
+    "Navigational status",
+    "ROT",
+    "SOG",
+    "COG",
+    "Heading",
+    "IMO",
+    "Callsign",
+    "Name",
+    "Ship type",
+    "Cargo type",
+    "Width",
+    "Length",
+    "Type of position fixing device",
+    "Draught",
+    "Destination",
+    "ETA",
+    "Data source type",
+]
 
 def find_column(header, synonyms):
     """Find column index by case-insensitive synonyms. Fails loudly if missing."""
@@ -25,6 +50,28 @@ def find_column(header, synonyms):
                 return i
     
     raise ValueError(f"Required column (one of {synonyms}) not found in header: {header}")
+
+
+def resolve_ais_header(first_row):
+    """Return a usable AIS header and any pending data rows for headerless legacy files."""
+    try:
+        find_column(first_row, ["latitude", "lat"])
+        find_column(first_row, ["longitude", "lon", "long"])
+        find_column(first_row, ["sog", "speed over ground", "speed"])
+        return first_row, []
+    except ValueError:
+        diff = len(first_row) - len(LEGACY_AIS_HEADER)
+        if diff == 0:
+            return LEGACY_AIS_HEADER, [first_row]
+        elif 0 < diff <= 5:
+            # Pad header for extra trailing columns
+            padded_header = LEGACY_AIS_HEADER + [f"Extra_{i}" for i in range(diff)]
+            return padded_header, [first_row]
+        elif -5 <= diff < 0:
+            # Truncate header for fewer columns
+            truncated_header = LEGACY_AIS_HEADER[:len(first_row)]
+            return truncated_header, [first_row]
+        raise
 
 def load_region_bounds(region_name="european_master"):
     """Load regional bounds from configuration file."""
@@ -121,7 +168,8 @@ def download_zip(key):
             raise FileNotFoundError(f"404 Not Found for {url}")
         response.raise_for_status()
 
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".zip") as tmp_zip:
+        os.makedirs(TMP_DIR, exist_ok=True)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".zip", dir=TMP_DIR) as tmp_zip:
             shutil.copyfileobj(response.raw, tmp_zip)
             return tmp_zip.name
 
@@ -147,12 +195,16 @@ def filter_zip_to_writer(zip_path, writer, write_header, bounds, max_sog=None, m
                 return {"seen": 0, "kept": 0}, write_header
 
             delim = ";" if ";" in first_line else ","
-            header = next(csv.reader(io.StringIO(first_line), delimiter=delim))
+            first_row = next(csv.reader(io.StringIO(first_line), delimiter=delim))
+            header, pending_rows = resolve_ais_header(first_row)
             if write_header:
                 writer.writerow(header)
                 write_header = False
 
-            reader = csv.reader(text_stream, delimiter=delim, quotechar='"')
+            reader = itertools.chain(
+                pending_rows,
+                csv.reader(text_stream, delimiter=delim, quotechar='"'),
+            )
             
             # Use explicit header resolver
             lat_idx = find_column(header, ["latitude", "lat"])

@@ -5,7 +5,7 @@ from pathlib import Path
 
 import duckdb
 
-from .paths import DATA_DIR
+from .paths import DATA_DIR, TMP_DIR
 
 CATALOG_PATH = os.path.join(DATA_DIR, "catalog.duckdb")
 
@@ -17,7 +17,11 @@ def get_connection(read_only=False, catalog_path=None):
     db_path = os.fspath(catalog_path or CATALOG_PATH)
     if not read_only:
         Path(db_path).parent.mkdir(parents=True, exist_ok=True)
-    return duckdb.connect(db_path, read_only=read_only)
+    con = duckdb.connect(db_path, read_only=read_only)
+    if not read_only:
+        Path(TMP_DIR).mkdir(parents=True, exist_ok=True)
+        con.execute(f"SET temp_directory={_sql_string_literal(Path(TMP_DIR) / 'duckdb')}")
+    return con
 
 
 def quote_view_name(view_name):

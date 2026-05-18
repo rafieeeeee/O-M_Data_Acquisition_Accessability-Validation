@@ -1,12 +1,12 @@
 # Project Context: O&M Data Acquisition & Validation
 
-This project builds an empirical data pipeline to derive operational limits for offshore wind Operations and Maintenance (O&M) vessels. It replaces static heuristics with dynamic, vessel-aware workability surfaces.
+This project builds an empirical data pipeline to derive operational limits for offshore wind Operations and Maintenance (O&M) vessels. It replaces static heuristics with dynamic, vessel-aware workability surfaces, specializing in Service Operation Vessel (SOV) workability.
 
 ## Domain Concepts
 
 ### AIS (Automatic Identification System)
 - **Source:** Danish Maritime Authority (DMA) S3 archives.
-- **Data Structure:** Longitudinal study (2009–2024), focusing on Jan/July "slices."
+- **Data Structure:** Longitudinal study currently implemented for 2010-2020 farm-candidate slices. The runner prioritizes quarterly coverage (`Jan/Apr/Jul/Oct`) before filling remaining months.
 - **Filtering:** 
     - **Regional:** European Master Box (46.5N–60.0N, -4.5E–15.0E).
     - **Proximity:** 100m radius around turbine foundations.
@@ -18,7 +18,7 @@ This project builds an empirical data pipeline to derive operational limits for 
 
 ### Offshore Wind Infrastructure
 - **Open European Offshore Wind Turbine Database:** The primary source for turbine coordinates and farm boundaries.
-- **Alpha Ventus (AV):** The primary focus area for validation due to the RAVE research archive.
+- **Wikinger Wind Farm:** The primary focus area and pilot site for validation, selected for its high volume of Service Operation Vessel (SOV) activity (vessels > 60m with DP capabilities), replacing the older, CTV-dominated Alpha Ventus target.
 
 ## Data Pipeline Architecture
 
@@ -35,11 +35,12 @@ The pipeline operates in two modes to balance storage efficiency with auditabili
 
 ## Metocean & Synchronization
 - **FINO1:** 10-minute ground-truth wave spectra ($H_s, T_p, \theta$).
-- **NORA3 Extraction:** Hourly 3km hindcast data is pulled from MET Norway's THREDDS server. The current implemented backbone extracts wave parameters only: significant wave height (`hs`), peak period (`tp`), and wave direction (`wave_direction`). Extraction is driven by a local DuckDB catalog, fetching exact calendar month blocks (plus a 2-hour padding overlap) to maximize local cache hits for events occurring in the same temporal window.
-- **Future Metocean Scope:** Wind and current are required for the final workability model but are intentionally deferred until the wave-only NORA3 backbone has passed QA. Add wind as speed/direction or vector components (`u10`, `v10`) and current as speed/direction or vector components if a reliable hindcast/source is available. Preserve the same cache/interpolation contract when extending the schema.
-- **Upscaling Strategy:** NORA3 hourly arrays are upscaled to 10-minute intervals using **Cubic Splines** for scalar variables ($H_s, T_p$) and **Circular Vector Interpolation** for the wave direction ($\theta$). 
-- **Backbone Join:** The extraction of the Metocean backbone (`Metocean_NORA3_Backbone.csv`) is completely separated from the AIS join (`events + metocean`). This allows for rigorous row-count and boundary QA on the metocean arrays before initiating the complex event-level synchronization.
+- **NORA3 Wave Ingestion:** Hourly 3km wave hindcast data is pulled from MET Norway's THREDDS server. The backbone extracts wave parameters: significant wave height (`hs`), peak period (`tp`), and wave direction (`wave_direction`). The wave ingestion utilizes spatial coordinate rounding to 2 decimal places and month-level caching to share raw files across close-proximity turbines.
+- **Atmospheric Wind Ingestion:** Wind speed and direction at both 10m and 100m hub heights are extracted from MET Norway's NORA3 Atmospheric hindcast (`nora3_subset_atmos/wind_hourly_v2`). It retrieves variables (`wind_speed`, `wind_direction`) at height dimensions `10` and `100` and saves them locally with coordinate caching.
+- **CMEMS Current Ingestion:** Ocean surface current speed and direction are extracted using the Copernicus Marine Toolbox API (`copernicusmarine` client) targeting dataset `cmems_mod_nws_phy-uv_my_7km-2D_PT1H-i` to fetch horizontal components `uo` and `vo`. The system integrates a physically consistent semi-diurnal tidal rotation climatology fallback when offline or credentials are not supplied.
+- **Generalized Upscaling & QA:** The metocean ingestor dynamically processes all metocean parameters to upscale hourly records to the 10-minute backbone: Cubic Spline interpolation is used for all scalar columns (e.g. `hs`, `tp`, `wind_speed_10m`, `wind_speed_100m`, `current_speed`) and Circular Vector Interpolation is used for all angular columns (e.g. `wave_direction`, `wind_direction_10m`, `wind_direction_100m`, `current_direction`). The QA gate enforces strict [0, 360) angular bounds and zero nulls.
 - **SCADA Handshake:** Taxonomy-based labeling (Success, Standby, Aborted) by cross-referencing vessel proximity with turbine status.
+
 
 ## Ingestion Logic & Safety
 - **Robust Headers:** Uses a synonym-based resolver (`Latitude`, `Longitude`, `SOG`) to handle multi-year DMA schema variations.

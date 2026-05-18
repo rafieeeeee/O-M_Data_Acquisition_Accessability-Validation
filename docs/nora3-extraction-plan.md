@@ -1,6 +1,6 @@
 # Metocean Implementation Spec (NORA3 / FINO1 Pilot)
 
-**Status:** PREPARED (Awaiting AIS July Pilot & Vessel Identification Review)
+**Status:** IMPLEMENTED FOR WAVE-ONLY BACKBONE (Strict QA gate pending)
 
 ## 1. Inputs
 
@@ -14,25 +14,23 @@ To begin the metocean extraction, the following inputs are required from the AIS
 
 ## 2. Output Schema
 
-The extraction process will generate an expected metocean event table with the following schema:
+The extraction process generates a foundation-time backbone, not an event-joined table. The expected wave-only output schema is:
 
-- `event_id` (String/UUID: Foreign key linking to the AIS dwell event)
-- `MMSI` (Integer: Vessel identifier)
 - `found_id` (String: Foundation/turbine ID)
 - `timestamp_10min` (Datetime: Normalized to 10-minute intervals)
-- `lat` (Float: Latitude of the foundation)
-- `lon` (Float: Longitude of the foundation)
-- `Hs` (Float: Significant wave height, in meters)
-- `Tp` (Float: Peak wave period, in seconds)
+- `lat` / `lon` (Float: NORA3 grid or selected point coordinates)
+- `hs` (Float: Significant wave height, in meters)
+- `tp` (Float: Peak wave period, in seconds)
 - `wave_direction` (Float: Mean wave direction, in degrees)
-- `source` (String: 'NORA3' or 'FINO1')
-- `interpolation_method` (String: e.g., 'cubic_scalar', 'circular_vector', 'none')
+- `source` (String: `NORA3`)
+- `interpolation_method` (String: `cubic_scalar+circular_vector`)
 
 ## 3. NORA3 Extraction Design
 
-The extraction script (`src/om_pipeline/ingestion/nora3.py` or similar) will adhere to the following design constraints:
-- **Spatial Scope:** One coordinate/farm processed at a time.
+The extraction implementation (`src/om_pipeline/ingestion/nora3.py`, orchestrated by `scripts/extract_metocean.py`) adheres to the following design constraints:
+- **Spatial Scope:** One foundation-month group processed at a time.
 - **Network Protocol:** Serialized, cache-aware THREDDS access (no concurrent bulk requests).
+- **Historical Endpoint:** Default NORA3 access is pinned to the legacy aggregate endpoint (`windsurfer/mywavewam3km_files/aggregate/nora3_wave_agg.nc`) for the 2010-2020 Wikinger SOV study; monthly endpoints should be passed only as explicit overrides.
 - **Data Preservation:** Hourly raw values from NORA3 must be preserved and cached.
 - **Interpolation:** 10-minute interpolation generated separately from the raw fetch.
   - **Hs and Tp:** Scalar cubic interpolation.
@@ -41,7 +39,7 @@ The extraction script (`src/om_pipeline/ingestion/nora3.py` or similar) will adh
 ## 4. Join Boundary
 
 **Do not join metocean to AIS yet.** 
-This specification strictly prepares the *design* for the extraction and structure of the metocean dataset. The actual database join or backbone construction remains out of scope for this step.
+The implemented extraction creates `Data/Interim/Metocean_NORA3_Backbone.csv`. The event-level join remains a separate future module that should merge dwell events to the 10-minute backbone by `found_id` and timestamp.
 
 ## 5. Human Blocker
 
@@ -52,8 +50,10 @@ Do not attempt to pull FINO1 data until BSH Insitu access is formally approved b
 
 ## 6. Restart Condition
 
-**RESTART METOCEAN IMPLEMENTATION ONLY AFTER:**
-1. The July European farm-candidate slice and vessel identification are completed and reviewed.
-2. `OM_Events_*.csv` and associated foundation coordinates are confirmed and available.
+**RUN FULL METOCEAN EXTRACTION ONLY AFTER:**
+1. The DuckDB catalog has registered the relevant `dwell_events` and `turbines` views.
+2. The current AIS backfill slice or milestone cohort has been reviewed for event plausibility.
 
-Once the above is satisfied, you may implement the NORA3 extractor and interpolation scripts following the design in Section 3.
+Once the above is satisfied, run `scripts/extract_metocean.py`, then validate with `scripts/qa_metocean_backbone.py` before any AIS + metocean join work.
+
+Passing wave-only NORA3 backbone QA is a strict implementation gate. Do not start wind/current expansion or the AIS + metocean join until the wave backbone has passed missing-value, timestamp-alignment, row-count, duplicate, and span-continuity checks.

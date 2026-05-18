@@ -1,8 +1,12 @@
 import argparse
 import os
+import sys
+from pathlib import Path
 
+sys.path.insert(0, os.fspath(Path(__file__).resolve().parents[1] / "src"))
+
+from om_pipeline.common.paths import CACHE_DIR, INTERIM_DIR, TMP_DIR
 from om_pipeline.analysis.ais_backfill import run_backfill
-from om_pipeline.common.paths import INTERIM_DIR
 
 
 def parse_args():
@@ -10,7 +14,7 @@ def parse_args():
         description="Resumable Europe-wide AIS farm-candidate backfill runner."
     )
     parser.add_argument("--start-year", type=int, default=2010)
-    parser.add_argument("--end-year", type=int, default=2025)
+    parser.add_argument("--end-year", type=int, default=2020)
     parser.add_argument(
         "--phase",
         choices=["quarterly", "backfill", "all"],
@@ -18,6 +22,12 @@ def parse_args():
         help="quarterly runs Jan/Apr/Jul/Oct first; backfill runs the other months; all runs both in that order.",
     )
     parser.add_argument("--region", default="european_master")
+    parser.add_argument(
+        "--mode",
+        choices=["farm_candidate", "regional"],
+        default="farm_candidate",
+        help="farm_candidate filters against buffered turbine bounds; regional filters against the configured region bbox.",
+    )
     parser.add_argument("--max-sog", type=float, default=2.0)
     parser.add_argument("--buffer-nm", type=float, default=2.0)
     parser.add_argument(
@@ -40,12 +50,18 @@ def parse_args():
 
 
 if __name__ == "__main__":
+    os.environ["TMPDIR"] = TMP_DIR
+    os.environ["TEMP"] = TMP_DIR
+    os.environ["TMP"] = TMP_DIR
+    os.environ.setdefault("XDG_CACHE_HOME", CACHE_DIR)
+
     args = parse_args()
     run_backfill(
         start_year=args.start_year,
         end_year=args.end_year,
         phase=args.phase,
         region_name=args.region,
+        mode=args.mode,
         max_sog=args.max_sog,
         buffer_nm=args.buffer_nm,
         turbine_file=args.turbine_file,

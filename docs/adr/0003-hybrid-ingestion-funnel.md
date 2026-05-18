@@ -17,7 +17,7 @@ We will pivot to a **Hybrid Ingestion Funnel** architecture that supports two di
 
 2.  **Mode B (Farm-Candidate Extraction):**
     -   **Behavior:** Filters AIS pings directly against a spatial index of wind farm bounding boxes, buffered by a configurable distance (default 2nm).
-    -   **Usage:** Standard longitudinal months (2009–2024 quarterly slices).
+    -   **Usage:** Standard longitudinal months. The current backfill runner processes 2010-2025 quarterly slices (`Jan/Apr/Jul/Oct`) first, then the remaining months.
     -   **Pros:** Low storage cost (~100-200MB/month); optimized for O&M identification.
     -   **Cons:** May exclude vessels waiting/drifting far (e.g., >5km) outside the buffered farm boundaries.
 

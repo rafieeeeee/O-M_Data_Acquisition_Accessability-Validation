@@ -60,41 +60,54 @@ class MetoceanIngestor:
     def upscale_to_10min(self, df_hourly):
         """
         Upscale 1-hour metocean data to 10-minute resolution.
-        Uses Cubic Spline for Hs/Tp and Circular Interpolation for Direction.
+        Uses Cubic Spline for scalar fields and Circular Vector Interpolation for directions.
         
         Args:
-            df_hourly (pd.DataFrame): Must contain 'time', 'hs', 'tp', 'wave_direction'
+            df_hourly (pd.DataFrame): Hourly dataframe containing columns like 'time', 'hs', 'tp', 'wave_direction', etc.
         Returns:
             pd.DataFrame: 10-minute upscaled dataframe.
         """
         if df_hourly.empty:
-            return pd.DataFrame(columns=['time', 'hs', 'tp', 'wave_direction'])
+            return pd.DataFrame()
             
         df = df_hourly.copy()
         df = df.set_index('time')
         
-        # Pre-calculate u, v components for wave_direction
-        if 'wave_direction' in df.columns:
-            r = np.radians(df['wave_direction'])
-            df['u'] = np.cos(r)
-            df['v'] = np.sin(r)
+        # Identify scalar and direction columns dynamically
+        direction_cols = [c for c in df.columns if 'direction' in c.lower() or c.lower() == 'dir' or c.lower() == 'thq']
+        scalar_cols = [c for c in df.columns if c not in direction_cols and c not in ['lat', 'lon', 'source', 'interpolation_method', 'found_id']]
+        
+        # Pre-calculate u, v components for all direction variables
+        for dcol in direction_cols:
+            r = np.radians(df[dcol])
+            df[f'{dcol}_u'] = np.cos(r)
+            df[f'{dcol}_v'] = np.sin(r)
             
         # Resample to 10-minute frequency
         df_10m = df.resample('10min').asfreq()
         
         # Interpolate scalars with cubic spline
-        for col in ['hs', 'tp']:
+        for col in scalar_cols:
             if col in df_10m.columns:
                 df_10m[col] = df_10m[col].interpolate(method='cubicspline')
                 
-        # Interpolate vectors linearly
-        if 'u' in df_10m.columns and 'v' in df_10m.columns:
-            df_10m['u'] = df_10m['u'].interpolate(method='linear')
-            df_10m['v'] = df_10m['v'].interpolate(method='linear')
-            
-            # Reconstruct angle
-            df_10m['wave_direction'] = np.degrees(np.arctan2(df_10m['v'], df_10m['u'])) % 360
-            df_10m = df_10m.drop(columns=['u', 'v'])
-            
+        # Forward/Backward fill metadata/coordinates if present
+        for meta_col in ['lat', 'lon', 'source', 'interpolation_method', 'found_id']:
+            if meta_col in df_10m.columns:
+                df_10m[meta_col] = df_10m[meta_col].ffill().bfill()
+                
+        # Interpolate orthogonal direction vectors linearly and reconstruct angles
+        for dcol in direction_cols:
+            ucol = f'{dcol}_u'
+            vcol = f'{dcol}_v'
+            if ucol in df_10m.columns and vcol in df_10m.columns:
+                df_10m[ucol] = df_10m[ucol].interpolate(method='linear')
+                df_10m[vcol] = df_10m[vcol].interpolate(method='linear')
+                
+                # Reconstruct angle in [0, 360)
+                df_10m[dcol] = np.degrees(np.arctan2(df_10m[vcol], df_10m[ucol])) % 360
+                df_10m = df_10m.drop(columns=[ucol, vcol])
+                
         df_10m = df_10m.reset_index()
         return df_10m
+
