@@ -147,9 +147,10 @@ def join_metocean_vectorised(
     avail_cols = [c for c in METOCEAN_COLS if c in mo.columns]
 
     # Strip any pre-existing metocean columns from the backbone before merging
-    # to prevent _x/_y suffix collision in merge_asof.
+    # to prevent _x/_y suffix collision in merge_asof. We drop ALL potential
+    # METOCEAN_COLS to ensure a clean join regardless of what's in mo.columns.
     backbone_clean = backbone_df.drop(
-        columns=[c for c in avail_cols if c in backbone_df.columns],
+        columns=[c for c in METOCEAN_COLS if c in backbone_df.columns],
         errors="ignore",
     ).sort_values("timestamp")
 
