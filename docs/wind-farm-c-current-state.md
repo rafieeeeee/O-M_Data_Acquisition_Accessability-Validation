@@ -37,7 +37,7 @@ NORA3 and CMEMS are complementary, not alternatives. NORA3 covers atmospheric an
 
 ## Immediate Next Steps
 
-1. **First baseline model (Completed):** We implemented a baseline diagnostic modeling pipeline. Task A shows promising but leakage-prone diagnostic separability. Task B shows high ROC-AUC ranking under extreme class imbalance, but default-threshold classification fails for Random Forest and the target remains a proxy because AIS proximity is synthetic. Results are exploratory and should guide the next grouped 10-minute modeling experiment, not be treated as thesis-grade evidence yet.
+1. **10-Minute Grouped Feasibility Study (Completed):** Successfully executed our leakage-safe event-grouped validation campaign at 10-minute cadence (`scripts/train_wind_farm_c_10min_grouped.py`). Verified robust physical signal separability across 5 viability gates and isolated high-frequency autocorrelation leakage (grouped F1 0.840 vs. leaked naive F1 0.899). Identified a major Simpson's Paradox (wave heights are pooled-larger for success, but event-normalized calmer in 72.5% of events), and computed decision threshold operational regions.
 2. **AIS proximity replacement:** Replace the synthetic `min_dist=50m` placeholder with real AIS dwell geometry wherever local catalog coverage exists.
 3. **Real CMEMS rerun:** Install/configure `copernicusmarine`, rerun `scripts/extract_wind_farm_c_metocean.py --force`, then rerun `scripts/build_wind_farm_c_feature_matrix.py --force` and `scripts/build_wind_farm_c_event_aggregates.py --force`.
 4. **Evidence language discipline:** Use "high-confidence working mapping" or "production working mapping" unless AIS co-occurrence or another independent external check closes the remaining gap.
