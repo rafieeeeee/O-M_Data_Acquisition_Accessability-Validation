@@ -54,7 +54,10 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - Output: `Data/Processed/wind_farm_c_feature_matrix.parquet` (local generated artifact; not committed).
     - QA report: `reports/care_wind_farm_c_confirmation/wfc_feature_matrix_qa.md`
     - Caveat: current columns use the CMEMS tidal fallback until `copernicusmarine` credentials are configured and extraction is re-run with `--force`.
-- [ ] **Wind Farm C Event-Level Aggregation (ACTIVE MILESTONE):** Collapse the 10-minute matrix to one row per CARE event with mean/max/std metocean features, directional spread, SCADA label shares, and event-level target labels.
+- [x] **Wind Farm C Event-Level Aggregation:** Collapsed the 10-minute matrix to one row per CARE event with mean/max/std metocean features, circular directional statistics, SCADA status shares, handshake label shares, and event-level target labels.
+    - Script: `scripts/build_wind_farm_c_event_aggregates.py`
+    - Output: `Data/Processed/wind_farm_c_event_aggregates.parquet` (local generated artifact; not committed).
+    - Current local run: 58 events, 58 columns, 31 CARE normal / 27 CARE anomaly, no aggregate NaNs.
 - [ ] **Wind Farm C External Cross-Checks:** Replace synthetic `min_dist=50m` with real AIS dwell proximity where catalog coverage exists, and re-run currents with real CMEMS reanalysis rather than fallback climatology.
 - [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
 - [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:

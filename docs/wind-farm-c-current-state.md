@@ -29,6 +29,7 @@ NORA3 and CMEMS are complementary, not alternatives. NORA3 covers atmospheric an
 ## Current Artifacts
 
 - Feature matrix: `Data/Processed/wind_farm_c_feature_matrix.parquet` (local generated artifact, not committed)
+- Event-level aggregate matrix: `Data/Processed/wind_farm_c_event_aggregates.parquet` (local generated artifact, not committed; 58 events in the current local run)
 - Borkum metocean backbone: `Data/Processed/metocean/wind_farm_c_borkum_metocean_10min.csv` (local generated artifact, not committed)
 - Feature matrix QA: `reports/care_wind_farm_c_confirmation/wfc_feature_matrix_qa.md`
 - SCADA labeling detail: `reports/care_wind_farm_c_confirmation/wfc_labeling_slice_detail.csv`
@@ -36,8 +37,7 @@ NORA3 and CMEMS are complementary, not alternatives. NORA3 covers atmospheric an
 
 ## Immediate Next Steps
 
-1. **Event-level aggregation:** Build one row per CARE event from the 10-minute feature matrix. Include metocean mean/max/std, directional spread, SCADA label shares, and a clear event-level target.
-2. **First baseline model:** Train a simple Random Forest or XGBoost classifier on the event-level table. Treat this as a diagnostic baseline, not the final thesis model.
-3. **AIS proximity replacement:** Replace the synthetic `min_dist=50m` placeholder with real AIS dwell geometry wherever local catalog coverage exists.
-4. **Real CMEMS rerun:** Install/configure `copernicusmarine`, rerun `scripts/extract_wind_farm_c_metocean.py --force`, then rerun `scripts/build_wind_farm_c_feature_matrix.py --force`.
-5. **Evidence language discipline:** Use "high-confidence working mapping" or "production working mapping" unless AIS co-occurrence or another independent external check closes the remaining gap.
+1. **First baseline model:** Train a simple Random Forest or XGBoost classifier on the event-level table. Treat this as a diagnostic baseline, not the final thesis model.
+2. **AIS proximity replacement:** Replace the synthetic `min_dist=50m` placeholder with real AIS dwell geometry wherever local catalog coverage exists.
+3. **Real CMEMS rerun:** Install/configure `copernicusmarine`, rerun `scripts/extract_wind_farm_c_metocean.py --force`, then rerun `scripts/build_wind_farm_c_feature_matrix.py --force` and `scripts/build_wind_farm_c_event_aggregates.py --force`.
+4. **Evidence language discipline:** Use "high-confidence working mapping" or "production working mapping" unless AIS co-occurrence or another independent external check closes the remaining gap.
