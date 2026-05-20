@@ -44,10 +44,17 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] Run row count, schema, missing-value, duplicate, span-continuity, and alignment sanity checks on the NORA3 Backbone. Passing this wave-only QA is a strict gate before wind/current expansion or AIS + metocean join work.
 - [x] **The AIS + Metocean Join:**
     - [x] Create a formal module in `src/om_pipeline/` to merge `dwell_events` and the 10-minute backbone based on `found_id` and timestamps.
-- [ ] **The "SCADA Handshake" & Feature Engineering:** 
+- [/] **The "SCADA Handshake" & Feature Engineering:**
+    - [x] **Wind Farm C (CAREtoCompare / Trianel Borkum I+II):** De-anonymized with confirmed 0-year temporal shift. `SCADAHandshake` applies timestamps directly. Labels validated via 8-test empirical campaign. See `docs/adr/003-care-de-anonymization.md`.
+    - [x] **Wind Farm B (CAREtoCompare / Alpha Ventus):** De-anonymized with confirmed 0-year temporal shift.
     - [ ] **Wikinger strategic log sourcing (BLOCKED):** Pivot from legacy Alpha Ventus RAVE archives to secure Wikinger-specific Daily Progress Reports (DPRs) or SCADA logs to enable high-fidelity vessel status handshakes.
     - [ ] Compute event-level aggregates (mean/max Hs, Tp, wind, current, direction, and relative profiles).
-- [ ] **Feature Matrix Construction:** Create a master CSV/Parquet file containing:
+- [ ] **Feature Matrix Construction — Wind Farm C (ACTIVE MILESTONE):** Build the first production feature matrix for Wind Farm C (Trianel Borkum I+II). Produce a joined table with:
+    - `[timestamp | vessel | hs | tp | wave_direction | wind_speed | wind_direction | current_speed | current_direction | status_type_id | label]`
+    - Output: `Data/Processed/wind_farm_c_feature_matrix.parquet` (Parquet preferred for scale).
+    - QA report: `reports/care_wind_farm_c_confirmation/`
+- [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
+- [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
 
 ---

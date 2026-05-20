@@ -39,7 +39,11 @@ The pipeline operates in two modes to balance storage efficiency with auditabili
 - **Atmospheric Wind Ingestion:** Wind speed and direction at both 10m and 100m hub heights are extracted from MET Norway's NORA3 Atmospheric hindcast (`nora3_subset_atmos/wind_hourly_v2`). It retrieves variables (`wind_speed`, `wind_direction`) at height dimensions `10` and `100` and saves them locally with coordinate caching.
 - **CMEMS Current Ingestion:** Ocean surface current speed and direction are extracted using the Copernicus Marine Toolbox API (`copernicusmarine` client) targeting dataset `cmems_mod_nws_phy-uv_my_7km-2D_PT1H-i` to fetch horizontal components `uo` and `vo`. The system integrates a physically consistent semi-diurnal tidal rotation climatology fallback when offline or credentials are not supplied.
 - **Generalized Upscaling & QA:** The metocean ingestor dynamically processes all metocean parameters to upscale hourly records to the 10-minute backbone: Cubic Spline interpolation is used for all scalar columns (e.g. `hs`, `tp`, `wind_speed_10m`, `wind_speed_100m`, `current_speed`) and Circular Vector Interpolation is used for all angular columns (e.g. `wave_direction`, `wind_direction_10m`, `wind_direction_100m`, `current_direction`). The QA gate enforces strict [0, 360) angular bounds and zero nulls.
-- **SCADA Handshake:** Taxonomy-based labeling (Success, Standby, Aborted) by cross-referencing vessel proximity with turbine status.
+- **SCADA Handshake & De-Anonymization:** 
+    - **Taxonomy-based Labeling:** Cross-references vessel dwell events with turbine operational states in `src/om_pipeline/analysis/scada_handshake.py`. It maps turbine states (specifically status 3: Service) to clean O&M label matrices, categorizing them as `maintenance_success`, `standby_weather`, or `attempted_transfer` based on dwell duration and proximity thresholds.
+    - **Wind Farm B De-Anonymization:** Identified as **Alpha Ventus** (REpower/Senvion 5M assets) with a **0-year temporal shift** (Shift = 0). File timestamps map to true operating calendar dates (February 2022 to February 2023).
+    - **Wind Farm C De-Anonymization:** Completed production mapping to **Trianel Windpark Borkum I & II** with a **0-year temporal shift** (Shift = 0). CAREtoCompare timestamps map directly to the true operating calendar (2022-2024). The turbine fingerprint indicates a mixed Borkum I/Borkum II fleet, and the AIS/SCADA co-occurrence test remains an archived coverage-limited validation enhancement rather than a pipeline blocker.
+
 
 
 ## Ingestion Logic & Safety
