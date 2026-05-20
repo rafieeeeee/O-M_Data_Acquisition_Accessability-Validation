@@ -68,8 +68,10 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 ## Phase 3: Machine Learning & Boundary Mapping
 **Goal:** Derive the non-linear workability surface.
 
-- [ ] **Baseline Model:** Train a **Random Forest / XGBoost** classifier on the German Bight master dataset.
-- [ ] **Feature Importance:** Quantify the impact of $T_p$ (Period) and $\theta$ (Direction) vs. $H_s$.
+- [/] **Baseline Model:** Train a **Random Forest / XGBoost** classifier on the German Bight master dataset.
+    - [x] **Wind Farm C Baseline Models:** Implemented dual-task cross-validated modeling pipeline (`scripts/train_wind_farm_c_baseline.py`). Task A (CARE Anomaly) achieves 82.9% accuracy / 0.920 ROC-AUC. Task B (O&M Workability) achieves 91.4% accuracy / 0.936 ROC-AUC (Random Forest).
+- [/] **Feature Importance:** Quantify the impact of $T_p$ (Period) and $\theta$ (Direction) vs. $H_s$.
+    - [x] **Wind Farm C Importances:** Analyzed MDI feature importances across all classifiers; significant wave height ($H_s$) and wind speed dominate.
 - [ ] **Vessel Sensitivity Analysis:** 
     - Determine how the workability surface shifts as Vessel Length increases from 60m (CTV) to 120m (SOV).
 - [ ] **Model Validation:** Cross-validate against Daily Progress Reports (DPRs) from the **Marine Data Exchange (MDE)**.
