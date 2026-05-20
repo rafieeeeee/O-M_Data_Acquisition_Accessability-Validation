@@ -37,7 +37,7 @@ NORA3 and CMEMS are complementary, not alternatives. NORA3 covers atmospheric an
 
 ## Immediate Next Steps
 
-1. **First baseline model:** Train a simple Random Forest or XGBoost classifier on the event-level table. Treat this as a diagnostic baseline, not the final thesis model.
+1. **First baseline model (Completed):** We implemented a baseline diagnostic modeling pipeline. Task A shows promising but leakage-prone diagnostic separability. Task B shows high ROC-AUC ranking under extreme class imbalance, but default-threshold classification fails for Random Forest and the target remains a proxy because AIS proximity is synthetic. Results are exploratory and should guide the next grouped 10-minute modeling experiment, not be treated as thesis-grade evidence yet.
 2. **AIS proximity replacement:** Replace the synthetic `min_dist=50m` placeholder with real AIS dwell geometry wherever local catalog coverage exists.
 3. **Real CMEMS rerun:** Install/configure `copernicusmarine`, rerun `scripts/extract_wind_farm_c_metocean.py --force`, then rerun `scripts/build_wind_farm_c_feature_matrix.py --force` and `scripts/build_wind_farm_c_event_aggregates.py --force`.
 4. **Evidence language discipline:** Use "high-confidence working mapping" or "production working mapping" unless AIS co-occurrence or another independent external check closes the remaining gap.

@@ -110,16 +110,24 @@ def select_features_for_task(df: pd.DataFrame, task: str) -> tuple[pd.DataFrame,
         X = df[feature_cols].copy()
         
     elif task == "B":
-        # Task B: O&M Workability Boundary (Metocean features only)
+        # Task B: O&M Workability Boundary (Metocean features only, Dominant Label-based)
         # We use the dominant event label (event_label_model == "maintenance_success") as our target.
         # While this has an extreme [53, 5] class imbalance at the collapsed event level, it represents
         # sustained active maintenance where the event's average weather represents true workability.
-        # An alternative target (share_label_maintenance_success > 0) has a better [41, 17] split, but
-        # dilutes the weather signal because averaging weather over multi-day event windows introduces
-        # heavy noise (ROC-AUC drops from 0.936 to ~0.50). For a high-fidelity workability boundary,
-        # training should be performed directly on the 10-minute backbone rows, where we have 12,078 positive
-        # and 107,486 negative rows.
         y = (df["event_label_model"] == "maintenance_success").astype(int)
+        
+        # Only allow metocean wave, wind, current features (scalars + circular-trig components + circular variance)
+        allowed_keywords = ["hs_", "tp_", "wind_speed_", "wind_direction_", "wave_direction_", "current_speed_", "current_direction_"]
+        feature_cols = [
+            c for c in df.columns 
+            if any(k in c for k in allowed_keywords) 
+            and not c.endswith("_null_share")
+        ]
+        X = df[feature_cols].copy()
+    elif task == "B_alt":
+        # Task B_alt: O&M Workability Boundary (Metocean features only, Presence-based target)
+        # Target: share_label_maintenance_success > 0.0 (active maintenance occurred at any point during event)
+        y = (df["share_label_maintenance_success"] > 0.0).astype(int)
         
         # Only allow metocean wave, wind, current features (scalars + circular-trig components + circular variance)
         allowed_keywords = ["hs_", "tp_", "wind_speed_", "wind_direction_", "wave_direction_", "current_speed_", "current_direction_"]
@@ -349,21 +357,33 @@ def main():
     plot_feature_importance(XA, yA, "Task A: CARE Anomaly Classifier", output_dir / "task_a_feature_importance.png")
     
     # ----------------------------------------------------
-    # TASK B: O&M Workability Boundary (Operational)
+    # TASK B: O&M Workability Boundary (Dominant, Metocean only)
     # ----------------------------------------------------
-    print("\n--- Training Task B: O&M Workability Boundary (Metocean features only) ---")
+    print("\n--- Training Task B: O&M Workability Boundary (Dominant, Metocean only) ---")
     XB, yB = select_features_for_task(processed_df, "B")
     print(f"  Shape of X: {XB.shape}, Class distribution: {np.bincount(yB)}")
     
-    metrics_B, roc_B = run_cross_validation(XB, yB, "Task B: O&M Workability")
+    metrics_B, roc_B = run_cross_validation(XB, yB, "Task B: O&M Workability (Dominant)")
     for name, met in metrics_B.items():
         print(f"  {name:<20} | F1-Score: {met['F1-Score']:.3f} | ROC-AUC: {met['ROC-AUC']:.3f} | Accuracy: {met['Accuracy']:.3f}")
         all_metrics.append(met)
         
     # Generate Plots for Task B
-    plot_roc_curves(roc_B, "Task B: O&M Workability Boundary", output_dir / "task_b_roc_curves.png")
-    plot_feature_importance(XB, yB, "Task B: O&M Workability Boundary", output_dir / "task_b_feature_importance.png")
+    plot_roc_curves(roc_B, "Task B: O&M Workability (Dominant)", output_dir / "task_b_roc_curves.png")
+    plot_feature_importance(XB, yB, "Task B: O&M Workability (Dominant)", output_dir / "task_b_feature_importance.png")
     
+    # ----------------------------------------------------
+    # TASK B_alt: O&M Workability Boundary (Presence, Metocean only)
+    # ----------------------------------------------------
+    print("\n--- Training Task B_alt: O&M Workability Boundary (Presence, Metocean only) ---")
+    XB_alt, yB_alt = select_features_for_task(processed_df, "B_alt")
+    print(f"  Shape of X: {XB_alt.shape}, Class distribution: {np.bincount(yB_alt)}")
+    
+    metrics_B_alt, roc_B_alt = run_cross_validation(XB_alt, yB_alt, "Task B_alt: O&M Workability (Presence)")
+    for name, met in metrics_B_alt.items():
+        print(f"  {name:<20} | F1-Score: {met['F1-Score']:.3f} | ROC-AUC: {met['ROC-AUC']:.3f} | Accuracy: {met['Accuracy']:.3f}")
+        all_metrics.append(met)
+        
     # Generate Bivariate Workability Surface plot
     plot_workability_scatter(event_df, output_dir / "empirical_workability_boundary.png")
     
@@ -375,33 +395,17 @@ def main():
     metrics_df.to_csv(csv_out, index=False)
     print(f"\nTabular metrics successfully exported → {csv_out}")
     
-    # Generate a brief markdown report summary
-    md_summary = f"""# Baseline Classifier Models — Report Summary
-Generated: 2026-05-20  
-Pipeline: `scripts/train_wind_farm_c_baseline.py`
-
-## Dual-Task Performance Table
-
-| Task | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-|------|-------|----------|-----------|--------|----------|---------|
-"""
-    for met in all_metrics:
-        md_summary += f"| {met['Task']} | {met.get('Model', 'N/A')} | {met['Accuracy']:.3f} | {met['Precision']:.3f} | {met['Recall']:.3f} | {met['F1-Score']:.3f} | {met['ROC-AUC']:.3f} |\n"
-        
-    # Standardise column labels in md_summary
-    md_summary = md_summary.replace("| Task A: CARE Anomaly |", "| Task A (Anomaly) |").replace("| Task B: O&M Workability |", "| Task B (Workability) |")
-    
-    # Add RF modeling names to metrics
-    # Fix the missing Model name insertion
-    # (Since metrics dict output by run_cross_validation has no 'Model' key by default, we insert it here)
-    
     # Let's fix that formatting before writing
     # Regenerate metrics table properly
     md_summary = f"""# Baseline Classifier Models — Report Summary
 Generated: 2026-05-20  
 Pipeline: `scripts/train_wind_farm_c_baseline.py`
 
-## Task Metrics
+> [!NOTE]
+> **Scientific Summary & Status Statement:**
+> We implemented a baseline diagnostic modeling pipeline. Task A shows promising but leakage-prone diagnostic separability. Task B shows high ROC-AUC ranking under extreme class imbalance, but default-threshold classification fails for Random Forest and the target remains a proxy because AIS proximity is synthetic. Results are exploratory and should guide the next grouped 10-minute modeling experiment, not be treated as thesis-grade evidence yet.
+
+## Diagnostic Classifier Metrics Table
 
 | Task | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |------|-------|----------|-----------|--------|----------|---------|
@@ -409,20 +413,29 @@ Pipeline: `scripts/train_wind_farm_c_baseline.py`
     for name, met in metrics_A.items():
         md_summary += f"| Task A (CARE Anomaly) | {name} | {met['Accuracy']:.3f} | {met['Precision']:.3f} | {met['Recall']:.3f} | {met['F1-Score']:.3f} | {met['ROC-AUC']:.3f} |\n"
     for name, met in metrics_B.items():
-        md_summary += f"| Task B (Workability) | {name} | {met['Accuracy']:.3f} | {met['Precision']:.3f} | {met['Recall']:.3f} | {met['F1-Score']:.3f} | {met['ROC-AUC']:.3f} |\n"
+        md_summary += f"| Task B (Workability - Dominant) | {name} | {met['Accuracy']:.3f} | {met['Precision']:.3f} | {met['Recall']:.3f} | {met['F1-Score']:.3f} | {met['ROC-AUC']:.3f} |\n"
+    for name, met in metrics_B_alt.items():
+        md_summary += f"| Task B_alt (Workability - Presence) | {name} | {met['Accuracy']:.3f} | {met['Precision']:.3f} | {met['Recall']:.3f} | {met['F1-Score']:.3f} | {met['ROC-AUC']:.3f} |\n"
         
     md_summary += f"""
-## Key Findings & Interpretation
+## Key Findings & Critical Research Caveats
 
-### Task A: CARE Anomaly Classifier (Diagnostic)
-* Explores if weather conditions and SCADA behavior co-vary with CARE-reported fault anomalies.
-* Highly predictive due to operational shares (e.g. Service or Downtime durations) indicating the turbine state.
-* Useful as a diagnostic check of our de-anonymization and calendar mapping consistency.
+### 1. Task A: CARE Anomaly Classifier (Diagnostic)
+* **Status:** Exploratory and highly prone to event-definition leakage.
+* **Caveat:** Uses SCADA operational state summaries (e.g. status duration and label shares) from the *same* event windows. The high classification scores reflect turbine-state mapping consistency and calendar validation, rather than a purely weather-driven predictive anomaly result.
 
-### Task B: O&M Workability Boundary (Operational)
-* Maps out the vessel workability surface directly from the physical environment to successful O&M handshakes.
-* Uses **metocean features only** to prevent operational leakage, representing the true predictive capacity of weather-only workability models.
-* Bounded by significant wave height ($H_s$) and wind speed. Refer to `empirical_workability_boundary.png` for the scatter plot layout.
+### 2. Task B: O&M Workability Boundary (Dominant vs. Presence Targets)
+* **Dominant Target (`event_label_model == "maintenance_success"`):**
+  * Extreme class imbalance (53 unknown / 5 maintenance_success). In a 5-Fold Cross-Validation, each fold contains only a single positive test event, making the ROC-AUC extremely fragile and prone to sharp swings based on individual ranks.
+  * While the Random Forest achieves a high ranking ROC-AUC of 0.936, at the default decision threshold (0.50) it predicts zero positive workability events, yielding **F1, Precision, and Recall scores of 0.000**.
+  * The target remains a proxy. Proximity checks depend on a synthetic `min_dist = 50m` assumption rather than real AIS proximity.
+* **Presence Target (`share_label_maintenance_success > 0`):**
+  * Alleviates the class split to `[17, 41]`, but collapses prediction metrics to random-guessing levels (ROC-AUC ~0.50). 
+  * **Dilution effect:** Averaging weather features across multi-day event windows completely introduces rough-weather noise, hiding the fine-grained calm workability windows where active O&M successfully took place.
+
+### 3. Autocorrelation & Modeling Roadmap
+* While transitioning modeling directly to the 120,224-row 10-minute backbone solves class sparsity, **grouped splits by `event_id` or time blocks are absolutely mandatory**.
+* Failing to group splits will result in high-frequency temporal autocorrelation leakage, where neighboring 10-minute rows are split across train and test sets, invalidating cross-validation scores.
 
 ## Exported Artifacts
 All plots and metric reports are located in: `reports/baseline_models/`
