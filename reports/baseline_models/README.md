@@ -33,7 +33,7 @@ Pipeline: `scripts/train_wind_farm_c_baseline.py`
   * The target remains a proxy. Proximity checks depend on a synthetic `min_dist = 50m` assumption rather than real AIS proximity.
 * **Presence Target (`share_label_maintenance_success > 0`):**
   * Alleviates the class split to `[17, 41]`, but collapses prediction metrics to random-guessing levels (ROC-AUC ~0.50). 
-  * **Dilution effect:** Averaging weather features across multi-day event windows completely introduces rough-weather noise, hiding the fine-grained calm workability windows where active O&M successfully took place.
+  * **Dilution effect:** Averaging weather features across multi-day event windows can strongly dilute weather features and introduce rough-weather noise, hiding the fine-grained calm workability windows where active O&M successfully took place.
 
 ### 3. Autocorrelation & Modeling Roadmap
 * While transitioning modeling directly to the 120,224-row 10-minute backbone solves class sparsity, **grouped splits by `event_id` or time blocks are absolutely mandatory**.
