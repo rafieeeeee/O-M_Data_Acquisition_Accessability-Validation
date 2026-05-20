@@ -127,27 +127,37 @@ def join_metocean_vectorised(
     """
     Vectorised nearest-neighbour metocean join using pd.merge_asof.
     Tolerance = 10 minutes. Falls back to NaN columns when metocean_df is None.
-    """
-    for col in METOCEAN_COLS:
-        if col not in backbone_df.columns:
-            backbone_df[col] = np.nan
 
+    IMPORTANT: Do NOT pre-seed NaN stubs for METOCEAN_COLS on backbone_df
+    before calling merge_asof. If both sides carry the same column names,
+    pandas produces _x/_y suffixed duplicates and the real values are lost.
+    Instead, NaN stubs are added only AFTER the merge for any col still absent.
+    """
     if metocean_df is None:
+        # Pure fallback — add NaN stubs and return immediately
+        for col in METOCEAN_COLS:
+            if col not in backbone_df.columns:
+                backbone_df[col] = np.nan
         return backbone_df
 
     mo = metocean_df.copy()
     mo["timestamp_10min"] = pd.to_datetime(mo["timestamp_10min"])
     backbone_df["timestamp"] = pd.to_datetime(backbone_df["timestamp"])
 
-    # merge_asof requires both sides sorted
-    backbone_sorted = backbone_df.sort_values("timestamp")
-    mo_sorted       = mo.sort_values("timestamp_10min")
+    avail_cols = [c for c in METOCEAN_COLS if c in mo.columns]
 
-    avail_cols = [c for c in METOCEAN_COLS if c in mo_sorted.columns]
+    # Strip any pre-existing metocean columns from the backbone before merging
+    # to prevent _x/_y suffix collision in merge_asof.
+    backbone_clean = backbone_df.drop(
+        columns=[c for c in avail_cols if c in backbone_df.columns],
+        errors="ignore",
+    ).sort_values("timestamp")
+
+    mo_sorted = mo[["timestamp_10min"] + avail_cols].sort_values("timestamp_10min")
 
     merged = pd.merge_asof(
-        backbone_sorted,
-        mo_sorted[["timestamp_10min"] + avail_cols],
+        backbone_clean,
+        mo_sorted,
         left_on="timestamp",
         right_on="timestamp_10min",
         direction="nearest",
@@ -158,7 +168,12 @@ def join_metocean_vectorised(
     if "timestamp_10min" in merged.columns:
         merged = merged.drop(columns=["timestamp_10min"])
 
-    # Restore original row order
+    # Fallback NaN stubs for any metocean column not in the metocean file
+    for col in METOCEAN_COLS:
+        if col not in merged.columns:
+            merged[col] = np.nan
+
+    # Restore original sort order
     merged = merged.sort_values(["event_id", "timestamp"]).reset_index(drop=True)
     return merged
 
