@@ -1,13 +1,18 @@
 """
 scripts/build_wind_farm_c_feature_matrix.py
 --------------------------------------------
-Builds the first production feature matrix for Wind Farm C (Trianel Borkum I+II).
+Builds the production feature matrix for Wind Farm C (Trianel Borkum I+II).
 
 This script joins:
   - CARE Wind Farm C event_info (gives us event windows + asset IDs)
   - SCADA status lookup via SCADAHandshake (0-year shift, direct timestamps)
-  - 10-minute metocean backbone (hs, tp, wave_direction, wind, current)
-    from Data/Processed/metocean/ if available, else stubs NaN columns.
+  - 10-minute metocean backbone from Data/Processed/metocean/
+    Expected: wind_farm_c_borkum_metocean_10min.csv (produced by
+    scripts/extract_wind_farm_c_metocean.py). Falls back to NaN stubs if absent.
+
+Metocean join strategy:
+  A single vectorised pd.merge_asof (tolerance = 10 min, direction = nearest)
+  is used rather than per-row lookups. This keeps rebuild time in seconds.
 
 Output:
   Data/Processed/wind_farm_c_feature_matrix.parquet
@@ -21,7 +26,7 @@ Schema:
   status_type_id, label
 
 Usage:
-    python scripts/build_wind_farm_c_feature_matrix.py [--max-events N]
+    python scripts/build_wind_farm_c_feature_matrix.py [--max-events N] [--force]
 """
 
 import os
@@ -65,49 +70,97 @@ FEATURE_COLS = [
 # Metocean loader
 # ---------------------------------------------------------------------------
 
-def load_metocean_index() -> pd.DataFrame | None:
+# Preferred single-file output from extract_wind_farm_c_metocean.py
+BORKUM_METOCEAN_FILE = os.path.join(
+    METOCEAN_DIR, "wind_farm_c_borkum_metocean_10min.csv"
+)
+
+
+def load_metocean_df() -> pd.DataFrame | None:
     """
-    Attempts to load metocean backbone CSVs from Data/Processed/metocean/.
-    Returns a DataFrame indexed by timestamp, or None if no files found.
+    Loads the Borkum metocean backbone into a DataFrame sorted by
+    timestamp_10min, ready for merge_asof.
+
+    Priority:
+      1. wind_farm_c_borkum_metocean_10min.csv  (canonical output)
+      2. Any other *.csv in Data/Processed/metocean/  (fallback glob)
+    Returns None (with a warning) when no CSV is found.
     """
-    csv_files = glob(os.path.join(METOCEAN_DIR, "*.csv"))
-    if not csv_files:
-        print(f"  [INFO] No metocean CSV files found in {METOCEAN_DIR}. "
-              "Metocean columns will be NaN.")
+    # Priority 1: canonical file
+    if os.path.exists(BORKUM_METOCEAN_FILE):
+        print(f"  [INFO] Loading canonical metocean file: {BORKUM_METOCEAN_FILE}")
+        df = pd.read_csv(BORKUM_METOCEAN_FILE, parse_dates=["timestamp_10min"])
+    else:
+        # Priority 2: any CSV in the metocean dir
+        csv_files = glob(os.path.join(METOCEAN_DIR, "*.csv"))
+        if not csv_files:
+            print(f"  [WARN] No metocean CSV found in {METOCEAN_DIR}. "
+                  "Run scripts/extract_wind_farm_c_metocean.py first. "
+                  "Metocean columns will be NaN.")
+            return None
+        parts = []
+        for f in csv_files:
+            try:
+                parts.append(pd.read_csv(f, parse_dates=["timestamp_10min"]))
+            except Exception as e:
+                print(f"  [WARN] Could not load {f}: {e}")
+        if not parts:
+            return None
+        df = pd.concat(parts, ignore_index=True)
+
+    avail = [c for c in METOCEAN_COLS if c in df.columns]
+    if not avail:
+        print("  [WARN] Metocean file has no recognised parameter columns. "
+              "Check schema.")
         return None
 
-    parts = []
-    for f in csv_files:
-        try:
-            df = pd.read_csv(f, parse_dates=["timestamp_10min"])
-            parts.append(df)
-        except Exception as e:
-            print(f"  [WARN] Could not load {f}: {e}")
-
-    if not parts:
-        return None
-
-    metocean = pd.concat(parts, ignore_index=True)
-    metocean = metocean.drop_duplicates(subset=["timestamp_10min"])
-    metocean = metocean.set_index("timestamp_10min").sort_index()
-    avail = [c for c in METOCEAN_COLS if c in metocean.columns]
-    print(f"  [INFO] Metocean index loaded: {len(metocean):,} rows, columns: {avail}")
-    return metocean[avail] if avail else None
+    df = df.drop_duplicates(subset=["timestamp_10min"]).sort_values("timestamp_10min")
+    df = df[["timestamp_10min"] + avail].reset_index(drop=True)
+    print(f"  [INFO] Metocean loaded: {len(df):,} rows, columns: {avail}")
+    return df
 
 
-def lookup_metocean(metocean_index: pd.DataFrame | None,
-                    timestamps: pd.DatetimeIndex) -> pd.DataFrame:
-    """Nearest-neighbour metocean lookup (tolerance ±10 min)."""
-    stub = pd.DataFrame(index=timestamps, columns=METOCEAN_COLS, dtype=float)
-    if metocean_index is None:
-        return stub
+def join_metocean_vectorised(
+    backbone_df: pd.DataFrame,
+    metocean_df: pd.DataFrame | None,
+) -> pd.DataFrame:
+    """
+    Vectorised nearest-neighbour metocean join using pd.merge_asof.
+    Tolerance = 10 minutes. Falls back to NaN columns when metocean_df is None.
+    """
+    for col in METOCEAN_COLS:
+        if col not in backbone_df.columns:
+            backbone_df[col] = np.nan
 
-    tolerance = pd.Timedelta("10min")
-    for ts in timestamps:
-        pos = metocean_index.index.get_indexer([ts], method="nearest", tolerance=tolerance)
-        if pos[0] != -1:
-            stub.loc[ts] = metocean_index.iloc[pos[0]]
-    return stub
+    if metocean_df is None:
+        return backbone_df
+
+    mo = metocean_df.copy()
+    mo["timestamp_10min"] = pd.to_datetime(mo["timestamp_10min"])
+    backbone_df["timestamp"] = pd.to_datetime(backbone_df["timestamp"])
+
+    # merge_asof requires both sides sorted
+    backbone_sorted = backbone_df.sort_values("timestamp")
+    mo_sorted       = mo.sort_values("timestamp_10min")
+
+    avail_cols = [c for c in METOCEAN_COLS if c in mo_sorted.columns]
+
+    merged = pd.merge_asof(
+        backbone_sorted,
+        mo_sorted[["timestamp_10min"] + avail_cols],
+        left_on="timestamp",
+        right_on="timestamp_10min",
+        direction="nearest",
+        tolerance=pd.Timedelta("10min"),
+    )
+
+    # Drop the extra key column introduced by merge_asof
+    if "timestamp_10min" in merged.columns:
+        merged = merged.drop(columns=["timestamp_10min"])
+
+    # Restore original row order
+    merged = merged.sort_values(["event_id", "timestamp"]).reset_index(drop=True)
+    return merged
 
 
 # ---------------------------------------------------------------------------
@@ -122,9 +175,18 @@ def main():
         "--max-events", type=int, default=None,
         help="Limit to first N events (default: all)."
     )
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Overwrite existing Parquet even if it exists."
+    )
     args = parser.parse_args()
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    if os.path.exists(OUTPUT_PARQUET) and not args.force:
+        print(f"[SKIP] Output already exists: {OUTPUT_PARQUET}")
+        print("Re-run with --force to overwrite.")
+        sys.exit(0)
 
     # 1. Load event_info
     print(f"Loading event_info: {EVENT_INFO_PATH}")
@@ -137,23 +199,23 @@ def main():
         event_info = event_info.head(args.max_events)
         print(f"Limiting to {len(event_info)} events (--max-events).")
 
-    # 2. Load metocean index
+    # 2. Load metocean backbone (single vectorised join later)
     print(f"\nLoading metocean backbone from: {METOCEAN_DIR}")
-    metocean_index = load_metocean_index()
+    metocean_df = load_metocean_df()
 
     # 3. Init handshaker
     handshaker = SCADAHandshake(care_base_dir=CARE_BASE_DIR)
 
-    # 4. Build feature rows
-    all_rows = []
+    # 4. Build SCADA-labelled backbone rows (batch — no metocean yet)
+    all_backbone_rows = []
     skipped = 0
 
     for _, ev in event_info.iterrows():
-        event_id   = int(ev["event_id"])
-        asset_id   = int(ev["asset_id"])
-        ev_label   = str(ev["event_label"])
-        ev_start   = ev["event_start"]
-        ev_end     = ev["event_end"]
+        event_id  = int(ev["event_id"])
+        asset_id  = int(ev["asset_id"])
+        ev_label  = str(ev["event_label"])
+        ev_start  = ev["event_start"]
+        ev_end    = ev["event_end"]
 
         scada_path = os.path.join(WIND_FARM_C_DIR, "datasets", f"{event_id}.csv")
         if not os.path.exists(scada_path):
@@ -161,67 +223,61 @@ def main():
             skipped += 1
             continue
 
-        # Build 10-min backbone for this event window
-        backbone_ts = pd.date_range(
+        backbone_ts  = pd.date_range(
             start=ev_start.floor("10min"),
             end=ev_end.ceil("10min"),
             freq="10min",
         )
-
         duration_min = (ev_end - ev_start).total_seconds() / 60.0
 
-        # Construct pseudo-joined rows for handshake
         rows_for_handshake = pd.DataFrame({
             "timestamp_10min": backbone_ts,
             "wind_farm":       "Wind Farm C",
             "event_id":        float(event_id),
             "duration_min":    duration_min,
-            "min_dist":        50.0,  # Conservative: vessel at foundation
+            "min_dist":        50.0,
         })
 
         labelled = handshaker.apply_handshake(rows_for_handshake)
 
-        # Metocean join
-        mo_df = lookup_metocean(metocean_index, pd.DatetimeIndex(backbone_ts))
+        labelled["timestamp"]        = backbone_ts
+        labelled["asset_id"]         = asset_id
+        labelled["event_label_care"] = ev_label
+        all_backbone_rows.append(labelled)
 
-        for i, ts in enumerate(backbone_ts):
-            lr = labelled.iloc[i] if i < len(labelled) else None
-            mr = mo_df.iloc[i] if i < len(mo_df) else None
-
-            feature_row = {
-                "timestamp":          ts,
-                "asset_id":           asset_id,
-                "event_id":           event_id,
-                "event_label_care":   ev_label,
-                "status_type_id":     lr["status_type_id"] if lr is not None else np.nan,
-                "label":              lr["label"] if lr is not None else "unknown",
-            }
-            if mr is not None:
-                for col in METOCEAN_COLS:
-                    feature_row[col] = mr.get(col, np.nan)
-            else:
-                for col in METOCEAN_COLS:
-                    feature_row[col] = np.nan
-
-            all_rows.append(feature_row)
-
-    if not all_rows:
-        print("\n[ERROR] No feature rows produced. Check event_info and SCADA files.")
+    if not all_backbone_rows:
+        print("\n[ERROR] No backbone rows produced. Check event_info and SCADA files.")
         sys.exit(1)
 
-    # 5. Assemble final DataFrame
-    feature_df = pd.DataFrame(all_rows)[FEATURE_COLS]
-    feature_df["timestamp"] = pd.to_datetime(feature_df["timestamp"])
-    feature_df = feature_df.sort_values(["event_id", "timestamp"]).reset_index(drop=True)
+    # 5. Concatenate backbone
+    backbone_df = pd.concat(all_backbone_rows, ignore_index=True)
+    backbone_df["event_id"] = backbone_df["event_id"].astype(int)
+    backbone_df["timestamp"] = pd.to_datetime(backbone_df["timestamp"])
 
-    # 6. Write Parquet
+    # 6. Vectorised metocean join
+    print(f"\nJoining metocean ({len(backbone_df):,} backbone rows)...")
+    feature_df = join_metocean_vectorised(backbone_df, metocean_df)
+
+    # 7. Select and order final columns
+    final_cols = [c for c in FEATURE_COLS if c in feature_df.columns]
+    feature_df = feature_df[final_cols].sort_values(
+        ["event_id", "timestamp"]
+    ).reset_index(drop=True)
+
+    # 8. Write Parquet
     feature_df.to_parquet(OUTPUT_PARQUET, index=False)
     print(f"\nFeature matrix written → {OUTPUT_PARQUET}")
 
-    # 7. Summary
-    total = len(feature_df)
+    # 9. QA summary
+    total   = len(feature_df)
     matched = feature_df["status_type_id"].notna().sum()
     label_dist = feature_df["label"].value_counts()
+
+    metocean_null_rates = {
+        col: feature_df[col].isna().mean() * 100
+        for col in METOCEAN_COLS
+        if col in feature_df.columns
+    }
 
     print("\n" + "=" * 60)
     print("WIND FARM C FEATURE MATRIX — SUMMARY")
@@ -230,11 +286,16 @@ def main():
     print(f"  Skipped (no SCADA): {skipped}")
     print(f"  Total rows        : {total:,}")
     print(f"  SCADA matched     : {matched:,} ({matched/total*100:.1f}%)")
-    print(f"  Date span         : {feature_df['timestamp'].min()} → {feature_df['timestamp'].max()}")
+    print(f"  Date span         : {feature_df['timestamp'].min()} → "
+          f"{feature_df['timestamp'].max()}")
     print(f"  Schema            : {list(feature_df.columns)}")
     print("\n  Label distribution:")
     for lbl, cnt in label_dist.items():
         print(f"    {lbl:<25} {cnt:>6}  ({cnt/total*100:.1f}%)")
+    print("\n  Metocean null rates:")
+    for col, rate in metocean_null_rates.items():
+        flag = " ⚠  (run extract_wind_farm_c_metocean.py)" if rate > 95 else ""
+        print(f"    {col:<35} {rate:.1f}%{flag}")
     print("=" * 60)
     print(f"\n  Output: {OUTPUT_PARQUET}")
 
