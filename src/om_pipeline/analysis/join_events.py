@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from ..common.database import get_connection
 from ..common.paths import INTERIM_DIR, DATA_DIR
+from .scada_handshake import handshake_scada_and_dwell
 
 def join_events_and_metocean(backbone_path=None, output_path=None, wind_farm=None):
     """
@@ -74,6 +75,11 @@ def join_events_and_metocean(backbone_path=None, output_path=None, wind_farm=Non
     conn.close()
     
     print(f"Join completed. Resulting rows: {len(joined_df)}")
+    
+    # Apply SCADA Handshake labeling
+    joined_df = handshake_scada_and_dwell(joined_df)
+    
     joined_df.to_csv(output_path, index=False)
     print(f"Saved joined feature matrix to {output_path}")
     return joined_df
+

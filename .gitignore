@@ -7,9 +7,11 @@ __pycache__/
 .dodsrc
 temp_check.zip
 tool-outputs/
+scratch/
 Data/Raw/
 Data/Interim/
 Data/Processed/
+Data/CARE_To_Compare/
 Data/**/*.zip
 Data/**/*.nc
 !Data/README.md

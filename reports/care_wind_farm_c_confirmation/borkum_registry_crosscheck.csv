@@ -1,0 +1,3 @@
+wind_farm,turbine_count,manufacturer,turbine_type,rated_power,rotor_diameter,commissioning_date,centroid_lat,centroid_lon
+Trianel Windpark Borkum 1,40,Adwen,M5000-116,5.0,116.0,2015-09,54.045497499999996,6.457649999999999
+Trianel Windpark Borkum 2,32,Senvion,6.2M152,6.15,152.0,2020-07,54.052662500000004,6.46544375

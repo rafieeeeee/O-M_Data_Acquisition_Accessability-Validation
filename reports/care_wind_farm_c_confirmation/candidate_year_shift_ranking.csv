@@ -1,0 +1,771 @@
+candidate,lat,lon,scada_column,year_shift,overlap_hours,pearson_r,rank
+Riffgat,53.69,6.48,wind_speed_236_avg,0,672,0.9186527747972614,1.0
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,0,672,0.9116812816655471,2.0
+Veja Mate,54.32,5.87,wind_speed_236_avg,0,672,0.9104200818893406,3.0
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,0,672,0.908054148180573,4.0
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,0,672,0.9077296904743407,5.0
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,0,672,0.9068765211157651,6.0
+Albatros,54.49,6.24,wind_speed_236_avg,0,672,0.9057830215883083,7.0
+Global Tech I,54.51,6.36,wind_speed_236_avg,0,672,0.9036970993836752,8.0
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,0,5088,0.8717079261547575,9.0
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,0,672,0.8556779873839211,10.0
+Kaskasi,54.49,7.69,wind_speed_236_avg,0,672,0.8549956550777617,11.0
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,0,672,0.852923383597069,12.0
+Amrumbank West,54.52,7.71,wind_speed_236_avg,0,672,0.8518784134142784,13.0
+Nordsee One,53.98,6.82,wind_speed_236_avg,0,5832,0.8369286840004967,14.0
+Albatros,54.49,6.24,wind_speed_236_avg,3,672,0.8263763616803925,15.0
+Nordergründe,53.84,8.17,wind_speed_236_avg,0,672,0.8102721179372327,16.0
+Sandbank,55.2,6.85,wind_speed_236_avg,0,672,0.7844491104324787,17.0
+Dan Tysk,55.14,7.2,wind_speed_236_avg,0,672,0.7705690818497267,18.0
+Butendiek,55.02,7.77,wind_speed_236_avg,0,672,0.7704407501755403,19.0
+Nordsee One,53.98,6.82,wind_speed_236_avg,1,6576,0.6394566274778718,20.0
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,0,672,0.6236460928242279,21.0
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,0,672,0.6217063654041368,22.0
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,1,5832,0.5885545634218772,23.0
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,0,672,0.5726466772370244,24.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,0,17584,0.5653789954650009,25.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,0,17584,0.5634361314897661,26.0
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,0,17584,0.5624289752639178,27.0
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,0,17584,0.5611572417581718,28.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,0,17584,0.560588309452919,29.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,0,17584,0.560588309452919,30.0
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,0,672,0.5592704207481722,31.0
+Wikinger,54.84,14.07,wind_speed_236_avg,0,672,0.5492503092427824,32.0
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,0,672,0.5435715795368362,33.0
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,1,1416,0.4918845431493411,34.0
+Global Tech I,54.51,6.36,wind_speed_236_avg,1,1416,0.4907628655765415,35.0
+Veja Mate,54.32,5.87,wind_speed_236_avg,1,1416,0.49064219988103586,36.0
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,1,1416,0.4901356405836494,37.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,1,17584,0.48778772892016714,38.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,1,17584,0.48778772892016714,39.0
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,1,1416,0.48760148465076686,40.0
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,1,17584,0.4866046613909192,41.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,1,17584,0.4839751491250011,42.0
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,1,17584,0.4839303275092284,43.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,1,17584,0.48358449141540844,44.0
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,1,1416,0.4823309871130394,45.0
+Riffgat,53.69,6.48,wind_speed_236_avg,1,1416,0.47832631500471706,46.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,3,8944,0.47824413266641336,47.0
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,3,8944,0.4777832906964904,48.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,3,8944,0.47561825811990566,49.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,3,8944,0.47543235763741304,50.0
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,1,1416,0.4655120777346253,51.0
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,1,1416,0.4637109789393885,52.0
+Kaskasi,54.49,7.69,wind_speed_236_avg,1,1416,0.46185807532443895,53.0
+Amrumbank West,54.52,7.71,wind_speed_236_avg,1,1416,0.45936545177245713,54.0
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,3,9616,0.4554622974616239,55.0
+Sandbank,55.2,6.85,wind_speed_236_avg,1,1416,0.4492297303324165,56.0
+Dan Tysk,55.14,7.2,wind_speed_236_avg,1,1416,0.4489161718469977,57.0
+Butendiek,55.02,7.77,wind_speed_236_avg,1,1416,0.43040912214995247,58.0
+Nordergründe,53.84,8.17,wind_speed_236_avg,1,1416,0.4263805553813301,59.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,3,17584,0.422848832772914,60.0
+Albatros,54.49,6.24,wind_speed_236_avg,1,2088,0.40564571176685943,61.0
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,1,1416,0.39513413638737294,62.0
+Wikinger,54.84,14.07,wind_speed_236_avg,1,1416,0.39432494674380497,63.0
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,1,1416,0.3913049215811041,64.0
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,1,1416,0.3884503054330426,65.0
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,1,1416,0.38634825332121964,66.0
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,1,1416,0.385684131656218,67.0
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,2,17584,0.2029016628501473,68.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,2,17584,0.20253112761384975,69.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,2,17584,0.20253112761384975,70.0
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,2,17584,0.20250641350764823,71.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,2,17584,0.20130908059087765,72.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,2,17584,0.20024325032784596,73.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,8,6552,0.19476472077668877,74.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,4,8944,0.17689728079936223,75.0
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,2,744,0.1663914848178725,76.0
+Albatros,54.49,6.24,wind_speed_236_avg,2,2088,0.16269863551840708,77.0
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,2,744,0.1542690429635282,78.0
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,2,744,0.15019097653053565,79.0
+Wikinger,54.84,14.07,wind_speed_236_avg,2,744,0.13615691359867202,80.0
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,2,744,0.12915053627490705,81.0
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,2,744,0.12685247347138504,82.0
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,2,744,0.1256854357275879,83.0
+Kaskasi,54.49,7.69,wind_speed_236_avg,2,744,0.1241723237871729,84.0
+Amrumbank West,54.52,7.71,wind_speed_236_avg,2,744,0.12352559785912347,85.0
+Dan Tysk,55.14,7.2,wind_speed_236_avg,2,744,0.12252224495372291,86.0
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,2,744,0.11782666195490327,87.0
+Sandbank,55.2,6.85,wind_speed_236_avg,2,744,0.11493895580101085,88.0
+Butendiek,55.02,7.77,wind_speed_236_avg,2,744,0.11322567918044381,89.0
+Nordergründe,53.84,8.17,wind_speed_236_avg,2,744,0.10808095546952305,90.0
+Riffgat,53.69,6.48,wind_speed_236_avg,2,744,0.10539829471151874,91.0
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,4,856,0.10026904275176819,92.0
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,2,744,0.09544227136383081,93.0
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,2,744,0.0930048690418149,94.0
+Nordsee One,53.98,6.82,wind_speed_236_avg,2,744,0.08975434198943694,95.0
+Global Tech I,54.51,6.36,wind_speed_236_avg,2,744,0.08511498035204038,96.0
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,2,744,0.08365170030943206,97.0
+Veja Mate,54.32,5.87,wind_speed_236_avg,2,744,0.08159981589921403,98.0
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,2,744,0.08027825822963368,99.0
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,2,744,0.07884205080482229,100.0
+Barrow,54.0,-3.29,wind_speed_236_avg,9,744,0.02211328388991651,101.0
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,9,744,0.02211328388991651,102.0
+Barrow,54.0,-3.29,wind_speed_236_avg,10,744,0.013440716619333822,103.0
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,10,744,0.013440716619333822,104.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,7,6432,0.009141453151059431,105.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,5,184,-0.05884845564039875,106.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,4,184,-0.09663254582948896,107.0
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,4,184,-0.10223113855973635,108.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,4,184,-0.10352534528510417,109.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,4,184,-0.10802412269426634,110.0
+Gemini,54.03,5.91,wind_speed_236_avg,5,1488,-0.11361538292818946,111.0
+Horns Rev I,55.5,7.82,wind_speed_236_avg,6,744,-0.1312240443948166,112.0
+Horns Rev II,55.61,7.61,wind_speed_236_avg,6,744,-0.131511730084319,113.0
+Horns Rev II,55.61,7.61,wind_speed_236_avg,5,744,-0.1339493738773668,114.0
+Horns Rev I,55.5,7.82,wind_speed_236_avg,5,744,-0.15332652603377164,115.0
+Gemini,54.03,5.91,wind_speed_236_avg,6,1488,-0.16197644154718505,116.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,9,184,-0.1802531722926789,117.0
+Riffgat,53.69,6.48,wind_speed_236_avg,3,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,4,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,5,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,6,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,7,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,8,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,9,0,,
+Riffgat,53.69,6.48,wind_speed_236_avg,10,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,3,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,4,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,5,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,6,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,7,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,8,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,9,0,,
+Nordergründe,53.84,8.17,wind_speed_236_avg,10,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,5,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,6,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,7,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,8,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,9,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_236_avg,10,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,5,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,6,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,7,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,8,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,9,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_236_avg,10,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,3,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,4,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,5,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,6,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,7,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,8,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,9,0,,
+Nordsee One,53.98,6.82,wind_speed_236_avg,10,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,0,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,1,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,2,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,3,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,4,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,5,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,6,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,7,0,,
+Barrow,54.0,-3.29,wind_speed_236_avg,8,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,0,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,1,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,2,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,3,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,4,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,5,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,6,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,7,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_236_avg,8,0,,
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,5,0,,
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,6,0,,
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,7,0,,
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,8,0,,
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,9,0,,
+Alpha Ventus,54.01,6.61,wind_speed_236_avg,10,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,0,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,1,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,2,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,3,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,4,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,7,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,8,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,9,0,,
+Gemini,54.03,5.91,wind_speed_236_avg,10,0,,
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,5,0,,
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,6,0,,
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,7,0,,
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,8,0,,
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,9,0,,
+Merkur Offshore,54.04,6.56,wind_speed_236_avg,10,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,3,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,4,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,5,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,6,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,7,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,8,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,9,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_236_avg,10,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,3,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,4,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,5,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,6,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,7,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,8,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,9,0,,
+Gode Wind 3,54.04,7.1,wind_speed_236_avg,10,0,,
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,6,0,,
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_236_avg,10,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,5,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,6,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,7,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,8,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,9,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_236_avg,10,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,3,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,4,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,5,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,6,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,7,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,8,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,9,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_236_avg,10,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,3,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,4,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,5,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,6,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,7,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,8,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,9,0,,
+Veja Mate,54.32,5.87,wind_speed_236_avg,10,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,3,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,4,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,5,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,6,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,7,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,8,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,9,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_236_avg,10,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,3,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,4,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,5,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,6,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,7,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,8,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,9,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_236_avg,10,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,3,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,4,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,5,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,6,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,7,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,8,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,9,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_236_avg,10,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,3,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,4,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,5,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,6,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,7,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,8,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,9,0,,
+Nordsee Ost,54.44,7.68,wind_speed_236_avg,10,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,4,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,5,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,6,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,7,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,8,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,9,0,,
+Albatros,54.49,6.24,wind_speed_236_avg,10,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,3,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,4,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,5,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,6,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,7,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,8,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,9,0,,
+Kaskasi,54.49,7.69,wind_speed_236_avg,10,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,3,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,4,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,5,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,6,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,7,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,8,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,9,0,,
+Global Tech I,54.51,6.36,wind_speed_236_avg,10,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,3,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,4,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,5,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,6,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,7,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,8,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,9,0,,
+Amrumbank West,54.52,7.71,wind_speed_236_avg,10,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,3,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,4,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,5,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,6,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,7,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,8,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,9,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_236_avg,10,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,3,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,4,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,5,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,6,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,7,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,8,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,9,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_236_avg,10,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,3,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,4,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,5,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,6,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,7,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,8,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,9,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_236_avg,10,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,3,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,4,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,5,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,6,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,7,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,8,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,9,0,,
+Baltic Eagle,54.83,13.86,wind_speed_236_avg,10,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,3,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,4,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,5,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,6,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,7,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,8,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,9,0,,
+Wikinger,54.84,14.07,wind_speed_236_avg,10,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,3,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,4,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,5,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,6,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,7,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,8,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,9,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_236_avg,10,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,3,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,4,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,5,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,6,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,7,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,8,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,9,0,,
+Butendiek,55.02,7.77,wind_speed_236_avg,10,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,3,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,4,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,5,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,6,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,7,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,8,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,9,0,,
+Dan Tysk,55.14,7.2,wind_speed_236_avg,10,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,3,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,4,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,5,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,6,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,7,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,8,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,9,0,,
+Sandbank,55.2,6.85,wind_speed_236_avg,10,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,0,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,1,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,2,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,3,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,4,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,7,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,8,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,9,0,,
+Horns Rev I,55.5,7.82,wind_speed_236_avg,10,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,0,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,1,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,2,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,3,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,4,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,7,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,8,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,9,0,,
+Horns Rev II,55.61,7.61,wind_speed_236_avg,10,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,0,672,0.9164459827561448,1.0
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,0,672,0.9119440545905313,2.0
+Veja Mate,54.32,5.87,wind_speed_237_avg,0,672,0.9105742672320247,3.0
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,0,672,0.9082085602172684,4.0
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,0,672,0.9068100319380401,5.0
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,0,672,0.9061089068039225,6.0
+Albatros,54.49,6.24,wind_speed_237_avg,0,672,0.9057792787876968,7.0
+Global Tech I,54.51,6.36,wind_speed_237_avg,0,672,0.9039968468656534,8.0
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,0,5088,0.8763589067804239,9.0
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,0,672,0.8539550876445815,10.0
+Kaskasi,54.49,7.69,wind_speed_237_avg,0,672,0.8535001897258063,11.0
+Albatros,54.49,6.24,wind_speed_237_avg,3,672,0.8528442852519164,12.0
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,0,672,0.8509521245526299,13.0
+Amrumbank West,54.52,7.71,wind_speed_237_avg,0,672,0.8504628167569931,14.0
+Nordsee One,53.98,6.82,wind_speed_237_avg,0,5832,0.8287595993942055,15.0
+Nordergründe,53.84,8.17,wind_speed_237_avg,0,672,0.8060800849936816,16.0
+Sandbank,55.2,6.85,wind_speed_237_avg,0,672,0.7872879734187244,17.0
+Dan Tysk,55.14,7.2,wind_speed_237_avg,0,672,0.7734805507962338,18.0
+Butendiek,55.02,7.77,wind_speed_237_avg,0,672,0.7726344118471076,19.0
+Nordsee One,53.98,6.82,wind_speed_237_avg,1,6576,0.6675674076346945,20.0
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,0,672,0.6230889255899201,21.0
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,1,5832,0.6220376828617022,22.0
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,0,672,0.6196996819315744,23.0
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,0,672,0.570807837825897,24.0
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,0,672,0.5574624793234574,25.0
+Veja Mate,54.32,5.87,wind_speed_237_avg,1,1416,0.5516681341298098,26.0
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,1,1416,0.5514339150358352,27.0
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,1,1416,0.5492222252664143,28.0
+Wikinger,54.84,14.07,wind_speed_237_avg,0,672,0.5478310795665045,29.0
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,1,1416,0.5474353072661404,30.0
+Global Tech I,54.51,6.36,wind_speed_237_avg,1,1416,0.5467343901406407,31.0
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,0,672,0.5423274058949351,32.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,0,17584,0.540415710080937,33.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,0,17584,0.5384905092693045,34.0
+Riffgat,53.69,6.48,wind_speed_237_avg,1,1416,0.5377940626347316,35.0
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,0,17584,0.5376086157181172,36.0
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,0,17584,0.5360395570315338,37.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,0,17584,0.5353315867291535,38.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,0,17584,0.5353315867291535,39.0
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,1,1416,0.5352448848460556,40.0
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,1,1416,0.5050714315029917,41.0
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,1,1416,0.5034963285754329,42.0
+Kaskasi,54.49,7.69,wind_speed_237_avg,1,1416,0.5014757430979081,43.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,1,17584,0.5011618249238787,44.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,1,17584,0.5011618249238787,45.0
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,1,17584,0.4999782379598149,46.0
+Amrumbank West,54.52,7.71,wind_speed_237_avg,1,1416,0.49894152841842765,47.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,1,17584,0.49727826033416783,48.0
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,1,17584,0.4972337321637181,49.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,1,17584,0.4968898197639372,50.0
+Sandbank,55.2,6.85,wind_speed_237_avg,1,1416,0.49106201359975754,51.0
+Dan Tysk,55.14,7.2,wind_speed_237_avg,1,1416,0.4863863057004955,52.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,3,8944,0.47275876456257626,53.0
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,3,8944,0.472723561419425,54.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,3,8944,0.4704444168874265,55.0
+Nordergründe,53.84,8.17,wind_speed_237_avg,1,1416,0.4702968778262423,56.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,3,8944,0.4698597271927001,57.0
+Butendiek,55.02,7.77,wind_speed_237_avg,1,1416,0.4659232488343015,58.0
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,3,9616,0.45142560084301814,59.0
+Albatros,54.49,6.24,wind_speed_237_avg,1,2088,0.44232495174401465,60.0
+Wikinger,54.84,14.07,wind_speed_237_avg,1,1416,0.4201624765206522,61.0
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,1,1416,0.41929333926084383,62.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,3,17584,0.417998882645514,63.0
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,1,1416,0.41450841435465235,64.0
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,1,1416,0.41428815178698414,65.0
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,1,1416,0.4136763112979412,66.0
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,1,1416,0.4097428617399448,67.0
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,2,17584,0.20111274589626235,68.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,2,17584,0.20076879042646018,69.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,2,17584,0.20076879042646018,70.0
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,2,17584,0.20065882137329563,71.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,2,17584,0.1995509747892436,72.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,2,17584,0.1985182977905773,73.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,8,6552,0.18730272596002406,74.0
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,2,744,0.16946312082959075,75.0
+Albatros,54.49,6.24,wind_speed_237_avg,2,2088,0.16218088444246764,76.0
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,2,744,0.1577143275464713,77.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,4,8944,0.1574273398371378,78.0
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,2,744,0.15618904863385896,79.0
+Wikinger,54.84,14.07,wind_speed_237_avg,2,744,0.13997919005935536,80.0
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,2,744,0.13537162724700005,81.0
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,2,744,0.13410170414471367,82.0
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,2,744,0.13335338380194936,83.0
+Kaskasi,54.49,7.69,wind_speed_237_avg,2,744,0.13255099238842008,84.0
+Amrumbank West,54.52,7.71,wind_speed_237_avg,2,744,0.13184756473762943,85.0
+Dan Tysk,55.14,7.2,wind_speed_237_avg,2,744,0.13002774042075235,86.0
+Sandbank,55.2,6.85,wind_speed_237_avg,2,744,0.12249188423693198,87.0
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,2,744,0.12032207420108607,88.0
+Butendiek,55.02,7.77,wind_speed_237_avg,2,744,0.1201398670545059,89.0
+Nordergründe,53.84,8.17,wind_speed_237_avg,2,744,0.11905563555529798,90.0
+Riffgat,53.69,6.48,wind_speed_237_avg,2,744,0.11340817021815426,91.0
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,2,744,0.10400006445253522,92.0
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,2,744,0.10147964894032112,93.0
+Nordsee One,53.98,6.82,wind_speed_237_avg,2,744,0.09815240595432104,94.0
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,4,856,0.09467736321817155,95.0
+Global Tech I,54.51,6.36,wind_speed_237_avg,2,744,0.09328138497287272,96.0
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,2,744,0.09180429779749152,97.0
+Veja Mate,54.32,5.87,wind_speed_237_avg,2,744,0.0889135954649052,98.0
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,2,744,0.08789685769613338,99.0
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,2,744,0.08605494826311386,100.0
+Barrow,54.0,-3.29,wind_speed_237_avg,9,744,0.02033472466538361,101.0
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,9,744,0.02033472466538361,102.0
+Barrow,54.0,-3.29,wind_speed_237_avg,10,744,0.013478668576311099,103.0
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,10,744,0.013478668576311099,104.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,7,6432,0.00643358307196951,105.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,5,184,-0.02798713893400967,106.0
+Gemini,54.03,5.91,wind_speed_237_avg,5,1488,-0.11277144631964606,107.0
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,9,184,-0.12895799644754385,108.0
+Horns Rev I,55.5,7.82,wind_speed_237_avg,6,744,-0.13097493348415556,109.0
+Horns Rev II,55.61,7.61,wind_speed_237_avg,6,744,-0.13131864877363886,110.0
+Horns Rev II,55.61,7.61,wind_speed_237_avg,5,744,-0.1354362659584072,111.0
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,4,184,-0.1516497319698427,112.0
+Horns Rev I,55.5,7.82,wind_speed_237_avg,5,744,-0.15483261526048542,113.0
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,4,184,-0.15535558031457072,114.0
+Gemini,54.03,5.91,wind_speed_237_avg,6,1488,-0.15845322362465092,115.0
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,4,184,-0.15896611542363775,116.0
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,4,184,-0.16009274579677485,117.0
+Riffgat,53.69,6.48,wind_speed_237_avg,3,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,4,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,5,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,6,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,7,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,8,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,9,0,,
+Riffgat,53.69,6.48,wind_speed_237_avg,10,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,3,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,4,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,5,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,6,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,7,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,8,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,9,0,,
+Nordergründe,53.84,8.17,wind_speed_237_avg,10,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,5,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,6,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,7,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,8,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,9,0,,
+Borkum Riffgrund 2,53.95,6.5,wind_speed_237_avg,10,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,5,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,6,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,7,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,8,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,9,0,,
+Borkum Riffgrund 1,53.97,6.55,wind_speed_237_avg,10,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,3,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,4,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,5,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,6,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,7,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,8,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,9,0,,
+Nordsee One,53.98,6.82,wind_speed_237_avg,10,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,0,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,1,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,2,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,3,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,4,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,5,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,6,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,7,0,,
+Barrow,54.0,-3.29,wind_speed_237_avg,8,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,0,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,1,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,2,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,3,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,4,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,5,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,6,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,7,0,,
+"Barrow (54.00,-3.28)",54.0,-3.28,wind_speed_237_avg,8,0,,
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,5,0,,
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,6,0,,
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,7,0,,
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,8,0,,
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,9,0,,
+Alpha Ventus,54.01,6.61,wind_speed_237_avg,10,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,0,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,1,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,2,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,3,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,4,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,7,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,8,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,9,0,,
+Gemini,54.03,5.91,wind_speed_237_avg,10,0,,
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,5,0,,
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,6,0,,
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,7,0,,
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,8,0,,
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,9,0,,
+Merkur Offshore,54.04,6.56,wind_speed_237_avg,10,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,3,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,4,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,5,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,6,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,7,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,8,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,9,0,,
+Gode Wind 1 and 2,54.04,6.99,wind_speed_237_avg,10,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,3,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,4,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,5,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,6,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,7,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,8,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,9,0,,
+Gode Wind 3,54.04,7.1,wind_speed_237_avg,10,0,,
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,6,0,,
+Trianel Windpark Borkum 1,54.05,6.46,wind_speed_237_avg,10,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,5,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,6,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,7,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,8,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,9,0,,
+Trianel Windpark Borkum 2,54.05,6.47,wind_speed_237_avg,10,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,3,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,4,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,5,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,6,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,7,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,8,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,9,0,,
+Deutsche Bucht,54.3,5.79,wind_speed_237_avg,10,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,3,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,4,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,5,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,6,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,7,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,8,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,9,0,,
+Veja Mate,54.32,5.87,wind_speed_237_avg,10,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,3,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,4,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,5,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,6,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,7,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,8,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,9,0,,
+Bard Offshore 1,54.36,5.98,wind_speed_237_avg,10,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,3,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,4,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,5,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,6,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,7,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,8,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,9,0,,
+Meerwind Sued/Ost,54.39,7.7,wind_speed_237_avg,10,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,3,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,4,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,5,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,6,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,7,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,8,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,9,0,,
+EnBW Hohe See,54.44,6.33,wind_speed_237_avg,10,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,3,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,4,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,5,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,6,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,7,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,8,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,9,0,,
+Nordsee Ost,54.44,7.68,wind_speed_237_avg,10,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,4,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,5,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,6,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,7,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,8,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,9,0,,
+Albatros,54.49,6.24,wind_speed_237_avg,10,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,3,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,4,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,5,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,6,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,7,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,8,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,9,0,,
+Kaskasi,54.49,7.69,wind_speed_237_avg,10,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,3,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,4,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,5,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,6,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,7,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,8,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,9,0,,
+Global Tech I,54.51,6.36,wind_speed_237_avg,10,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,3,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,4,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,5,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,6,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,7,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,8,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,9,0,,
+Amrumbank West,54.52,7.71,wind_speed_237_avg,10,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,3,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,4,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,5,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,6,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,7,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,8,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,9,0,,
+EnBW Windpark Baltic 1,54.61,12.65,wind_speed_237_avg,10,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,3,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,4,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,5,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,6,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,7,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,8,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,9,0,,
+Arkona-Becken Südost,54.78,14.12,wind_speed_237_avg,10,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,3,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,4,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,5,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,6,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,7,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,8,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,9,0,,
+Arcadis Ost 1,54.82,13.66,wind_speed_237_avg,10,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,3,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,4,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,5,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,6,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,7,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,8,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,9,0,,
+Baltic Eagle,54.83,13.86,wind_speed_237_avg,10,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,3,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,4,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,5,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,6,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,7,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,8,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,9,0,,
+Wikinger,54.84,14.07,wind_speed_237_avg,10,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,3,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,4,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,5,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,6,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,7,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,8,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,9,0,,
+EnBW Windpark Baltic 2,54.98,13.16,wind_speed_237_avg,10,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,3,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,4,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,5,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,6,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,7,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,8,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,9,0,,
+Butendiek,55.02,7.77,wind_speed_237_avg,10,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,3,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,4,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,5,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,6,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,7,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,8,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,9,0,,
+Dan Tysk,55.14,7.2,wind_speed_237_avg,10,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,3,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,4,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,5,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,6,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,7,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,8,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,9,0,,
+Sandbank,55.2,6.85,wind_speed_237_avg,10,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,0,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,1,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,2,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,3,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,4,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,7,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,8,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,9,0,,
+Horns Rev I,55.5,7.82,wind_speed_237_avg,10,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,0,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,1,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,2,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,3,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,4,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,7,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,8,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,9,0,,
+Horns Rev II,55.61,7.61,wind_speed_237_avg,10,0,,

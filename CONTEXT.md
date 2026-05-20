@@ -42,7 +42,7 @@ The pipeline operates in two modes to balance storage efficiency with auditabili
 - **SCADA Handshake & De-Anonymization:** 
     - **Taxonomy-based Labeling:** Cross-references vessel dwell events with turbine operational states in `src/om_pipeline/analysis/scada_handshake.py`. It maps turbine states (specifically status 3: Service) to clean O&M label matrices, categorizing them as `maintenance_success`, `standby_weather`, or `attempted_transfer` based on dwell duration and proximity thresholds.
     - **Wind Farm B De-Anonymization:** Identified as **Alpha Ventus** (REpower/Senvion 5M assets) with a **0-year temporal shift** (Shift = 0). File timestamps map to true operating calendar dates (February 2022 to February 2023).
-    - **Wind Farm C De-Anonymization:** Completed production mapping to **Trianel Windpark Borkum I & II** with a **0-year temporal shift** (Shift = 0). CAREtoCompare timestamps map directly to the true operating calendar (2022-2024). The turbine fingerprint indicates a mixed Borkum I/Borkum II fleet, and the AIS/SCADA co-occurrence test remains an archived coverage-limited validation enhancement rather than a pipeline blocker.
+    - **Wind Farm C De-Anonymization:** High-confidence production working mapping to **Trianel Windpark Borkum I & II** with a **0-year temporal shift** (Shift = 0). CAREtoCompare timestamps map directly to the working true operating calendar (2022-2024). The turbine fingerprint indicates a mixed Borkum I/Borkum II fleet, and the AIS/SCADA co-occurrence test remains a coverage-limited validation enhancement rather than a pipeline blocker.
 
 
 

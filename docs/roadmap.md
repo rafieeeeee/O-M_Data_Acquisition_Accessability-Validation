@@ -49,10 +49,13 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] **Wind Farm B (CAREtoCompare / Alpha Ventus):** De-anonymized with confirmed 0-year temporal shift.
     - [ ] **Wikinger strategic log sourcing (BLOCKED):** Pivot from legacy Alpha Ventus RAVE archives to secure Wikinger-specific Daily Progress Reports (DPRs) or SCADA logs to enable high-fidelity vessel status handshakes.
     - [ ] Compute event-level aggregates (mean/max Hs, Tp, wind, current, direction, and relative profiles).
-- [ ] **Feature Matrix Construction — Wind Farm C (ACTIVE MILESTONE):** Build the first production feature matrix for Wind Farm C (Trianel Borkum I+II). Produce a joined table with:
+- [x] **Feature Matrix Construction — Wind Farm C:** Built the first production feature matrix for Wind Farm C using the Trianel Borkum I+II working mapping. Produced a joined table with:
     - `[timestamp | vessel | hs | tp | wave_direction | wind_speed | wind_direction | current_speed | current_direction | status_type_id | label]`
-    - Output: `Data/Processed/wind_farm_c_feature_matrix.parquet` (Parquet preferred for scale).
-    - QA report: `reports/care_wind_farm_c_confirmation/`
+    - Output: `Data/Processed/wind_farm_c_feature_matrix.parquet` (local generated artifact; not committed).
+    - QA report: `reports/care_wind_farm_c_confirmation/wfc_feature_matrix_qa.md`
+    - Caveat: current columns use the CMEMS tidal fallback until `copernicusmarine` credentials are configured and extraction is re-run with `--force`.
+- [ ] **Wind Farm C Event-Level Aggregation (ACTIVE MILESTONE):** Collapse the 10-minute matrix to one row per CARE event with mean/max/std metocean features, directional spread, SCADA label shares, and event-level target labels.
+- [ ] **Wind Farm C External Cross-Checks:** Replace synthetic `min_dist=50m` with real AIS dwell proximity where catalog coverage exists, and re-run currents with real CMEMS reanalysis rather than fallback climatology.
 - [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
 - [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`

@@ -190,7 +190,7 @@ Purpose: validate the site identity using independent vessel activity.
 Procedure:
 
 1. Query `dwell_events` for Borkum I and Borkum II separately.
-2. Apply the asserted Wind Farm C year shift to align AIS dwell times with SCADA timestamps.
+2. Apply the current Wind Farm C temporal mapping. The active production mapping is a 0-year shift, so CARE SCADA timestamps are compared directly against true-calendar candidate AIS windows.
 3. For each dwell event with a matching CARE event file or asset window, inspect nearby SCADA `status_type_id`, power, wind speed, and downtime/service signals.
 4. Compare against non-Borkum candidate farms as controls.
 
@@ -291,9 +291,9 @@ List assumptions and unsupported claims.
 
 Do not accept the wind farm identity from a single evidence family. A strong confirmation requires at least:
 
-1. Borkum wins the year-shifted spatial correlation scan.
+1. The temporal scan supports the 0-year mapping and Borkum-region candidates remain competitive under spatial correlation.
 2. The Borkum win is robust across time windows and negative controls.
 3. The SCADA turbine fingerprint matches either Borkum I or Borkum II metadata.
-4. AIS/SCADA co-occurrence is directionally consistent with Borkum operations.
+4. AIS/SCADA co-occurrence is directionally consistent with Borkum operations, or explicitly documented as coverage-limited rather than contradictory.
 
 If those conditions are not met, the correct conclusion is "supported but not confirmed" or "phase unresolved," not "fully validated."

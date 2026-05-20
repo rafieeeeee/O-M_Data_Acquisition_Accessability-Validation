@@ -1,0 +1,3 @@
+scada_column,lag_hours,lag_description_365d_years,overlap_hours,pearson_r,scada_start,scada_end,derived_true_start,derived_true_end
+wind_speed_236_avg,0,"0 years, 0 days, 0 hours",17584,0.560588309452919,2022-01-06,2024-01-08 15:00:00,2022-01-06,2024-01-08 15:00:00
+wind_speed_237_avg,0,"0 years, 0 days, 0 hours",17584,0.5353315867291535,2022-01-06,2024-01-08 15:00:00,2022-01-06,2024-01-08 15:00:00
