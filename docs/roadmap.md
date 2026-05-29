@@ -22,9 +22,10 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [/] **Logistics (AIS):** Download and process raw terrestrial AIS data from the **Danish Maritime Authority (DMA)**.
     - [x] **Automated Pipeline:** Hardened `stream_ais_filter.py` (Python-native HTTP/ZIP) and `identify_vessels_at_scale.py` (Event-based) implemented.
     - [x] **Repository Restructuring:** Implemented `src/om_pipeline` and agent-centric context layer.
-    - [/] **Longitudinal Sampling:** Resumable farm-candidate backfill runner configured for the 2010–2020 historical period. Quarterly slices (`Jan/Apr/Jul/Oct`) are run first, followed by the remaining months to capture full seasonal transitions.
+    - [x] **Longitudinal Sampling:** Resumable farm-candidate backfill runner configured and executed for the 2010–2020 historical period. Quarterly slices (`Jan/Apr/Jul/Oct`) completed for the Wikinger/Baltic cluster, capturing 527 raw dwells (383 deduplicated behavioral events).
 - [ ] **Environment (In-Situ):** Access relevant Baltic/North Sea database for wave spectra.
 - [x] **Environment (Hindcast):** Pull wave-only **NORA3** 3km-resolution NetCDF data via MET Norway's legacy aggregate OPeNDAP endpoint (`windsurfer/mywavewam3km_files/aggregate/nora3_wave_agg.nc`) for the 2010-2020 Wikinger SOV study. The ingestion utilizes spatial coordinate rounding to 2 decimal places and month-level caching to share raw files across close-proximity turbines, with monitoring required because the aggregate endpoint is prone to timeouts.
+    - [x] **NORA3 Sidecar Consolidation:** Added a read-only sidecar checkpoint flow that joins stable raw NORA3 wave/wind cache pairs into `Data/Processed/metocean/nora3_joined_cache/` while the downloader continues writing monthly CSVs.
 - [ ] **Operations (SCADA/Structural/DPR):** Obtain Wikinger daily progress reports (DPRs) or validation datasets for workability validation.
 
 ---
@@ -42,6 +43,27 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] Run `extract_metocean.py` across the completed event catalog to generate the expanded wave, wind, and current backbone.
 - [x] **Data Quality Assurance (QA):**
     - [x] Run row count, schema, missing-value, duplicate, span-continuity, and alignment sanity checks on the NORA3 Backbone. Passing this wave-only QA is a strict gate before wind/current expansion or AIS + metocean join work.
+- [x] **NWS Continuous Wave Backbone:**
+    - [x] Planned NWS extraction from common farm requirements rather than event-only windows.
+    - [x] Materialized the processed farm/sample-point archive under `Data/Processed/metocean/nws_wave_timeseries/`.
+    - [x] Validated `1,169` farm-year partitions across `112` farms; raw annual NetCDF source files remain on the external 4TB drive referenced by the inventory docs.
+- [/] **Baltic Continuous Wave Backbone:**
+    - [x] Planned Baltic extraction from the same common farm requirements table.
+    - [x] Downloaded reviewed raw subset files for `16` in-scope Baltic farms under `Data/Raw/Metocean/CMEMS/BalticSea/Waves/`.
+    - [x] Materialized and accepted the processed archive target `Data/Processed/metocean/baltic_wave_timeseries/` with `238` partitions and `73,866,720` rows.
+- [x] **Wave Confidence Layer:**
+    - [x] Built Fusion v1 source-agreement evidence for NORA3, NWS, and Baltic waves.
+    - [x] Preserved source disagreement and confidence classes rather than using the v0 source-priority resolver.
+- [x] **Current Confidence Layer:**
+    - [x] Piloted and scaled NWS hourly true `uo`/`vo` currents for `125` normal recommended farm-years.
+    - [x] Attached NWS current evidence to dwell events in Current Confidence v1 with `16,307` event-scale current assignments.
+- [x] **Wind Confidence Layer:**
+    - [x] Formalized existing NORA3 active-window wind evidence in Wind Confidence v1.
+    - [x] Accepted wind speed as modelling-ready for `75,380` events while keeping sparse wind direction nullable/sensitivity-only.
+- [x] **Fusion v2 Multi-Parameter Event Features:**
+    - [x] Built `Data/Processed/metocean/fusion_v2/dwell_metocean_fusion_v2.parquet`.
+    - [x] Preserved all `92,660` dwell rows and joined wave confidence, wind confidence, current confidence, and bathymetry.
+    - [x] Validated `13,207` wave+wind+current rows and `9,337` high-confidence multivariate rows.
 - [x] **The AIS + Metocean Join:**
     - [x] Create a formal module in `src/om_pipeline/` to merge `dwell_events` and the 10-minute backbone based on `found_id` and timestamps.
 - [/] **The "SCADA Handshake" & Feature Engineering:**
@@ -62,6 +84,7 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
 - [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
+- [ ] **Stage 2 Fusion v2 Sensitivity:** Use Fusion v2 to compare observed envelopes for wave-only, wave+wind speed, wave+current, and wave+wind+current subsets before any calibrated probability model.
 
 ---
 
@@ -69,7 +92,7 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 **Goal:** Derive the non-linear workability surface.
 
     - [x] **Wind Farm C Baseline Models:** Implemented dual-task cross-validated modeling pipeline (`scripts/train_wind_farm_c_baseline.py`). We implemented a baseline diagnostic modeling pipeline. Task A shows promising but leakage-prone diagnostic separability. Task B shows high ROC-AUC ranking under extreme class imbalance, but default-threshold classification fails for Random Forest and the target remains a proxy because AIS proximity is synthetic. Results are exploratory and should guide the next grouped 10-minute modeling experiment, not be treated as thesis-grade evidence yet.
-    - [x] **Wind Farm C 10-Minute Grouped Feasibility Study:** Successfully transitioned to a high-frequency 10-minute backbone modeling pipeline under strict `StratifiedGroupKFold` split validation grouped by `event_id` (`scripts/train_wind_farm_c_10min_grouped.py`). Evaluated C1 (Clean contrast) and C2 (Noisy proxy) targets. Exposed naive row-level CV leakage (naive F1 0.899 vs. grouped F1 0.840). Identified a major Simpson's Paradox in physical wave height distributions (pooled $H_s$ shows successes in larger waves, but event-normalized $H_s$ shows successes in calmer waves for 29/40 events). Saved detailed reports, diagnostic plots, and threshold sweeps. See `docs/adr/0008-ten-minute-grouped-validation-modeling.md`.
+    - [x] **Wind Farm C 10-Minute Grouped Feasibility Study:** Successfully established a leakage-safe, event-grouped validation framework (`scripts/train_wind_farm_c_10min_grouped.py`). The study confirms that naive row-level CV substantially overstates performance (F1 0.899 vs 0.682). Verdict: **Methodological Success / Predictive Inconclusive**. Metocean-only features provide weak/unstable signal under proxy labels, and LOEO sensitivity shows significant event-level instability. This justifies the pivot to richer operational context (AIS/CMEMS) in the next phase. See `reports/baseline_models/ten_min_grouped_README.md`.
 - [/] **Feature Importance:** Quantify the impact of $T_p$ (Period) and $\theta$ (Direction) vs. $H_s$.
     - [x] **Wind Farm C Importances:** Analyzed MDI feature importances across all classifiers; significant wave height ($H_s$) and wind speed dominate. Also audited physical separability using Cliff's Delta and event-normalized medians.
 - [ ] **Vessel Sensitivity Analysis:** 
@@ -78,9 +101,36 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 
 ---
 
-## Phase 4: Scaling & Impact Modeling
+## Phase 4: Cross-Farm AIS Dwell Atlas (Pilot)
+**Goal:** Develop a scalable, cross-farm behavioral atlas to characterize operational limits using AIS dwells as proxies.
+
+- [x] **Spatial Engine Implementation:**
+    - [x] Developed `om_pipeline.spatial.bounds` for UTM-projected farm and context geometries.
+    - [x] Implemented precision asset-proximity checks using `scipy.spatial.KDTree` (200m Tier A threshold).
+- [x] **Track Segmentation & Dwell Detection:**
+    - [x] Developed `ais_visit_extractor` to segment tracks into visits based on 5km context buffers and AIS gaps.
+    - [x] Developed `ais_dwell_detector` with a 4-tier unsupervised geometric taxonomy (Asset-Proximal, Farm-Internal, Operational-Dwell, Context-Holding).
+- [x] **Phase-Based Metocean Join:**
+    - [x] Implemented `dwell_weather_join` to capture exposure across four critical phases: approach, active-dwell, departure, and matched non-dwell comparator.
+    - [x] Calculated the **weather-exposure difference** between dwell and matched non-dwell windows.
+- [x] **Validation Island (Wind Farm C):**
+    - [x] Aligned AIS dwell candidates with CARE SCADA anomalies for Trianel Borkum I+II.
+    - [x] Results: Directionally consistent correspondence found in 3 of 4 available dwells, but validation is underpowered due to local AIS coverage gaps.
+- [x] **Cross-Farm Synthesis:**
+    - [x] Generated the `Cross-Farm Dwell Atlas: Taxonomy & Behavioural Summary` and `Metocean Exposure Report`.
+    - [x] Framework **implemented and pilot-verified across three farms**.
+    - [x] Verdict: **Methodological extension successful / atlas pilot underpowered but scalable.**
+
+---
+
+## Phase 5: Scaling & Impact Modeling
 **Goal:** Apply findings to next-generation 15MW+ assets and US Eastern Seaboard deployment.
 
+- [x] **Baltic Cluster Scaling (Wikinger):** 
+    - [x] Implemented resumable backfill runner with cross-farm duplicate detection.
+    - [x] Completed 10-year quarterly backfill (2010-2020) across 5 farms.
+    - [x] Enriched with 4-phase NORA3 metocean exposure.
+    - [x] Verdict: **Methodological extension successful / atlas pilot underpowered but scalable.**
 - [ ] **US East Coast Transfer:** Apply the validated model to **MarineCadastre** AIS and **NOAA** buoy data for US lease areas.
 - [ ] **15MW Extrapolation:** Use the "Vessel-Aware" ML model to predict operational uptime for 15MW-class SOVs using theoretical dimensions.
 - [ ] **Monte Carlo Integration:** 
