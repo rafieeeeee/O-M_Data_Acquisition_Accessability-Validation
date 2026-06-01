@@ -1,0 +1,12 @@
+metadata_field,source_column,present,non_null_count,total_rows,non_null_share,unique_count,status
+turbine_source_id,Unnamed: 0,True,6523,6523,1.0,6523,complete
+farm_name,wind_farm,True,6523,6523,1.0,119,complete
+country,country,True,6523,6523,1.0,8,complete
+latitude,latitude,True,6523,6523,1.0,5533,complete
+longitude,longitude,True,6523,6523,1.0,5852,complete
+commissioning_date,commissioning_date,True,6523,6523,1.0,88,complete
+oem_manufacturer,oem_manufacturer,True,6523,6523,1.0,10,complete
+turbine_model,turbine_type,True,6523,6523,1.0,34,complete
+rated_capacity,rated_power,True,6523,6523,1.0,19,complete
+rotor_diameter,rotor_diameter,True,6523,6523,1.0,24,complete
+hub_height,hub_height,True,6523,6523,1.0,55,complete
