@@ -12,6 +12,16 @@ from om_pipeline.analysis.rq9_turbine_feasibility import (
     build_turbine_feasibility_report,
     build_answerability_matrix,
 )
+from om_pipeline.analysis.rq9_turbine_exposure import (
+    DENOMINATOR_COLUMNS,
+    INTENSITY_COLUMNS,
+    assign_sea_basin,
+    build_exposure_comparison,
+    build_static_turbine_exposure_features,
+    build_turbine_denominator,
+    build_turbine_exposure_report,
+    build_turbine_intervention_intensity,
+)
 
 
 def _sample_turbines() -> pd.DataFrame:
@@ -84,6 +94,35 @@ def _sample_farm_intensity() -> pd.DataFrame:
         {
             "farm_id": ["Alpha", "Bravo"],
             "steady_intervention_intensity_per_farm_year": [1.0, 2.0],
+        }
+    )
+
+
+def _sample_manifest() -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "farm_id": [
+                "Alpha",
+                "Alpha",
+                "Alpha",
+                "Alpha",
+                "Alpha",
+                "Alpha",
+                "Bravo",
+                "Bravo",
+            ],
+            "year": [2020, 2020, 2020, 2020, 2020, 2020, 2020, 2021],
+            "month": [1, 6, 7, 8, 9, 10, 11, 1],
+            "status": [
+                "success",
+                "success",
+                "success",
+                "success_no_ais_in_bbox",
+                "skipped_missing_source",
+                "source_parse_error",
+                "success",
+                "success",
+            ],
         }
     )
 
@@ -186,3 +225,86 @@ def test_report_and_outputs_use_intervention_terminology(tmp_path: Path):
     written_events = pd.read_csv(outputs.files["turbine_intervention_events_v0_csv"])
     assert list(written_events.columns) == TURBINE_EVENT_COLUMNS
     assert outputs.validation["answerability_status_counts"]["partially ready"] >= 1
+
+
+def test_turbine_denominator_excludes_pre_operational_and_ramp_up_months():
+    denominator, metrics = build_turbine_denominator(
+        _sample_manifest(),
+        _sample_turbines(),
+        ramp_up_months=6,
+    )
+    alpha = denominator.loc[denominator["farm_id"].eq("Alpha")]
+
+    assert list(denominator.columns) == DENOMINATOR_COLUMNS
+    assert set(alpha["observed_steady_months"]) == {2}
+    assert set(alpha["steady_manifest_months"]) == {4}
+    assert set(alpha["success_steady_months"]) == {1}
+    assert set(alpha["success_no_ais_in_bbox_steady_months"]) == {1}
+    assert set(alpha["skipped_missing_source_steady_months"]) == {1}
+    assert set(alpha["first_observed_steady_month"]) == {"2020-07"}
+    assert metrics["success_no_ais_in_bbox_steady_months"] == 2
+
+
+def test_turbine_high_confidence_primary_and_medium_sensitivity_are_separate():
+    events, _ = build_turbine_intervention_events(
+        _sample_dwell(),
+        _sample_turbines(),
+        ramp_up_months=6,
+    )
+    denominator, _ = build_turbine_denominator(
+        _sample_manifest(),
+        _sample_turbines(),
+        ramp_up_months=6,
+    )
+    intensity, metrics = build_turbine_intervention_intensity(events, denominator)
+    alpha_10 = intensity.set_index("turbine_id").loc["Alpha::10"]
+
+    assert list(intensity.columns) == INTENSITY_COLUMNS
+    assert alpha_10["steady_high_event_count"] == 0
+    assert alpha_10["steady_high_medium_event_count"] == 1
+    assert metrics["high_medium_steady_event_count"] > metrics["high_confidence_steady_event_count"]
+
+
+def test_exposure_quantile_and_sea_basin_unknown_mapping():
+    turbines = pd.DataFrame(
+        {
+            "Unnamed: 0": [1, 2, 3, 4],
+            "wind_farm": ["Layout", "Layout", "Layout", "Layout"],
+            "latitude": [55.0, 55.0, 55.01, 55.02],
+            "longitude": [8.0, 8.01, 8.0, 8.0],
+            "country": ["Denmark", "Denmark", "Denmark", "Denmark"],
+            "commissioning_date": ["2020-01", "2020-01", "2020-01", "2020-01"],
+        }
+    )
+    features = build_static_turbine_exposure_features(turbines)
+
+    assert features["distance_to_farm_centroid_quantile"].max() == 1.0
+    assert "outer_exposed_proxy" in set(features["exposure_group"])
+    assert assign_sea_basin("Atlantis", 0.0) == ("unknown", "unmapped_country_unknown")
+    assert assign_sea_basin(None, 0.0) == ("unknown", "missing_country_unknown")
+
+
+def test_exposure_report_and_outputs_use_intervention_terminology():
+    events, _ = build_turbine_intervention_events(
+        _sample_dwell(),
+        _sample_turbines(),
+        ramp_up_months=6,
+    )
+    denominator, denominator_metrics = build_turbine_denominator(
+        _sample_manifest(),
+        _sample_turbines(),
+        ramp_up_months=6,
+    )
+    intensity, intensity_metrics = build_turbine_intervention_intensity(events, denominator)
+    comparison = build_exposure_comparison(intensity)
+    report = build_turbine_exposure_report(
+        denominator,
+        intensity,
+        comparison,
+        {**denominator_metrics, **intensity_metrics},
+    )
+
+    assert "maintenance intervention intensity" in report
+    assert "failure_rate" not in report
+    assert all("failure_rate" not in column for column in denominator.columns)
+    assert all("failure_rate" not in column for column in intensity.columns)
