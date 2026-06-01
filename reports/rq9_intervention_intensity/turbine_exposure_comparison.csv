@@ -1,0 +1,5 @@
+assignment_scope,comparison_group,turbine_count,eligible_turbine_count_ge_1yr,observed_steady_years,event_count,duplicate_adjusted_event_count,unique_vessel_count_sum,repeat_visit_30d_count,intervention_intensity_per_steady_turbine_year,median_turbine_intervention_intensity,comparison_confidence_class
+high_confidence_200m,outer_exposed_proxy,1658,1476,12831.249999999998,516,513.0,372,132,0.03998051631758403,0.0,high_sample_observed_signal
+high_confidence_200m,inner_or_middle_proxy,4854,4325,37585.25,2935,2918.1666666666665,1876,729,0.07764127328318067,0.0,high_sample_observed_signal
+high_medium_500m,outer_exposed_proxy,1658,1476,12831.249999999998,1033,1021.5,723,273,0.07961032635168049,0.0,high_sample_observed_signal
+high_medium_500m,inner_or_middle_proxy,4854,4325,37585.25,8185,8107.833333333333,4131,3349,0.2157184888575527,0.0,high_sample_observed_signal

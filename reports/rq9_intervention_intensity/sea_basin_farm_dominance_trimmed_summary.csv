@@ -1,0 +1,3 @@
+comparison_scope,sea_basin,excluded_farms,remaining_turbines,remaining_farms,observed_steady_turbine_years,high_confidence_adjusted_events,high_medium_adjusted_events,primary_intensity,sensitivity_intensity,zero_event_turbine_share
+overall_excluding_farms_with_ge_10pct_basin_high_events,Baltic,Anholt; Horns_Rev_I; Kriegers_Flak; Lillgrund; Nysted; Rodsand_II,524,14,3985.166666666666,1078.5,3119.5,0.27062858098782994,0.7827778010120866,0.3606870229007634
+overall_excluding_farms_with_ge_10pct_basin_high_events,North Sea,Anholt; Horns_Rev_I; Kriegers_Flak; Lillgrund; Nysted; Rodsand_II,5555,99,43293.33333333333,1699.6666666666665,4745.333333333333,0.03925931629196181,0.10960886972590084,0.8475247524752475

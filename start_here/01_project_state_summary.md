@@ -14,6 +14,15 @@ The active objective is no longer only the Wikinger/Baltic pilot. The current ha
 
 Stage 1 now exists as an observed/provisional workability surface. Its default view is $H_s \times T_p$, but the surface engine is configurable for additional metocean and grouping dimensions. Stage 2 is next and has not started; it should use Fusion v2 to compare wave-only, wave+wind speed, wave+current, and wave+wind+current slices before any calibrated probability model.
 
+RQ9 now has a completed local turbine-feasibility workstream for AIS-derived maintenance intervention intensity, not confirmed failure rate. Farm-level phase-separated intervention intensity, turbine-level feasibility, turbine denominator/exposure v1, turbine characteristics comparison v1, sea-basin observability audits, and an AIS observability bias audit are available under:
+
+```text
+Data/Processed/analysis/rq9_intervention_intensity/
+reports/rq9_intervention_intensity/
+```
+
+The strongest open caveat is that the Baltic/North Sea gap is not yet causal or thesis-safe as an operational/reliability signal. It remains entangled with country/farm structure, vessel concentration, missing CTV/SOV registry evidence, assignment geometry, and unavailable direct AIS receiver-distance metadata. Tomorrow's recommended RQ9 continuation is: **Does intervention intensity vary by turbine age/capacity/OEM after controlling for farm, basin, and observability?**
+
 The broad source and dwell jobs use Europe-wide farm-candidate slices:
 
 ```text
