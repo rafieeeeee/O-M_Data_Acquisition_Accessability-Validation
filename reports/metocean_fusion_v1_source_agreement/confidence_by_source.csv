@@ -1,0 +1,11 @@
+selected_wave_source,wave_confidence_class,rows
+baltic,A_high,2861
+baltic,B_medium,615
+baltic,C_low,2357
+missing,D_unsuitable,8759
+nora3,A_high,1292
+nora3,B_medium,10743
+nora3,C_low,7728
+nws,A_high,11298
+nws,B_medium,4757
+nws,C_low,42250

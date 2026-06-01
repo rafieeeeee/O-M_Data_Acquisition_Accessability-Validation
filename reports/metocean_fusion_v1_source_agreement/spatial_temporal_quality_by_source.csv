@@ -1,0 +1,4 @@
+source,rows,sample_distance_p50_km,sample_distance_p95_km,source_grid_distance_p50_km,source_grid_distance_p95_km,nearest_time_gap_p50_min,nearest_time_gap_p95_min,event_window_sample_count_p50,event_window_sample_count_p95,not_bracketed_rows,shallow_water_rows
+nora3,92660,,,,,,,5.0,34.0,0,57521
+nws,92660,2.751442350934539,4.778623009851893,0.7394675682990877,1.7199558668074333,34.00833333333333,84.88333333333334,1.0,15.0,25542,57521
+baltic,92660,2.1030902689553774,4.6704529381256625,0.6629435636806724,1.0726161589122851,11.704166666666666,28.6,0.0,23.0,59803,57521

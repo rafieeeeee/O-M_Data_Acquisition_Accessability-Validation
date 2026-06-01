@@ -1,0 +1,9 @@
+subset,hs_threshold_m,nora3_valid_rows,nora3_rows_below_threshold,fusion_valid_rows,fusion_rows_below_threshold
+all_rows,1.0,44377,37954,83901,75377
+tier_a,1.0,13574,11646,14606,12099
+all_rows,1.5,44377,42912,83901,82099
+tier_a,1.5,13574,13259,14606,14215
+all_rows,2.0,44377,44003,83901,83444
+tier_a,2.0,13574,13520,14606,14539
+all_rows,2.5,44377,44290,83901,83821
+tier_a,2.5,13574,13565,14606,14596

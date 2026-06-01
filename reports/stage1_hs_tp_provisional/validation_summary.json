@@ -1,0 +1,127 @@
+{
+  "analysis_label": "Provisional NORA3-derived Tier A wave-only observed operational envelope",
+  "duplicate_dwell_id_count": 0,
+  "input_columns": 96,
+  "input_exists": true,
+  "input_path": "Data/Processed/ais_dwell_backfill/cross_farm_dwell_weather_features.parquet",
+  "input_rows": 92660,
+  "physical_range_checks": {
+    "primary_tier_a": {
+      "hs_below_or_equal_20m": true,
+      "hs_non_negative": true,
+      "tp_below_or_equal_30s": true,
+      "tp_positive": true
+    },
+    "sensitivity_all_tiers": {
+      "hs_below_or_equal_20m": true,
+      "hs_non_negative": true,
+      "tp_below_or_equal_30s": true,
+      "tp_positive": true
+    }
+  },
+  "primary_rows_expected_around_13574": true,
+  "primary_summary": {
+    "active_hs_mean_max": 4.995802879333496,
+    "active_hs_mean_median": 0.5788190323232323,
+    "active_hs_mean_min": 0.022442135959863663,
+    "active_tp_mean_max": 18.805078506469727,
+    "active_tp_mean_median": 4.282095194329834,
+    "active_tp_mean_min": 1.8260109424591064,
+    "analysis_label": "Provisional NORA3-derived Tier A wave-only observed operational envelope",
+    "duplicate_dwell_id_count": 0,
+    "dwell_tier_distribution": {
+      "Tier A": 13574
+    },
+    "farm_count": 105,
+    "mmsi_count": 976,
+    "month_distribution": {
+      "1": 586,
+      "10": 967,
+      "11": 301,
+      "12": 654,
+      "2": 686,
+      "3": 1109,
+      "4": 1117,
+      "5": 1723,
+      "6": 1569,
+      "7": 1514,
+      "8": 1693,
+      "9": 1655
+    },
+    "month_max": 12,
+    "month_min": 1,
+    "rows": 13574,
+    "subset": "primary_tier_a",
+    "year_distribution": {
+      "2010": 206,
+      "2011": 149,
+      "2012": 1152,
+      "2016": 30,
+      "2017": 422,
+      "2018": 396,
+      "2019": 307,
+      "2020": 267,
+      "2021": 333,
+      "2022": 331,
+      "2023": 348,
+      "2024": 8627,
+      "2025": 1006
+    },
+    "year_max": 2025,
+    "year_min": 2010
+  },
+  "sensitivity_rows_expected_around_44377": true,
+  "sensitivity_summary": {
+    "active_hs_mean_max": 5.819206714630127,
+    "active_hs_mean_median": 0.49156758,
+    "active_hs_mean_min": 0.021075536,
+    "active_tp_mean_max": 18.805078506469727,
+    "active_tp_mean_median": 3.9794540405273438,
+    "active_tp_mean_min": 1.8260109424591064,
+    "analysis_label": "Provisional NORA3-derived Tier A wave-only observed operational envelope",
+    "duplicate_dwell_id_count": 0,
+    "dwell_tier_distribution": {
+      "Tier A": 13574,
+      "Tier B": 1838,
+      "Tier C": 2017,
+      "Tier D": 26948
+    },
+    "farm_count": 113,
+    "mmsi_count": 3835,
+    "month_distribution": {
+      "1": 2110,
+      "10": 3232,
+      "11": 1089,
+      "12": 2204,
+      "2": 2295,
+      "3": 3248,
+      "4": 3337,
+      "5": 5501,
+      "6": 5237,
+      "7": 5137,
+      "8": 5424,
+      "9": 5563
+    },
+    "month_max": 12,
+    "month_min": 1,
+    "rows": 44377,
+    "subset": "sensitivity_all_tiers",
+    "year_distribution": {
+      "2010": 571,
+      "2011": 504,
+      "2012": 3238,
+      "2016": 92,
+      "2017": 1457,
+      "2018": 1520,
+      "2019": 1148,
+      "2020": 959,
+      "2021": 1343,
+      "2022": 1480,
+      "2023": 1216,
+      "2024": 27619,
+      "2025": 3230
+    },
+    "year_max": 2025,
+    "year_min": 2010
+  }
+}

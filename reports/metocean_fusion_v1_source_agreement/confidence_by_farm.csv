@@ -1,0 +1,338 @@
+farm_id,wave_confidence_class,rows
+Aberdeen Offshore Wind Farm,A_high,16
+Aberdeen Offshore Wind Farm,B_medium,97
+Aberdeen Offshore Wind Farm,D_unsuitable,33
+Albatros,A_high,192
+Albatros,B_medium,153
+Albatros,C_low,33
+Albatros,D_unsuitable,14
+Alpha Ventus,A_high,499
+Alpha Ventus,B_medium,326
+Alpha Ventus,C_low,54
+Alpha Ventus,D_unsuitable,16
+Amrumbank West,A_high,534
+Amrumbank West,B_medium,290
+Amrumbank West,C_low,45
+Amrumbank West,D_unsuitable,27
+Anholt,A_high,786
+Anholt,B_medium,196
+Anholt,D_unsuitable,26
+Arcadis Ost 1,A_high,495
+Arcadis Ost 1,B_medium,358
+Arcadis Ost 1,C_low,22
+Arcadis Ost 1,D_unsuitable,29
+Arkona-Becken Südost,B_medium,2084
+Arkona-Becken Südost,D_unsuitable,205
+Avedøre Holme,C_low,2666
+Avedøre Holme,D_unsuitable,1840
+Baltic Eagle,B_medium,1523
+Baltic Eagle,D_unsuitable,269
+Bard Offshore 1,A_high,116
+Bard Offshore 1,B_medium,130
+Bard Offshore 1,C_low,12
+Bard Offshore 1,D_unsuitable,23
+Barrow,A_high,8
+Barrow,B_medium,3
+Beatrice Offshore Wind Farm,A_high,7
+Beatrice Offshore Wind Farm,B_medium,11
+Beatrice Offshore Wind Farm,C_low,1
+Belwind phase 1,A_high,8
+Belwind phase 1,B_medium,6
+Blyth Demo Phase 1,B_medium,6
+Blyth Demo Phase 1,D_unsuitable,2
+Borkum Riffgrund 1,A_high,574
+Borkum Riffgrund 1,B_medium,379
+Borkum Riffgrund 1,C_low,55
+Borkum Riffgrund 1,D_unsuitable,23
+Borkum Riffgrund 2,A_high,513
+Borkum Riffgrund 2,B_medium,428
+Borkum Riffgrund 2,C_low,44
+Borkum Riffgrund 2,D_unsuitable,31
+Borssele Kavel I and II,A_high,4
+Borssele Kavel I and II,B_medium,67
+Borssele Kavel I and II,D_unsuitable,13
+Borssele Kavel III and IV,A_high,5
+Borssele Kavel III and IV,B_medium,76
+Borssele Kavel III and IV,D_unsuitable,11
+Burbo Bank,C_low,22
+Burbo Bank Extension,B_medium,39
+Burbo Bank Extension,C_low,16
+Burbo Bank Extension,D_unsuitable,18
+Butendiek,A_high,412
+Butendiek,B_medium,120
+Butendiek,C_low,50
+Butendiek,D_unsuitable,6
+Dan Tysk,A_high,360
+Dan Tysk,B_medium,293
+Dan Tysk,C_low,46
+Dan Tysk,D_unsuitable,12
+Deutsche Bucht,A_high,92
+Deutsche Bucht,B_medium,93
+Deutsche Bucht,C_low,12
+Deutsche Bucht,D_unsuitable,8
+Dudgeon,A_high,8
+Dudgeon,B_medium,10
+Dudgeon,C_low,5
+East Anglia One,A_high,8
+East Anglia One,B_medium,4
+East Anglia One,D_unsuitable,1
+EnBW Hohe See,A_high,202
+EnBW Hohe See,B_medium,200
+EnBW Hohe See,C_low,35
+EnBW Hohe See,D_unsuitable,13
+EnBW Windpark Baltic 1,A_high,292
+EnBW Windpark Baltic 1,B_medium,158
+EnBW Windpark Baltic 1,C_low,2
+EnBW Windpark Baltic 1,D_unsuitable,13
+EnBW Windpark Baltic 2,A_high,754
+EnBW Windpark Baltic 2,B_medium,235
+EnBW Windpark Baltic 2,C_low,3
+EnBW Windpark Baltic 2,D_unsuitable,6
+Frederikshavn Offshore,C_low,10294
+Frederikshavn Offshore,D_unsuitable,723
+Fécamp,B_medium,4
+Galloper,A_high,2
+Galloper,B_medium,91
+Galloper,D_unsuitable,13
+Gemini,A_high,50
+Gemini,B_medium,46
+Gemini,C_low,9
+Global Tech I,A_high,245
+Global Tech I,B_medium,148
+Global Tech I,C_low,37
+Global Tech I,D_unsuitable,4
+Gode Wind 1 and 2,A_high,484
+Gode Wind 1 and 2,B_medium,322
+Gode Wind 1 and 2,C_low,58
+Gode Wind 1 and 2,D_unsuitable,30
+Gode Wind 3,B_medium,569
+Gode Wind 3,D_unsuitable,195
+Greater Gabbard,A_high,19
+Greater Gabbard,B_medium,112
+Greater Gabbard,D_unsuitable,19
+Gunfleet Sands,A_high,3
+Gunfleet Sands,B_medium,2
+Gunfleet Sands,C_low,25
+Gwynt y Mor,A_high,5
+Gwynt y Mor,B_medium,66
+Gwynt y Mor,D_unsuitable,7
+Hollandse Kust Noord,A_high,9
+Hollandse Kust Noord,B_medium,35
+Hollandse Kust Noord,C_low,1
+Hollandse Kust Noord,D_unsuitable,7
+Hollandse Kust Zuid,A_high,38
+Hollandse Kust Zuid,B_medium,153
+Hollandse Kust Zuid,C_low,6
+Hollandse Kust Zuid,D_unsuitable,43
+Horns Rev I,A_high,128
+Horns Rev I,B_medium,25
+Horns Rev I,C_low,655
+Horns Rev II,A_high,756
+Horns Rev II,B_medium,340
+Horns Rev II,C_low,275
+Horns Rev II,D_unsuitable,9
+Horns Rev III,A_high,692
+Horns Rev III,B_medium,415
+Horns Rev III,C_low,118
+Horns Rev III,D_unsuitable,18
+Hornsea Project 1,A_high,30
+Hornsea Project 1,B_medium,32
+Hornsea Project 1,C_low,4
+Hornsea Project 1,D_unsuitable,3
+Hornsea Project 2,A_high,25
+Hornsea Project 2,B_medium,42
+Hornsea Project 2,C_low,6
+Hornsea Project 2,D_unsuitable,3
+Humber Gateway,A_high,8
+Humber Gateway,B_medium,30
+Humber Gateway,C_low,2
+Humber Gateway,D_unsuitable,8
+Hywind Scotland Pilot Park,A_high,6
+Hywind Scotland Pilot Park,B_medium,5
+Hywind Scotland Pilot Park,C_low,3
+Inner Dowsing,C_low,228
+Kaskasi,A_high,525
+Kaskasi,B_medium,396
+Kaskasi,C_low,46
+Kaskasi,D_unsuitable,54
+Kentish Flats,C_low,18
+Kentish Flats Extension,C_low,12
+Kentish Flats Extension,D_unsuitable,1
+Kincardine,A_high,1
+Kriegers Flak,A_high,1543
+Kriegers Flak,B_medium,717
+Kriegers Flak,C_low,9
+Kriegers Flak,D_unsuitable,53
+Lillgrund,A_high,6
+Lillgrund,B_medium,1
+Lillgrund,C_low,441
+Lillgrund,D_unsuitable,2
+Lincs,B_medium,125
+Lincs,C_low,50
+Lincs,D_unsuitable,21
+London Array,A_high,1
+London Array,B_medium,166
+London Array,C_low,138
+London Array,D_unsuitable,74
+Lynn,A_high,9
+Lynn,B_medium,5
+Lynn,C_low,187
+Meerwind Sued/Ost,A_high,655
+Meerwind Sued/Ost,B_medium,245
+Meerwind Sued/Ost,C_low,63
+Meerwind Sued/Ost,D_unsuitable,19
+Merkur Offshore,A_high,543
+Merkur Offshore,B_medium,422
+Merkur Offshore,C_low,61
+Merkur Offshore,D_unsuitable,56
+Mermaid,B_medium,9
+Mermaid,D_unsuitable,3
+Middelgrunden,C_low,14493
+Middelgrunden,D_unsuitable,530
+Moray East,A_high,1
+Moray East,B_medium,11
+Moray East,D_unsuitable,1
+Moray West,B_medium,21
+Moray West,D_unsuitable,4
+Neart na Gaoithe,B_medium,16
+Neart na Gaoithe,D_unsuitable,2
+Nissum Bredning,C_low,8556
+Nissum Bredning,D_unsuitable,2717
+Nobelwind,A_high,3
+Nobelwind,B_medium,8
+Nobelwind,D_unsuitable,3
+Nordergründe,B_medium,2
+Nordergründe,C_low,74
+Nordergründe,D_unsuitable,18
+Nordsee One,A_high,253
+Nordsee One,B_medium,138
+Nordsee One,C_low,13
+Nordsee One,D_unsuitable,8
+Nordsee Ost,A_high,866
+Nordsee Ost,B_medium,391
+Nordsee Ost,C_low,94
+Nordsee Ost,D_unsuitable,25
+North Hoyle,A_high,12
+North Hoyle,B_medium,12
+North Hoyle,C_low,18
+Norther,B_medium,77
+Norther,D_unsuitable,15
+Northwester 2,A_high,1
+Northwester 2,B_medium,7
+Northwester 2,D_unsuitable,4
+Northwind,A_high,4
+Northwind,B_medium,11
+Northwind,D_unsuitable,1
+Nysted,C_low,1089
+Nysted,D_unsuitable,6
+OWF Egmond aan Zee,A_high,13
+OWF Egmond aan Zee,B_medium,10
+OWF Egmond aan Zee,C_low,5
+OWF Luchterduinen,A_high,10
+OWF Luchterduinen,B_medium,43
+OWF Luchterduinen,C_low,2
+OWF Luchterduinen,D_unsuitable,12
+OWF Prinses Amalia,A_high,17
+OWF Prinses Amalia,B_medium,19
+OWF Prinses Amalia,C_low,5
+Ormonde,A_high,43
+Ormonde,B_medium,4
+Ormonde,C_low,1
+Race Bank,A_high,4
+Race Bank,B_medium,25
+Race Bank,C_low,4
+Rampion,B_medium,19
+Rampion,D_unsuitable,2
+Renland,C_low,10578
+Renland,D_unsuitable,650
+Rentel,A_high,1
+Rentel,B_medium,77
+Rentel,D_unsuitable,16
+Rhyl Flats,A_high,5
+Rhyl Flats,B_medium,4
+Rhyl Flats,C_low,25
+Riffgat,A_high,42
+Riffgat,B_medium,41
+Riffgat,C_low,9
+Riffgat,D_unsuitable,9
+Robin Rigg West,C_low,12
+Rodsand II,A_high,258
+Rodsand II,B_medium,84
+Rodsand II,C_low,1152
+Rodsand II,D_unsuitable,15
+Saint-Brieuc,B_medium,4
+Saint-Nazaire,B_medium,6
+Samsa,A_high,97
+Samsa,B_medium,24
+Samsa,D_unsuitable,1
+Sandbank,A_high,245
+Sandbank,B_medium,102
+Sandbank,C_low,28
+Sandbank,D_unsuitable,8
+Scroby Sands,A_high,1
+Scroby Sands,B_medium,111
+Scroby Sands,C_low,24
+SeaStar,A_high,4
+SeaStar,B_medium,12
+SeaStar,D_unsuitable,2
+Seagreen,A_high,2
+Seagreen,B_medium,8
+Sheringham Shoal,A_high,7
+Sheringham Shoal,B_medium,126
+Sheringham Shoal,C_low,2
+Sheringham Shoal,D_unsuitable,39
+Sprogo,A_high,58
+Sprogo,B_medium,11
+Sprogo,C_low,54
+Sprogo,D_unsuitable,1
+Teesside,B_medium,80
+Teesside,C_low,4
+Teesside,D_unsuitable,59
+Thanet,A_high,21
+Thanet,B_medium,8
+Thanet,C_low,4
+Thornton Bank - phase I,B_medium,71
+Thornton Bank - phase I,D_unsuitable,9
+Thornton Bank - phase II and III,B_medium,84
+Thornton Bank - phase II and III,D_unsuitable,13
+Trianel Windpark Borkum 1,B_medium,693
+Trianel Windpark Borkum 1,D_unsuitable,207
+Trianel Windpark Borkum 2,B_medium,537
+Trianel Windpark Borkum 2,D_unsuitable,204
+Triton Knoll,A_high,14
+Triton Knoll,B_medium,16
+Triton Knoll,C_low,3
+Triton Knoll,D_unsuitable,1
+Tunm Knob,C_low,56
+Veja Mate,A_high,226
+Veja Mate,B_medium,178
+Veja Mate,C_low,25
+Veja Mate,D_unsuitable,12
+Vesterhav Nord,A_high,157
+Vesterhav Nord,B_medium,171
+Vesterhav Nord,C_low,38
+Vesterhav Nord,D_unsuitable,23
+Vesterhav Syd,A_high,192
+Vesterhav Syd,B_medium,166
+Vesterhav Syd,C_low,44
+Vesterhav Syd,D_unsuitable,24
+Walney 1,A_high,60
+Walney 1,B_medium,11
+Walney 1,C_low,1
+Walney 2,A_high,51
+Walney 2,B_medium,16
+Walney 2,C_low,7
+Walney Extension 3,B_medium,10
+Walney Extension 3,D_unsuitable,3
+Walney Extension 4,B_medium,59
+Walney Extension 4,D_unsuitable,10
+West of Duddon Sands,A_high,2
+West of Duddon Sands,B_medium,31
+West of Duddon Sands,D_unsuitable,4
+Westermost Rough,A_high,2
+Westermost Rough,B_medium,10
+Westermost Rough,D_unsuitable,3
+Wikinger,A_high,1111
+Wikinger,B_medium,742
+Wikinger,C_low,46
+Wikinger,D_unsuitable,94

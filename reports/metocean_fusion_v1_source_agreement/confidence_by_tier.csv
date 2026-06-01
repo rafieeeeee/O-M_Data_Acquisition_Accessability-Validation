@@ -1,0 +1,17 @@
+dwell_tier,wave_confidence_class,rows
+Tier A,A_high,6440
+Tier A,B_medium,5189
+Tier A,C_low,2977
+Tier A,D_unsuitable,658
+Tier B,A_high,858
+Tier B,B_medium,1118
+Tier B,C_low,155
+Tier B,D_unsuitable,170
+Tier C,A_high,862
+Tier C,B_medium,1073
+Tier C,C_low,284
+Tier C,D_unsuitable,131
+Tier D,A_high,7291
+Tier D,B_medium,8735
+Tier D,C_low,48919
+Tier D,D_unsuitable,7800

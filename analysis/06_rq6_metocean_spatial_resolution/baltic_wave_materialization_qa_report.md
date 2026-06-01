@@ -1,0 +1,292 @@
+# Baltic Wave Materialization QA Report
+
+This report covers the Baltic Copernicus wave archive materializer. It preserves native hourly data and does not create 10-minute interpolated, fused, current, or final workability variables.
+
+## Run Mode
+
+- Dry run: False
+- Output root: `Data/Processed/metocean/baltic_wave_timeseries`
+- Farms in plan: 16
+- Ready farms: 16
+- Blocked farms: 0
+- Expected partitions: 238
+- Expected rows if materialized: 73866720
+- Rows written in this run: 73599936
+
+## Variable Contract
+
+- `VHM0` -> `baltic_wave_hs`
+- `VTPK` -> `baltic_wave_tp`
+- `VMDR` -> `baltic_wave_dir`
+- `VTM10` -> `baltic_wave_tm10`
+- `VTM02` -> `baltic_wave_tm02`
+- `VSDX`/`VSDY` are not used here because they are Stokes drift, not Eulerian currents.
+
+## Farm Plan
+
+- **Anholt** (`Anholt`): 2013-09-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 99360 hourly timestamps; 112 sample points; 12 expected partitions; 11128320 expected rows; status `ready`
+- **Arcadis Ost 1** (`Arcadis_Ost_1`): 2023-12-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 9528 hourly timestamps; 28 sample points; 2 expected partitions; 266784 expected rows; status `ready`
+- **Arkona-Becken Südost** (`Arkona-Becken_Südost`): 2019-01-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 52608 hourly timestamps; 61 sample points; 6 expected partitions; 3209088 expected rows; status `ready`
+- **Avedøre Holme** (`Avedre_Holme`): 2011-12-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 114720 hourly timestamps; 4 sample points; 14 expected partitions; 458880 expected rows; status `ready`
+- **EnBW Windpark Baltic 1** (`EnBW_Windpark_Baltic_1`): 2011-05-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 119856 hourly timestamps; 22 sample points; 14 expected partitions; 2636832 expected rows; status `ready`
+- **EnBW Windpark Baltic 2** (`EnBW_Windpark_Baltic_2`): 2015-10-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 81120 hourly timestamps; 81 sample points; 10 expected partitions; 6570720 expected rows; status `ready`
+- **Frederikshavn Offshore** (`Frederikshavn_Offshore`): 2003-06-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 189240 hourly timestamps; 5 sample points; 22 expected partitions; 946200 expected rows; status `ready`
+- **Kriegers Flak** (`Kriegers_Flak`): 2021-09-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 29232 hourly timestamps; 73 sample points; 4 expected partitions; 2133936 expected rows; status `ready`
+- **Lillgrund** (`Lillgrund`): 2007-12-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 149784 hourly timestamps; 49 sample points; 18 expected partitions; 7339416 expected rows; status `ready`
+- **Middelgrunden** (`Middelgrunden`): 2001-03-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 208968 hourly timestamps; 21 sample points; 24 expected partitions; 4388328 expected rows; status `ready`
+- **Nysted** (`Nysted`): 2003-12-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 184848 hourly timestamps; 73 sample points; 22 expected partitions; 13493904 expected rows; status `ready`
+- **Rodsand II** (`Rodsand_II`): 2010-10-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 124944 hourly timestamps; 91 sample points; 15 expected partitions; 11369904 expected rows; status `ready`
+- **Samsa** (`Samsa`): 2003-02-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 192120 hourly timestamps; 11 sample points; 22 expected partitions; 2113320 expected rows; status `ready`
+- **Sprogo** (`Sprogo`): 2009-12-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 132240 hourly timestamps; 8 sample points; 16 expected partitions; 1057920 expected rows; status `ready`
+- **Tunm Knob** (`Tunm_Knob`): 1995-05-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 260112 hourly timestamps; 11 sample points; 30 expected partitions; 2861232 expected rows; status `ready`
+- **Wikinger** (`Wikinger`): 2018-10-01T00:00:00+00:00 to 2024-12-31T23:00:00+00:00; 54816 hourly timestamps; 71 sample points; 7 expected partitions; 3891936 expected rows; status `ready`
+
+## QA Rows
+
+- Status counts: `{'ok': 236, 'existing_partition_skipped': 2}`
+- **Anholt 2013**: ok; rows=327936; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2013/part.parquet`
+- **Anholt 2014**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2014/part.parquet`
+- **Anholt 2015**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2015/part.parquet`
+- **Anholt 2016**: ok; rows=983808; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2016/part.parquet`
+- **Anholt 2017**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2017/part.parquet`
+- **Anholt 2018**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2018/part.parquet`
+- **Anholt 2019**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2019/part.parquet`
+- **Anholt 2020**: ok; rows=983808; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2020/part.parquet`
+- **Anholt 2021**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2021/part.parquet`
+- **Anholt 2022**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2022/part.parquet`
+- **Anholt 2023**: ok; rows=981120; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2023/part.parquet`
+- **Anholt 2024**: ok; rows=983808; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Anholt/year=2024/part.parquet`
+- **Arcadis Ost 1 2023**: existing_partition_skipped; rows=0; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arcadis_Ost_1/year=2023/part.parquet`
+- **Arcadis Ost 1 2024**: existing_partition_skipped; rows=0; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arcadis_Ost_1/year=2024/part.parquet`
+- **Arkona-Becken Südost 2019**: ok; rows=534360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arkona_Becken_Sudost/year=2019/part.parquet`
+- **Arkona-Becken Südost 2020**: ok; rows=535824; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arkona_Becken_Sudost/year=2020/part.parquet`
+- **Arkona-Becken Südost 2021**: ok; rows=534360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arkona_Becken_Sudost/year=2021/part.parquet`
+- **Arkona-Becken Südost 2022**: ok; rows=534360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arkona_Becken_Sudost/year=2022/part.parquet`
+- **Arkona-Becken Südost 2023**: ok; rows=534360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arkona_Becken_Sudost/year=2023/part.parquet`
+- **Arkona-Becken Südost 2024**: ok; rows=535824; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Arkona_Becken_Sudost/year=2024/part.parquet`
+- **Avedøre Holme 2011**: ok; rows=2976; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2011/part.parquet`
+- **Avedøre Holme 2012**: ok; rows=35136; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2012/part.parquet`
+- **Avedøre Holme 2013**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2013/part.parquet`
+- **Avedøre Holme 2014**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2014/part.parquet`
+- **Avedøre Holme 2015**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2015/part.parquet`
+- **Avedøre Holme 2016**: ok; rows=35136; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2016/part.parquet`
+- **Avedøre Holme 2017**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2017/part.parquet`
+- **Avedøre Holme 2018**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2018/part.parquet`
+- **Avedøre Holme 2019**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2019/part.parquet`
+- **Avedøre Holme 2020**: ok; rows=35136; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2020/part.parquet`
+- **Avedøre Holme 2021**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2021/part.parquet`
+- **Avedøre Holme 2022**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2022/part.parquet`
+- **Avedøre Holme 2023**: ok; rows=35040; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2023/part.parquet`
+- **Avedøre Holme 2024**: ok; rows=35136; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Avedre_Holme/year=2024/part.parquet`
+- **EnBW Windpark Baltic 1 2011**: ok; rows=129360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2011/part.parquet`
+- **EnBW Windpark Baltic 1 2012**: ok; rows=193248; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2012/part.parquet`
+- **EnBW Windpark Baltic 1 2013**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2013/part.parquet`
+- **EnBW Windpark Baltic 1 2014**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2014/part.parquet`
+- **EnBW Windpark Baltic 1 2015**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2015/part.parquet`
+- **EnBW Windpark Baltic 1 2016**: ok; rows=193248; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2016/part.parquet`
+- **EnBW Windpark Baltic 1 2017**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2017/part.parquet`
+- **EnBW Windpark Baltic 1 2018**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2018/part.parquet`
+- **EnBW Windpark Baltic 1 2019**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2019/part.parquet`
+- **EnBW Windpark Baltic 1 2020**: ok; rows=193248; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2020/part.parquet`
+- **EnBW Windpark Baltic 1 2021**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2021/part.parquet`
+- **EnBW Windpark Baltic 1 2022**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2022/part.parquet`
+- **EnBW Windpark Baltic 1 2023**: ok; rows=192720; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2023/part.parquet`
+- **EnBW Windpark Baltic 1 2024**: ok; rows=193248; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_1/year=2024/part.parquet`
+- **EnBW Windpark Baltic 2 2015**: ok; rows=178848; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2015/part.parquet`
+- **EnBW Windpark Baltic 2 2016**: ok; rows=711504; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2016/part.parquet`
+- **EnBW Windpark Baltic 2 2017**: ok; rows=709560; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2017/part.parquet`
+- **EnBW Windpark Baltic 2 2018**: ok; rows=709560; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2018/part.parquet`
+- **EnBW Windpark Baltic 2 2019**: ok; rows=709560; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2019/part.parquet`
+- **EnBW Windpark Baltic 2 2020**: ok; rows=711504; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2020/part.parquet`
+- **EnBW Windpark Baltic 2 2021**: ok; rows=709560; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2021/part.parquet`
+- **EnBW Windpark Baltic 2 2022**: ok; rows=709560; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2022/part.parquet`
+- **EnBW Windpark Baltic 2 2023**: ok; rows=709560; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2023/part.parquet`
+- **EnBW Windpark Baltic 2 2024**: ok; rows=711504; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=EnBW_Windpark_Baltic_2/year=2024/part.parquet`
+- **Frederikshavn Offshore 2003**: ok; rows=25680; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2003/part.parquet`
+- **Frederikshavn Offshore 2004**: ok; rows=43920; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2004/part.parquet`
+- **Frederikshavn Offshore 2005**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2005/part.parquet`
+- **Frederikshavn Offshore 2006**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2006/part.parquet`
+- **Frederikshavn Offshore 2007**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2007/part.parquet`
+- **Frederikshavn Offshore 2008**: ok; rows=43920; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2008/part.parquet`
+- **Frederikshavn Offshore 2009**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2009/part.parquet`
+- **Frederikshavn Offshore 2010**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2010/part.parquet`
+- **Frederikshavn Offshore 2011**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2011/part.parquet`
+- **Frederikshavn Offshore 2012**: ok; rows=43920; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2012/part.parquet`
+- **Frederikshavn Offshore 2013**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2013/part.parquet`
+- **Frederikshavn Offshore 2014**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2014/part.parquet`
+- **Frederikshavn Offshore 2015**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2015/part.parquet`
+- **Frederikshavn Offshore 2016**: ok; rows=43920; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2016/part.parquet`
+- **Frederikshavn Offshore 2017**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2017/part.parquet`
+- **Frederikshavn Offshore 2018**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2018/part.parquet`
+- **Frederikshavn Offshore 2019**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2019/part.parquet`
+- **Frederikshavn Offshore 2020**: ok; rows=43920; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2020/part.parquet`
+- **Frederikshavn Offshore 2021**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2021/part.parquet`
+- **Frederikshavn Offshore 2022**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2022/part.parquet`
+- **Frederikshavn Offshore 2023**: ok; rows=43800; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2023/part.parquet`
+- **Frederikshavn Offshore 2024**: ok; rows=43920; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Frederikshavn_Offshore/year=2024/part.parquet`
+- **Kriegers Flak 2021**: ok; rows=213744; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Kriegers_Flak/year=2021/part.parquet`
+- **Kriegers Flak 2022**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Kriegers_Flak/year=2022/part.parquet`
+- **Kriegers Flak 2023**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Kriegers_Flak/year=2023/part.parquet`
+- **Kriegers Flak 2024**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Kriegers_Flak/year=2024/part.parquet`
+- **Lillgrund 2007**: ok; rows=36456; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2007/part.parquet`
+- **Lillgrund 2008**: ok; rows=430416; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2008/part.parquet`
+- **Lillgrund 2009**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2009/part.parquet`
+- **Lillgrund 2010**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2010/part.parquet`
+- **Lillgrund 2011**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2011/part.parquet`
+- **Lillgrund 2012**: ok; rows=430416; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2012/part.parquet`
+- **Lillgrund 2013**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2013/part.parquet`
+- **Lillgrund 2014**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2014/part.parquet`
+- **Lillgrund 2015**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2015/part.parquet`
+- **Lillgrund 2016**: ok; rows=430416; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2016/part.parquet`
+- **Lillgrund 2017**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2017/part.parquet`
+- **Lillgrund 2018**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2018/part.parquet`
+- **Lillgrund 2019**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2019/part.parquet`
+- **Lillgrund 2020**: ok; rows=430416; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2020/part.parquet`
+- **Lillgrund 2021**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2021/part.parquet`
+- **Lillgrund 2022**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2022/part.parquet`
+- **Lillgrund 2023**: ok; rows=429240; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2023/part.parquet`
+- **Lillgrund 2024**: ok; rows=430416; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Lillgrund/year=2024/part.parquet`
+- **Middelgrunden 2001**: ok; rows=154224; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2001/part.parquet`
+- **Middelgrunden 2002**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2002/part.parquet`
+- **Middelgrunden 2003**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2003/part.parquet`
+- **Middelgrunden 2004**: ok; rows=184464; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2004/part.parquet`
+- **Middelgrunden 2005**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2005/part.parquet`
+- **Middelgrunden 2006**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2006/part.parquet`
+- **Middelgrunden 2007**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2007/part.parquet`
+- **Middelgrunden 2008**: ok; rows=184464; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2008/part.parquet`
+- **Middelgrunden 2009**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2009/part.parquet`
+- **Middelgrunden 2010**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2010/part.parquet`
+- **Middelgrunden 2011**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2011/part.parquet`
+- **Middelgrunden 2012**: ok; rows=184464; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2012/part.parquet`
+- **Middelgrunden 2013**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2013/part.parquet`
+- **Middelgrunden 2014**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2014/part.parquet`
+- **Middelgrunden 2015**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2015/part.parquet`
+- **Middelgrunden 2016**: ok; rows=184464; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2016/part.parquet`
+- **Middelgrunden 2017**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2017/part.parquet`
+- **Middelgrunden 2018**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2018/part.parquet`
+- **Middelgrunden 2019**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2019/part.parquet`
+- **Middelgrunden 2020**: ok; rows=184464; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2020/part.parquet`
+- **Middelgrunden 2021**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2021/part.parquet`
+- **Middelgrunden 2022**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2022/part.parquet`
+- **Middelgrunden 2023**: ok; rows=183960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2023/part.parquet`
+- **Middelgrunden 2024**: ok; rows=184464; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Middelgrunden/year=2024/part.parquet`
+- **Nysted 2003**: ok; rows=54312; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2003/part.parquet`
+- **Nysted 2004**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2004/part.parquet`
+- **Nysted 2005**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2005/part.parquet`
+- **Nysted 2006**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2006/part.parquet`
+- **Nysted 2007**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2007/part.parquet`
+- **Nysted 2008**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2008/part.parquet`
+- **Nysted 2009**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2009/part.parquet`
+- **Nysted 2010**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2010/part.parquet`
+- **Nysted 2011**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2011/part.parquet`
+- **Nysted 2012**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2012/part.parquet`
+- **Nysted 2013**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2013/part.parquet`
+- **Nysted 2014**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2014/part.parquet`
+- **Nysted 2015**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2015/part.parquet`
+- **Nysted 2016**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2016/part.parquet`
+- **Nysted 2017**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2017/part.parquet`
+- **Nysted 2018**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2018/part.parquet`
+- **Nysted 2019**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2019/part.parquet`
+- **Nysted 2020**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2020/part.parquet`
+- **Nysted 2021**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2021/part.parquet`
+- **Nysted 2022**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2022/part.parquet`
+- **Nysted 2023**: ok; rows=639480; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2023/part.parquet`
+- **Nysted 2024**: ok; rows=641232; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Nysted/year=2024/part.parquet`
+- **Rodsand II 2010**: ok; rows=200928; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2010/part.parquet`
+- **Rodsand II 2011**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2011/part.parquet`
+- **Rodsand II 2012**: ok; rows=799344; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2012/part.parquet`
+- **Rodsand II 2013**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2013/part.parquet`
+- **Rodsand II 2014**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2014/part.parquet`
+- **Rodsand II 2015**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2015/part.parquet`
+- **Rodsand II 2016**: ok; rows=799344; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2016/part.parquet`
+- **Rodsand II 2017**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2017/part.parquet`
+- **Rodsand II 2018**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2018/part.parquet`
+- **Rodsand II 2019**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2019/part.parquet`
+- **Rodsand II 2020**: ok; rows=799344; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2020/part.parquet`
+- **Rodsand II 2021**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2021/part.parquet`
+- **Rodsand II 2022**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2022/part.parquet`
+- **Rodsand II 2023**: ok; rows=797160; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2023/part.parquet`
+- **Rodsand II 2024**: ok; rows=799344; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Rodsand_II/year=2024/part.parquet`
+- **Samsa 2003**: ok; rows=88176; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2003/part.parquet`
+- **Samsa 2004**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2004/part.parquet`
+- **Samsa 2005**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2005/part.parquet`
+- **Samsa 2006**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2006/part.parquet`
+- **Samsa 2007**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2007/part.parquet`
+- **Samsa 2008**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2008/part.parquet`
+- **Samsa 2009**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2009/part.parquet`
+- **Samsa 2010**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2010/part.parquet`
+- **Samsa 2011**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2011/part.parquet`
+- **Samsa 2012**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2012/part.parquet`
+- **Samsa 2013**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2013/part.parquet`
+- **Samsa 2014**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2014/part.parquet`
+- **Samsa 2015**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2015/part.parquet`
+- **Samsa 2016**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2016/part.parquet`
+- **Samsa 2017**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2017/part.parquet`
+- **Samsa 2018**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2018/part.parquet`
+- **Samsa 2019**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2019/part.parquet`
+- **Samsa 2020**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2020/part.parquet`
+- **Samsa 2021**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2021/part.parquet`
+- **Samsa 2022**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2022/part.parquet`
+- **Samsa 2023**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2023/part.parquet`
+- **Samsa 2024**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Samsa/year=2024/part.parquet`
+- **Sprogo 2009**: ok; rows=5952; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2009/part.parquet`
+- **Sprogo 2010**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2010/part.parquet`
+- **Sprogo 2011**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2011/part.parquet`
+- **Sprogo 2012**: ok; rows=70272; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2012/part.parquet`
+- **Sprogo 2013**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2013/part.parquet`
+- **Sprogo 2014**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2014/part.parquet`
+- **Sprogo 2015**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2015/part.parquet`
+- **Sprogo 2016**: ok; rows=70272; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2016/part.parquet`
+- **Sprogo 2017**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2017/part.parquet`
+- **Sprogo 2018**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2018/part.parquet`
+- **Sprogo 2019**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2019/part.parquet`
+- **Sprogo 2020**: ok; rows=70272; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2020/part.parquet`
+- **Sprogo 2021**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2021/part.parquet`
+- **Sprogo 2022**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2022/part.parquet`
+- **Sprogo 2023**: ok; rows=70080; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2023/part.parquet`
+- **Sprogo 2024**: ok; rows=70272; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Sprogo/year=2024/part.parquet`
+- **Tunm Knob 1995**: ok; rows=64680; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=1995/part.parquet`
+- **Tunm Knob 1996**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=1996/part.parquet`
+- **Tunm Knob 1997**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=1997/part.parquet`
+- **Tunm Knob 1998**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=1998/part.parquet`
+- **Tunm Knob 1999**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=1999/part.parquet`
+- **Tunm Knob 2000**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2000/part.parquet`
+- **Tunm Knob 2001**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2001/part.parquet`
+- **Tunm Knob 2002**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2002/part.parquet`
+- **Tunm Knob 2003**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2003/part.parquet`
+- **Tunm Knob 2004**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2004/part.parquet`
+- **Tunm Knob 2005**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2005/part.parquet`
+- **Tunm Knob 2006**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2006/part.parquet`
+- **Tunm Knob 2007**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2007/part.parquet`
+- **Tunm Knob 2008**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2008/part.parquet`
+- **Tunm Knob 2009**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2009/part.parquet`
+- **Tunm Knob 2010**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2010/part.parquet`
+- **Tunm Knob 2011**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2011/part.parquet`
+- **Tunm Knob 2012**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2012/part.parquet`
+- **Tunm Knob 2013**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2013/part.parquet`
+- **Tunm Knob 2014**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2014/part.parquet`
+- **Tunm Knob 2015**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2015/part.parquet`
+- **Tunm Knob 2016**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2016/part.parquet`
+- **Tunm Knob 2017**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2017/part.parquet`
+- **Tunm Knob 2018**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2018/part.parquet`
+- **Tunm Knob 2019**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2019/part.parquet`
+- **Tunm Knob 2020**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2020/part.parquet`
+- **Tunm Knob 2021**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2021/part.parquet`
+- **Tunm Knob 2022**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2022/part.parquet`
+- **Tunm Knob 2023**: ok; rows=96360; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2023/part.parquet`
+- **Tunm Knob 2024**: ok; rows=96624; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Tunm_Knob/year=2024/part.parquet`
+- **Wikinger 2018**: ok; rows=156768; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2018/part.parquet`
+- **Wikinger 2019**: ok; rows=621960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2019/part.parquet`
+- **Wikinger 2020**: ok; rows=623664; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2020/part.parquet`
+- **Wikinger 2021**: ok; rows=621960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2021/part.parquet`
+- **Wikinger 2022**: ok; rows=621960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2022/part.parquet`
+- **Wikinger 2023**: ok; rows=621960; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2023/part.parquet`
+- **Wikinger 2024**: ok; rows=623664; path=`Data/Processed/metocean/baltic_wave_timeseries/wind_farm=Wikinger/year=2024/part.parquet`
+
+## Guardrails
+
+- No current downloads were run.
+- No NORA3 extraction or consolidation was run.
+- No final dwell-metocean feature table was rebuilt.
+- No source fusion or preferred-source variables were created.
+- Native hourly cadence is preserved for later source-agnostic assignment.
