@@ -88,13 +88,25 @@ def main() -> None:
     print("This is intervention intensity, not failure rate.")
     print(f"Farm rows: {validation['farm_output_rows']}")
     print(f"Observed farm-years: {validation['observed_years_total']:.3f}")
+    print(
+        "Observed farm-years range: "
+        f"{validation['observed_years_min']:.3f} - {validation['observed_years_max']:.3f}"
+    )
+    print(f"Operational window known farms: {validation['operational_window_known_farm_count']}")
     print(f"Candidate intervention count: {validation['candidate_intervention_count_total']}")
+    print(
+        "Pre-operational candidate count excluded: "
+        f"{validation['pre_operational_candidate_count_total']}"
+    )
     print(f"Tier A count: {validation['tier_a_visit_count_total']}")
     print(f"Tier B count: {validation['tier_b_visit_count_total']}")
     print(f"Long dwell count: {validation['long_dwell_count_total']}")
     print(f"Farm output: {outputs.files['farm_intervention_intensity_csv']}")
     print(f"Validation summary: {outputs.files['validation_summary_csv']}")
     print(f"Methodology report: {outputs.files['methodology_report_md']}")
+    print(f"Sanity audit: {outputs.files['sanity_audit_md']}")
+    print(f"Top/bottom audit: {outputs.files['top_bottom_csv']}")
+    print(f"Sensitivity audit: {outputs.files['sensitivity_csv']}")
 
 
 if __name__ == "__main__":

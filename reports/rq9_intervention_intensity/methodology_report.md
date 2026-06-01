@@ -8,7 +8,7 @@ This report describes farm-level maintenance intervention intensity from existin
 
 - Existing AIS dwell/weather feature table.
 - Existing AIS backfill manifest.
-- Existing turbine coordinate table, used only for farm-level turbine counts.
+- Existing turbine coordinate table, used for farm-level turbine counts and commissioning-derived operational windows.
 - No AIS extraction rerun.
 - No metocean extraction rerun.
 
@@ -17,10 +17,13 @@ This report describes farm-level maintenance intervention intensity from existin
 - `success` and `success_no_ais_in_bbox` count as observed months.
 - `success_no_ais_in_bbox` is observed zero activity, not missing data.
 - `skipped_missing_source` is excluded from the observed denominator.
+- When commissioning dates are available, manifest months before the farm operational start month are excluded from the observed denominator.
+- If commissioning metadata is missing, AIS source coverage is used as a fallback denominator and confidence is lowered.
 
 ## Numerator Policy
 
 - Tier A and Tier B dwells are candidate intervention evidence, not fault labels.
+- Candidate dwell rows before the farm operational start month are excluded from the numerator and retained as `pre_operational_candidate_count`.
 - Long dwells are Tier A/B candidate interventions at or above the configured duration threshold.
 - Duplicate groups are adjusted through derived fractional counts without destructive deletion.
 
@@ -33,11 +36,15 @@ This report describes farm-level maintenance intervention intensity from existin
 ## Summary Metrics
 
 - Farm rows: 113
-- Observed farm-years: 1695.000
-- Candidate intervention count: 17565
-- Tier A count: 15264
-- Tier B count: 2301
-- Long dwell count: 15227
+- Observed farm-years: 986.500
+- Observed farm-years range: 0.000 to 15.000
+- Operational window known farms: 113
+- Operational window unknown farms: 0
+- Candidate intervention count: 13545
+- Pre-operational candidate count excluded: 4020
+- Tier A count: 11972
+- Tier B count: 1573
+- Long dwell count: 11656
 - Duplicate adjustment available: True
 
 ## Guardrails
