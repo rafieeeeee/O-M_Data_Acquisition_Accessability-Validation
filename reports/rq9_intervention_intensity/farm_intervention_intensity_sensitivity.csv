@@ -1,0 +1,453 @@
+scenario,scenario_label,farm_id,observed_years,coverage_share,confidence_class,long_dwell_threshold_min,event_count,events_per_observed_farm_year,notes
+tier_a_only,Tier A candidate visits only,Aberdeen Offshore Wind Farm,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Albatros,15.0,0.9375,high_observed_signal,,61,4.066666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Alpha Ventus,15.0,0.9375,high_observed_signal,,52,3.466666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Amrumbank West,15.0,0.9375,high_observed_signal,,353,23.533333333333335,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Anholt,15.0,0.9375,high_observed_signal,,861,57.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Arcadis Ost 1,15.0,0.9375,high_observed_signal,,287,19.133333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Arkona-Becken Südost,15.0,0.9375,high_observed_signal,,489,32.6,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Avedøre Holme,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Baltic Eagle,15.0,0.9375,high_observed_signal,,1112,74.13333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Bard Offshore 1,15.0,0.9375,high_observed_signal,,125,8.333333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Barrow,15.0,0.9375,high_observed_signal,,6,0.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Beatrice Offshore Wind Farm,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Belwind phase 1,15.0,0.9375,high_observed_signal,,5,0.3333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Blyth Demo Phase 1,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Borkum Riffgrund 1,15.0,0.9375,high_observed_signal,,151,10.066666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Borkum Riffgrund 2,15.0,0.9375,high_observed_signal,,112,7.466666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Borssele Kavel I and II,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Borssele Kavel III and IV,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Burbo Bank,15.0,0.9375,high_observed_signal,,12,0.8,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Burbo Bank Extension,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Butendiek,15.0,0.9375,high_observed_signal,,477,31.8,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Dan Tysk,15.0,0.9375,high_observed_signal,,408,27.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Deutsche Bucht,15.0,0.9375,high_observed_signal,,56,3.7333333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Dudgeon,15.0,0.9375,high_observed_signal,,8,0.5333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,East Anglia One,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,EnBW Hohe See,15.0,0.9375,high_observed_signal,,127,8.466666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,EnBW Windpark Baltic 1,15.0,0.9375,high_observed_signal,,316,21.066666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,EnBW Windpark Baltic 2,15.0,0.9375,high_observed_signal,,649,43.266666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Frederikshavn Offshore,15.0,0.9375,high_observed_signal,,18,1.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Fécamp,15.0,0.9375,high_observed_zero,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Galloper,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Gemini,15.0,0.9375,high_observed_signal,,30,2.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Global Tech I,15.0,0.9375,high_observed_signal,,154,10.266666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Gode Wind 1 and 2,15.0,0.9375,high_observed_signal,,262,17.466666666666665,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Gode Wind 3,15.0,0.9375,high_observed_signal,,255,17.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Greater Gabbard,15.0,0.9375,high_observed_signal,,105,7.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Gunfleet Sands,15.0,0.9375,high_observed_signal,,22,1.4666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Gwynt y Mor,15.0,0.9375,high_observed_signal,,28,1.8666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Hollandse Kust Noord,15.0,0.9375,high_observed_signal,,6,0.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Hollandse Kust Zuid,15.0,0.9375,high_observed_signal,,15,1.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Horns Rev I,15.0,0.9375,high_observed_signal,,572,38.13333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Horns Rev II,15.0,0.9375,high_observed_signal,,536,35.733333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Horns Rev III,15.0,0.9375,high_observed_signal,,530,35.333333333333336,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Hornsea Project 1,15.0,0.9375,high_observed_signal,,29,1.9333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Hornsea Project 2,15.0,0.9375,high_observed_signal,,22,1.4666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Humber Gateway,15.0,0.9375,high_observed_signal,,9,0.6,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Hywind Scotland Pilot Park,15.0,0.9375,high_observed_signal,,5,0.3333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Inner Dowsing,15.0,0.9375,high_observed_signal,,55,3.6666666666666665,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Kaskasi,15.0,0.9375,high_observed_signal,,244,16.266666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Kentish Flats,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Kentish Flats Extension,15.0,0.9375,high_observed_signal,,1,0.06666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Kincardine,15.0,0.9375,high_observed_zero,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Kriegers Flak,15.0,0.9375,high_observed_signal,,675,45.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Lillgrund,15.0,0.9375,high_observed_signal,,310,20.666666666666668,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Lincs,15.0,0.9375,high_observed_signal,,127,8.466666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,London Array,15.0,0.9375,high_observed_signal,,285,19.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Lynn,15.0,0.9375,high_observed_signal,,58,3.8666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Meerwind Sued/Ost,15.0,0.9375,high_observed_signal,,362,24.133333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Merkur Offshore,15.0,0.9375,high_observed_signal,,242,16.133333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Mermaid,15.0,0.9375,high_observed_signal,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Middelgrunden,15.0,0.9375,high_observed_signal,,140,9.333333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Moray East,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Moray West,15.0,0.9375,high_observed_signal,,5,0.3333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Neart na Gaoithe,15.0,0.9375,high_observed_signal,,8,0.5333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Nissum Bredning,15.0,0.9375,high_observed_signal,,97,6.466666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Nobelwind,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Nordergründe,15.0,0.9375,high_observed_signal,,63,4.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Nordsee One,15.0,0.9375,high_observed_signal,,140,9.333333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Nordsee Ost,15.0,0.9375,high_observed_signal,,297,19.8,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,North Hoyle,15.0,0.9375,high_observed_signal,,9,0.6,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Norther,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Northwester 2,15.0,0.9375,high_observed_zero,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Northwind,15.0,0.9375,high_observed_zero,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Nysted,15.0,0.9375,high_observed_signal,,428,28.533333333333335,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,OWF Egmond aan Zee,15.0,0.9375,high_observed_signal,,9,0.6,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,OWF Luchterduinen,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,OWF Prinses Amalia,15.0,0.9375,high_observed_signal,,11,0.7333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Ormonde,15.0,0.9375,high_observed_signal,,24,1.6,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Race Bank,15.0,0.9375,high_observed_signal,,20,1.3333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Rampion,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Renland,15.0,0.9375,high_observed_signal,,3,0.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Rentel,15.0,0.9375,high_observed_signal,,5,0.3333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Rhyl Flats,15.0,0.9375,high_observed_signal,,16,1.0666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Riffgat,15.0,0.9375,high_observed_signal,,60,4.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Robin Rigg West,15.0,0.9375,high_observed_signal,,12,0.8,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Rodsand II,15.0,0.9375,high_observed_signal,,726,48.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Saint-Brieuc,15.0,0.9375,high_observed_signal,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Saint-Nazaire,15.0,0.9375,high_observed_zero,,0,0.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Samsa,15.0,0.9375,high_observed_signal,,103,6.866666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Sandbank,15.0,0.9375,high_observed_signal,,286,19.066666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Scroby Sands,15.0,0.9375,high_observed_signal,,15,1.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,SeaStar,15.0,0.9375,high_observed_signal,,1,0.06666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Seagreen,15.0,0.9375,high_observed_signal,,6,0.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Sheringham Shoal,15.0,0.9375,high_observed_signal,,150,10.0,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Sprogo,15.0,0.9375,high_observed_signal,,14,0.9333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Teesside,15.0,0.9375,high_observed_signal,,25,1.6666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Thanet,15.0,0.9375,high_observed_signal,,27,1.8,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Thornton Bank - phase I,15.0,0.9375,high_observed_signal,,21,1.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Thornton Bank - phase II and III,15.0,0.9375,high_observed_signal,,55,3.6666666666666665,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Trianel Windpark Borkum 1,15.0,0.9375,high_observed_signal,,94,6.266666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Trianel Windpark Borkum 2,15.0,0.9375,high_observed_signal,,143,9.533333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Triton Knoll,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Tunm Knob,15.0,0.9375,high_observed_signal,,34,2.2666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Veja Mate,15.0,0.9375,high_observed_signal,,54,3.6,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Vesterhav Nord,15.0,0.9375,high_observed_signal,,220,14.666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Vesterhav Syd,15.0,0.9375,high_observed_signal,,239,15.933333333333334,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Walney 1,15.0,0.9375,high_observed_signal,,20,1.3333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Walney 2,15.0,0.9375,high_observed_signal,,33,2.2,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Walney Extension 3,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Walney Extension 4,15.0,0.9375,high_observed_signal,,6,0.4,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,West of Duddon Sands,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Westermost Rough,15.0,0.9375,high_observed_signal,,7,0.4666666666666667,Tier A only candidate intervention evidence.
+tier_a_only,Tier A candidate visits only,Wikinger,15.0,0.9375,high_observed_signal,,942,62.8,Tier A only candidate intervention evidence.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Aberdeen Offshore Wind Farm,15.0,0.9375,high_observed_signal,,3,0.2,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Albatros,15.0,0.9375,high_observed_signal,,70,4.666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Alpha Ventus,15.0,0.9375,high_observed_signal,,302,20.133333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Amrumbank West,15.0,0.9375,high_observed_signal,,381,25.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Anholt,15.0,0.9375,high_observed_signal,,880,58.666666666666664,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Arcadis Ost 1,15.0,0.9375,high_observed_signal,,307,20.466666666666665,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Arkona-Becken Südost,15.0,0.9375,high_observed_signal,,551,36.733333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Avedøre Holme,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Baltic Eagle,15.0,0.9375,high_observed_signal,,1235,82.33333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Bard Offshore 1,15.0,0.9375,high_observed_signal,,140,9.333333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Barrow,15.0,0.9375,high_observed_signal,,6,0.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Beatrice Offshore Wind Farm,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Belwind phase 1,15.0,0.9375,high_observed_signal,,6,0.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Blyth Demo Phase 1,15.0,0.9375,high_observed_signal,,3,0.2,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Borkum Riffgrund 1,15.0,0.9375,high_observed_signal,,174,11.6,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Borkum Riffgrund 2,15.0,0.9375,high_observed_signal,,212,14.133333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Borssele Kavel I and II,15.0,0.9375,high_observed_signal,,3,0.2,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Borssele Kavel III and IV,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Burbo Bank,15.0,0.9375,high_observed_signal,,12,0.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Burbo Bank Extension,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Butendiek,15.0,0.9375,high_observed_signal,,486,32.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Dan Tysk,15.0,0.9375,high_observed_signal,,489,32.6,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Deutsche Bucht,15.0,0.9375,high_observed_signal,,67,4.466666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Dudgeon,15.0,0.9375,high_observed_signal,,12,0.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,East Anglia One,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,EnBW Hohe See,15.0,0.9375,high_observed_signal,,142,9.466666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,EnBW Windpark Baltic 1,15.0,0.9375,high_observed_signal,,320,21.333333333333332,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,EnBW Windpark Baltic 2,15.0,0.9375,high_observed_signal,,702,46.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Frederikshavn Offshore,15.0,0.9375,high_observed_signal,,48,3.2,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Fécamp,15.0,0.9375,high_observed_zero,,0,0.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Galloper,15.0,0.9375,high_observed_signal,,30,2.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Gemini,15.0,0.9375,high_observed_signal,,38,2.533333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Global Tech I,15.0,0.9375,high_observed_signal,,166,11.066666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Gode Wind 1 and 2,15.0,0.9375,high_observed_signal,,326,21.733333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Gode Wind 3,15.0,0.9375,high_observed_signal,,327,21.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Greater Gabbard,15.0,0.9375,high_observed_signal,,116,7.733333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Gunfleet Sands,15.0,0.9375,high_observed_signal,,22,1.4666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Gwynt y Mor,15.0,0.9375,high_observed_signal,,30,2.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Hollandse Kust Noord,15.0,0.9375,high_observed_signal,,14,0.9333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Hollandse Kust Zuid,15.0,0.9375,high_observed_signal,,43,2.8666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Horns Rev I,15.0,0.9375,high_observed_signal,,587,39.13333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Horns Rev II,15.0,0.9375,high_observed_signal,,539,35.93333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Horns Rev III,15.0,0.9375,high_observed_signal,,547,36.46666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Hornsea Project 1,15.0,0.9375,high_observed_signal,,38,2.533333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Hornsea Project 2,15.0,0.9375,high_observed_signal,,40,2.6666666666666665,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Humber Gateway,15.0,0.9375,high_observed_signal,,9,0.6,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Hywind Scotland Pilot Park,15.0,0.9375,high_observed_signal,,8,0.5333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Inner Dowsing,15.0,0.9375,high_observed_signal,,55,3.6666666666666665,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Kaskasi,15.0,0.9375,high_observed_signal,,254,16.933333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Kentish Flats,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Kentish Flats Extension,15.0,0.9375,high_observed_signal,,6,0.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Kincardine,15.0,0.9375,high_observed_zero,,0,0.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Kriegers Flak,15.0,0.9375,high_observed_signal,,1186,79.06666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Lillgrund,15.0,0.9375,high_observed_signal,,310,20.666666666666668,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Lincs,15.0,0.9375,high_observed_signal,,138,9.2,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,London Array,15.0,0.9375,high_observed_signal,,311,20.733333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Lynn,15.0,0.9375,high_observed_signal,,62,4.133333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Meerwind Sued/Ost,15.0,0.9375,high_observed_signal,,368,24.533333333333335,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Merkur Offshore,15.0,0.9375,high_observed_signal,,537,35.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Mermaid,15.0,0.9375,high_observed_signal,,1,0.06666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Middelgrunden,15.0,0.9375,high_observed_signal,,140,9.333333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Moray East,15.0,0.9375,high_observed_signal,,6,0.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Moray West,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Neart na Gaoithe,15.0,0.9375,high_observed_signal,,13,0.8666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Nissum Bredning,15.0,0.9375,high_observed_signal,,98,6.533333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Nobelwind,15.0,0.9375,high_observed_signal,,6,0.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Nordergründe,15.0,0.9375,high_observed_signal,,64,4.266666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Nordsee One,15.0,0.9375,high_observed_signal,,145,9.666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Nordsee Ost,15.0,0.9375,high_observed_signal,,321,21.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,North Hoyle,15.0,0.9375,high_observed_signal,,9,0.6,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Norther,15.0,0.9375,high_observed_signal,,4,0.26666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Northwester 2,15.0,0.9375,high_observed_zero,,0,0.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Northwind,15.0,0.9375,high_observed_zero,,0,0.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Nysted,15.0,0.9375,high_observed_signal,,429,28.6,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,OWF Egmond aan Zee,15.0,0.9375,high_observed_signal,,9,0.6,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,OWF Luchterduinen,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,OWF Prinses Amalia,15.0,0.9375,high_observed_signal,,11,0.7333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Ormonde,15.0,0.9375,high_observed_signal,,25,1.6666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Race Bank,15.0,0.9375,high_observed_signal,,25,1.6666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Rampion,15.0,0.9375,high_observed_signal,,13,0.8666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Renland,15.0,0.9375,high_observed_signal,,26,1.7333333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Rentel,15.0,0.9375,high_observed_signal,,8,0.5333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Rhyl Flats,15.0,0.9375,high_observed_signal,,16,1.0666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Riffgat,15.0,0.9375,high_observed_signal,,65,4.333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Robin Rigg West,15.0,0.9375,high_observed_signal,,12,0.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Rodsand II,15.0,0.9375,high_observed_signal,,736,49.06666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Saint-Brieuc,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Saint-Nazaire,15.0,0.9375,high_observed_zero,,0,0.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Samsa,15.0,0.9375,high_observed_signal,,103,6.866666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Sandbank,15.0,0.9375,high_observed_signal,,305,20.333333333333332,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Scroby Sands,15.0,0.9375,high_observed_signal,,15,1.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,SeaStar,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Seagreen,15.0,0.9375,high_observed_signal,,10,0.6666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Sheringham Shoal,15.0,0.9375,high_observed_signal,,151,10.066666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Sprogo,15.0,0.9375,high_observed_signal,,15,1.0,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Teesside,15.0,0.9375,high_observed_signal,,28,1.8666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Thanet,15.0,0.9375,high_observed_signal,,28,1.8666666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Thornton Bank - phase I,15.0,0.9375,high_observed_signal,,21,1.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Thornton Bank - phase II and III,15.0,0.9375,high_observed_signal,,71,4.733333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Trianel Windpark Borkum 1,15.0,0.9375,high_observed_signal,,125,8.333333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Trianel Windpark Borkum 2,15.0,0.9375,high_observed_signal,,162,10.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Triton Knoll,15.0,0.9375,high_observed_signal,,12,0.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Tunm Knob,15.0,0.9375,high_observed_signal,,34,2.2666666666666666,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Veja Mate,15.0,0.9375,high_observed_signal,,64,4.266666666666667,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Vesterhav Nord,15.0,0.9375,high_observed_signal,,222,14.8,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Vesterhav Syd,15.0,0.9375,high_observed_signal,,239,15.933333333333334,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Walney 1,15.0,0.9375,high_observed_signal,,20,1.3333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Walney 2,15.0,0.9375,high_observed_signal,,35,2.3333333333333335,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Walney Extension 3,15.0,0.9375,high_observed_signal,,6,0.4,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Walney Extension 4,15.0,0.9375,high_observed_signal,,18,1.2,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,West of Duddon Sands,15.0,0.9375,high_observed_signal,,2,0.13333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Westermost Rough,15.0,0.9375,high_observed_signal,,11,0.7333333333333333,Current raw numerator for candidate intervention intensity.
+tier_a_plus_tier_b,Tier A plus Tier B candidate visits,Wikinger,15.0,0.9375,high_observed_signal,,976,65.06666666666666,Current raw numerator for candidate intervention intensity.
+long_dwell_120_min,Long dwell candidates >= 120 min,Aberdeen Offshore Wind Farm,15.0,0.9375,high_observed_signal,120.0,3,0.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Albatros,15.0,0.9375,high_observed_signal,120.0,48,3.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Alpha Ventus,15.0,0.9375,high_observed_signal,120.0,259,17.266666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Amrumbank West,15.0,0.9375,high_observed_signal,120.0,322,21.466666666666665,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Anholt,15.0,0.9375,high_observed_signal,120.0,828,55.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Arcadis Ost 1,15.0,0.9375,high_observed_signal,120.0,284,18.933333333333334,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Arkona-Becken Südost,15.0,0.9375,high_observed_signal,120.0,528,35.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Avedøre Holme,15.0,0.9375,high_observed_signal,120.0,1,0.06666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Baltic Eagle,15.0,0.9375,high_observed_signal,120.0,1162,77.46666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Bard Offshore 1,15.0,0.9375,high_observed_signal,120.0,115,7.666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Barrow,15.0,0.9375,high_observed_signal,120.0,5,0.3333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Beatrice Offshore Wind Farm,15.0,0.9375,high_observed_signal,120.0,2,0.13333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Belwind phase 1,15.0,0.9375,high_observed_signal,120.0,6,0.4,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Blyth Demo Phase 1,15.0,0.9375,high_observed_signal,120.0,1,0.06666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Borkum Riffgrund 1,15.0,0.9375,high_observed_signal,120.0,130,8.666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Borkum Riffgrund 2,15.0,0.9375,high_observed_signal,120.0,165,11.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Borssele Kavel I and II,15.0,0.9375,high_observed_signal,120.0,3,0.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Borssele Kavel III and IV,15.0,0.9375,high_observed_signal,120.0,3,0.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Burbo Bank,15.0,0.9375,high_observed_signal,120.0,12,0.8,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Burbo Bank Extension,15.0,0.9375,high_observed_signal,120.0,9,0.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Butendiek,15.0,0.9375,high_observed_signal,120.0,448,29.866666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Dan Tysk,15.0,0.9375,high_observed_signal,120.0,409,27.266666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Deutsche Bucht,15.0,0.9375,high_observed_signal,120.0,52,3.466666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Dudgeon,15.0,0.9375,high_observed_signal,120.0,5,0.3333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,East Anglia One,15.0,0.9375,high_observed_signal,120.0,2,0.13333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,EnBW Hohe See,15.0,0.9375,high_observed_signal,120.0,117,7.8,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,EnBW Windpark Baltic 1,15.0,0.9375,high_observed_signal,120.0,297,19.8,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,EnBW Windpark Baltic 2,15.0,0.9375,high_observed_signal,120.0,645,43.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Frederikshavn Offshore,15.0,0.9375,high_observed_signal,120.0,45,3.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Fécamp,15.0,0.9375,high_observed_zero,120.0,0,0.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Galloper,15.0,0.9375,high_observed_signal,120.0,11,0.7333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Gemini,15.0,0.9375,high_observed_signal,120.0,28,1.8666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Global Tech I,15.0,0.9375,high_observed_signal,120.0,133,8.866666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Gode Wind 1 and 2,15.0,0.9375,high_observed_signal,120.0,254,16.933333333333334,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Gode Wind 3,15.0,0.9375,high_observed_signal,120.0,263,17.533333333333335,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Greater Gabbard,15.0,0.9375,high_observed_signal,120.0,96,6.4,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Gunfleet Sands,15.0,0.9375,high_observed_signal,120.0,21,1.4,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Gwynt y Mor,15.0,0.9375,high_observed_signal,120.0,25,1.6666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Hollandse Kust Noord,15.0,0.9375,high_observed_signal,120.0,9,0.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Hollandse Kust Zuid,15.0,0.9375,high_observed_signal,120.0,35,2.3333333333333335,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Horns Rev I,15.0,0.9375,high_observed_signal,120.0,549,36.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Horns Rev II,15.0,0.9375,high_observed_signal,120.0,527,35.13333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Horns Rev III,15.0,0.9375,high_observed_signal,120.0,498,33.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Hornsea Project 1,15.0,0.9375,high_observed_signal,120.0,35,2.3333333333333335,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Hornsea Project 2,15.0,0.9375,high_observed_signal,120.0,30,2.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Humber Gateway,15.0,0.9375,high_observed_signal,120.0,6,0.4,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Hywind Scotland Pilot Park,15.0,0.9375,high_observed_signal,120.0,4,0.26666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Inner Dowsing,15.0,0.9375,high_observed_signal,120.0,53,3.533333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Kaskasi,15.0,0.9375,high_observed_signal,120.0,217,14.466666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Kentish Flats,15.0,0.9375,high_observed_signal,120.0,5,0.3333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Kentish Flats Extension,15.0,0.9375,high_observed_signal,120.0,2,0.13333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Kincardine,15.0,0.9375,high_observed_zero,120.0,0,0.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Kriegers Flak,15.0,0.9375,high_observed_signal,120.0,748,49.86666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Lillgrund,15.0,0.9375,high_observed_signal,120.0,292,19.466666666666665,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Lincs,15.0,0.9375,high_observed_signal,120.0,128,8.533333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,London Array,15.0,0.9375,high_observed_signal,120.0,273,18.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Lynn,15.0,0.9375,high_observed_signal,120.0,56,3.7333333333333334,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Meerwind Sued/Ost,15.0,0.9375,high_observed_signal,120.0,287,19.133333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Merkur Offshore,15.0,0.9375,high_observed_signal,120.0,453,30.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Mermaid,15.0,0.9375,high_observed_signal,120.0,0,0.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Middelgrunden,15.0,0.9375,high_observed_signal,120.0,125,8.333333333333334,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Moray East,15.0,0.9375,high_observed_signal,120.0,4,0.26666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Moray West,15.0,0.9375,high_observed_signal,120.0,7,0.4666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Neart na Gaoithe,15.0,0.9375,high_observed_signal,120.0,12,0.8,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Nissum Bredning,15.0,0.9375,high_observed_signal,120.0,84,5.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Nobelwind,15.0,0.9375,high_observed_signal,120.0,4,0.26666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Nordergründe,15.0,0.9375,high_observed_signal,120.0,38,2.533333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Nordsee One,15.0,0.9375,high_observed_signal,120.0,99,6.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Nordsee Ost,15.0,0.9375,high_observed_signal,120.0,270,18.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,North Hoyle,15.0,0.9375,high_observed_signal,120.0,8,0.5333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Norther,15.0,0.9375,high_observed_signal,120.0,4,0.26666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Northwester 2,15.0,0.9375,high_observed_zero,120.0,0,0.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Northwind,15.0,0.9375,high_observed_zero,120.0,0,0.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Nysted,15.0,0.9375,high_observed_signal,120.0,414,27.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,OWF Egmond aan Zee,15.0,0.9375,high_observed_signal,120.0,7,0.4666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,OWF Luchterduinen,15.0,0.9375,high_observed_signal,120.0,1,0.06666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,OWF Prinses Amalia,15.0,0.9375,high_observed_signal,120.0,10,0.6666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Ormonde,15.0,0.9375,high_observed_signal,120.0,21,1.4,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Race Bank,15.0,0.9375,high_observed_signal,120.0,7,0.4666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Rampion,15.0,0.9375,high_observed_signal,120.0,8,0.5333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Renland,15.0,0.9375,high_observed_signal,120.0,24,1.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Rentel,15.0,0.9375,high_observed_signal,120.0,6,0.4,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Rhyl Flats,15.0,0.9375,high_observed_signal,120.0,10,0.6666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Riffgat,15.0,0.9375,high_observed_signal,120.0,50,3.3333333333333335,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Robin Rigg West,15.0,0.9375,high_observed_signal,120.0,9,0.6,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Rodsand II,15.0,0.9375,high_observed_signal,120.0,695,46.333333333333336,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Saint-Brieuc,15.0,0.9375,high_observed_signal,120.0,1,0.06666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Saint-Nazaire,15.0,0.9375,high_observed_zero,120.0,0,0.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Samsa,15.0,0.9375,high_observed_signal,120.0,87,5.8,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Sandbank,15.0,0.9375,high_observed_signal,120.0,263,17.533333333333335,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Scroby Sands,15.0,0.9375,high_observed_signal,120.0,15,1.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,SeaStar,15.0,0.9375,high_observed_signal,120.0,2,0.13333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Seagreen,15.0,0.9375,high_observed_signal,120.0,4,0.26666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Sheringham Shoal,15.0,0.9375,high_observed_signal,120.0,143,9.533333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Sprogo,15.0,0.9375,high_observed_signal,120.0,12,0.8,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Teesside,15.0,0.9375,high_observed_signal,120.0,28,1.8666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Thanet,15.0,0.9375,high_observed_signal,120.0,22,1.4666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Thornton Bank - phase I,15.0,0.9375,high_observed_signal,120.0,18,1.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Thornton Bank - phase II and III,15.0,0.9375,high_observed_signal,120.0,65,4.333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Trianel Windpark Borkum 1,15.0,0.9375,high_observed_signal,120.0,90,6.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Trianel Windpark Borkum 2,15.0,0.9375,high_observed_signal,120.0,120,8.0,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Triton Knoll,15.0,0.9375,high_observed_signal,120.0,8,0.5333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Tunm Knob,15.0,0.9375,high_observed_signal,120.0,31,2.066666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Veja Mate,15.0,0.9375,high_observed_signal,120.0,53,3.533333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Vesterhav Nord,15.0,0.9375,high_observed_signal,120.0,203,13.533333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Vesterhav Syd,15.0,0.9375,high_observed_signal,120.0,228,15.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Walney 1,15.0,0.9375,high_observed_signal,120.0,20,1.3333333333333333,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Walney 2,15.0,0.9375,high_observed_signal,120.0,28,1.8666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Walney Extension 3,15.0,0.9375,high_observed_signal,120.0,3,0.2,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Walney Extension 4,15.0,0.9375,high_observed_signal,120.0,16,1.0666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,West of Duddon Sands,15.0,0.9375,high_observed_signal,120.0,1,0.06666666666666667,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Westermost Rough,15.0,0.9375,high_observed_signal,120.0,10,0.6666666666666666,Current long-dwell numerator from committed farm output.
+long_dwell_120_min,Long dwell candidates >= 120 min,Wikinger,15.0,0.9375,high_observed_signal,120.0,895,59.666666666666664,Current long-dwell numerator from committed farm output.
+long_dwell_240_min,Long dwell candidates >= 240 min,Aberdeen Offshore Wind Farm,15.0,0.9375,high_observed_signal,240.0,2,0.13333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Albatros,15.0,0.9375,high_observed_signal,240.0,35,2.3333333333333335,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Alpha Ventus,15.0,0.9375,high_observed_signal,240.0,213,14.2,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Amrumbank West,15.0,0.9375,high_observed_signal,240.0,262,17.466666666666665,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Anholt,15.0,0.9375,high_observed_signal,240.0,777,51.8,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Arcadis Ost 1,15.0,0.9375,high_observed_signal,240.0,257,17.133333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Arkona-Becken Südost,15.0,0.9375,high_observed_signal,240.0,495,33.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Avedøre Holme,15.0,0.9375,high_observed_signal,240.0,1,0.06666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Baltic Eagle,15.0,0.9375,high_observed_signal,240.0,1097,73.13333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Bard Offshore 1,15.0,0.9375,high_observed_signal,240.0,86,5.733333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Barrow,15.0,0.9375,high_observed_signal,240.0,4,0.26666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Beatrice Offshore Wind Farm,15.0,0.9375,high_observed_signal,240.0,2,0.13333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Belwind phase 1,15.0,0.9375,high_observed_signal,240.0,5,0.3333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Blyth Demo Phase 1,15.0,0.9375,high_observed_signal,240.0,1,0.06666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Borkum Riffgrund 1,15.0,0.9375,high_observed_signal,240.0,90,6.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Borkum Riffgrund 2,15.0,0.9375,high_observed_signal,240.0,121,8.066666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Borssele Kavel I and II,15.0,0.9375,high_observed_signal,240.0,1,0.06666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Borssele Kavel III and IV,15.0,0.9375,high_observed_signal,240.0,2,0.13333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Burbo Bank,15.0,0.9375,high_observed_signal,240.0,11,0.7333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Burbo Bank Extension,15.0,0.9375,high_observed_signal,240.0,8,0.5333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Butendiek,15.0,0.9375,high_observed_signal,240.0,396,26.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Dan Tysk,15.0,0.9375,high_observed_signal,240.0,358,23.866666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Deutsche Bucht,15.0,0.9375,high_observed_signal,240.0,37,2.466666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Dudgeon,15.0,0.9375,high_observed_signal,240.0,2,0.13333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,East Anglia One,15.0,0.9375,high_observed_signal,240.0,1,0.06666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,EnBW Hohe See,15.0,0.9375,high_observed_signal,240.0,96,6.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,EnBW Windpark Baltic 1,15.0,0.9375,high_observed_signal,240.0,273,18.2,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,EnBW Windpark Baltic 2,15.0,0.9375,high_observed_signal,240.0,598,39.86666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Frederikshavn Offshore,15.0,0.9375,high_observed_signal,240.0,43,2.8666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Fécamp,15.0,0.9375,high_observed_zero,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Galloper,15.0,0.9375,high_observed_signal,240.0,8,0.5333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Gemini,15.0,0.9375,high_observed_signal,240.0,21,1.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Global Tech I,15.0,0.9375,high_observed_signal,240.0,103,6.866666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Gode Wind 1 and 2,15.0,0.9375,high_observed_signal,240.0,186,12.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Gode Wind 3,15.0,0.9375,high_observed_signal,240.0,194,12.933333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Greater Gabbard,15.0,0.9375,high_observed_signal,240.0,93,6.2,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Gunfleet Sands,15.0,0.9375,high_observed_signal,240.0,19,1.2666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Gwynt y Mor,15.0,0.9375,high_observed_signal,240.0,22,1.4666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Hollandse Kust Noord,15.0,0.9375,high_observed_signal,240.0,5,0.3333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Hollandse Kust Zuid,15.0,0.9375,high_observed_signal,240.0,24,1.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Horns Rev I,15.0,0.9375,high_observed_signal,240.0,505,33.666666666666664,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Horns Rev II,15.0,0.9375,high_observed_signal,240.0,503,33.53333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Horns Rev III,15.0,0.9375,high_observed_signal,240.0,470,31.333333333333332,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Hornsea Project 1,15.0,0.9375,high_observed_signal,240.0,25,1.6666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Hornsea Project 2,15.0,0.9375,high_observed_signal,240.0,24,1.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Humber Gateway,15.0,0.9375,high_observed_signal,240.0,6,0.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Hywind Scotland Pilot Park,15.0,0.9375,high_observed_signal,240.0,3,0.2,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Inner Dowsing,15.0,0.9375,high_observed_signal,240.0,49,3.2666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Kaskasi,15.0,0.9375,high_observed_signal,240.0,189,12.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Kentish Flats,15.0,0.9375,high_observed_signal,240.0,4,0.26666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Kentish Flats Extension,15.0,0.9375,high_observed_signal,240.0,2,0.13333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Kincardine,15.0,0.9375,high_observed_zero,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Kriegers Flak,15.0,0.9375,high_observed_signal,240.0,670,44.666666666666664,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Lillgrund,15.0,0.9375,high_observed_signal,240.0,248,16.533333333333335,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Lincs,15.0,0.9375,high_observed_signal,240.0,120,8.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,London Array,15.0,0.9375,high_observed_signal,240.0,222,14.8,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Lynn,15.0,0.9375,high_observed_signal,240.0,51,3.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Meerwind Sued/Ost,15.0,0.9375,high_observed_signal,240.0,215,14.333333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Merkur Offshore,15.0,0.9375,high_observed_signal,240.0,362,24.133333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Mermaid,15.0,0.9375,high_observed_signal,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Middelgrunden,15.0,0.9375,high_observed_signal,240.0,109,7.266666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Moray East,15.0,0.9375,high_observed_signal,240.0,3,0.2,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Moray West,15.0,0.9375,high_observed_signal,240.0,5,0.3333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Neart na Gaoithe,15.0,0.9375,high_observed_signal,240.0,9,0.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Nissum Bredning,15.0,0.9375,high_observed_signal,240.0,82,5.466666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Nobelwind,15.0,0.9375,high_observed_signal,240.0,2,0.13333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Nordergründe,15.0,0.9375,high_observed_signal,240.0,15,1.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Nordsee One,15.0,0.9375,high_observed_signal,240.0,72,4.8,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Nordsee Ost,15.0,0.9375,high_observed_signal,240.0,228,15.2,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,North Hoyle,15.0,0.9375,high_observed_signal,240.0,5,0.3333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Norther,15.0,0.9375,high_observed_signal,240.0,4,0.26666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Northwester 2,15.0,0.9375,high_observed_zero,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Northwind,15.0,0.9375,high_observed_zero,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Nysted,15.0,0.9375,high_observed_signal,240.0,386,25.733333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,OWF Egmond aan Zee,15.0,0.9375,high_observed_signal,240.0,5,0.3333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,OWF Luchterduinen,15.0,0.9375,high_observed_signal,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,OWF Prinses Amalia,15.0,0.9375,high_observed_signal,240.0,7,0.4666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Ormonde,15.0,0.9375,high_observed_signal,240.0,16,1.0666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Race Bank,15.0,0.9375,high_observed_signal,240.0,5,0.3333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Rampion,15.0,0.9375,high_observed_signal,240.0,7,0.4666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Renland,15.0,0.9375,high_observed_signal,240.0,23,1.5333333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Rentel,15.0,0.9375,high_observed_signal,240.0,4,0.26666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Rhyl Flats,15.0,0.9375,high_observed_signal,240.0,9,0.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Riffgat,15.0,0.9375,high_observed_signal,240.0,32,2.1333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Robin Rigg West,15.0,0.9375,high_observed_signal,240.0,9,0.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Rodsand II,15.0,0.9375,high_observed_signal,240.0,641,42.733333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Saint-Brieuc,15.0,0.9375,high_observed_signal,240.0,1,0.06666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Saint-Nazaire,15.0,0.9375,high_observed_zero,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Samsa,15.0,0.9375,high_observed_signal,240.0,52,3.466666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Sandbank,15.0,0.9375,high_observed_signal,240.0,218,14.533333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Scroby Sands,15.0,0.9375,high_observed_signal,240.0,13,0.8666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,SeaStar,15.0,0.9375,high_observed_signal,240.0,1,0.06666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Seagreen,15.0,0.9375,high_observed_signal,240.0,4,0.26666666666666666,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Sheringham Shoal,15.0,0.9375,high_observed_signal,240.0,135,9.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Sprogo,15.0,0.9375,high_observed_signal,240.0,12,0.8,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Teesside,15.0,0.9375,high_observed_signal,240.0,25,1.6666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Thanet,15.0,0.9375,high_observed_signal,240.0,14,0.9333333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Thornton Bank - phase I,15.0,0.9375,high_observed_signal,240.0,15,1.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Thornton Bank - phase II and III,15.0,0.9375,high_observed_signal,240.0,60,4.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Trianel Windpark Borkum 1,15.0,0.9375,high_observed_signal,240.0,64,4.266666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Trianel Windpark Borkum 2,15.0,0.9375,high_observed_signal,240.0,77,5.133333333333334,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Triton Knoll,15.0,0.9375,high_observed_signal,240.0,6,0.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Tunm Knob,15.0,0.9375,high_observed_signal,240.0,21,1.4,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Veja Mate,15.0,0.9375,high_observed_signal,240.0,43,2.8666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Vesterhav Nord,15.0,0.9375,high_observed_signal,240.0,178,11.866666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Vesterhav Syd,15.0,0.9375,high_observed_signal,240.0,206,13.733333333333333,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Walney 1,15.0,0.9375,high_observed_signal,240.0,16,1.0666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Walney 2,15.0,0.9375,high_observed_signal,240.0,25,1.6666666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Walney Extension 3,15.0,0.9375,high_observed_signal,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Walney Extension 4,15.0,0.9375,high_observed_signal,240.0,15,1.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,West of Duddon Sands,15.0,0.9375,high_observed_signal,240.0,0,0.0,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Westermost Rough,15.0,0.9375,high_observed_signal,240.0,9,0.6,Read-only sensitivity from existing dwell feature table; no extraction rerun.
+long_dwell_240_min,Long dwell candidates >= 240 min,Wikinger,15.0,0.9375,high_observed_signal,240.0,832,55.46666666666667,Read-only sensitivity from existing dwell feature table; no extraction rerun.
