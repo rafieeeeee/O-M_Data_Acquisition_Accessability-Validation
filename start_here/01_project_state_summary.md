@@ -12,6 +12,8 @@ The active objective is no longer only the Wikinger/Baltic pilot. The current ha
 2. Completed NWS wave hindcast backbone for North Sea and overlap farms.
 3. Completed Baltic Copernicus native-hourly wave archive for the Baltic farms in scope.
 
+Stage 1 now exists as an observed/provisional workability surface. Its default view is $H_s \times T_p$, but the surface engine is configurable for additional metocean and grouping dimensions. Stage 2 is next and has not started; it should use Fusion v2 to compare wave-only, wave+wind speed, wave+current, and wave+wind+current slices before any calibrated probability model.
+
 The broad source and dwell jobs use Europe-wide farm-candidate slices:
 
 ```text
@@ -129,7 +131,7 @@ src/om_pipeline/metocean/common_requirements.py
 scripts/plan_common_metocean_requirements.py
 ```
 
-It derives one canonical wind-farm requirements table from turbine/farm metadata, with temporal bounds from operation or commissioning start to the configured study end date and spatial bounds from the turbine/farm footprint plus buffer. AIS events are validation samples and fallback diagnostics only; they must not define continuous archive start/end dates.
+It derives one canonical wind-farm requirements table from turbine/farm metadata, with temporal bounds from operation or commissioning start to the configured study end date and spatial bounds from the turbine/farm footprint plus buffer. AIS events are validation samples and supporting diagnostics only; they must not define continuous archive start/end dates.
 
 Current canonical dry-run outputs:
 
@@ -171,7 +173,7 @@ missing_depth_count=0
 duplicate_farm_sample_keys=0
 ```
 
-The assignment uses official EMODnet `depth_sample` REST responses cached as JSONL. GEBCO_2026 remains the documented fallback/cross-check source but was not fetched because EMODnet returned valid depth samples for all points.
+The assignment uses official EMODnet `depth_sample` REST responses cached as JSONL. GEBCO_2026 remains the documented cross-check source but was not fetched because EMODnet returned valid depth samples for all points.
 
 ### 7. FINO Validation Planning
 
@@ -296,9 +298,11 @@ tier_a_high_confidence_rows=3402
 
 Fusion v2 joins Wave Confidence v1, Wind Confidence v1, Current Confidence v1,
 and EMODnet bathymetry while preserving separate confidence/provenance fields.
-It is ready for Stage 2 modelling sensitivity, not calibrated
-`P(operation | weather)`. The next modelling comparison should test wave-only
-versus wave+wind, wave+current, and wave+wind+current subsets.
+It is the accepted/provisional feature layer for the next Stage 2 modelling
+sensitivity branch, not calibrated `P(operation | weather)` and not a final
+model. The next modelling comparison should test wave-only versus wave+wind,
+wave+current, and wave+wind+current subsets. Missing current remains null, not
+zero current. Wind direction remains too sparse for primary predictors.
 
 ### 13. NORA3 Sidecar Consolidation
 

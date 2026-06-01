@@ -1,0 +1,4408 @@
+source,farm_id,event_year,candidate_rows,valid_candidate_rows,valid_rate
+nora3,Aberdeen Offshore Wind Farm,2010,2,2,1.0
+nora3,Aberdeen Offshore Wind Farm,2011,0,0,
+nora3,Aberdeen Offshore Wind Farm,2012,102,71,0.696078431372549
+nora3,Aberdeen Offshore Wind Farm,2016,0,0,
+nora3,Aberdeen Offshore Wind Farm,2017,14,13,0.9285714285714286
+nora3,Aberdeen Offshore Wind Farm,2018,0,0,
+nora3,Aberdeen Offshore Wind Farm,2019,0,0,
+nora3,Aberdeen Offshore Wind Farm,2020,0,0,
+nora3,Aberdeen Offshore Wind Farm,2021,2,2,1.0
+nora3,Aberdeen Offshore Wind Farm,2022,0,0,
+nora3,Aberdeen Offshore Wind Farm,2023,0,0,
+nora3,Aberdeen Offshore Wind Farm,2024,23,22,0.9565217391304348
+nora3,Aberdeen Offshore Wind Farm,2025,3,2,0.6666666666666666
+nora3,Albatros,2010,2,2,1.0
+nora3,Albatros,2011,0,0,
+nora3,Albatros,2012,0,0,
+nora3,Albatros,2016,0,0,
+nora3,Albatros,2017,10,9,0.9
+nora3,Albatros,2018,12,8,0.6666666666666666
+nora3,Albatros,2019,32,24,0.75
+nora3,Albatros,2020,8,7,0.875
+nora3,Albatros,2021,11,9,0.8181818181818182
+nora3,Albatros,2022,6,3,0.5
+nora3,Albatros,2023,7,7,1.0
+nora3,Albatros,2024,275,224,0.8145454545454546
+nora3,Albatros,2025,29,28,0.9655172413793104
+nora3,Alpha Ventus,2010,6,6,1.0
+nora3,Alpha Ventus,2011,17,9,0.5294117647058824
+nora3,Alpha Ventus,2012,17,13,0.7647058823529411
+nora3,Alpha Ventus,2016,0,0,
+nora3,Alpha Ventus,2017,15,10,0.6666666666666666
+nora3,Alpha Ventus,2018,33,21,0.6363636363636364
+nora3,Alpha Ventus,2019,12,11,0.9166666666666666
+nora3,Alpha Ventus,2020,12,9,0.75
+nora3,Alpha Ventus,2021,30,23,0.7666666666666667
+nora3,Alpha Ventus,2022,25,19,0.76
+nora3,Alpha Ventus,2023,22,17,0.7727272727272727
+nora3,Alpha Ventus,2024,656,490,0.7469512195121951
+nora3,Alpha Ventus,2025,50,34,0.68
+nora3,Amrumbank West,2010,9,6,0.6666666666666666
+nora3,Amrumbank West,2011,6,4,0.6666666666666666
+nora3,Amrumbank West,2012,11,8,0.7272727272727273
+nora3,Amrumbank West,2016,0,0,
+nora3,Amrumbank West,2017,6,6,1.0
+nora3,Amrumbank West,2018,12,10,0.8333333333333334
+nora3,Amrumbank West,2019,3,3,1.0
+nora3,Amrumbank West,2020,4,3,0.75
+nora3,Amrumbank West,2021,22,21,0.9545454545454546
+nora3,Amrumbank West,2022,81,61,0.7530864197530864
+nora3,Amrumbank West,2023,16,14,0.875
+nora3,Amrumbank West,2024,622,555,0.8922829581993569
+nora3,Amrumbank West,2025,104,85,0.8173076923076923
+nora3,Anholt,2010,11,8,0.7272727272727273
+nora3,Anholt,2011,24,17,0.7083333333333334
+nora3,Anholt,2012,97,85,0.8762886597938144
+nora3,Anholt,2016,4,4,1.0
+nora3,Anholt,2017,38,36,0.9473684210526315
+nora3,Anholt,2018,29,26,0.896551724137931
+nora3,Anholt,2019,18,18,1.0
+nora3,Anholt,2020,19,19,1.0
+nora3,Anholt,2021,22,19,0.8636363636363636
+nora3,Anholt,2022,19,19,1.0
+nora3,Anholt,2023,24,23,0.9583333333333334
+nora3,Anholt,2024,623,607,0.9743178170144462
+nora3,Anholt,2025,80,76,0.95
+nora3,Arcadis Ost 1,2010,1,1,1.0
+nora3,Arcadis Ost 1,2011,1,1,1.0
+nora3,Arcadis Ost 1,2012,6,5,0.8333333333333334
+nora3,Arcadis Ost 1,2016,0,0,
+nora3,Arcadis Ost 1,2017,3,2,0.6666666666666666
+nora3,Arcadis Ost 1,2018,5,4,0.8
+nora3,Arcadis Ost 1,2019,7,6,0.8571428571428571
+nora3,Arcadis Ost 1,2020,1,0,0.0
+nora3,Arcadis Ost 1,2021,5,2,0.4
+nora3,Arcadis Ost 1,2022,44,38,0.8636363636363636
+nora3,Arcadis Ost 1,2023,41,36,0.8780487804878049
+nora3,Arcadis Ost 1,2024,690,607,0.8797101449275362
+nora3,Arcadis Ost 1,2025,100,90,0.9
+nora3,Arkona-Becken Südost,2010,10,9,0.9
+nora3,Arkona-Becken Südost,2011,26,24,0.9230769230769231
+nora3,Arkona-Becken Südost,2012,19,18,0.9473684210526315
+nora3,Arkona-Becken Südost,2016,22,18,0.8181818181818182
+nora3,Arkona-Becken Südost,2017,224,177,0.7901785714285714
+nora3,Arkona-Becken Südost,2018,262,215,0.8206106870229007
+nora3,Arkona-Becken Südost,2019,86,80,0.9302325581395349
+nora3,Arkona-Becken Südost,2020,64,62,0.96875
+nora3,Arkona-Becken Südost,2021,41,39,0.9512195121951219
+nora3,Arkona-Becken Südost,2022,41,39,0.9512195121951219
+nora3,Arkona-Becken Südost,2023,37,37,1.0
+nora3,Arkona-Becken Südost,2024,1319,1230,0.9325246398786959
+nora3,Arkona-Becken Südost,2025,138,136,0.9855072463768116
+nora3,Avedøre Holme,2010,55,37,0.6727272727272727
+nora3,Avedøre Holme,2011,82,65,0.7926829268292683
+nora3,Avedøre Holme,2012,76,61,0.8026315789473685
+nora3,Avedøre Holme,2016,12,10,0.8333333333333334
+nora3,Avedøre Holme,2017,128,92,0.71875
+nora3,Avedøre Holme,2018,132,104,0.7878787878787878
+nora3,Avedøre Holme,2019,149,110,0.738255033557047
+nora3,Avedøre Holme,2020,151,105,0.695364238410596
+nora3,Avedøre Holme,2021,184,127,0.6902173913043478
+nora3,Avedøre Holme,2022,178,124,0.6966292134831461
+nora3,Avedøre Holme,2023,160,102,0.6375
+nora3,Avedøre Holme,2024,2791,1488,0.5331422429236833
+nora3,Avedøre Holme,2025,408,241,0.5906862745098039
+nora3,Baltic Eagle,2010,1,1,1.0
+nora3,Baltic Eagle,2011,7,3,0.42857142857142855
+nora3,Baltic Eagle,2012,5,4,0.8
+nora3,Baltic Eagle,2016,3,2,0.6666666666666666
+nora3,Baltic Eagle,2017,31,23,0.7419354838709677
+nora3,Baltic Eagle,2018,36,27,0.75
+nora3,Baltic Eagle,2019,22,16,0.7272727272727273
+nora3,Baltic Eagle,2020,4,2,0.5
+nora3,Baltic Eagle,2021,4,3,0.75
+nora3,Baltic Eagle,2022,35,27,0.7714285714285715
+nora3,Baltic Eagle,2023,81,62,0.7654320987654321
+nora3,Baltic Eagle,2024,1292,1140,0.8823529411764706
+nora3,Baltic Eagle,2025,271,213,0.7859778597785978
+nora3,Bard Offshore 1,2010,16,10,0.625
+nora3,Bard Offshore 1,2011,15,11,0.7333333333333333
+nora3,Bard Offshore 1,2012,22,13,0.5909090909090909
+nora3,Bard Offshore 1,2016,0,0,
+nora3,Bard Offshore 1,2017,10,6,0.6
+nora3,Bard Offshore 1,2018,15,10,0.6666666666666666
+nora3,Bard Offshore 1,2019,1,1,1.0
+nora3,Bard Offshore 1,2020,5,4,0.8
+nora3,Bard Offshore 1,2021,13,10,0.7692307692307693
+nora3,Bard Offshore 1,2022,6,3,0.5
+nora3,Bard Offshore 1,2023,2,2,1.0
+nora3,Bard Offshore 1,2024,167,112,0.6706586826347305
+nora3,Bard Offshore 1,2025,9,5,0.5555555555555556
+nora3,Barrow,2010,0,0,
+nora3,Barrow,2011,0,0,
+nora3,Barrow,2012,11,11,1.0
+nora3,Barrow,2016,0,0,
+nora3,Barrow,2017,0,0,
+nora3,Barrow,2018,0,0,
+nora3,Barrow,2019,0,0,
+nora3,Barrow,2020,0,0,
+nora3,Barrow,2021,0,0,
+nora3,Barrow,2022,0,0,
+nora3,Barrow,2023,0,0,
+nora3,Barrow,2024,0,0,
+nora3,Barrow,2025,0,0,
+nora3,Beatrice Offshore Wind Farm,2010,1,0,0.0
+nora3,Beatrice Offshore Wind Farm,2011,0,0,
+nora3,Beatrice Offshore Wind Farm,2012,12,9,0.75
+nora3,Beatrice Offshore Wind Farm,2016,0,0,
+nora3,Beatrice Offshore Wind Farm,2017,3,3,1.0
+nora3,Beatrice Offshore Wind Farm,2018,2,0,0.0
+nora3,Beatrice Offshore Wind Farm,2019,0,0,
+nora3,Beatrice Offshore Wind Farm,2020,0,0,
+nora3,Beatrice Offshore Wind Farm,2021,0,0,
+nora3,Beatrice Offshore Wind Farm,2022,0,0,
+nora3,Beatrice Offshore Wind Farm,2023,0,0,
+nora3,Beatrice Offshore Wind Farm,2024,0,0,
+nora3,Beatrice Offshore Wind Farm,2025,1,1,1.0
+nora3,Belwind phase 1,2010,0,0,
+nora3,Belwind phase 1,2011,0,0,
+nora3,Belwind phase 1,2012,9,6,0.6666666666666666
+nora3,Belwind phase 1,2016,0,0,
+nora3,Belwind phase 1,2017,1,1,1.0
+nora3,Belwind phase 1,2018,0,0,
+nora3,Belwind phase 1,2019,0,0,
+nora3,Belwind phase 1,2020,0,0,
+nora3,Belwind phase 1,2021,0,0,
+nora3,Belwind phase 1,2022,0,0,
+nora3,Belwind phase 1,2023,0,0,
+nora3,Belwind phase 1,2024,4,1,0.25
+nora3,Belwind phase 1,2025,0,0,
+nora3,Blyth Demo Phase 1,2010,0,0,
+nora3,Blyth Demo Phase 1,2011,0,0,
+nora3,Blyth Demo Phase 1,2012,7,5,0.7142857142857143
+nora3,Blyth Demo Phase 1,2016,0,0,
+nora3,Blyth Demo Phase 1,2017,1,1,1.0
+nora3,Blyth Demo Phase 1,2018,0,0,
+nora3,Blyth Demo Phase 1,2019,0,0,
+nora3,Blyth Demo Phase 1,2020,0,0,
+nora3,Blyth Demo Phase 1,2021,0,0,
+nora3,Blyth Demo Phase 1,2022,0,0,
+nora3,Blyth Demo Phase 1,2023,0,0,
+nora3,Blyth Demo Phase 1,2024,0,0,
+nora3,Blyth Demo Phase 1,2025,0,0,
+nora3,Borkum Riffgrund 1,2010,6,6,1.0
+nora3,Borkum Riffgrund 1,2011,15,8,0.5333333333333333
+nora3,Borkum Riffgrund 1,2012,18,14,0.7777777777777778
+nora3,Borkum Riffgrund 1,2016,0,0,
+nora3,Borkum Riffgrund 1,2017,22,18,0.8181818181818182
+nora3,Borkum Riffgrund 1,2018,51,32,0.6274509803921569
+nora3,Borkum Riffgrund 1,2019,13,12,0.9230769230769231
+nora3,Borkum Riffgrund 1,2020,14,9,0.6428571428571429
+nora3,Borkum Riffgrund 1,2021,34,22,0.6470588235294118
+nora3,Borkum Riffgrund 1,2022,22,17,0.7727272727272727
+nora3,Borkum Riffgrund 1,2023,25,20,0.8
+nora3,Borkum Riffgrund 1,2024,755,566,0.7496688741721854
+nora3,Borkum Riffgrund 1,2025,56,44,0.7857142857142857
+nora3,Borkum Riffgrund 2,2010,6,6,1.0
+nora3,Borkum Riffgrund 2,2011,17,9,0.5294117647058824
+nora3,Borkum Riffgrund 2,2012,18,14,0.7777777777777778
+nora3,Borkum Riffgrund 2,2016,0,0,
+nora3,Borkum Riffgrund 2,2017,24,18,0.75
+nora3,Borkum Riffgrund 2,2018,61,33,0.5409836065573771
+nora3,Borkum Riffgrund 2,2019,11,10,0.9090909090909091
+nora3,Borkum Riffgrund 2,2020,15,9,0.6
+nora3,Borkum Riffgrund 2,2021,33,20,0.6060606060606061
+nora3,Borkum Riffgrund 2,2022,24,18,0.75
+nora3,Borkum Riffgrund 2,2023,24,19,0.7916666666666666
+nora3,Borkum Riffgrund 2,2024,722,516,0.7146814404432132
+nora3,Borkum Riffgrund 2,2025,61,48,0.7868852459016393
+nora3,Borssele Kavel I and II,2010,0,0,
+nora3,Borssele Kavel I and II,2011,0,0,
+nora3,Borssele Kavel I and II,2012,75,62,0.8266666666666667
+nora3,Borssele Kavel I and II,2016,0,0,
+nora3,Borssele Kavel I and II,2017,1,1,1.0
+nora3,Borssele Kavel I and II,2018,0,0,
+nora3,Borssele Kavel I and II,2019,0,0,
+nora3,Borssele Kavel I and II,2020,0,0,
+nora3,Borssele Kavel I and II,2021,2,2,1.0
+nora3,Borssele Kavel I and II,2022,0,0,
+nora3,Borssele Kavel I and II,2023,0,0,
+nora3,Borssele Kavel I and II,2024,6,2,0.3333333333333333
+nora3,Borssele Kavel I and II,2025,0,0,
+nora3,Borssele Kavel III and IV,2010,0,0,
+nora3,Borssele Kavel III and IV,2011,0,0,
+nora3,Borssele Kavel III and IV,2012,77,66,0.8571428571428571
+nora3,Borssele Kavel III and IV,2016,0,0,
+nora3,Borssele Kavel III and IV,2017,3,3,1.0
+nora3,Borssele Kavel III and IV,2018,0,0,
+nora3,Borssele Kavel III and IV,2019,0,0,
+nora3,Borssele Kavel III and IV,2020,0,0,
+nora3,Borssele Kavel III and IV,2021,2,2,1.0
+nora3,Borssele Kavel III and IV,2022,0,0,
+nora3,Borssele Kavel III and IV,2023,0,0,
+nora3,Borssele Kavel III and IV,2024,10,3,0.3
+nora3,Borssele Kavel III and IV,2025,0,0,
+nora3,Burbo Bank,2010,0,0,
+nora3,Burbo Bank,2011,0,0,
+nora3,Burbo Bank,2012,21,20,0.9523809523809523
+nora3,Burbo Bank,2016,0,0,
+nora3,Burbo Bank,2017,1,1,1.0
+nora3,Burbo Bank,2018,0,0,
+nora3,Burbo Bank,2019,0,0,
+nora3,Burbo Bank,2020,0,0,
+nora3,Burbo Bank,2021,0,0,
+nora3,Burbo Bank,2022,0,0,
+nora3,Burbo Bank,2023,0,0,
+nora3,Burbo Bank,2024,0,0,
+nora3,Burbo Bank,2025,0,0,
+nora3,Burbo Bank Extension,2010,0,0,
+nora3,Burbo Bank Extension,2011,0,0,
+nora3,Burbo Bank Extension,2012,72,54,0.75
+nora3,Burbo Bank Extension,2016,0,0,
+nora3,Burbo Bank Extension,2017,1,1,1.0
+nora3,Burbo Bank Extension,2018,0,0,
+nora3,Burbo Bank Extension,2019,0,0,
+nora3,Burbo Bank Extension,2020,0,0,
+nora3,Burbo Bank Extension,2021,0,0,
+nora3,Burbo Bank Extension,2022,0,0,
+nora3,Burbo Bank Extension,2023,0,0,
+nora3,Burbo Bank Extension,2024,0,0,
+nora3,Burbo Bank Extension,2025,0,0,
+nora3,Butendiek,2010,0,0,
+nora3,Butendiek,2011,9,4,0.4444444444444444
+nora3,Butendiek,2012,0,0,
+nora3,Butendiek,2016,1,1,1.0
+nora3,Butendiek,2017,35,32,0.9142857142857143
+nora3,Butendiek,2018,28,26,0.9285714285714286
+nora3,Butendiek,2019,27,25,0.9259259259259259
+nora3,Butendiek,2020,21,19,0.9047619047619048
+nora3,Butendiek,2021,21,20,0.9523809523809523
+nora3,Butendiek,2022,19,18,0.9473684210526315
+nora3,Butendiek,2023,18,16,0.8888888888888888
+nora3,Butendiek,2024,373,359,0.9624664879356568
+nora3,Butendiek,2025,36,35,0.9722222222222222
+nora3,Dan Tysk,2010,1,1,1.0
+nora3,Dan Tysk,2011,11,9,0.8181818181818182
+nora3,Dan Tysk,2012,8,4,0.5
+nora3,Dan Tysk,2016,1,1,1.0
+nora3,Dan Tysk,2017,24,15,0.625
+nora3,Dan Tysk,2018,23,18,0.782608695652174
+nora3,Dan Tysk,2019,23,18,0.782608695652174
+nora3,Dan Tysk,2020,26,20,0.7692307692307693
+nora3,Dan Tysk,2021,34,30,0.8823529411764706
+nora3,Dan Tysk,2022,25,22,0.88
+nora3,Dan Tysk,2023,18,12,0.6666666666666666
+nora3,Dan Tysk,2024,499,365,0.7314629258517034
+nora3,Dan Tysk,2025,18,12,0.6666666666666666
+nora3,Deutsche Bucht,2010,0,0,
+nora3,Deutsche Bucht,2011,1,0,0.0
+nora3,Deutsche Bucht,2012,2,1,0.5
+nora3,Deutsche Bucht,2016,0,0,
+nora3,Deutsche Bucht,2017,11,10,0.9090909090909091
+nora3,Deutsche Bucht,2018,10,6,0.6
+nora3,Deutsche Bucht,2019,7,7,1.0
+nora3,Deutsche Bucht,2020,5,3,0.6
+nora3,Deutsche Bucht,2021,12,9,0.75
+nora3,Deutsche Bucht,2022,4,3,0.75
+nora3,Deutsche Bucht,2023,4,4,1.0
+nora3,Deutsche Bucht,2024,144,94,0.6527777777777778
+nora3,Deutsche Bucht,2025,5,4,0.8
+nora3,Dudgeon,2010,0,0,
+nora3,Dudgeon,2011,0,0,
+nora3,Dudgeon,2012,0,0,
+nora3,Dudgeon,2016,0,0,
+nora3,Dudgeon,2017,13,13,1.0
+nora3,Dudgeon,2018,0,0,
+nora3,Dudgeon,2019,0,0,
+nora3,Dudgeon,2020,0,0,
+nora3,Dudgeon,2021,0,0,
+nora3,Dudgeon,2022,0,0,
+nora3,Dudgeon,2023,0,0,
+nora3,Dudgeon,2024,7,2,0.2857142857142857
+nora3,Dudgeon,2025,3,3,1.0
+nora3,East Anglia One,2010,0,0,
+nora3,East Anglia One,2011,0,0,
+nora3,East Anglia One,2012,2,2,1.0
+nora3,East Anglia One,2016,0,0,
+nora3,East Anglia One,2017,0,0,
+nora3,East Anglia One,2018,1,0,0.0
+nora3,East Anglia One,2019,0,0,
+nora3,East Anglia One,2020,0,0,
+nora3,East Anglia One,2021,0,0,
+nora3,East Anglia One,2022,0,0,
+nora3,East Anglia One,2023,0,0,
+nora3,East Anglia One,2024,10,8,0.8
+nora3,East Anglia One,2025,0,0,
+nora3,EnBW Hohe See,2010,2,2,1.0
+nora3,EnBW Hohe See,2011,0,0,
+nora3,EnBW Hohe See,2012,0,0,
+nora3,EnBW Hohe See,2016,0,0,
+nora3,EnBW Hohe See,2017,13,11,0.8461538461538461
+nora3,EnBW Hohe See,2018,29,21,0.7241379310344828
+nora3,EnBW Hohe See,2019,51,30,0.5882352941176471
+nora3,EnBW Hohe See,2020,14,13,0.9285714285714286
+nora3,EnBW Hohe See,2021,10,7,0.7
+nora3,EnBW Hohe See,2022,9,5,0.5555555555555556
+nora3,EnBW Hohe See,2023,8,8,1.0
+nora3,EnBW Hohe See,2024,282,205,0.7269503546099291
+nora3,EnBW Hohe See,2025,32,29,0.90625
+nora3,EnBW Windpark Baltic 1,2010,74,64,0.8648648648648649
+nora3,EnBW Windpark Baltic 1,2011,30,29,0.9666666666666667
+nora3,EnBW Windpark Baltic 1,2012,15,14,0.9333333333333333
+nora3,EnBW Windpark Baltic 1,2016,0,0,
+nora3,EnBW Windpark Baltic 1,2017,5,4,0.8
+nora3,EnBW Windpark Baltic 1,2018,8,8,1.0
+nora3,EnBW Windpark Baltic 1,2019,7,7,1.0
+nora3,EnBW Windpark Baltic 1,2020,9,8,0.8888888888888888
+nora3,EnBW Windpark Baltic 1,2021,11,10,0.9090909090909091
+nora3,EnBW Windpark Baltic 1,2022,23,22,0.9565217391304348
+nora3,EnBW Windpark Baltic 1,2023,8,7,0.875
+nora3,EnBW Windpark Baltic 1,2024,250,230,0.92
+nora3,EnBW Windpark Baltic 1,2025,25,22,0.88
+nora3,EnBW Windpark Baltic 2,2010,24,21,0.875
+nora3,EnBW Windpark Baltic 2,2011,31,30,0.967741935483871
+nora3,EnBW Windpark Baltic 2,2012,21,21,1.0
+nora3,EnBW Windpark Baltic 2,2016,3,3,1.0
+nora3,EnBW Windpark Baltic 2,2017,44,36,0.8181818181818182
+nora3,EnBW Windpark Baltic 2,2018,40,30,0.75
+nora3,EnBW Windpark Baltic 2,2019,37,34,0.918918918918919
+nora3,EnBW Windpark Baltic 2,2020,36,36,1.0
+nora3,EnBW Windpark Baltic 2,2021,52,48,0.9230769230769231
+nora3,EnBW Windpark Baltic 2,2022,21,21,1.0
+nora3,EnBW Windpark Baltic 2,2023,26,25,0.9615384615384616
+nora3,EnBW Windpark Baltic 2,2024,582,559,0.9604810996563574
+nora3,EnBW Windpark Baltic 2,2025,81,79,0.9753086419753086
+nora3,Frederikshavn Offshore,2010,349,2,0.0057306590257879654
+nora3,Frederikshavn Offshore,2011,455,3,0.006593406593406593
+nora3,Frederikshavn Offshore,2012,453,5,0.011037527593818985
+nora3,Frederikshavn Offshore,2016,45,6,0.13333333333333333
+nora3,Frederikshavn Offshore,2017,578,55,0.09515570934256055
+nora3,Frederikshavn Offshore,2018,561,35,0.062388591800356503
+nora3,Frederikshavn Offshore,2019,557,43,0.07719928186714542
+nora3,Frederikshavn Offshore,2020,562,29,0.051601423487544484
+nora3,Frederikshavn Offshore,2021,557,27,0.04847396768402154
+nora3,Frederikshavn Offshore,2022,532,10,0.018796992481203006
+nora3,Frederikshavn Offshore,2023,564,10,0.01773049645390071
+nora3,Frederikshavn Offshore,2024,5013,329,0.0656293636544983
+nora3,Frederikshavn Offshore,2025,791,68,0.08596713021491782
+nora3,Fécamp,2010,0,0,
+nora3,Fécamp,2011,0,0,
+nora3,Fécamp,2012,4,4,1.0
+nora3,Fécamp,2016,0,0,
+nora3,Fécamp,2017,0,0,
+nora3,Fécamp,2018,0,0,
+nora3,Fécamp,2019,0,0,
+nora3,Fécamp,2020,0,0,
+nora3,Fécamp,2021,0,0,
+nora3,Fécamp,2022,0,0,
+nora3,Fécamp,2023,0,0,
+nora3,Fécamp,2024,0,0,
+nora3,Fécamp,2025,0,0,
+nora3,Galloper,2010,7,0,0.0
+nora3,Galloper,2011,0,0,
+nora3,Galloper,2012,77,71,0.922077922077922
+nora3,Galloper,2016,0,0,
+nora3,Galloper,2017,20,20,1.0
+nora3,Galloper,2018,0,0,
+nora3,Galloper,2019,0,0,
+nora3,Galloper,2020,0,0,
+nora3,Galloper,2021,0,0,
+nora3,Galloper,2022,0,0,
+nora3,Galloper,2023,0,0,
+nora3,Galloper,2024,2,2,1.0
+nora3,Galloper,2025,0,0,
+nora3,Gemini,2010,0,0,
+nora3,Gemini,2011,0,0,
+nora3,Gemini,2012,0,0,
+nora3,Gemini,2016,0,0,
+nora3,Gemini,2017,4,3,0.75
+nora3,Gemini,2018,4,3,0.75
+nora3,Gemini,2019,0,0,
+nora3,Gemini,2020,1,1,1.0
+nora3,Gemini,2021,6,4,0.6666666666666666
+nora3,Gemini,2022,2,0,0.0
+nora3,Gemini,2023,0,0,
+nora3,Gemini,2024,88,53,0.6022727272727273
+nora3,Gemini,2025,0,0,
+nora3,Global Tech I,2010,1,1,1.0
+nora3,Global Tech I,2011,0,0,
+nora3,Global Tech I,2012,0,0,
+nora3,Global Tech I,2016,0,0,
+nora3,Global Tech I,2017,14,11,0.7857142857142857
+nora3,Global Tech I,2018,24,14,0.5833333333333334
+nora3,Global Tech I,2019,50,33,0.66
+nora3,Global Tech I,2020,14,14,1.0
+nora3,Global Tech I,2021,18,12,0.6666666666666666
+nora3,Global Tech I,2022,11,9,0.8181818181818182
+nora3,Global Tech I,2023,8,8,1.0
+nora3,Global Tech I,2024,263,214,0.8136882129277566
+nora3,Global Tech I,2025,31,27,0.8709677419354839
+nora3,Gode Wind 1 and 2,2010,2,2,1.0
+nora3,Gode Wind 1 and 2,2011,2,1,0.5
+nora3,Gode Wind 1 and 2,2012,2,1,0.5
+nora3,Gode Wind 1 and 2,2016,0,0,
+nora3,Gode Wind 1 and 2,2017,11,7,0.6363636363636364
+nora3,Gode Wind 1 and 2,2018,7,6,0.8571428571428571
+nora3,Gode Wind 1 and 2,2019,3,2,0.6666666666666666
+nora3,Gode Wind 1 and 2,2020,0,0,
+nora3,Gode Wind 1 and 2,2021,9,7,0.7777777777777778
+nora3,Gode Wind 1 and 2,2022,11,4,0.36363636363636365
+nora3,Gode Wind 1 and 2,2023,10,10,1.0
+nora3,Gode Wind 1 and 2,2024,764,572,0.7486910994764397
+nora3,Gode Wind 1 and 2,2025,73,45,0.6164383561643836
+nora3,Gode Wind 3,2010,1,0,0.0
+nora3,Gode Wind 3,2011,0,0,
+nora3,Gode Wind 3,2012,0,0,
+nora3,Gode Wind 3,2016,0,0,
+nora3,Gode Wind 3,2017,3,2,0.6666666666666666
+nora3,Gode Wind 3,2018,2,2,1.0
+nora3,Gode Wind 3,2019,2,2,1.0
+nora3,Gode Wind 3,2020,0,0,
+nora3,Gode Wind 3,2021,11,7,0.6363636363636364
+nora3,Gode Wind 3,2022,7,3,0.42857142857142855
+nora3,Gode Wind 3,2023,9,7,0.7777777777777778
+nora3,Gode Wind 3,2024,673,509,0.7563150074294205
+nora3,Gode Wind 3,2025,56,37,0.6607142857142857
+nora3,Greater Gabbard,2010,8,0,0.0
+nora3,Greater Gabbard,2011,0,0,
+nora3,Greater Gabbard,2012,122,111,0.9098360655737705
+nora3,Greater Gabbard,2016,0,0,
+nora3,Greater Gabbard,2017,18,18,1.0
+nora3,Greater Gabbard,2018,0,0,
+nora3,Greater Gabbard,2019,0,0,
+nora3,Greater Gabbard,2020,0,0,
+nora3,Greater Gabbard,2021,0,0,
+nora3,Greater Gabbard,2022,0,0,
+nora3,Greater Gabbard,2023,0,0,
+nora3,Greater Gabbard,2024,2,2,1.0
+nora3,Greater Gabbard,2025,0,0,
+nora3,Gunfleet Sands,2010,0,0,
+nora3,Gunfleet Sands,2011,0,0,
+nora3,Gunfleet Sands,2012,27,25,0.9259259259259259
+nora3,Gunfleet Sands,2016,0,0,
+nora3,Gunfleet Sands,2017,0,0,
+nora3,Gunfleet Sands,2018,0,0,
+nora3,Gunfleet Sands,2019,0,0,
+nora3,Gunfleet Sands,2020,0,0,
+nora3,Gunfleet Sands,2021,0,0,
+nora3,Gunfleet Sands,2022,0,0,
+nora3,Gunfleet Sands,2023,0,0,
+nora3,Gunfleet Sands,2024,3,1,0.3333333333333333
+nora3,Gunfleet Sands,2025,0,0,
+nora3,Gwynt y Mor,2010,0,0,
+nora3,Gwynt y Mor,2011,0,0,
+nora3,Gwynt y Mor,2012,71,64,0.9014084507042254
+nora3,Gwynt y Mor,2016,0,0,
+nora3,Gwynt y Mor,2017,7,7,1.0
+nora3,Gwynt y Mor,2018,0,0,
+nora3,Gwynt y Mor,2019,0,0,
+nora3,Gwynt y Mor,2020,0,0,
+nora3,Gwynt y Mor,2021,0,0,
+nora3,Gwynt y Mor,2022,0,0,
+nora3,Gwynt y Mor,2023,0,0,
+nora3,Gwynt y Mor,2024,0,0,
+nora3,Gwynt y Mor,2025,0,0,
+nora3,Hollandse Kust Noord,2010,0,0,
+nora3,Hollandse Kust Noord,2011,0,0,
+nora3,Hollandse Kust Noord,2012,29,23,0.7931034482758621
+nora3,Hollandse Kust Noord,2016,0,0,
+nora3,Hollandse Kust Noord,2017,0,0,
+nora3,Hollandse Kust Noord,2018,0,0,
+nora3,Hollandse Kust Noord,2019,0,0,
+nora3,Hollandse Kust Noord,2020,0,0,
+nora3,Hollandse Kust Noord,2021,1,1,1.0
+nora3,Hollandse Kust Noord,2022,1,0,0.0
+nora3,Hollandse Kust Noord,2023,2,2,1.0
+nora3,Hollandse Kust Noord,2024,17,10,0.5882352941176471
+nora3,Hollandse Kust Noord,2025,2,2,1.0
+nora3,Hollandse Kust Zuid,2010,0,0,
+nora3,Hollandse Kust Zuid,2011,0,0,
+nora3,Hollandse Kust Zuid,2012,137,110,0.8029197080291971
+nora3,Hollandse Kust Zuid,2016,0,0,
+nora3,Hollandse Kust Zuid,2017,9,7,0.7777777777777778
+nora3,Hollandse Kust Zuid,2018,0,0,
+nora3,Hollandse Kust Zuid,2019,0,0,
+nora3,Hollandse Kust Zuid,2020,0,0,
+nora3,Hollandse Kust Zuid,2021,3,3,1.0
+nora3,Hollandse Kust Zuid,2022,19,7,0.3684210526315789
+nora3,Hollandse Kust Zuid,2023,2,1,0.5
+nora3,Hollandse Kust Zuid,2024,66,47,0.7121212121212122
+nora3,Hollandse Kust Zuid,2025,4,3,0.75
+nora3,Horns Rev I,2010,44,40,0.9090909090909091
+nora3,Horns Rev I,2011,35,34,0.9714285714285714
+nora3,Horns Rev I,2012,26,25,0.9615384615384616
+nora3,Horns Rev I,2016,2,2,1.0
+nora3,Horns Rev I,2017,19,19,1.0
+nora3,Horns Rev I,2018,22,21,0.9545454545454546
+nora3,Horns Rev I,2019,26,26,1.0
+nora3,Horns Rev I,2020,25,21,0.84
+nora3,Horns Rev I,2021,25,24,0.96
+nora3,Horns Rev I,2022,27,27,1.0
+nora3,Horns Rev I,2023,29,27,0.9310344827586207
+nora3,Horns Rev I,2024,495,473,0.9555555555555556
+nora3,Horns Rev I,2025,33,33,1.0
+nora3,Horns Rev II,2010,29,29,1.0
+nora3,Horns Rev II,2011,31,26,0.8387096774193549
+nora3,Horns Rev II,2012,23,22,0.9565217391304348
+nora3,Horns Rev II,2016,0,0,
+nora3,Horns Rev II,2017,22,22,1.0
+nora3,Horns Rev II,2018,47,43,0.9148936170212766
+nora3,Horns Rev II,2019,67,64,0.9552238805970149
+nora3,Horns Rev II,2020,24,23,0.9583333333333334
+nora3,Horns Rev II,2021,17,17,1.0
+nora3,Horns Rev II,2022,29,28,0.9655172413793104
+nora3,Horns Rev II,2023,15,15,1.0
+nora3,Horns Rev II,2024,982,857,0.8727087576374746
+nora3,Horns Rev II,2025,94,85,0.9042553191489362
+nora3,Horns Rev III,2010,40,35,0.875
+nora3,Horns Rev III,2011,25,25,1.0
+nora3,Horns Rev III,2012,20,19,0.95
+nora3,Horns Rev III,2016,0,0,
+nora3,Horns Rev III,2017,23,22,0.9565217391304348
+nora3,Horns Rev III,2018,49,43,0.8775510204081632
+nora3,Horns Rev III,2019,73,69,0.9452054794520548
+nora3,Horns Rev III,2020,23,23,1.0
+nora3,Horns Rev III,2021,30,30,1.0
+nora3,Horns Rev III,2022,49,44,0.8979591836734694
+nora3,Horns Rev III,2023,20,19,0.95
+nora3,Horns Rev III,2024,823,742,0.9015795868772782
+nora3,Horns Rev III,2025,68,63,0.9264705882352942
+nora3,Hornsea Project 1,2010,0,0,
+nora3,Hornsea Project 1,2011,0,0,
+nora3,Hornsea Project 1,2012,3,1,0.3333333333333333
+nora3,Hornsea Project 1,2016,0,0,
+nora3,Hornsea Project 1,2017,1,1,1.0
+nora3,Hornsea Project 1,2018,5,5,1.0
+nora3,Hornsea Project 1,2019,0,0,
+nora3,Hornsea Project 1,2020,4,3,0.75
+nora3,Hornsea Project 1,2021,5,3,0.6
+nora3,Hornsea Project 1,2022,4,4,1.0
+nora3,Hornsea Project 1,2023,1,1,1.0
+nora3,Hornsea Project 1,2024,43,31,0.7209302325581395
+nora3,Hornsea Project 1,2025,3,2,0.6666666666666666
+nora3,Hornsea Project 2,2010,0,0,
+nora3,Hornsea Project 2,2011,0,0,
+nora3,Hornsea Project 2,2012,0,0,
+nora3,Hornsea Project 2,2016,0,0,
+nora3,Hornsea Project 2,2017,2,2,1.0
+nora3,Hornsea Project 2,2018,7,7,1.0
+nora3,Hornsea Project 2,2019,0,0,
+nora3,Hornsea Project 2,2020,2,2,1.0
+nora3,Hornsea Project 2,2021,8,5,0.625
+nora3,Hornsea Project 2,2022,3,3,1.0
+nora3,Hornsea Project 2,2023,1,1,1.0
+nora3,Hornsea Project 2,2024,51,33,0.6470588235294118
+nora3,Hornsea Project 2,2025,2,2,1.0
+nora3,Humber Gateway,2010,0,0,
+nora3,Humber Gateway,2011,0,0,
+nora3,Humber Gateway,2012,30,23,0.7666666666666667
+nora3,Humber Gateway,2016,0,0,
+nora3,Humber Gateway,2017,3,3,1.0
+nora3,Humber Gateway,2018,0,0,
+nora3,Humber Gateway,2019,0,0,
+nora3,Humber Gateway,2020,0,0,
+nora3,Humber Gateway,2021,2,1,0.5
+nora3,Humber Gateway,2022,0,0,
+nora3,Humber Gateway,2023,0,0,
+nora3,Humber Gateway,2024,9,8,0.8888888888888888
+nora3,Humber Gateway,2025,4,3,0.75
+nora3,Hywind Scotland Pilot Park,2010,0,0,
+nora3,Hywind Scotland Pilot Park,2011,0,0,
+nora3,Hywind Scotland Pilot Park,2012,1,1,1.0
+nora3,Hywind Scotland Pilot Park,2016,0,0,
+nora3,Hywind Scotland Pilot Park,2017,2,2,1.0
+nora3,Hywind Scotland Pilot Park,2018,0,0,
+nora3,Hywind Scotland Pilot Park,2019,0,0,
+nora3,Hywind Scotland Pilot Park,2020,0,0,
+nora3,Hywind Scotland Pilot Park,2021,0,0,
+nora3,Hywind Scotland Pilot Park,2022,0,0,
+nora3,Hywind Scotland Pilot Park,2023,0,0,
+nora3,Hywind Scotland Pilot Park,2024,11,7,0.6363636363636364
+nora3,Hywind Scotland Pilot Park,2025,0,0,
+nora3,Inner Dowsing,2010,0,0,
+nora3,Inner Dowsing,2011,0,0,
+nora3,Inner Dowsing,2012,225,187,0.8311111111111111
+nora3,Inner Dowsing,2016,0,0,
+nora3,Inner Dowsing,2017,0,0,
+nora3,Inner Dowsing,2018,0,0,
+nora3,Inner Dowsing,2019,0,0,
+nora3,Inner Dowsing,2020,0,0,
+nora3,Inner Dowsing,2021,0,0,
+nora3,Inner Dowsing,2022,0,0,
+nora3,Inner Dowsing,2023,0,0,
+nora3,Inner Dowsing,2024,1,1,1.0
+nora3,Inner Dowsing,2025,2,2,1.0
+nora3,Kaskasi,2010,9,6,0.6666666666666666
+nora3,Kaskasi,2011,6,4,0.6666666666666666
+nora3,Kaskasi,2012,15,12,0.8
+nora3,Kaskasi,2016,0,0,
+nora3,Kaskasi,2017,13,12,0.9230769230769231
+nora3,Kaskasi,2018,21,17,0.8095238095238095
+nora3,Kaskasi,2019,3,3,1.0
+nora3,Kaskasi,2020,10,7,0.7
+nora3,Kaskasi,2021,31,26,0.8387096774193549
+nora3,Kaskasi,2022,80,66,0.825
+nora3,Kaskasi,2023,14,11,0.7857142857142857
+nora3,Kaskasi,2024,718,632,0.8802228412256268
+nora3,Kaskasi,2025,101,82,0.8118811881188119
+nora3,Kentish Flats,2010,0,0,
+nora3,Kentish Flats,2011,0,0,
+nora3,Kentish Flats,2012,14,13,0.9285714285714286
+nora3,Kentish Flats,2016,0,0,
+nora3,Kentish Flats,2017,4,4,1.0
+nora3,Kentish Flats,2018,0,0,
+nora3,Kentish Flats,2019,0,0,
+nora3,Kentish Flats,2020,0,0,
+nora3,Kentish Flats,2021,0,0,
+nora3,Kentish Flats,2022,0,0,
+nora3,Kentish Flats,2023,0,0,
+nora3,Kentish Flats,2024,0,0,
+nora3,Kentish Flats,2025,0,0,
+nora3,Kentish Flats Extension,2010,0,0,
+nora3,Kentish Flats Extension,2011,0,0,
+nora3,Kentish Flats Extension,2012,11,10,0.9090909090909091
+nora3,Kentish Flats Extension,2016,0,0,
+nora3,Kentish Flats Extension,2017,2,2,1.0
+nora3,Kentish Flats Extension,2018,0,0,
+nora3,Kentish Flats Extension,2019,0,0,
+nora3,Kentish Flats Extension,2020,0,0,
+nora3,Kentish Flats Extension,2021,0,0,
+nora3,Kentish Flats Extension,2022,0,0,
+nora3,Kentish Flats Extension,2023,0,0,
+nora3,Kentish Flats Extension,2024,0,0,
+nora3,Kentish Flats Extension,2025,0,0,
+nora3,Kincardine,2010,0,0,
+nora3,Kincardine,2011,0,0,
+nora3,Kincardine,2012,0,0,
+nora3,Kincardine,2016,0,0,
+nora3,Kincardine,2017,0,0,
+nora3,Kincardine,2018,0,0,
+nora3,Kincardine,2019,0,0,
+nora3,Kincardine,2020,0,0,
+nora3,Kincardine,2021,1,1,1.0
+nora3,Kincardine,2022,0,0,
+nora3,Kincardine,2023,0,0,
+nora3,Kincardine,2024,0,0,
+nora3,Kincardine,2025,0,0,
+nora3,Kriegers Flak,2010,23,21,0.9130434782608695
+nora3,Kriegers Flak,2011,25,24,0.96
+nora3,Kriegers Flak,2012,19,19,1.0
+nora3,Kriegers Flak,2016,5,4,0.8
+nora3,Kriegers Flak,2017,50,43,0.86
+nora3,Kriegers Flak,2018,51,47,0.9215686274509803
+nora3,Kriegers Flak,2019,45,40,0.8888888888888888
+nora3,Kriegers Flak,2020,92,83,0.9021739130434783
+nora3,Kriegers Flak,2021,102,93,0.9117647058823529
+nora3,Kriegers Flak,2022,57,54,0.9473684210526315
+nora3,Kriegers Flak,2023,44,40,0.9090909090909091
+nora3,Kriegers Flak,2024,1555,1495,0.9614147909967846
+nora3,Kriegers Flak,2025,254,230,0.905511811023622
+nora3,Lillgrund,2010,17,17,1.0
+nora3,Lillgrund,2011,12,12,1.0
+nora3,Lillgrund,2012,13,13,1.0
+nora3,Lillgrund,2016,0,0,
+nora3,Lillgrund,2017,12,12,1.0
+nora3,Lillgrund,2018,8,6,0.75
+nora3,Lillgrund,2019,12,11,0.9166666666666666
+nora3,Lillgrund,2020,7,5,0.7142857142857143
+nora3,Lillgrund,2021,6,6,1.0
+nora3,Lillgrund,2022,11,11,1.0
+nora3,Lillgrund,2023,10,10,1.0
+nora3,Lillgrund,2024,281,273,0.9715302491103203
+nora3,Lillgrund,2025,61,59,0.9672131147540983
+nora3,Lincs,2010,0,0,
+nora3,Lincs,2011,0,0,
+nora3,Lincs,2012,193,172,0.8911917098445595
+nora3,Lincs,2016,0,0,
+nora3,Lincs,2017,0,0,
+nora3,Lincs,2018,0,0,
+nora3,Lincs,2019,0,0,
+nora3,Lincs,2020,0,0,
+nora3,Lincs,2021,0,0,
+nora3,Lincs,2022,0,0,
+nora3,Lincs,2023,0,0,
+nora3,Lincs,2024,1,1,1.0
+nora3,Lincs,2025,2,2,1.0
+nora3,London Array,2010,1,0,0.0
+nora3,London Array,2011,0,0,
+nora3,London Array,2012,377,304,0.8063660477453581
+nora3,London Array,2016,0,0,
+nora3,London Array,2017,1,1,1.0
+nora3,London Array,2018,0,0,
+nora3,London Array,2019,0,0,
+nora3,London Array,2020,0,0,
+nora3,London Array,2021,0,0,
+nora3,London Array,2022,0,0,
+nora3,London Array,2023,0,0,
+nora3,London Array,2024,0,0,
+nora3,London Array,2025,0,0,
+nora3,Lynn,2010,0,0,
+nora3,Lynn,2011,0,0,
+nora3,Lynn,2012,200,170,0.85
+nora3,Lynn,2016,0,0,
+nora3,Lynn,2017,0,0,
+nora3,Lynn,2018,0,0,
+nora3,Lynn,2019,0,0,
+nora3,Lynn,2020,0,0,
+nora3,Lynn,2021,0,0,
+nora3,Lynn,2022,0,0,
+nora3,Lynn,2023,0,0,
+nora3,Lynn,2024,0,0,
+nora3,Lynn,2025,1,1,1.0
+nora3,Meerwind Sued/Ost,2010,0,0,
+nora3,Meerwind Sued/Ost,2011,3,2,0.6666666666666666
+nora3,Meerwind Sued/Ost,2012,11,9,0.8181818181818182
+nora3,Meerwind Sued/Ost,2016,0,0,
+nora3,Meerwind Sued/Ost,2017,12,11,0.9166666666666666
+nora3,Meerwind Sued/Ost,2018,23,20,0.8695652173913043
+nora3,Meerwind Sued/Ost,2019,3,3,1.0
+nora3,Meerwind Sued/Ost,2020,12,9,0.75
+nora3,Meerwind Sued/Ost,2021,50,41,0.82
+nora3,Meerwind Sued/Ost,2022,44,38,0.8636363636363636
+nora3,Meerwind Sued/Ost,2023,27,24,0.8888888888888888
+nora3,Meerwind Sued/Ost,2024,720,651,0.9041666666666667
+nora3,Meerwind Sued/Ost,2025,77,61,0.7922077922077922
+nora3,Merkur Offshore,2010,4,4,1.0
+nora3,Merkur Offshore,2011,16,9,0.5625
+nora3,Merkur Offshore,2012,17,13,0.7647058823529411
+nora3,Merkur Offshore,2016,0,0,
+nora3,Merkur Offshore,2017,18,13,0.7222222222222222
+nora3,Merkur Offshore,2018,67,40,0.5970149253731343
+nora3,Merkur Offshore,2019,19,18,0.9473684210526315
+nora3,Merkur Offshore,2020,13,10,0.7692307692307693
+nora3,Merkur Offshore,2021,30,21,0.7
+nora3,Merkur Offshore,2022,25,21,0.84
+nora3,Merkur Offshore,2023,28,24,0.8571428571428571
+nora3,Merkur Offshore,2024,798,582,0.7293233082706767
+nora3,Merkur Offshore,2025,47,34,0.723404255319149
+nora3,Mermaid,2010,0,0,
+nora3,Mermaid,2011,0,0,
+nora3,Mermaid,2012,8,5,0.625
+nora3,Mermaid,2016,0,0,
+nora3,Mermaid,2017,1,1,1.0
+nora3,Mermaid,2018,0,0,
+nora3,Mermaid,2019,0,0,
+nora3,Mermaid,2020,0,0,
+nora3,Mermaid,2021,0,0,
+nora3,Mermaid,2022,0,0,
+nora3,Mermaid,2023,0,0,
+nora3,Mermaid,2024,3,0,0.0
+nora3,Mermaid,2025,0,0,
+nora3,Middelgrunden,2010,128,53,0.4140625
+nora3,Middelgrunden,2011,132,62,0.4696969696969697
+nora3,Middelgrunden,2012,156,86,0.5512820512820513
+nora3,Middelgrunden,2016,27,17,0.6296296296296297
+nora3,Middelgrunden,2017,355,214,0.6028169014084507
+nora3,Middelgrunden,2018,622,218,0.3504823151125402
+nora3,Middelgrunden,2019,715,258,0.36083916083916084
+nora3,Middelgrunden,2020,651,245,0.3763440860215054
+nora3,Middelgrunden,2021,744,335,0.45026881720430106
+nora3,Middelgrunden,2022,938,455,0.48507462686567165
+nora3,Middelgrunden,2023,780,338,0.43333333333333335
+nora3,Middelgrunden,2024,8766,4476,0.5106091718001369
+nora3,Middelgrunden,2025,1009,479,0.47472745292368684
+nora3,Moray East,2010,0,0,
+nora3,Moray East,2011,0,0,
+nora3,Moray East,2012,4,4,1.0
+nora3,Moray East,2016,0,0,
+nora3,Moray East,2017,2,2,1.0
+nora3,Moray East,2018,0,0,
+nora3,Moray East,2019,0,0,
+nora3,Moray East,2020,0,0,
+nora3,Moray East,2021,1,1,1.0
+nora3,Moray East,2022,0,0,
+nora3,Moray East,2023,0,0,
+nora3,Moray East,2024,1,1,1.0
+nora3,Moray East,2025,5,4,0.8
+nora3,Moray West,2010,1,0,0.0
+nora3,Moray West,2011,0,0,
+nora3,Moray West,2012,15,12,0.8
+nora3,Moray West,2016,0,0,
+nora3,Moray West,2017,4,4,1.0
+nora3,Moray West,2018,0,0,
+nora3,Moray West,2019,0,0,
+nora3,Moray West,2020,0,0,
+nora3,Moray West,2021,0,0,
+nora3,Moray West,2022,0,0,
+nora3,Moray West,2023,0,0,
+nora3,Moray West,2024,2,2,1.0
+nora3,Moray West,2025,3,3,1.0
+nora3,Neart na Gaoithe,2010,0,0,
+nora3,Neart na Gaoithe,2011,0,0,
+nora3,Neart na Gaoithe,2012,3,2,0.6666666666666666
+nora3,Neart na Gaoithe,2016,0,0,
+nora3,Neart na Gaoithe,2017,0,0,
+nora3,Neart na Gaoithe,2018,0,0,
+nora3,Neart na Gaoithe,2019,0,0,
+nora3,Neart na Gaoithe,2020,0,0,
+nora3,Neart na Gaoithe,2021,3,3,1.0
+nora3,Neart na Gaoithe,2022,0,0,
+nora3,Neart na Gaoithe,2023,0,0,
+nora3,Neart na Gaoithe,2024,7,6,0.8571428571428571
+nora3,Neart na Gaoithe,2025,5,5,1.0
+nora3,Nissum Bredning,2010,339,0,0.0
+nora3,Nissum Bredning,2011,395,1,0.002531645569620253
+nora3,Nissum Bredning,2012,466,7,0.015021459227467811
+nora3,Nissum Bredning,2016,66,0,0.0
+nora3,Nissum Bredning,2017,791,6,0.007585335018963337
+nora3,Nissum Bredning,2018,721,5,0.006934812760055479
+nora3,Nissum Bredning,2019,770,0,0.0
+nora3,Nissum Bredning,2020,782,6,0.0076726342710997444
+nora3,Nissum Bredning,2021,708,7,0.009887005649717515
+nora3,Nissum Bredning,2022,715,1,0.0013986013986013986
+nora3,Nissum Bredning,2023,658,8,0.0121580547112462
+nora3,Nissum Bredning,2024,4184,66,0.01577437858508604
+nora3,Nissum Bredning,2025,678,4,0.0058997050147492625
+nora3,Nobelwind,2010,0,0,
+nora3,Nobelwind,2011,0,0,
+nora3,Nobelwind,2012,8,5,0.625
+nora3,Nobelwind,2016,0,0,
+nora3,Nobelwind,2017,1,1,1.0
+nora3,Nobelwind,2018,0,0,
+nora3,Nobelwind,2019,0,0,
+nora3,Nobelwind,2020,0,0,
+nora3,Nobelwind,2021,0,0,
+nora3,Nobelwind,2022,0,0,
+nora3,Nobelwind,2023,0,0,
+nora3,Nobelwind,2024,5,2,0.4
+nora3,Nobelwind,2025,0,0,
+nora3,Nordergründe,2010,0,0,
+nora3,Nordergründe,2011,0,0,
+nora3,Nordergründe,2012,0,0,
+nora3,Nordergründe,2016,0,0,
+nora3,Nordergründe,2017,5,4,0.8
+nora3,Nordergründe,2018,1,1,1.0
+nora3,Nordergründe,2019,1,1,1.0
+nora3,Nordergründe,2020,1,1,1.0
+nora3,Nordergründe,2021,0,0,
+nora3,Nordergründe,2022,1,1,1.0
+nora3,Nordergründe,2023,2,2,1.0
+nora3,Nordergründe,2024,69,52,0.7536231884057971
+nora3,Nordergründe,2025,14,14,1.0
+nora3,Nordsee One,2010,1,1,1.0
+nora3,Nordsee One,2011,0,0,
+nora3,Nordsee One,2012,0,0,
+nora3,Nordsee One,2016,0,0,
+nora3,Nordsee One,2017,12,8,0.6666666666666666
+nora3,Nordsee One,2018,10,9,0.9
+nora3,Nordsee One,2019,1,0,0.0
+nora3,Nordsee One,2020,0,0,
+nora3,Nordsee One,2021,4,3,0.75
+nora3,Nordsee One,2022,13,6,0.46153846153846156
+nora3,Nordsee One,2023,4,4,1.0
+nora3,Nordsee One,2024,330,266,0.806060606060606
+nora3,Nordsee One,2025,37,29,0.7837837837837838
+nora3,Nordsee Ost,2010,9,6,0.6666666666666666
+nora3,Nordsee Ost,2011,7,5,0.7142857142857143
+nora3,Nordsee Ost,2012,21,17,0.8095238095238095
+nora3,Nordsee Ost,2016,0,0,
+nora3,Nordsee Ost,2017,14,12,0.8571428571428571
+nora3,Nordsee Ost,2018,34,31,0.9117647058823529
+nora3,Nordsee Ost,2019,3,3,1.0
+nora3,Nordsee Ost,2020,15,11,0.7333333333333333
+nora3,Nordsee Ost,2021,50,46,0.92
+nora3,Nordsee Ost,2022,100,76,0.76
+nora3,Nordsee Ost,2023,30,27,0.9
+nora3,Nordsee Ost,2024,981,869,0.8858307849133538
+nora3,Nordsee Ost,2025,112,96,0.8571428571428571
+nora3,North Hoyle,2010,0,0,
+nora3,North Hoyle,2011,0,0,
+nora3,North Hoyle,2012,41,36,0.8780487804878049
+nora3,North Hoyle,2016,0,0,
+nora3,North Hoyle,2017,1,1,1.0
+nora3,North Hoyle,2018,0,0,
+nora3,North Hoyle,2019,0,0,
+nora3,North Hoyle,2020,0,0,
+nora3,North Hoyle,2021,0,0,
+nora3,North Hoyle,2022,0,0,
+nora3,North Hoyle,2023,0,0,
+nora3,North Hoyle,2024,0,0,
+nora3,North Hoyle,2025,0,0,
+nora3,Norther,2010,0,0,
+nora3,Norther,2011,0,0,
+nora3,Norther,2012,89,74,0.8314606741573034
+nora3,Norther,2016,0,0,
+nora3,Norther,2017,3,3,1.0
+nora3,Norther,2018,0,0,
+nora3,Norther,2019,0,0,
+nora3,Norther,2020,0,0,
+nora3,Norther,2021,0,0,
+nora3,Norther,2022,0,0,
+nora3,Norther,2023,0,0,
+nora3,Norther,2024,0,0,
+nora3,Norther,2025,0,0,
+nora3,Northwester 2,2010,0,0,
+nora3,Northwester 2,2011,0,0,
+nora3,Northwester 2,2012,8,4,0.5
+nora3,Northwester 2,2016,0,0,
+nora3,Northwester 2,2017,1,1,1.0
+nora3,Northwester 2,2018,0,0,
+nora3,Northwester 2,2019,0,0,
+nora3,Northwester 2,2020,0,0,
+nora3,Northwester 2,2021,0,0,
+nora3,Northwester 2,2022,0,0,
+nora3,Northwester 2,2023,0,0,
+nora3,Northwester 2,2024,3,1,0.3333333333333333
+nora3,Northwester 2,2025,0,0,
+nora3,Northwind,2010,0,0,
+nora3,Northwind,2011,0,0,
+nora3,Northwind,2012,9,8,0.8888888888888888
+nora3,Northwind,2016,0,0,
+nora3,Northwind,2017,3,3,1.0
+nora3,Northwind,2018,0,0,
+nora3,Northwind,2019,0,0,
+nora3,Northwind,2020,0,0,
+nora3,Northwind,2021,0,0,
+nora3,Northwind,2022,0,0,
+nora3,Northwind,2023,0,0,
+nora3,Northwind,2024,4,1,0.25
+nora3,Northwind,2025,0,0,
+nora3,Nysted,2010,56,54,0.9642857142857143
+nora3,Nysted,2011,19,18,0.9473684210526315
+nora3,Nysted,2012,19,19,1.0
+nora3,Nysted,2016,2,2,1.0
+nora3,Nysted,2017,22,21,0.9545454545454546
+nora3,Nysted,2018,25,25,1.0
+nora3,Nysted,2019,28,27,0.9642857142857143
+nora3,Nysted,2020,16,16,1.0
+nora3,Nysted,2021,24,23,0.9583333333333334
+nora3,Nysted,2022,24,23,0.9583333333333334
+nora3,Nysted,2023,22,22,1.0
+nora3,Nysted,2024,711,689,0.9690576652601969
+nora3,Nysted,2025,127,121,0.952755905511811
+nora3,OWF Egmond aan Zee,2010,0,0,
+nora3,OWF Egmond aan Zee,2011,0,0,
+nora3,OWF Egmond aan Zee,2012,18,13,0.7222222222222222
+nora3,OWF Egmond aan Zee,2016,0,0,
+nora3,OWF Egmond aan Zee,2017,0,0,
+nora3,OWF Egmond aan Zee,2018,0,0,
+nora3,OWF Egmond aan Zee,2019,0,0,
+nora3,OWF Egmond aan Zee,2020,0,0,
+nora3,OWF Egmond aan Zee,2021,0,0,
+nora3,OWF Egmond aan Zee,2022,0,0,
+nora3,OWF Egmond aan Zee,2023,0,0,
+nora3,OWF Egmond aan Zee,2024,10,7,0.7
+nora3,OWF Egmond aan Zee,2025,0,0,
+nora3,OWF Luchterduinen,2010,0,0,
+nora3,OWF Luchterduinen,2011,0,0,
+nora3,OWF Luchterduinen,2012,46,34,0.7391304347826086
+nora3,OWF Luchterduinen,2016,0,0,
+nora3,OWF Luchterduinen,2017,1,1,1.0
+nora3,OWF Luchterduinen,2018,0,0,
+nora3,OWF Luchterduinen,2019,0,0,
+nora3,OWF Luchterduinen,2020,0,0,
+nora3,OWF Luchterduinen,2021,2,2,1.0
+nora3,OWF Luchterduinen,2022,6,2,0.3333333333333333
+nora3,OWF Luchterduinen,2023,0,0,
+nora3,OWF Luchterduinen,2024,11,9,0.8181818181818182
+nora3,OWF Luchterduinen,2025,1,1,1.0
+nora3,OWF Prinses Amalia,2010,0,0,
+nora3,OWF Prinses Amalia,2011,0,0,
+nora3,OWF Prinses Amalia,2012,33,24,0.7272727272727273
+nora3,OWF Prinses Amalia,2016,0,0,
+nora3,OWF Prinses Amalia,2017,0,0,
+nora3,OWF Prinses Amalia,2018,0,0,
+nora3,OWF Prinses Amalia,2019,0,0,
+nora3,OWF Prinses Amalia,2020,0,0,
+nora3,OWF Prinses Amalia,2021,0,0,
+nora3,OWF Prinses Amalia,2022,0,0,
+nora3,OWF Prinses Amalia,2023,0,0,
+nora3,OWF Prinses Amalia,2024,7,4,0.5714285714285714
+nora3,OWF Prinses Amalia,2025,1,1,1.0
+nora3,Ormonde,2010,0,0,
+nora3,Ormonde,2011,0,0,
+nora3,Ormonde,2012,47,47,1.0
+nora3,Ormonde,2016,0,0,
+nora3,Ormonde,2017,1,1,1.0
+nora3,Ormonde,2018,0,0,
+nora3,Ormonde,2019,0,0,
+nora3,Ormonde,2020,0,0,
+nora3,Ormonde,2021,0,0,
+nora3,Ormonde,2022,0,0,
+nora3,Ormonde,2023,0,0,
+nora3,Ormonde,2024,0,0,
+nora3,Ormonde,2025,0,0,
+nora3,Race Bank,2010,0,0,
+nora3,Race Bank,2011,0,0,
+nora3,Race Bank,2012,8,8,1.0
+nora3,Race Bank,2016,0,0,
+nora3,Race Bank,2017,18,18,1.0
+nora3,Race Bank,2018,0,0,
+nora3,Race Bank,2019,0,0,
+nora3,Race Bank,2020,1,1,1.0
+nora3,Race Bank,2021,0,0,
+nora3,Race Bank,2022,0,0,
+nora3,Race Bank,2023,0,0,
+nora3,Race Bank,2024,5,4,0.8
+nora3,Race Bank,2025,1,1,1.0
+nora3,Rampion,2010,0,0,
+nora3,Rampion,2011,0,0,
+nora3,Rampion,2012,12,10,0.8333333333333334
+nora3,Rampion,2016,0,0,
+nora3,Rampion,2017,9,9,1.0
+nora3,Rampion,2018,0,0,
+nora3,Rampion,2019,0,0,
+nora3,Rampion,2020,0,0,
+nora3,Rampion,2021,0,0,
+nora3,Rampion,2022,0,0,
+nora3,Rampion,2023,0,0,
+nora3,Rampion,2024,0,0,
+nora3,Rampion,2025,0,0,
+nora3,Renland,2010,339,0,0.0
+nora3,Renland,2011,392,0,0.0
+nora3,Renland,2012,467,7,0.014989293361884369
+nora3,Renland,2016,66,0,0.0
+nora3,Renland,2017,791,6,0.007585335018963337
+nora3,Renland,2018,724,7,0.009668508287292817
+nora3,Renland,2019,770,0,0.0
+nora3,Renland,2020,783,7,0.008939974457215836
+nora3,Renland,2021,706,5,0.007082152974504249
+nora3,Renland,2022,710,1,0.0014084507042253522
+nora3,Renland,2023,660,8,0.012121212121212121
+nora3,Renland,2024,4164,79,0.018972142170989432
+nora3,Renland,2025,656,6,0.009146341463414634
+nora3,Rentel,2010,0,0,
+nora3,Rentel,2011,0,0,
+nora3,Rentel,2012,86,70,0.813953488372093
+nora3,Rentel,2016,0,0,
+nora3,Rentel,2017,5,5,1.0
+nora3,Rentel,2018,0,0,
+nora3,Rentel,2019,0,0,
+nora3,Rentel,2020,0,0,
+nora3,Rentel,2021,0,0,
+nora3,Rentel,2022,0,0,
+nora3,Rentel,2023,0,0,
+nora3,Rentel,2024,3,1,0.3333333333333333
+nora3,Rentel,2025,0,0,
+nora3,Rhyl Flats,2010,0,0,
+nora3,Rhyl Flats,2011,0,0,
+nora3,Rhyl Flats,2012,30,23,0.7666666666666667
+nora3,Rhyl Flats,2016,0,0,
+nora3,Rhyl Flats,2017,4,4,1.0
+nora3,Rhyl Flats,2018,0,0,
+nora3,Rhyl Flats,2019,0,0,
+nora3,Rhyl Flats,2020,0,0,
+nora3,Rhyl Flats,2021,0,0,
+nora3,Rhyl Flats,2022,0,0,
+nora3,Rhyl Flats,2023,0,0,
+nora3,Rhyl Flats,2024,0,0,
+nora3,Rhyl Flats,2025,0,0,
+nora3,Riffgat,2010,0,0,
+nora3,Riffgat,2011,1,1,1.0
+nora3,Riffgat,2012,24,15,0.625
+nora3,Riffgat,2016,0,0,
+nora3,Riffgat,2017,0,0,
+nora3,Riffgat,2018,0,0,
+nora3,Riffgat,2019,0,0,
+nora3,Riffgat,2020,0,0,
+nora3,Riffgat,2021,1,1,1.0
+nora3,Riffgat,2022,0,0,
+nora3,Riffgat,2023,0,0,
+nora3,Riffgat,2024,72,58,0.8055555555555556
+nora3,Riffgat,2025,3,3,1.0
+nora3,Robin Rigg West,2010,0,0,
+nora3,Robin Rigg West,2011,0,0,
+nora3,Robin Rigg West,2012,11,10,0.9090909090909091
+nora3,Robin Rigg West,2016,0,0,
+nora3,Robin Rigg West,2017,1,1,1.0
+nora3,Robin Rigg West,2018,0,0,
+nora3,Robin Rigg West,2019,0,0,
+nora3,Robin Rigg West,2020,0,0,
+nora3,Robin Rigg West,2021,0,0,
+nora3,Robin Rigg West,2022,0,0,
+nora3,Robin Rigg West,2023,0,0,
+nora3,Robin Rigg West,2024,0,0,
+nora3,Robin Rigg West,2025,0,0,
+nora3,Rodsand II,2010,107,99,0.9252336448598131
+nora3,Rodsand II,2011,32,31,0.96875
+nora3,Rodsand II,2012,23,23,1.0
+nora3,Rodsand II,2016,2,2,1.0
+nora3,Rodsand II,2017,22,20,0.9090909090909091
+nora3,Rodsand II,2018,23,22,0.9565217391304348
+nora3,Rodsand II,2019,27,26,0.9629629629629629
+nora3,Rodsand II,2020,25,25,1.0
+nora3,Rodsand II,2021,40,40,1.0
+nora3,Rodsand II,2022,26,24,0.9230769230769231
+nora3,Rodsand II,2023,26,26,1.0
+nora3,Rodsand II,2024,1002,888,0.8862275449101796
+nora3,Rodsand II,2025,154,139,0.9025974025974026
+nora3,Saint-Brieuc,2010,0,0,
+nora3,Saint-Brieuc,2011,0,0,
+nora3,Saint-Brieuc,2012,4,4,1.0
+nora3,Saint-Brieuc,2016,0,0,
+nora3,Saint-Brieuc,2017,0,0,
+nora3,Saint-Brieuc,2018,0,0,
+nora3,Saint-Brieuc,2019,0,0,
+nora3,Saint-Brieuc,2020,0,0,
+nora3,Saint-Brieuc,2021,0,0,
+nora3,Saint-Brieuc,2022,0,0,
+nora3,Saint-Brieuc,2023,0,0,
+nora3,Saint-Brieuc,2024,0,0,
+nora3,Saint-Brieuc,2025,0,0,
+nora3,Saint-Nazaire,2010,0,0,
+nora3,Saint-Nazaire,2011,0,0,
+nora3,Saint-Nazaire,2012,6,6,1.0
+nora3,Saint-Nazaire,2016,0,0,
+nora3,Saint-Nazaire,2017,0,0,
+nora3,Saint-Nazaire,2018,0,0,
+nora3,Saint-Nazaire,2019,0,0,
+nora3,Saint-Nazaire,2020,0,0,
+nora3,Saint-Nazaire,2021,0,0,
+nora3,Saint-Nazaire,2022,0,0,
+nora3,Saint-Nazaire,2023,0,0,
+nora3,Saint-Nazaire,2024,0,0,
+nora3,Saint-Nazaire,2025,0,0,
+nora3,Samsa,2010,0,0,
+nora3,Samsa,2011,0,0,
+nora3,Samsa,2012,0,0,
+nora3,Samsa,2016,0,0,
+nora3,Samsa,2017,4,4,1.0
+nora3,Samsa,2018,5,4,0.8
+nora3,Samsa,2019,2,1,0.5
+nora3,Samsa,2020,2,2,1.0
+nora3,Samsa,2021,2,2,1.0
+nora3,Samsa,2022,2,2,1.0
+nora3,Samsa,2023,2,2,1.0
+nora3,Samsa,2024,83,80,0.963855421686747
+nora3,Samsa,2025,20,19,0.95
+nora3,Sandbank,2010,3,2,0.6666666666666666
+nora3,Sandbank,2011,0,0,
+nora3,Sandbank,2012,0,0,
+nora3,Sandbank,2016,2,1,0.5
+nora3,Sandbank,2017,28,24,0.8571428571428571
+nora3,Sandbank,2018,15,11,0.7333333333333333
+nora3,Sandbank,2019,12,9,0.75
+nora3,Sandbank,2020,9,9,1.0
+nora3,Sandbank,2021,18,15,0.8333333333333334
+nora3,Sandbank,2022,15,13,0.8666666666666667
+nora3,Sandbank,2023,11,10,0.9090909090909091
+nora3,Sandbank,2024,256,217,0.84765625
+nora3,Sandbank,2025,14,8,0.5714285714285714
+nora3,Scroby Sands,2010,0,0,
+nora3,Scroby Sands,2011,0,0,
+nora3,Scroby Sands,2012,113,21,0.18584070796460178
+nora3,Scroby Sands,2016,0,0,
+nora3,Scroby Sands,2017,15,0,0.0
+nora3,Scroby Sands,2018,0,0,
+nora3,Scroby Sands,2019,0,0,
+nora3,Scroby Sands,2020,0,0,
+nora3,Scroby Sands,2021,0,0,
+nora3,Scroby Sands,2022,0,0,
+nora3,Scroby Sands,2023,0,0,
+nora3,Scroby Sands,2024,8,5,0.625
+nora3,Scroby Sands,2025,0,0,
+nora3,SeaStar,2010,0,0,
+nora3,SeaStar,2011,0,0,
+nora3,SeaStar,2012,10,8,0.8
+nora3,SeaStar,2016,0,0,
+nora3,SeaStar,2017,2,2,1.0
+nora3,SeaStar,2018,0,0,
+nora3,SeaStar,2019,0,0,
+nora3,SeaStar,2020,0,0,
+nora3,SeaStar,2021,0,0,
+nora3,SeaStar,2022,0,0,
+nora3,SeaStar,2023,0,0,
+nora3,SeaStar,2024,6,4,0.6666666666666666
+nora3,SeaStar,2025,0,0,
+nora3,Seagreen,2010,0,0,
+nora3,Seagreen,2011,0,0,
+nora3,Seagreen,2012,0,0,
+nora3,Seagreen,2016,0,0,
+nora3,Seagreen,2017,0,0,
+nora3,Seagreen,2018,0,0,
+nora3,Seagreen,2019,0,0,
+nora3,Seagreen,2020,0,0,
+nora3,Seagreen,2021,2,2,1.0
+nora3,Seagreen,2022,0,0,
+nora3,Seagreen,2023,0,0,
+nora3,Seagreen,2024,6,2,0.3333333333333333
+nora3,Seagreen,2025,2,2,1.0
+nora3,Sheringham Shoal,2010,0,0,
+nora3,Sheringham Shoal,2011,0,0,
+nora3,Sheringham Shoal,2012,164,125,0.7621951219512195
+nora3,Sheringham Shoal,2016,0,0,
+nora3,Sheringham Shoal,2017,2,2,1.0
+nora3,Sheringham Shoal,2018,0,0,
+nora3,Sheringham Shoal,2019,0,0,
+nora3,Sheringham Shoal,2020,0,0,
+nora3,Sheringham Shoal,2021,0,0,
+nora3,Sheringham Shoal,2022,0,0,
+nora3,Sheringham Shoal,2023,0,0,
+nora3,Sheringham Shoal,2024,8,7,0.875
+nora3,Sheringham Shoal,2025,0,0,
+nora3,Sprogo,2010,5,5,1.0
+nora3,Sprogo,2011,5,4,0.8
+nora3,Sprogo,2012,4,4,1.0
+nora3,Sprogo,2016,1,1,1.0
+nora3,Sprogo,2017,19,19,1.0
+nora3,Sprogo,2018,22,22,1.0
+nora3,Sprogo,2019,6,6,1.0
+nora3,Sprogo,2020,1,1,1.0
+nora3,Sprogo,2021,5,5,1.0
+nora3,Sprogo,2022,4,2,0.5
+nora3,Sprogo,2023,1,1,1.0
+nora3,Sprogo,2024,46,40,0.8695652173913043
+nora3,Sprogo,2025,5,4,0.8
+nora3,Teesside,2010,5,3,0.6
+nora3,Teesside,2011,0,0,
+nora3,Teesside,2012,132,75,0.5681818181818182
+nora3,Teesside,2016,0,0,
+nora3,Teesside,2017,1,0,0.0
+nora3,Teesside,2018,0,0,
+nora3,Teesside,2019,0,0,
+nora3,Teesside,2020,0,0,
+nora3,Teesside,2021,1,0,0.0
+nora3,Teesside,2022,0,0,
+nora3,Teesside,2023,0,0,
+nora3,Teesside,2024,4,0,0.0
+nora3,Teesside,2025,0,0,
+nora3,Thanet,2010,1,0,0.0
+nora3,Thanet,2011,0,0,
+nora3,Thanet,2012,30,28,0.9333333333333333
+nora3,Thanet,2016,0,0,
+nora3,Thanet,2017,2,2,1.0
+nora3,Thanet,2018,0,0,
+nora3,Thanet,2019,0,0,
+nora3,Thanet,2020,0,0,
+nora3,Thanet,2021,0,0,
+nora3,Thanet,2022,0,0,
+nora3,Thanet,2023,0,0,
+nora3,Thanet,2024,0,0,
+nora3,Thanet,2025,0,0,
+nora3,Thornton Bank - phase I,2010,0,0,
+nora3,Thornton Bank - phase I,2011,0,0,
+nora3,Thornton Bank - phase I,2012,77,69,0.8961038961038961
+nora3,Thornton Bank - phase I,2016,0,0,
+nora3,Thornton Bank - phase I,2017,2,2,1.0
+nora3,Thornton Bank - phase I,2018,0,0,
+nora3,Thornton Bank - phase I,2019,0,0,
+nora3,Thornton Bank - phase I,2020,0,0,
+nora3,Thornton Bank - phase I,2021,0,0,
+nora3,Thornton Bank - phase I,2022,0,0,
+nora3,Thornton Bank - phase I,2023,0,0,
+nora3,Thornton Bank - phase I,2024,1,0,0.0
+nora3,Thornton Bank - phase I,2025,0,0,
+nora3,Thornton Bank - phase II and III,2010,0,0,
+nora3,Thornton Bank - phase II and III,2011,0,0,
+nora3,Thornton Bank - phase II and III,2012,89,78,0.8764044943820225
+nora3,Thornton Bank - phase II and III,2016,0,0,
+nora3,Thornton Bank - phase II and III,2017,4,4,1.0
+nora3,Thornton Bank - phase II and III,2018,0,0,
+nora3,Thornton Bank - phase II and III,2019,0,0,
+nora3,Thornton Bank - phase II and III,2020,0,0,
+nora3,Thornton Bank - phase II and III,2021,0,0,
+nora3,Thornton Bank - phase II and III,2022,0,0,
+nora3,Thornton Bank - phase II and III,2023,0,0,
+nora3,Thornton Bank - phase II and III,2024,4,2,0.5
+nora3,Thornton Bank - phase II and III,2025,0,0,
+nora3,Trianel Windpark Borkum 1,2010,0,0,
+nora3,Trianel Windpark Borkum 1,2011,0,0,
+nora3,Trianel Windpark Borkum 1,2012,5,5,1.0
+nora3,Trianel Windpark Borkum 1,2016,0,0,
+nora3,Trianel Windpark Borkum 1,2017,11,6,0.5454545454545454
+nora3,Trianel Windpark Borkum 1,2018,55,37,0.6727272727272727
+nora3,Trianel Windpark Borkum 1,2019,7,7,1.0
+nora3,Trianel Windpark Borkum 1,2020,8,5,0.625
+nora3,Trianel Windpark Borkum 1,2021,24,19,0.7916666666666666
+nora3,Trianel Windpark Borkum 1,2022,20,17,0.85
+nora3,Trianel Windpark Borkum 1,2023,12,11,0.9166666666666666
+nora3,Trianel Windpark Borkum 1,2024,723,556,0.7690179806362379
+nora3,Trianel Windpark Borkum 1,2025,35,30,0.8571428571428571
+nora3,Trianel Windpark Borkum 2,2010,0,0,
+nora3,Trianel Windpark Borkum 2,2011,0,0,
+nora3,Trianel Windpark Borkum 2,2012,1,1,1.0
+nora3,Trianel Windpark Borkum 2,2016,0,0,
+nora3,Trianel Windpark Borkum 2,2017,13,6,0.46153846153846156
+nora3,Trianel Windpark Borkum 2,2018,49,28,0.5714285714285714
+nora3,Trianel Windpark Borkum 2,2019,11,10,0.9090909090909091
+nora3,Trianel Windpark Borkum 2,2020,6,4,0.6666666666666666
+nora3,Trianel Windpark Borkum 2,2021,17,14,0.8235294117647058
+nora3,Trianel Windpark Borkum 2,2022,18,13,0.7222222222222222
+nora3,Trianel Windpark Borkum 2,2023,15,14,0.9333333333333333
+nora3,Trianel Windpark Borkum 2,2024,574,417,0.7264808362369338
+nora3,Trianel Windpark Borkum 2,2025,37,30,0.8108108108108109
+nora3,Triton Knoll,2010,0,0,
+nora3,Triton Knoll,2011,0,0,
+nora3,Triton Knoll,2012,2,1,0.5
+nora3,Triton Knoll,2016,0,0,
+nora3,Triton Knoll,2017,0,0,
+nora3,Triton Knoll,2018,0,0,
+nora3,Triton Knoll,2019,0,0,
+nora3,Triton Knoll,2020,0,0,
+nora3,Triton Knoll,2021,1,1,1.0
+nora3,Triton Knoll,2022,0,0,
+nora3,Triton Knoll,2023,0,0,
+nora3,Triton Knoll,2024,27,19,0.7037037037037037
+nora3,Triton Knoll,2025,4,4,1.0
+nora3,Tunm Knob,2010,0,0,
+nora3,Tunm Knob,2011,0,0,
+nora3,Tunm Knob,2012,1,1,1.0
+nora3,Tunm Knob,2016,0,0,
+nora3,Tunm Knob,2017,3,3,1.0
+nora3,Tunm Knob,2018,0,0,
+nora3,Tunm Knob,2019,0,0,
+nora3,Tunm Knob,2020,2,2,1.0
+nora3,Tunm Knob,2021,2,2,1.0
+nora3,Tunm Knob,2022,3,3,1.0
+nora3,Tunm Knob,2023,2,2,1.0
+nora3,Tunm Knob,2024,38,35,0.9210526315789473
+nora3,Tunm Knob,2025,5,5,1.0
+nora3,Veja Mate,2010,8,6,0.75
+nora3,Veja Mate,2011,9,7,0.7777777777777778
+nora3,Veja Mate,2012,13,7,0.5384615384615384
+nora3,Veja Mate,2016,0,0,
+nora3,Veja Mate,2017,20,16,0.8
+nora3,Veja Mate,2018,12,9,0.75
+nora3,Veja Mate,2019,16,13,0.8125
+nora3,Veja Mate,2020,11,9,0.8181818181818182
+nora3,Veja Mate,2021,24,18,0.75
+nora3,Veja Mate,2022,7,5,0.7142857142857143
+nora3,Veja Mate,2023,5,5,1.0
+nora3,Veja Mate,2024,303,203,0.66996699669967
+nora3,Veja Mate,2025,13,11,0.8461538461538461
+nora3,Vesterhav Nord,2010,4,2,0.5
+nora3,Vesterhav Nord,2011,3,0,0.0
+nora3,Vesterhav Nord,2012,6,6,1.0
+nora3,Vesterhav Nord,2016,0,0,
+nora3,Vesterhav Nord,2017,9,7,0.7777777777777778
+nora3,Vesterhav Nord,2018,3,1,0.3333333333333333
+nora3,Vesterhav Nord,2019,2,1,0.5
+nora3,Vesterhav Nord,2020,10,8,0.8
+nora3,Vesterhav Nord,2021,3,3,1.0
+nora3,Vesterhav Nord,2022,11,8,0.7272727272727273
+nora3,Vesterhav Nord,2023,39,33,0.8461538461538461
+nora3,Vesterhav Nord,2024,274,245,0.8941605839416058
+nora3,Vesterhav Nord,2025,25,23,0.92
+nora3,Vesterhav Syd,2010,0,0,
+nora3,Vesterhav Syd,2011,0,0,
+nora3,Vesterhav Syd,2012,0,0,
+nora3,Vesterhav Syd,2016,0,0,
+nora3,Vesterhav Syd,2017,5,1,0.2
+nora3,Vesterhav Syd,2018,13,11,0.8461538461538461
+nora3,Vesterhav Syd,2019,2,2,1.0
+nora3,Vesterhav Syd,2020,1,1,1.0
+nora3,Vesterhav Syd,2021,2,2,1.0
+nora3,Vesterhav Syd,2022,3,1,0.3333333333333333
+nora3,Vesterhav Syd,2023,48,42,0.875
+nora3,Vesterhav Syd,2024,319,286,0.896551724137931
+nora3,Vesterhav Syd,2025,33,23,0.696969696969697
+nora3,Walney 1,2010,0,0,
+nora3,Walney 1,2011,0,0,
+nora3,Walney 1,2012,69,66,0.9565217391304348
+nora3,Walney 1,2016,0,0,
+nora3,Walney 1,2017,3,3,1.0
+nora3,Walney 1,2018,0,0,
+nora3,Walney 1,2019,0,0,
+nora3,Walney 1,2020,0,0,
+nora3,Walney 1,2021,0,0,
+nora3,Walney 1,2022,0,0,
+nora3,Walney 1,2023,0,0,
+nora3,Walney 1,2024,0,0,
+nora3,Walney 1,2025,0,0,
+nora3,Walney 2,2010,0,0,
+nora3,Walney 2,2011,0,0,
+nora3,Walney 2,2012,70,62,0.8857142857142857
+nora3,Walney 2,2016,0,0,
+nora3,Walney 2,2017,4,4,1.0
+nora3,Walney 2,2018,0,0,
+nora3,Walney 2,2019,0,0,
+nora3,Walney 2,2020,0,0,
+nora3,Walney 2,2021,0,0,
+nora3,Walney 2,2022,0,0,
+nora3,Walney 2,2023,0,0,
+nora3,Walney 2,2024,0,0,
+nora3,Walney 2,2025,0,0,
+nora3,Walney Extension 3,2010,0,0,
+nora3,Walney Extension 3,2011,0,0,
+nora3,Walney Extension 3,2012,5,3,0.6
+nora3,Walney Extension 3,2016,0,0,
+nora3,Walney Extension 3,2017,8,7,0.875
+nora3,Walney Extension 3,2018,0,0,
+nora3,Walney Extension 3,2019,0,0,
+nora3,Walney Extension 3,2020,0,0,
+nora3,Walney Extension 3,2021,0,0,
+nora3,Walney Extension 3,2022,0,0,
+nora3,Walney Extension 3,2023,0,0,
+nora3,Walney Extension 3,2024,0,0,
+nora3,Walney Extension 3,2025,0,0,
+nora3,Walney Extension 4,2010,0,0,
+nora3,Walney Extension 4,2011,0,0,
+nora3,Walney Extension 4,2012,63,53,0.8412698412698413
+nora3,Walney Extension 4,2016,0,0,
+nora3,Walney Extension 4,2017,6,6,1.0
+nora3,Walney Extension 4,2018,0,0,
+nora3,Walney Extension 4,2019,0,0,
+nora3,Walney Extension 4,2020,0,0,
+nora3,Walney Extension 4,2021,0,0,
+nora3,Walney Extension 4,2022,0,0,
+nora3,Walney Extension 4,2023,0,0,
+nora3,Walney Extension 4,2024,0,0,
+nora3,Walney Extension 4,2025,0,0,
+nora3,West of Duddon Sands,2010,0,0,
+nora3,West of Duddon Sands,2011,0,0,
+nora3,West of Duddon Sands,2012,35,31,0.8857142857142857
+nora3,West of Duddon Sands,2016,0,0,
+nora3,West of Duddon Sands,2017,2,2,1.0
+nora3,West of Duddon Sands,2018,0,0,
+nora3,West of Duddon Sands,2019,0,0,
+nora3,West of Duddon Sands,2020,0,0,
+nora3,West of Duddon Sands,2021,0,0,
+nora3,West of Duddon Sands,2022,0,0,
+nora3,West of Duddon Sands,2023,0,0,
+nora3,West of Duddon Sands,2024,0,0,
+nora3,West of Duddon Sands,2025,0,0,
+nora3,Westermost Rough,2010,0,0,
+nora3,Westermost Rough,2011,0,0,
+nora3,Westermost Rough,2012,9,6,0.6666666666666666
+nora3,Westermost Rough,2016,0,0,
+nora3,Westermost Rough,2017,2,2,1.0
+nora3,Westermost Rough,2018,0,0,
+nora3,Westermost Rough,2019,0,0,
+nora3,Westermost Rough,2020,0,0,
+nora3,Westermost Rough,2021,0,0,
+nora3,Westermost Rough,2022,0,0,
+nora3,Westermost Rough,2023,0,0,
+nora3,Westermost Rough,2024,2,1,0.5
+nora3,Westermost Rough,2025,2,2,1.0
+nora3,Wikinger,2010,1,1,1.0
+nora3,Wikinger,2011,14,12,0.8571428571428571
+nora3,Wikinger,2012,9,7,0.7777777777777778
+nora3,Wikinger,2016,26,18,0.6923076923076923
+nora3,Wikinger,2017,202,148,0.7326732673267327
+nora3,Wikinger,2018,206,171,0.8300970873786407
+nora3,Wikinger,2019,63,58,0.9206349206349206
+nora3,Wikinger,2020,49,48,0.9795918367346939
+nora3,Wikinger,2021,40,40,1.0
+nora3,Wikinger,2022,42,39,0.9285714285714286
+nora3,Wikinger,2023,44,40,0.9090909090909091
+nora3,Wikinger,2024,1160,1109,0.9560344827586207
+nora3,Wikinger,2025,137,135,0.9854014598540146
+nws,Aberdeen Offshore Wind Farm,2010,2,0,0.0
+nws,Aberdeen Offshore Wind Farm,2011,0,0,
+nws,Aberdeen Offshore Wind Farm,2012,102,0,0.0
+nws,Aberdeen Offshore Wind Farm,2016,0,0,
+nws,Aberdeen Offshore Wind Farm,2017,14,0,0.0
+nws,Aberdeen Offshore Wind Farm,2018,0,0,
+nws,Aberdeen Offshore Wind Farm,2019,0,0,
+nws,Aberdeen Offshore Wind Farm,2020,0,0,
+nws,Aberdeen Offshore Wind Farm,2021,2,2,1.0
+nws,Aberdeen Offshore Wind Farm,2022,0,0,
+nws,Aberdeen Offshore Wind Farm,2023,0,0,
+nws,Aberdeen Offshore Wind Farm,2024,23,23,1.0
+nws,Aberdeen Offshore Wind Farm,2025,3,0,0.0
+nws,Albatros,2010,2,0,0.0
+nws,Albatros,2011,0,0,
+nws,Albatros,2012,0,0,
+nws,Albatros,2016,0,0,
+nws,Albatros,2017,10,0,0.0
+nws,Albatros,2018,12,0,0.0
+nws,Albatros,2019,32,0,0.0
+nws,Albatros,2020,8,8,1.0
+nws,Albatros,2021,11,11,1.0
+nws,Albatros,2022,6,6,1.0
+nws,Albatros,2023,7,7,1.0
+nws,Albatros,2024,275,275,1.0
+nws,Albatros,2025,29,0,0.0
+nws,Alpha Ventus,2010,6,6,1.0
+nws,Alpha Ventus,2011,17,17,1.0
+nws,Alpha Ventus,2012,17,17,1.0
+nws,Alpha Ventus,2016,0,0,
+nws,Alpha Ventus,2017,15,15,1.0
+nws,Alpha Ventus,2018,33,33,1.0
+nws,Alpha Ventus,2019,12,12,1.0
+nws,Alpha Ventus,2020,12,12,1.0
+nws,Alpha Ventus,2021,30,30,1.0
+nws,Alpha Ventus,2022,25,25,1.0
+nws,Alpha Ventus,2023,22,22,1.0
+nws,Alpha Ventus,2024,656,656,1.0
+nws,Alpha Ventus,2025,50,0,0.0
+nws,Amrumbank West,2010,9,0,0.0
+nws,Amrumbank West,2011,6,0,0.0
+nws,Amrumbank West,2012,11,0,0.0
+nws,Amrumbank West,2016,0,0,
+nws,Amrumbank West,2017,6,6,1.0
+nws,Amrumbank West,2018,12,12,1.0
+nws,Amrumbank West,2019,3,3,1.0
+nws,Amrumbank West,2020,4,4,1.0
+nws,Amrumbank West,2021,22,22,1.0
+nws,Amrumbank West,2022,81,81,1.0
+nws,Amrumbank West,2023,16,16,1.0
+nws,Amrumbank West,2024,622,622,1.0
+nws,Amrumbank West,2025,104,0,0.0
+nws,Anholt,2010,11,0,0.0
+nws,Anholt,2011,24,0,0.0
+nws,Anholt,2012,97,0,0.0
+nws,Anholt,2016,4,4,1.0
+nws,Anholt,2017,38,38,1.0
+nws,Anholt,2018,29,29,1.0
+nws,Anholt,2019,18,18,1.0
+nws,Anholt,2020,19,19,1.0
+nws,Anholt,2021,22,22,1.0
+nws,Anholt,2022,19,19,1.0
+nws,Anholt,2023,24,24,1.0
+nws,Anholt,2024,623,623,1.0
+nws,Anholt,2025,80,0,0.0
+nws,Arcadis Ost 1,2010,1,0,0.0
+nws,Arcadis Ost 1,2011,1,0,0.0
+nws,Arcadis Ost 1,2012,6,0,0.0
+nws,Arcadis Ost 1,2016,0,0,
+nws,Arcadis Ost 1,2017,3,0,0.0
+nws,Arcadis Ost 1,2018,5,0,0.0
+nws,Arcadis Ost 1,2019,7,0,0.0
+nws,Arcadis Ost 1,2020,1,0,0.0
+nws,Arcadis Ost 1,2021,5,0,0.0
+nws,Arcadis Ost 1,2022,44,0,0.0
+nws,Arcadis Ost 1,2023,41,0,0.0
+nws,Arcadis Ost 1,2024,690,0,0.0
+nws,Arcadis Ost 1,2025,100,0,0.0
+nws,Arkona-Becken Südost,2010,10,0,0.0
+nws,Arkona-Becken Südost,2011,26,0,0.0
+nws,Arkona-Becken Südost,2012,19,0,0.0
+nws,Arkona-Becken Südost,2016,22,0,0.0
+nws,Arkona-Becken Südost,2017,224,0,0.0
+nws,Arkona-Becken Südost,2018,262,0,0.0
+nws,Arkona-Becken Südost,2019,86,0,0.0
+nws,Arkona-Becken Südost,2020,64,0,0.0
+nws,Arkona-Becken Südost,2021,41,0,0.0
+nws,Arkona-Becken Südost,2022,41,0,0.0
+nws,Arkona-Becken Südost,2023,37,0,0.0
+nws,Arkona-Becken Südost,2024,1319,0,0.0
+nws,Arkona-Becken Südost,2025,138,0,0.0
+nws,Avedøre Holme,2010,55,0,0.0
+nws,Avedøre Holme,2011,82,0,0.0
+nws,Avedøre Holme,2012,76,0,0.0
+nws,Avedøre Holme,2016,12,0,0.0
+nws,Avedøre Holme,2017,128,0,0.0
+nws,Avedøre Holme,2018,132,0,0.0
+nws,Avedøre Holme,2019,149,0,0.0
+nws,Avedøre Holme,2020,151,0,0.0
+nws,Avedøre Holme,2021,184,0,0.0
+nws,Avedøre Holme,2022,178,0,0.0
+nws,Avedøre Holme,2023,160,0,0.0
+nws,Avedøre Holme,2024,2791,0,0.0
+nws,Avedøre Holme,2025,408,0,0.0
+nws,Baltic Eagle,2010,1,0,0.0
+nws,Baltic Eagle,2011,7,0,0.0
+nws,Baltic Eagle,2012,5,0,0.0
+nws,Baltic Eagle,2016,3,0,0.0
+nws,Baltic Eagle,2017,31,0,0.0
+nws,Baltic Eagle,2018,36,0,0.0
+nws,Baltic Eagle,2019,22,0,0.0
+nws,Baltic Eagle,2020,4,0,0.0
+nws,Baltic Eagle,2021,4,0,0.0
+nws,Baltic Eagle,2022,35,0,0.0
+nws,Baltic Eagle,2023,81,0,0.0
+nws,Baltic Eagle,2024,1292,0,0.0
+nws,Baltic Eagle,2025,271,0,0.0
+nws,Bard Offshore 1,2010,16,0,0.0
+nws,Bard Offshore 1,2011,15,0,0.0
+nws,Bard Offshore 1,2012,22,0,0.0
+nws,Bard Offshore 1,2016,0,0,
+nws,Bard Offshore 1,2017,10,10,1.0
+nws,Bard Offshore 1,2018,15,15,1.0
+nws,Bard Offshore 1,2019,1,1,1.0
+nws,Bard Offshore 1,2020,5,5,1.0
+nws,Bard Offshore 1,2021,13,13,1.0
+nws,Bard Offshore 1,2022,6,6,1.0
+nws,Bard Offshore 1,2023,2,2,1.0
+nws,Bard Offshore 1,2024,167,167,1.0
+nws,Bard Offshore 1,2025,9,0,0.0
+nws,Barrow,2010,0,0,
+nws,Barrow,2011,0,0,
+nws,Barrow,2012,11,11,1.0
+nws,Barrow,2016,0,0,
+nws,Barrow,2017,0,0,
+nws,Barrow,2018,0,0,
+nws,Barrow,2019,0,0,
+nws,Barrow,2020,0,0,
+nws,Barrow,2021,0,0,
+nws,Barrow,2022,0,0,
+nws,Barrow,2023,0,0,
+nws,Barrow,2024,0,0,
+nws,Barrow,2025,0,0,
+nws,Beatrice Offshore Wind Farm,2010,1,1,1.0
+nws,Beatrice Offshore Wind Farm,2011,0,0,
+nws,Beatrice Offshore Wind Farm,2012,12,12,1.0
+nws,Beatrice Offshore Wind Farm,2016,0,0,
+nws,Beatrice Offshore Wind Farm,2017,3,3,1.0
+nws,Beatrice Offshore Wind Farm,2018,2,2,1.0
+nws,Beatrice Offshore Wind Farm,2019,0,0,
+nws,Beatrice Offshore Wind Farm,2020,0,0,
+nws,Beatrice Offshore Wind Farm,2021,0,0,
+nws,Beatrice Offshore Wind Farm,2022,0,0,
+nws,Beatrice Offshore Wind Farm,2023,0,0,
+nws,Beatrice Offshore Wind Farm,2024,0,0,
+nws,Beatrice Offshore Wind Farm,2025,1,0,0.0
+nws,Belwind phase 1,2010,0,0,
+nws,Belwind phase 1,2011,0,0,
+nws,Belwind phase 1,2012,9,9,1.0
+nws,Belwind phase 1,2016,0,0,
+nws,Belwind phase 1,2017,1,1,1.0
+nws,Belwind phase 1,2018,0,0,
+nws,Belwind phase 1,2019,0,0,
+nws,Belwind phase 1,2020,0,0,
+nws,Belwind phase 1,2021,0,0,
+nws,Belwind phase 1,2022,0,0,
+nws,Belwind phase 1,2023,0,0,
+nws,Belwind phase 1,2024,4,4,1.0
+nws,Belwind phase 1,2025,0,0,
+nws,Blyth Demo Phase 1,2010,0,0,
+nws,Blyth Demo Phase 1,2011,0,0,
+nws,Blyth Demo Phase 1,2012,7,0,0.0
+nws,Blyth Demo Phase 1,2016,0,0,
+nws,Blyth Demo Phase 1,2017,1,0,0.0
+nws,Blyth Demo Phase 1,2018,0,0,
+nws,Blyth Demo Phase 1,2019,0,0,
+nws,Blyth Demo Phase 1,2020,0,0,
+nws,Blyth Demo Phase 1,2021,0,0,
+nws,Blyth Demo Phase 1,2022,0,0,
+nws,Blyth Demo Phase 1,2023,0,0,
+nws,Blyth Demo Phase 1,2024,0,0,
+nws,Blyth Demo Phase 1,2025,0,0,
+nws,Borkum Riffgrund 1,2010,6,0,0.0
+nws,Borkum Riffgrund 1,2011,15,0,0.0
+nws,Borkum Riffgrund 1,2012,18,0,0.0
+nws,Borkum Riffgrund 1,2016,0,0,
+nws,Borkum Riffgrund 1,2017,22,22,1.0
+nws,Borkum Riffgrund 1,2018,51,51,1.0
+nws,Borkum Riffgrund 1,2019,13,13,1.0
+nws,Borkum Riffgrund 1,2020,14,14,1.0
+nws,Borkum Riffgrund 1,2021,34,34,1.0
+nws,Borkum Riffgrund 1,2022,22,22,1.0
+nws,Borkum Riffgrund 1,2023,25,25,1.0
+nws,Borkum Riffgrund 1,2024,755,755,1.0
+nws,Borkum Riffgrund 1,2025,56,0,0.0
+nws,Borkum Riffgrund 2,2010,6,0,0.0
+nws,Borkum Riffgrund 2,2011,17,0,0.0
+nws,Borkum Riffgrund 2,2012,18,0,0.0
+nws,Borkum Riffgrund 2,2016,0,0,
+nws,Borkum Riffgrund 2,2017,24,0,0.0
+nws,Borkum Riffgrund 2,2018,61,61,1.0
+nws,Borkum Riffgrund 2,2019,11,11,1.0
+nws,Borkum Riffgrund 2,2020,15,15,1.0
+nws,Borkum Riffgrund 2,2021,33,33,1.0
+nws,Borkum Riffgrund 2,2022,24,24,1.0
+nws,Borkum Riffgrund 2,2023,24,24,1.0
+nws,Borkum Riffgrund 2,2024,722,722,1.0
+nws,Borkum Riffgrund 2,2025,61,0,0.0
+nws,Borssele Kavel I and II,2010,0,0,
+nws,Borssele Kavel I and II,2011,0,0,
+nws,Borssele Kavel I and II,2012,75,0,0.0
+nws,Borssele Kavel I and II,2016,0,0,
+nws,Borssele Kavel I and II,2017,1,0,0.0
+nws,Borssele Kavel I and II,2018,0,0,
+nws,Borssele Kavel I and II,2019,0,0,
+nws,Borssele Kavel I and II,2020,0,0,
+nws,Borssele Kavel I and II,2021,2,2,1.0
+nws,Borssele Kavel I and II,2022,0,0,
+nws,Borssele Kavel I and II,2023,0,0,
+nws,Borssele Kavel I and II,2024,6,6,1.0
+nws,Borssele Kavel I and II,2025,0,0,
+nws,Borssele Kavel III and IV,2010,0,0,
+nws,Borssele Kavel III and IV,2011,0,0,
+nws,Borssele Kavel III and IV,2012,77,0,0.0
+nws,Borssele Kavel III and IV,2016,0,0,
+nws,Borssele Kavel III and IV,2017,3,0,0.0
+nws,Borssele Kavel III and IV,2018,0,0,
+nws,Borssele Kavel III and IV,2019,0,0,
+nws,Borssele Kavel III and IV,2020,0,0,
+nws,Borssele Kavel III and IV,2021,2,2,1.0
+nws,Borssele Kavel III and IV,2022,0,0,
+nws,Borssele Kavel III and IV,2023,0,0,
+nws,Borssele Kavel III and IV,2024,10,10,1.0
+nws,Borssele Kavel III and IV,2025,0,0,
+nws,Burbo Bank,2010,0,0,
+nws,Burbo Bank,2011,0,0,
+nws,Burbo Bank,2012,21,21,1.0
+nws,Burbo Bank,2016,0,0,
+nws,Burbo Bank,2017,1,1,1.0
+nws,Burbo Bank,2018,0,0,
+nws,Burbo Bank,2019,0,0,
+nws,Burbo Bank,2020,0,0,
+nws,Burbo Bank,2021,0,0,
+nws,Burbo Bank,2022,0,0,
+nws,Burbo Bank,2023,0,0,
+nws,Burbo Bank,2024,0,0,
+nws,Burbo Bank,2025,0,0,
+nws,Burbo Bank Extension,2010,0,0,
+nws,Burbo Bank Extension,2011,0,0,
+nws,Burbo Bank Extension,2012,72,0,0.0
+nws,Burbo Bank Extension,2016,0,0,
+nws,Burbo Bank Extension,2017,1,1,1.0
+nws,Burbo Bank Extension,2018,0,0,
+nws,Burbo Bank Extension,2019,0,0,
+nws,Burbo Bank Extension,2020,0,0,
+nws,Burbo Bank Extension,2021,0,0,
+nws,Burbo Bank Extension,2022,0,0,
+nws,Burbo Bank Extension,2023,0,0,
+nws,Burbo Bank Extension,2024,0,0,
+nws,Burbo Bank Extension,2025,0,0,
+nws,Butendiek,2010,0,0,
+nws,Butendiek,2011,9,0,0.0
+nws,Butendiek,2012,0,0,
+nws,Butendiek,2016,1,1,1.0
+nws,Butendiek,2017,35,35,1.0
+nws,Butendiek,2018,28,28,1.0
+nws,Butendiek,2019,27,27,1.0
+nws,Butendiek,2020,21,21,1.0
+nws,Butendiek,2021,21,21,1.0
+nws,Butendiek,2022,19,19,1.0
+nws,Butendiek,2023,18,18,1.0
+nws,Butendiek,2024,373,373,1.0
+nws,Butendiek,2025,36,0,0.0
+nws,Dan Tysk,2010,1,0,0.0
+nws,Dan Tysk,2011,11,0,0.0
+nws,Dan Tysk,2012,8,0,0.0
+nws,Dan Tysk,2016,1,1,1.0
+nws,Dan Tysk,2017,24,24,1.0
+nws,Dan Tysk,2018,23,23,1.0
+nws,Dan Tysk,2019,23,23,1.0
+nws,Dan Tysk,2020,26,26,1.0
+nws,Dan Tysk,2021,34,34,1.0
+nws,Dan Tysk,2022,25,25,1.0
+nws,Dan Tysk,2023,18,18,1.0
+nws,Dan Tysk,2024,499,499,1.0
+nws,Dan Tysk,2025,18,0,0.0
+nws,Deutsche Bucht,2010,0,0,
+nws,Deutsche Bucht,2011,1,0,0.0
+nws,Deutsche Bucht,2012,2,0,0.0
+nws,Deutsche Bucht,2016,0,0,
+nws,Deutsche Bucht,2017,11,0,0.0
+nws,Deutsche Bucht,2018,10,0,0.0
+nws,Deutsche Bucht,2019,7,7,1.0
+nws,Deutsche Bucht,2020,5,5,1.0
+nws,Deutsche Bucht,2021,12,12,1.0
+nws,Deutsche Bucht,2022,4,4,1.0
+nws,Deutsche Bucht,2023,4,4,1.0
+nws,Deutsche Bucht,2024,144,144,1.0
+nws,Deutsche Bucht,2025,5,0,0.0
+nws,Dudgeon,2010,0,0,
+nws,Dudgeon,2011,0,0,
+nws,Dudgeon,2012,0,0,
+nws,Dudgeon,2016,0,0,
+nws,Dudgeon,2017,13,13,1.0
+nws,Dudgeon,2018,0,0,
+nws,Dudgeon,2019,0,0,
+nws,Dudgeon,2020,0,0,
+nws,Dudgeon,2021,0,0,
+nws,Dudgeon,2022,0,0,
+nws,Dudgeon,2023,0,0,
+nws,Dudgeon,2024,7,7,1.0
+nws,Dudgeon,2025,3,0,0.0
+nws,East Anglia One,2010,0,0,
+nws,East Anglia One,2011,0,0,
+nws,East Anglia One,2012,2,0,0.0
+nws,East Anglia One,2016,0,0,
+nws,East Anglia One,2017,0,0,
+nws,East Anglia One,2018,1,0,0.0
+nws,East Anglia One,2019,0,0,
+nws,East Anglia One,2020,0,0,
+nws,East Anglia One,2021,0,0,
+nws,East Anglia One,2022,0,0,
+nws,East Anglia One,2023,0,0,
+nws,East Anglia One,2024,10,10,1.0
+nws,East Anglia One,2025,0,0,
+nws,EnBW Hohe See,2010,2,0,0.0
+nws,EnBW Hohe See,2011,0,0,
+nws,EnBW Hohe See,2012,0,0,
+nws,EnBW Hohe See,2016,0,0,
+nws,EnBW Hohe See,2017,13,0,0.0
+nws,EnBW Hohe See,2018,29,0,0.0
+nws,EnBW Hohe See,2019,51,51,1.0
+nws,EnBW Hohe See,2020,14,14,1.0
+nws,EnBW Hohe See,2021,10,10,1.0
+nws,EnBW Hohe See,2022,9,9,1.0
+nws,EnBW Hohe See,2023,8,8,1.0
+nws,EnBW Hohe See,2024,282,282,1.0
+nws,EnBW Hohe See,2025,32,0,0.0
+nws,EnBW Windpark Baltic 1,2010,74,0,0.0
+nws,EnBW Windpark Baltic 1,2011,30,30,1.0
+nws,EnBW Windpark Baltic 1,2012,15,15,1.0
+nws,EnBW Windpark Baltic 1,2016,0,0,
+nws,EnBW Windpark Baltic 1,2017,5,5,1.0
+nws,EnBW Windpark Baltic 1,2018,8,8,1.0
+nws,EnBW Windpark Baltic 1,2019,7,7,1.0
+nws,EnBW Windpark Baltic 1,2020,9,9,1.0
+nws,EnBW Windpark Baltic 1,2021,11,11,1.0
+nws,EnBW Windpark Baltic 1,2022,23,23,1.0
+nws,EnBW Windpark Baltic 1,2023,8,8,1.0
+nws,EnBW Windpark Baltic 1,2024,250,250,1.0
+nws,EnBW Windpark Baltic 1,2025,25,0,0.0
+nws,EnBW Windpark Baltic 2,2010,24,0,0.0
+nws,EnBW Windpark Baltic 2,2011,31,0,0.0
+nws,EnBW Windpark Baltic 2,2012,21,0,0.0
+nws,EnBW Windpark Baltic 2,2016,3,3,1.0
+nws,EnBW Windpark Baltic 2,2017,44,44,1.0
+nws,EnBW Windpark Baltic 2,2018,40,40,1.0
+nws,EnBW Windpark Baltic 2,2019,37,37,1.0
+nws,EnBW Windpark Baltic 2,2020,36,36,1.0
+nws,EnBW Windpark Baltic 2,2021,52,52,1.0
+nws,EnBW Windpark Baltic 2,2022,21,21,1.0
+nws,EnBW Windpark Baltic 2,2023,26,26,1.0
+nws,EnBW Windpark Baltic 2,2024,582,582,1.0
+nws,EnBW Windpark Baltic 2,2025,81,0,0.0
+nws,Frederikshavn Offshore,2010,349,349,1.0
+nws,Frederikshavn Offshore,2011,455,455,1.0
+nws,Frederikshavn Offshore,2012,453,453,1.0
+nws,Frederikshavn Offshore,2016,45,45,1.0
+nws,Frederikshavn Offshore,2017,578,578,1.0
+nws,Frederikshavn Offshore,2018,561,561,1.0
+nws,Frederikshavn Offshore,2019,557,557,1.0
+nws,Frederikshavn Offshore,2020,562,562,1.0
+nws,Frederikshavn Offshore,2021,557,557,1.0
+nws,Frederikshavn Offshore,2022,532,532,1.0
+nws,Frederikshavn Offshore,2023,564,564,1.0
+nws,Frederikshavn Offshore,2024,5013,5013,1.0
+nws,Frederikshavn Offshore,2025,791,0,0.0
+nws,Fécamp,2010,0,0,
+nws,Fécamp,2011,0,0,
+nws,Fécamp,2012,4,0,0.0
+nws,Fécamp,2016,0,0,
+nws,Fécamp,2017,0,0,
+nws,Fécamp,2018,0,0,
+nws,Fécamp,2019,0,0,
+nws,Fécamp,2020,0,0,
+nws,Fécamp,2021,0,0,
+nws,Fécamp,2022,0,0,
+nws,Fécamp,2023,0,0,
+nws,Fécamp,2024,0,0,
+nws,Fécamp,2025,0,0,
+nws,Galloper,2010,7,0,0.0
+nws,Galloper,2011,0,0,
+nws,Galloper,2012,77,0,0.0
+nws,Galloper,2016,0,0,
+nws,Galloper,2017,20,0,0.0
+nws,Galloper,2018,0,0,
+nws,Galloper,2019,0,0,
+nws,Galloper,2020,0,0,
+nws,Galloper,2021,0,0,
+nws,Galloper,2022,0,0,
+nws,Galloper,2023,0,0,
+nws,Galloper,2024,2,2,1.0
+nws,Galloper,2025,0,0,
+nws,Gemini,2010,0,0,
+nws,Gemini,2011,0,0,
+nws,Gemini,2012,0,0,
+nws,Gemini,2016,0,0,
+nws,Gemini,2017,4,4,1.0
+nws,Gemini,2018,4,4,1.0
+nws,Gemini,2019,0,0,
+nws,Gemini,2020,1,1,1.0
+nws,Gemini,2021,6,6,1.0
+nws,Gemini,2022,2,2,1.0
+nws,Gemini,2023,0,0,
+nws,Gemini,2024,88,88,1.0
+nws,Gemini,2025,0,0,
+nws,Global Tech I,2010,1,0,0.0
+nws,Global Tech I,2011,0,0,
+nws,Global Tech I,2012,0,0,
+nws,Global Tech I,2016,0,0,
+nws,Global Tech I,2017,14,14,1.0
+nws,Global Tech I,2018,24,24,1.0
+nws,Global Tech I,2019,50,50,1.0
+nws,Global Tech I,2020,14,14,1.0
+nws,Global Tech I,2021,18,18,1.0
+nws,Global Tech I,2022,11,11,1.0
+nws,Global Tech I,2023,8,8,1.0
+nws,Global Tech I,2024,263,263,1.0
+nws,Global Tech I,2025,31,0,0.0
+nws,Gode Wind 1 and 2,2010,2,0,0.0
+nws,Gode Wind 1 and 2,2011,2,0,0.0
+nws,Gode Wind 1 and 2,2012,2,0,0.0
+nws,Gode Wind 1 and 2,2016,0,0,
+nws,Gode Wind 1 and 2,2017,11,11,1.0
+nws,Gode Wind 1 and 2,2018,7,7,1.0
+nws,Gode Wind 1 and 2,2019,3,3,1.0
+nws,Gode Wind 1 and 2,2020,0,0,
+nws,Gode Wind 1 and 2,2021,9,9,1.0
+nws,Gode Wind 1 and 2,2022,11,11,1.0
+nws,Gode Wind 1 and 2,2023,10,10,1.0
+nws,Gode Wind 1 and 2,2024,764,764,1.0
+nws,Gode Wind 1 and 2,2025,73,0,0.0
+nws,Gode Wind 3,2010,1,0,0.0
+nws,Gode Wind 3,2011,0,0,
+nws,Gode Wind 3,2012,0,0,
+nws,Gode Wind 3,2016,0,0,
+nws,Gode Wind 3,2017,3,0,0.0
+nws,Gode Wind 3,2018,2,0,0.0
+nws,Gode Wind 3,2019,2,0,0.0
+nws,Gode Wind 3,2020,0,0,
+nws,Gode Wind 3,2021,11,0,0.0
+nws,Gode Wind 3,2022,7,0,0.0
+nws,Gode Wind 3,2023,9,0,0.0
+nws,Gode Wind 3,2024,673,0,0.0
+nws,Gode Wind 3,2025,56,0,0.0
+nws,Greater Gabbard,2010,8,0,0.0
+nws,Greater Gabbard,2011,0,0,
+nws,Greater Gabbard,2012,122,0,0.0
+nws,Greater Gabbard,2016,0,0,
+nws,Greater Gabbard,2017,18,18,1.0
+nws,Greater Gabbard,2018,0,0,
+nws,Greater Gabbard,2019,0,0,
+nws,Greater Gabbard,2020,0,0,
+nws,Greater Gabbard,2021,0,0,
+nws,Greater Gabbard,2022,0,0,
+nws,Greater Gabbard,2023,0,0,
+nws,Greater Gabbard,2024,2,2,1.0
+nws,Greater Gabbard,2025,0,0,
+nws,Gunfleet Sands,2010,0,0,
+nws,Gunfleet Sands,2011,0,0,
+nws,Gunfleet Sands,2012,27,27,1.0
+nws,Gunfleet Sands,2016,0,0,
+nws,Gunfleet Sands,2017,0,0,
+nws,Gunfleet Sands,2018,0,0,
+nws,Gunfleet Sands,2019,0,0,
+nws,Gunfleet Sands,2020,0,0,
+nws,Gunfleet Sands,2021,0,0,
+nws,Gunfleet Sands,2022,0,0,
+nws,Gunfleet Sands,2023,0,0,
+nws,Gunfleet Sands,2024,3,3,1.0
+nws,Gunfleet Sands,2025,0,0,
+nws,Gwynt y Mor,2010,0,0,
+nws,Gwynt y Mor,2011,0,0,
+nws,Gwynt y Mor,2012,71,0,0.0
+nws,Gwynt y Mor,2016,0,0,
+nws,Gwynt y Mor,2017,7,7,1.0
+nws,Gwynt y Mor,2018,0,0,
+nws,Gwynt y Mor,2019,0,0,
+nws,Gwynt y Mor,2020,0,0,
+nws,Gwynt y Mor,2021,0,0,
+nws,Gwynt y Mor,2022,0,0,
+nws,Gwynt y Mor,2023,0,0,
+nws,Gwynt y Mor,2024,0,0,
+nws,Gwynt y Mor,2025,0,0,
+nws,Hollandse Kust Noord,2010,0,0,
+nws,Hollandse Kust Noord,2011,0,0,
+nws,Hollandse Kust Noord,2012,29,0,0.0
+nws,Hollandse Kust Noord,2016,0,0,
+nws,Hollandse Kust Noord,2017,0,0,
+nws,Hollandse Kust Noord,2018,0,0,
+nws,Hollandse Kust Noord,2019,0,0,
+nws,Hollandse Kust Noord,2020,0,0,
+nws,Hollandse Kust Noord,2021,1,0,0.0
+nws,Hollandse Kust Noord,2022,1,0,0.0
+nws,Hollandse Kust Noord,2023,2,2,1.0
+nws,Hollandse Kust Noord,2024,17,17,1.0
+nws,Hollandse Kust Noord,2025,2,0,0.0
+nws,Hollandse Kust Zuid,2010,0,0,
+nws,Hollandse Kust Zuid,2011,0,0,
+nws,Hollandse Kust Zuid,2012,137,0,0.0
+nws,Hollandse Kust Zuid,2016,0,0,
+nws,Hollandse Kust Zuid,2017,9,0,0.0
+nws,Hollandse Kust Zuid,2018,0,0,
+nws,Hollandse Kust Zuid,2019,0,0,
+nws,Hollandse Kust Zuid,2020,0,0,
+nws,Hollandse Kust Zuid,2021,3,0,0.0
+nws,Hollandse Kust Zuid,2022,19,0,0.0
+nws,Hollandse Kust Zuid,2023,2,0,0.0
+nws,Hollandse Kust Zuid,2024,66,66,1.0
+nws,Hollandse Kust Zuid,2025,4,0,0.0
+nws,Horns Rev I,2010,44,44,1.0
+nws,Horns Rev I,2011,35,35,1.0
+nws,Horns Rev I,2012,26,26,1.0
+nws,Horns Rev I,2016,2,2,1.0
+nws,Horns Rev I,2017,19,19,1.0
+nws,Horns Rev I,2018,22,22,1.0
+nws,Horns Rev I,2019,26,26,1.0
+nws,Horns Rev I,2020,25,25,1.0
+nws,Horns Rev I,2021,25,25,1.0
+nws,Horns Rev I,2022,27,27,1.0
+nws,Horns Rev I,2023,29,29,1.0
+nws,Horns Rev I,2024,495,495,1.0
+nws,Horns Rev I,2025,33,0,0.0
+nws,Horns Rev II,2010,29,29,1.0
+nws,Horns Rev II,2011,31,31,1.0
+nws,Horns Rev II,2012,23,23,1.0
+nws,Horns Rev II,2016,0,0,
+nws,Horns Rev II,2017,22,22,1.0
+nws,Horns Rev II,2018,47,47,1.0
+nws,Horns Rev II,2019,67,67,1.0
+nws,Horns Rev II,2020,24,24,1.0
+nws,Horns Rev II,2021,17,17,1.0
+nws,Horns Rev II,2022,29,29,1.0
+nws,Horns Rev II,2023,15,15,1.0
+nws,Horns Rev II,2024,982,982,1.0
+nws,Horns Rev II,2025,94,0,0.0
+nws,Horns Rev III,2010,40,0,0.0
+nws,Horns Rev III,2011,25,0,0.0
+nws,Horns Rev III,2012,20,0,0.0
+nws,Horns Rev III,2016,0,0,
+nws,Horns Rev III,2017,23,0,0.0
+nws,Horns Rev III,2018,49,0,0.0
+nws,Horns Rev III,2019,73,73,1.0
+nws,Horns Rev III,2020,23,23,1.0
+nws,Horns Rev III,2021,30,30,1.0
+nws,Horns Rev III,2022,49,49,1.0
+nws,Horns Rev III,2023,20,20,1.0
+nws,Horns Rev III,2024,823,823,1.0
+nws,Horns Rev III,2025,68,0,0.0
+nws,Hornsea Project 1,2010,0,0,
+nws,Hornsea Project 1,2011,0,0,
+nws,Hornsea Project 1,2012,3,0,0.0
+nws,Hornsea Project 1,2016,0,0,
+nws,Hornsea Project 1,2017,1,0,0.0
+nws,Hornsea Project 1,2018,5,0,0.0
+nws,Hornsea Project 1,2019,0,0,
+nws,Hornsea Project 1,2020,4,4,1.0
+nws,Hornsea Project 1,2021,5,5,1.0
+nws,Hornsea Project 1,2022,4,4,1.0
+nws,Hornsea Project 1,2023,1,1,1.0
+nws,Hornsea Project 1,2024,43,43,1.0
+nws,Hornsea Project 1,2025,3,0,0.0
+nws,Hornsea Project 2,2010,0,0,
+nws,Hornsea Project 2,2011,0,0,
+nws,Hornsea Project 2,2012,0,0,
+nws,Hornsea Project 2,2016,0,0,
+nws,Hornsea Project 2,2017,2,0,0.0
+nws,Hornsea Project 2,2018,7,0,0.0
+nws,Hornsea Project 2,2019,0,0,
+nws,Hornsea Project 2,2020,2,0,0.0
+nws,Hornsea Project 2,2021,8,0,0.0
+nws,Hornsea Project 2,2022,3,3,1.0
+nws,Hornsea Project 2,2023,1,1,1.0
+nws,Hornsea Project 2,2024,51,51,1.0
+nws,Hornsea Project 2,2025,2,0,0.0
+nws,Humber Gateway,2010,0,0,
+nws,Humber Gateway,2011,0,0,
+nws,Humber Gateway,2012,30,0,0.0
+nws,Humber Gateway,2016,0,0,
+nws,Humber Gateway,2017,3,3,1.0
+nws,Humber Gateway,2018,0,0,
+nws,Humber Gateway,2019,0,0,
+nws,Humber Gateway,2020,0,0,
+nws,Humber Gateway,2021,2,2,1.0
+nws,Humber Gateway,2022,0,0,
+nws,Humber Gateway,2023,0,0,
+nws,Humber Gateway,2024,9,9,1.0
+nws,Humber Gateway,2025,4,0,0.0
+nws,Hywind Scotland Pilot Park,2010,0,0,
+nws,Hywind Scotland Pilot Park,2011,0,0,
+nws,Hywind Scotland Pilot Park,2012,1,0,0.0
+nws,Hywind Scotland Pilot Park,2016,0,0,
+nws,Hywind Scotland Pilot Park,2017,2,2,1.0
+nws,Hywind Scotland Pilot Park,2018,0,0,
+nws,Hywind Scotland Pilot Park,2019,0,0,
+nws,Hywind Scotland Pilot Park,2020,0,0,
+nws,Hywind Scotland Pilot Park,2021,0,0,
+nws,Hywind Scotland Pilot Park,2022,0,0,
+nws,Hywind Scotland Pilot Park,2023,0,0,
+nws,Hywind Scotland Pilot Park,2024,11,11,1.0
+nws,Hywind Scotland Pilot Park,2025,0,0,
+nws,Inner Dowsing,2010,0,0,
+nws,Inner Dowsing,2011,0,0,
+nws,Inner Dowsing,2012,225,225,1.0
+nws,Inner Dowsing,2016,0,0,
+nws,Inner Dowsing,2017,0,0,
+nws,Inner Dowsing,2018,0,0,
+nws,Inner Dowsing,2019,0,0,
+nws,Inner Dowsing,2020,0,0,
+nws,Inner Dowsing,2021,0,0,
+nws,Inner Dowsing,2022,0,0,
+nws,Inner Dowsing,2023,0,0,
+nws,Inner Dowsing,2024,1,1,1.0
+nws,Inner Dowsing,2025,2,0,0.0
+nws,Kaskasi,2010,9,0,0.0
+nws,Kaskasi,2011,6,0,0.0
+nws,Kaskasi,2012,15,0,0.0
+nws,Kaskasi,2016,0,0,
+nws,Kaskasi,2017,13,0,0.0
+nws,Kaskasi,2018,21,0,0.0
+nws,Kaskasi,2019,3,0,0.0
+nws,Kaskasi,2020,10,0,0.0
+nws,Kaskasi,2021,31,0,0.0
+nws,Kaskasi,2022,80,0,0.0
+nws,Kaskasi,2023,14,14,1.0
+nws,Kaskasi,2024,718,718,1.0
+nws,Kaskasi,2025,101,0,0.0
+nws,Kentish Flats,2010,0,0,
+nws,Kentish Flats,2011,0,0,
+nws,Kentish Flats,2012,14,14,1.0
+nws,Kentish Flats,2016,0,0,
+nws,Kentish Flats,2017,4,4,1.0
+nws,Kentish Flats,2018,0,0,
+nws,Kentish Flats,2019,0,0,
+nws,Kentish Flats,2020,0,0,
+nws,Kentish Flats,2021,0,0,
+nws,Kentish Flats,2022,0,0,
+nws,Kentish Flats,2023,0,0,
+nws,Kentish Flats,2024,0,0,
+nws,Kentish Flats,2025,0,0,
+nws,Kentish Flats Extension,2010,0,0,
+nws,Kentish Flats Extension,2011,0,0,
+nws,Kentish Flats Extension,2012,11,0,0.0
+nws,Kentish Flats Extension,2016,0,0,
+nws,Kentish Flats Extension,2017,2,2,1.0
+nws,Kentish Flats Extension,2018,0,0,
+nws,Kentish Flats Extension,2019,0,0,
+nws,Kentish Flats Extension,2020,0,0,
+nws,Kentish Flats Extension,2021,0,0,
+nws,Kentish Flats Extension,2022,0,0,
+nws,Kentish Flats Extension,2023,0,0,
+nws,Kentish Flats Extension,2024,0,0,
+nws,Kentish Flats Extension,2025,0,0,
+nws,Kincardine,2010,0,0,
+nws,Kincardine,2011,0,0,
+nws,Kincardine,2012,0,0,
+nws,Kincardine,2016,0,0,
+nws,Kincardine,2017,0,0,
+nws,Kincardine,2018,0,0,
+nws,Kincardine,2019,0,0,
+nws,Kincardine,2020,0,0,
+nws,Kincardine,2021,1,1,1.0
+nws,Kincardine,2022,0,0,
+nws,Kincardine,2023,0,0,
+nws,Kincardine,2024,0,0,
+nws,Kincardine,2025,0,0,
+nws,Kriegers Flak,2010,23,0,0.0
+nws,Kriegers Flak,2011,25,0,0.0
+nws,Kriegers Flak,2012,19,0,0.0
+nws,Kriegers Flak,2016,5,0,0.0
+nws,Kriegers Flak,2017,50,0,0.0
+nws,Kriegers Flak,2018,51,0,0.0
+nws,Kriegers Flak,2019,45,0,0.0
+nws,Kriegers Flak,2020,92,0,0.0
+nws,Kriegers Flak,2021,102,102,1.0
+nws,Kriegers Flak,2022,57,57,1.0
+nws,Kriegers Flak,2023,44,44,1.0
+nws,Kriegers Flak,2024,1555,1555,1.0
+nws,Kriegers Flak,2025,254,0,0.0
+nws,Lillgrund,2010,17,17,1.0
+nws,Lillgrund,2011,12,12,1.0
+nws,Lillgrund,2012,13,13,1.0
+nws,Lillgrund,2016,0,0,
+nws,Lillgrund,2017,12,12,1.0
+nws,Lillgrund,2018,8,8,1.0
+nws,Lillgrund,2019,12,12,1.0
+nws,Lillgrund,2020,7,7,1.0
+nws,Lillgrund,2021,6,6,1.0
+nws,Lillgrund,2022,11,11,1.0
+nws,Lillgrund,2023,10,10,1.0
+nws,Lillgrund,2024,281,281,1.0
+nws,Lillgrund,2025,61,0,0.0
+nws,Lincs,2010,0,0,
+nws,Lincs,2011,0,0,
+nws,Lincs,2012,193,0,0.0
+nws,Lincs,2016,0,0,
+nws,Lincs,2017,0,0,
+nws,Lincs,2018,0,0,
+nws,Lincs,2019,0,0,
+nws,Lincs,2020,0,0,
+nws,Lincs,2021,0,0,
+nws,Lincs,2022,0,0,
+nws,Lincs,2023,0,0,
+nws,Lincs,2024,1,1,1.0
+nws,Lincs,2025,2,0,0.0
+nws,London Array,2010,1,0,0.0
+nws,London Array,2011,0,0,
+nws,London Array,2012,377,0,0.0
+nws,London Array,2016,0,0,
+nws,London Array,2017,1,1,1.0
+nws,London Array,2018,0,0,
+nws,London Array,2019,0,0,
+nws,London Array,2020,0,0,
+nws,London Array,2021,0,0,
+nws,London Array,2022,0,0,
+nws,London Array,2023,0,0,
+nws,London Array,2024,0,0,
+nws,London Array,2025,0,0,
+nws,Lynn,2010,0,0,
+nws,Lynn,2011,0,0,
+nws,Lynn,2012,200,200,1.0
+nws,Lynn,2016,0,0,
+nws,Lynn,2017,0,0,
+nws,Lynn,2018,0,0,
+nws,Lynn,2019,0,0,
+nws,Lynn,2020,0,0,
+nws,Lynn,2021,0,0,
+nws,Lynn,2022,0,0,
+nws,Lynn,2023,0,0,
+nws,Lynn,2024,0,0,
+nws,Lynn,2025,1,0,0.0
+nws,Meerwind Sued/Ost,2010,0,0,
+nws,Meerwind Sued/Ost,2011,3,0,0.0
+nws,Meerwind Sued/Ost,2012,11,0,0.0
+nws,Meerwind Sued/Ost,2016,0,0,
+nws,Meerwind Sued/Ost,2017,12,12,1.0
+nws,Meerwind Sued/Ost,2018,23,23,1.0
+nws,Meerwind Sued/Ost,2019,3,3,1.0
+nws,Meerwind Sued/Ost,2020,12,12,1.0
+nws,Meerwind Sued/Ost,2021,50,50,1.0
+nws,Meerwind Sued/Ost,2022,44,44,1.0
+nws,Meerwind Sued/Ost,2023,27,27,1.0
+nws,Meerwind Sued/Ost,2024,720,720,1.0
+nws,Meerwind Sued/Ost,2025,77,0,0.0
+nws,Merkur Offshore,2010,4,0,0.0
+nws,Merkur Offshore,2011,16,0,0.0
+nws,Merkur Offshore,2012,17,0,0.0
+nws,Merkur Offshore,2016,0,0,
+nws,Merkur Offshore,2017,18,0,0.0
+nws,Merkur Offshore,2018,67,0,0.0
+nws,Merkur Offshore,2019,19,19,1.0
+nws,Merkur Offshore,2020,13,13,1.0
+nws,Merkur Offshore,2021,30,30,1.0
+nws,Merkur Offshore,2022,25,25,1.0
+nws,Merkur Offshore,2023,28,28,1.0
+nws,Merkur Offshore,2024,798,798,1.0
+nws,Merkur Offshore,2025,47,0,0.0
+nws,Mermaid,2010,0,0,
+nws,Mermaid,2011,0,0,
+nws,Mermaid,2012,8,0,0.0
+nws,Mermaid,2016,0,0,
+nws,Mermaid,2017,1,0,0.0
+nws,Mermaid,2018,0,0,
+nws,Mermaid,2019,0,0,
+nws,Mermaid,2020,0,0,
+nws,Mermaid,2021,0,0,
+nws,Mermaid,2022,0,0,
+nws,Mermaid,2023,0,0,
+nws,Mermaid,2024,3,3,1.0
+nws,Mermaid,2025,0,0,
+nws,Middelgrunden,2010,128,128,1.0
+nws,Middelgrunden,2011,132,132,1.0
+nws,Middelgrunden,2012,156,156,1.0
+nws,Middelgrunden,2016,27,27,1.0
+nws,Middelgrunden,2017,355,355,1.0
+nws,Middelgrunden,2018,622,622,1.0
+nws,Middelgrunden,2019,715,715,1.0
+nws,Middelgrunden,2020,651,651,1.0
+nws,Middelgrunden,2021,744,744,1.0
+nws,Middelgrunden,2022,938,938,1.0
+nws,Middelgrunden,2023,780,780,1.0
+nws,Middelgrunden,2024,8766,8766,1.0
+nws,Middelgrunden,2025,1009,0,0.0
+nws,Moray East,2010,0,0,
+nws,Moray East,2011,0,0,
+nws,Moray East,2012,4,0,0.0
+nws,Moray East,2016,0,0,
+nws,Moray East,2017,2,0,0.0
+nws,Moray East,2018,0,0,
+nws,Moray East,2019,0,0,
+nws,Moray East,2020,0,0,
+nws,Moray East,2021,1,0,0.0
+nws,Moray East,2022,0,0,
+nws,Moray East,2023,0,0,
+nws,Moray East,2024,1,1,1.0
+nws,Moray East,2025,5,0,0.0
+nws,Moray West,2010,1,0,0.0
+nws,Moray West,2011,0,0,
+nws,Moray West,2012,15,0,0.0
+nws,Moray West,2016,0,0,
+nws,Moray West,2017,4,0,0.0
+nws,Moray West,2018,0,0,
+nws,Moray West,2019,0,0,
+nws,Moray West,2020,0,0,
+nws,Moray West,2021,0,0,
+nws,Moray West,2022,0,0,
+nws,Moray West,2023,0,0,
+nws,Moray West,2024,2,0,0.0
+nws,Moray West,2025,3,0,0.0
+nws,Neart na Gaoithe,2010,0,0,
+nws,Neart na Gaoithe,2011,0,0,
+nws,Neart na Gaoithe,2012,3,0,0.0
+nws,Neart na Gaoithe,2016,0,0,
+nws,Neart na Gaoithe,2017,0,0,
+nws,Neart na Gaoithe,2018,0,0,
+nws,Neart na Gaoithe,2019,0,0,
+nws,Neart na Gaoithe,2020,0,0,
+nws,Neart na Gaoithe,2021,3,0,0.0
+nws,Neart na Gaoithe,2022,0,0,
+nws,Neart na Gaoithe,2023,0,0,
+nws,Neart na Gaoithe,2024,7,0,0.0
+nws,Neart na Gaoithe,2025,5,0,0.0
+nws,Nissum Bredning,2010,339,0,0.0
+nws,Nissum Bredning,2011,395,0,0.0
+nws,Nissum Bredning,2012,466,0,0.0
+nws,Nissum Bredning,2016,66,0,0.0
+nws,Nissum Bredning,2017,791,0,0.0
+nws,Nissum Bredning,2018,721,721,1.0
+nws,Nissum Bredning,2019,770,770,1.0
+nws,Nissum Bredning,2020,782,782,1.0
+nws,Nissum Bredning,2021,708,708,1.0
+nws,Nissum Bredning,2022,715,715,1.0
+nws,Nissum Bredning,2023,658,658,1.0
+nws,Nissum Bredning,2024,4184,4184,1.0
+nws,Nissum Bredning,2025,678,0,0.0
+nws,Nobelwind,2010,0,0,
+nws,Nobelwind,2011,0,0,
+nws,Nobelwind,2012,8,0,0.0
+nws,Nobelwind,2016,0,0,
+nws,Nobelwind,2017,1,1,1.0
+nws,Nobelwind,2018,0,0,
+nws,Nobelwind,2019,0,0,
+nws,Nobelwind,2020,0,0,
+nws,Nobelwind,2021,0,0,
+nws,Nobelwind,2022,0,0,
+nws,Nobelwind,2023,0,0,
+nws,Nobelwind,2024,5,5,1.0
+nws,Nobelwind,2025,0,0,
+nws,Nordergründe,2010,0,0,
+nws,Nordergründe,2011,0,0,
+nws,Nordergründe,2012,0,0,
+nws,Nordergründe,2016,0,0,
+nws,Nordergründe,2017,5,0,0.0
+nws,Nordergründe,2018,1,0,0.0
+nws,Nordergründe,2019,1,0,0.0
+nws,Nordergründe,2020,1,0,0.0
+nws,Nordergründe,2021,0,0,
+nws,Nordergründe,2022,1,0,0.0
+nws,Nordergründe,2023,2,0,0.0
+nws,Nordergründe,2024,69,0,0.0
+nws,Nordergründe,2025,14,0,0.0
+nws,Nordsee One,2010,1,0,0.0
+nws,Nordsee One,2011,0,0,
+nws,Nordsee One,2012,0,0,
+nws,Nordsee One,2016,0,0,
+nws,Nordsee One,2017,12,12,1.0
+nws,Nordsee One,2018,10,10,1.0
+nws,Nordsee One,2019,1,1,1.0
+nws,Nordsee One,2020,0,0,
+nws,Nordsee One,2021,4,4,1.0
+nws,Nordsee One,2022,13,13,1.0
+nws,Nordsee One,2023,4,4,1.0
+nws,Nordsee One,2024,330,330,1.0
+nws,Nordsee One,2025,37,0,0.0
+nws,Nordsee Ost,2010,9,0,0.0
+nws,Nordsee Ost,2011,7,0,0.0
+nws,Nordsee Ost,2012,21,0,0.0
+nws,Nordsee Ost,2016,0,0,
+nws,Nordsee Ost,2017,14,14,1.0
+nws,Nordsee Ost,2018,34,34,1.0
+nws,Nordsee Ost,2019,3,3,1.0
+nws,Nordsee Ost,2020,15,15,1.0
+nws,Nordsee Ost,2021,50,50,1.0
+nws,Nordsee Ost,2022,100,100,1.0
+nws,Nordsee Ost,2023,30,30,1.0
+nws,Nordsee Ost,2024,981,981,1.0
+nws,Nordsee Ost,2025,112,0,0.0
+nws,North Hoyle,2010,0,0,
+nws,North Hoyle,2011,0,0,
+nws,North Hoyle,2012,41,41,1.0
+nws,North Hoyle,2016,0,0,
+nws,North Hoyle,2017,1,1,1.0
+nws,North Hoyle,2018,0,0,
+nws,North Hoyle,2019,0,0,
+nws,North Hoyle,2020,0,0,
+nws,North Hoyle,2021,0,0,
+nws,North Hoyle,2022,0,0,
+nws,North Hoyle,2023,0,0,
+nws,North Hoyle,2024,0,0,
+nws,North Hoyle,2025,0,0,
+nws,Norther,2010,0,0,
+nws,Norther,2011,0,0,
+nws,Norther,2012,89,0,0.0
+nws,Norther,2016,0,0,
+nws,Norther,2017,3,0,0.0
+nws,Norther,2018,0,0,
+nws,Norther,2019,0,0,
+nws,Norther,2020,0,0,
+nws,Norther,2021,0,0,
+nws,Norther,2022,0,0,
+nws,Norther,2023,0,0,
+nws,Norther,2024,0,0,
+nws,Norther,2025,0,0,
+nws,Northwester 2,2010,0,0,
+nws,Northwester 2,2011,0,0,
+nws,Northwester 2,2012,8,0,0.0
+nws,Northwester 2,2016,0,0,
+nws,Northwester 2,2017,1,0,0.0
+nws,Northwester 2,2018,0,0,
+nws,Northwester 2,2019,0,0,
+nws,Northwester 2,2020,0,0,
+nws,Northwester 2,2021,0,0,
+nws,Northwester 2,2022,0,0,
+nws,Northwester 2,2023,0,0,
+nws,Northwester 2,2024,3,3,1.0
+nws,Northwester 2,2025,0,0,
+nws,Northwind,2010,0,0,
+nws,Northwind,2011,0,0,
+nws,Northwind,2012,9,0,0.0
+nws,Northwind,2016,0,0,
+nws,Northwind,2017,3,3,1.0
+nws,Northwind,2018,0,0,
+nws,Northwind,2019,0,0,
+nws,Northwind,2020,0,0,
+nws,Northwind,2021,0,0,
+nws,Northwind,2022,0,0,
+nws,Northwind,2023,0,0,
+nws,Northwind,2024,4,4,1.0
+nws,Northwind,2025,0,0,
+nws,Nysted,2010,56,56,1.0
+nws,Nysted,2011,19,19,1.0
+nws,Nysted,2012,19,19,1.0
+nws,Nysted,2016,2,2,1.0
+nws,Nysted,2017,22,22,1.0
+nws,Nysted,2018,25,25,1.0
+nws,Nysted,2019,28,28,1.0
+nws,Nysted,2020,16,16,1.0
+nws,Nysted,2021,24,24,1.0
+nws,Nysted,2022,24,24,1.0
+nws,Nysted,2023,22,22,1.0
+nws,Nysted,2024,711,711,1.0
+nws,Nysted,2025,127,0,0.0
+nws,OWF Egmond aan Zee,2010,0,0,
+nws,OWF Egmond aan Zee,2011,0,0,
+nws,OWF Egmond aan Zee,2012,18,18,1.0
+nws,OWF Egmond aan Zee,2016,0,0,
+nws,OWF Egmond aan Zee,2017,0,0,
+nws,OWF Egmond aan Zee,2018,0,0,
+nws,OWF Egmond aan Zee,2019,0,0,
+nws,OWF Egmond aan Zee,2020,0,0,
+nws,OWF Egmond aan Zee,2021,0,0,
+nws,OWF Egmond aan Zee,2022,0,0,
+nws,OWF Egmond aan Zee,2023,0,0,
+nws,OWF Egmond aan Zee,2024,10,10,1.0
+nws,OWF Egmond aan Zee,2025,0,0,
+nws,OWF Luchterduinen,2010,0,0,
+nws,OWF Luchterduinen,2011,0,0,
+nws,OWF Luchterduinen,2012,46,0,0.0
+nws,OWF Luchterduinen,2016,0,0,
+nws,OWF Luchterduinen,2017,1,1,1.0
+nws,OWF Luchterduinen,2018,0,0,
+nws,OWF Luchterduinen,2019,0,0,
+nws,OWF Luchterduinen,2020,0,0,
+nws,OWF Luchterduinen,2021,2,2,1.0
+nws,OWF Luchterduinen,2022,6,6,1.0
+nws,OWF Luchterduinen,2023,0,0,
+nws,OWF Luchterduinen,2024,11,11,1.0
+nws,OWF Luchterduinen,2025,1,0,0.0
+nws,OWF Prinses Amalia,2010,0,0,
+nws,OWF Prinses Amalia,2011,0,0,
+nws,OWF Prinses Amalia,2012,33,33,1.0
+nws,OWF Prinses Amalia,2016,0,0,
+nws,OWF Prinses Amalia,2017,0,0,
+nws,OWF Prinses Amalia,2018,0,0,
+nws,OWF Prinses Amalia,2019,0,0,
+nws,OWF Prinses Amalia,2020,0,0,
+nws,OWF Prinses Amalia,2021,0,0,
+nws,OWF Prinses Amalia,2022,0,0,
+nws,OWF Prinses Amalia,2023,0,0,
+nws,OWF Prinses Amalia,2024,7,7,1.0
+nws,OWF Prinses Amalia,2025,1,0,0.0
+nws,Ormonde,2010,0,0,
+nws,Ormonde,2011,0,0,
+nws,Ormonde,2012,47,47,1.0
+nws,Ormonde,2016,0,0,
+nws,Ormonde,2017,1,1,1.0
+nws,Ormonde,2018,0,0,
+nws,Ormonde,2019,0,0,
+nws,Ormonde,2020,0,0,
+nws,Ormonde,2021,0,0,
+nws,Ormonde,2022,0,0,
+nws,Ormonde,2023,0,0,
+nws,Ormonde,2024,0,0,
+nws,Ormonde,2025,0,0,
+nws,Race Bank,2010,0,0,
+nws,Race Bank,2011,0,0,
+nws,Race Bank,2012,8,0,0.0
+nws,Race Bank,2016,0,0,
+nws,Race Bank,2017,18,0,0.0
+nws,Race Bank,2018,0,0,
+nws,Race Bank,2019,0,0,
+nws,Race Bank,2020,1,1,1.0
+nws,Race Bank,2021,0,0,
+nws,Race Bank,2022,0,0,
+nws,Race Bank,2023,0,0,
+nws,Race Bank,2024,5,5,1.0
+nws,Race Bank,2025,1,0,0.0
+nws,Rampion,2010,0,0,
+nws,Rampion,2011,0,0,
+nws,Rampion,2012,12,0,0.0
+nws,Rampion,2016,0,0,
+nws,Rampion,2017,9,0,0.0
+nws,Rampion,2018,0,0,
+nws,Rampion,2019,0,0,
+nws,Rampion,2020,0,0,
+nws,Rampion,2021,0,0,
+nws,Rampion,2022,0,0,
+nws,Rampion,2023,0,0,
+nws,Rampion,2024,0,0,
+nws,Rampion,2025,0,0,
+nws,Renland,2010,339,339,1.0
+nws,Renland,2011,392,392,1.0
+nws,Renland,2012,467,467,1.0
+nws,Renland,2016,66,66,1.0
+nws,Renland,2017,791,791,1.0
+nws,Renland,2018,724,724,1.0
+nws,Renland,2019,770,770,1.0
+nws,Renland,2020,783,783,1.0
+nws,Renland,2021,706,706,1.0
+nws,Renland,2022,710,710,1.0
+nws,Renland,2023,660,660,1.0
+nws,Renland,2024,4164,4164,1.0
+nws,Renland,2025,656,0,0.0
+nws,Rentel,2010,0,0,
+nws,Rentel,2011,0,0,
+nws,Rentel,2012,86,0,0.0
+nws,Rentel,2016,0,0,
+nws,Rentel,2017,5,0,0.0
+nws,Rentel,2018,0,0,
+nws,Rentel,2019,0,0,
+nws,Rentel,2020,0,0,
+nws,Rentel,2021,0,0,
+nws,Rentel,2022,0,0,
+nws,Rentel,2023,0,0,
+nws,Rentel,2024,3,3,1.0
+nws,Rentel,2025,0,0,
+nws,Rhyl Flats,2010,0,0,
+nws,Rhyl Flats,2011,0,0,
+nws,Rhyl Flats,2012,30,30,1.0
+nws,Rhyl Flats,2016,0,0,
+nws,Rhyl Flats,2017,4,4,1.0
+nws,Rhyl Flats,2018,0,0,
+nws,Rhyl Flats,2019,0,0,
+nws,Rhyl Flats,2020,0,0,
+nws,Rhyl Flats,2021,0,0,
+nws,Rhyl Flats,2022,0,0,
+nws,Rhyl Flats,2023,0,0,
+nws,Rhyl Flats,2024,0,0,
+nws,Rhyl Flats,2025,0,0,
+nws,Riffgat,2010,0,0,
+nws,Riffgat,2011,1,0,0.0
+nws,Riffgat,2012,24,0,0.0
+nws,Riffgat,2016,0,0,
+nws,Riffgat,2017,0,0,
+nws,Riffgat,2018,0,0,
+nws,Riffgat,2019,0,0,
+nws,Riffgat,2020,0,0,
+nws,Riffgat,2021,1,1,1.0
+nws,Riffgat,2022,0,0,
+nws,Riffgat,2023,0,0,
+nws,Riffgat,2024,72,72,1.0
+nws,Riffgat,2025,3,0,0.0
+nws,Robin Rigg West,2010,0,0,
+nws,Robin Rigg West,2011,0,0,
+nws,Robin Rigg West,2012,11,11,1.0
+nws,Robin Rigg West,2016,0,0,
+nws,Robin Rigg West,2017,1,1,1.0
+nws,Robin Rigg West,2018,0,0,
+nws,Robin Rigg West,2019,0,0,
+nws,Robin Rigg West,2020,0,0,
+nws,Robin Rigg West,2021,0,0,
+nws,Robin Rigg West,2022,0,0,
+nws,Robin Rigg West,2023,0,0,
+nws,Robin Rigg West,2024,0,0,
+nws,Robin Rigg West,2025,0,0,
+nws,Rodsand II,2010,107,107,1.0
+nws,Rodsand II,2011,32,32,1.0
+nws,Rodsand II,2012,23,23,1.0
+nws,Rodsand II,2016,2,2,1.0
+nws,Rodsand II,2017,22,22,1.0
+nws,Rodsand II,2018,23,23,1.0
+nws,Rodsand II,2019,27,27,1.0
+nws,Rodsand II,2020,25,25,1.0
+nws,Rodsand II,2021,40,40,1.0
+nws,Rodsand II,2022,26,26,1.0
+nws,Rodsand II,2023,26,26,1.0
+nws,Rodsand II,2024,1002,1002,1.0
+nws,Rodsand II,2025,154,0,0.0
+nws,Saint-Brieuc,2010,0,0,
+nws,Saint-Brieuc,2011,0,0,
+nws,Saint-Brieuc,2012,4,0,0.0
+nws,Saint-Brieuc,2016,0,0,
+nws,Saint-Brieuc,2017,0,0,
+nws,Saint-Brieuc,2018,0,0,
+nws,Saint-Brieuc,2019,0,0,
+nws,Saint-Brieuc,2020,0,0,
+nws,Saint-Brieuc,2021,0,0,
+nws,Saint-Brieuc,2022,0,0,
+nws,Saint-Brieuc,2023,0,0,
+nws,Saint-Brieuc,2024,0,0,
+nws,Saint-Brieuc,2025,0,0,
+nws,Saint-Nazaire,2010,0,0,
+nws,Saint-Nazaire,2011,0,0,
+nws,Saint-Nazaire,2012,6,0,0.0
+nws,Saint-Nazaire,2016,0,0,
+nws,Saint-Nazaire,2017,0,0,
+nws,Saint-Nazaire,2018,0,0,
+nws,Saint-Nazaire,2019,0,0,
+nws,Saint-Nazaire,2020,0,0,
+nws,Saint-Nazaire,2021,0,0,
+nws,Saint-Nazaire,2022,0,0,
+nws,Saint-Nazaire,2023,0,0,
+nws,Saint-Nazaire,2024,0,0,
+nws,Saint-Nazaire,2025,0,0,
+nws,Samsa,2010,0,0,
+nws,Samsa,2011,0,0,
+nws,Samsa,2012,0,0,
+nws,Samsa,2016,0,0,
+nws,Samsa,2017,4,4,1.0
+nws,Samsa,2018,5,5,1.0
+nws,Samsa,2019,2,2,1.0
+nws,Samsa,2020,2,2,1.0
+nws,Samsa,2021,2,2,1.0
+nws,Samsa,2022,2,2,1.0
+nws,Samsa,2023,2,2,1.0
+nws,Samsa,2024,83,83,1.0
+nws,Samsa,2025,20,0,0.0
+nws,Sandbank,2010,3,0,0.0
+nws,Sandbank,2011,0,0,
+nws,Sandbank,2012,0,0,
+nws,Sandbank,2016,2,0,0.0
+nws,Sandbank,2017,28,28,1.0
+nws,Sandbank,2018,15,15,1.0
+nws,Sandbank,2019,12,12,1.0
+nws,Sandbank,2020,9,9,1.0
+nws,Sandbank,2021,18,18,1.0
+nws,Sandbank,2022,15,15,1.0
+nws,Sandbank,2023,11,11,1.0
+nws,Sandbank,2024,256,256,1.0
+nws,Sandbank,2025,14,0,0.0
+nws,Scroby Sands,2010,0,0,
+nws,Scroby Sands,2011,0,0,
+nws,Scroby Sands,2012,113,113,1.0
+nws,Scroby Sands,2016,0,0,
+nws,Scroby Sands,2017,15,15,1.0
+nws,Scroby Sands,2018,0,0,
+nws,Scroby Sands,2019,0,0,
+nws,Scroby Sands,2020,0,0,
+nws,Scroby Sands,2021,0,0,
+nws,Scroby Sands,2022,0,0,
+nws,Scroby Sands,2023,0,0,
+nws,Scroby Sands,2024,8,8,1.0
+nws,Scroby Sands,2025,0,0,
+nws,SeaStar,2010,0,0,
+nws,SeaStar,2011,0,0,
+nws,SeaStar,2012,10,0,0.0
+nws,SeaStar,2016,0,0,
+nws,SeaStar,2017,2,0,0.0
+nws,SeaStar,2018,0,0,
+nws,SeaStar,2019,0,0,
+nws,SeaStar,2020,0,0,
+nws,SeaStar,2021,0,0,
+nws,SeaStar,2022,0,0,
+nws,SeaStar,2023,0,0,
+nws,SeaStar,2024,6,6,1.0
+nws,SeaStar,2025,0,0,
+nws,Seagreen,2010,0,0,
+nws,Seagreen,2011,0,0,
+nws,Seagreen,2012,0,0,
+nws,Seagreen,2016,0,0,
+nws,Seagreen,2017,0,0,
+nws,Seagreen,2018,0,0,
+nws,Seagreen,2019,0,0,
+nws,Seagreen,2020,0,0,
+nws,Seagreen,2021,2,0,0.0
+nws,Seagreen,2022,0,0,
+nws,Seagreen,2023,0,0,
+nws,Seagreen,2024,6,6,1.0
+nws,Seagreen,2025,2,0,0.0
+nws,Sheringham Shoal,2010,0,0,
+nws,Sheringham Shoal,2011,0,0,
+nws,Sheringham Shoal,2012,164,0,0.0
+nws,Sheringham Shoal,2016,0,0,
+nws,Sheringham Shoal,2017,2,2,1.0
+nws,Sheringham Shoal,2018,0,0,
+nws,Sheringham Shoal,2019,0,0,
+nws,Sheringham Shoal,2020,0,0,
+nws,Sheringham Shoal,2021,0,0,
+nws,Sheringham Shoal,2022,0,0,
+nws,Sheringham Shoal,2023,0,0,
+nws,Sheringham Shoal,2024,8,8,1.0
+nws,Sheringham Shoal,2025,0,0,
+nws,Sprogo,2010,5,5,1.0
+nws,Sprogo,2011,5,5,1.0
+nws,Sprogo,2012,4,4,1.0
+nws,Sprogo,2016,1,1,1.0
+nws,Sprogo,2017,19,19,1.0
+nws,Sprogo,2018,22,22,1.0
+nws,Sprogo,2019,6,6,1.0
+nws,Sprogo,2020,1,1,1.0
+nws,Sprogo,2021,5,5,1.0
+nws,Sprogo,2022,4,4,1.0
+nws,Sprogo,2023,1,1,1.0
+nws,Sprogo,2024,46,46,1.0
+nws,Sprogo,2025,5,0,0.0
+nws,Teesside,2010,5,0,0.0
+nws,Teesside,2011,0,0,
+nws,Teesside,2012,132,0,0.0
+nws,Teesside,2016,0,0,
+nws,Teesside,2017,1,1,1.0
+nws,Teesside,2018,0,0,
+nws,Teesside,2019,0,0,
+nws,Teesside,2020,0,0,
+nws,Teesside,2021,1,1,1.0
+nws,Teesside,2022,0,0,
+nws,Teesside,2023,0,0,
+nws,Teesside,2024,4,4,1.0
+nws,Teesside,2025,0,0,
+nws,Thanet,2010,1,1,1.0
+nws,Thanet,2011,0,0,
+nws,Thanet,2012,30,30,1.0
+nws,Thanet,2016,0,0,
+nws,Thanet,2017,2,2,1.0
+nws,Thanet,2018,0,0,
+nws,Thanet,2019,0,0,
+nws,Thanet,2020,0,0,
+nws,Thanet,2021,0,0,
+nws,Thanet,2022,0,0,
+nws,Thanet,2023,0,0,
+nws,Thanet,2024,0,0,
+nws,Thanet,2025,0,0,
+nws,Thornton Bank - phase I,2010,0,0,
+nws,Thornton Bank - phase I,2011,0,0,
+nws,Thornton Bank - phase I,2012,77,0,0.0
+nws,Thornton Bank - phase I,2016,0,0,
+nws,Thornton Bank - phase I,2017,2,0,0.0
+nws,Thornton Bank - phase I,2018,0,0,
+nws,Thornton Bank - phase I,2019,0,0,
+nws,Thornton Bank - phase I,2020,0,0,
+nws,Thornton Bank - phase I,2021,0,0,
+nws,Thornton Bank - phase I,2022,0,0,
+nws,Thornton Bank - phase I,2023,0,0,
+nws,Thornton Bank - phase I,2024,1,0,0.0
+nws,Thornton Bank - phase I,2025,0,0,
+nws,Thornton Bank - phase II and III,2010,0,0,
+nws,Thornton Bank - phase II and III,2011,0,0,
+nws,Thornton Bank - phase II and III,2012,89,0,0.0
+nws,Thornton Bank - phase II and III,2016,0,0,
+nws,Thornton Bank - phase II and III,2017,4,0,0.0
+nws,Thornton Bank - phase II and III,2018,0,0,
+nws,Thornton Bank - phase II and III,2019,0,0,
+nws,Thornton Bank - phase II and III,2020,0,0,
+nws,Thornton Bank - phase II and III,2021,0,0,
+nws,Thornton Bank - phase II and III,2022,0,0,
+nws,Thornton Bank - phase II and III,2023,0,0,
+nws,Thornton Bank - phase II and III,2024,4,0,0.0
+nws,Thornton Bank - phase II and III,2025,0,0,
+nws,Trianel Windpark Borkum 1,2010,0,0,
+nws,Trianel Windpark Borkum 1,2011,0,0,
+nws,Trianel Windpark Borkum 1,2012,5,0,0.0
+nws,Trianel Windpark Borkum 1,2016,0,0,
+nws,Trianel Windpark Borkum 1,2017,11,0,0.0
+nws,Trianel Windpark Borkum 1,2018,55,0,0.0
+nws,Trianel Windpark Borkum 1,2019,7,0,0.0
+nws,Trianel Windpark Borkum 1,2020,8,0,0.0
+nws,Trianel Windpark Borkum 1,2021,24,0,0.0
+nws,Trianel Windpark Borkum 1,2022,20,0,0.0
+nws,Trianel Windpark Borkum 1,2023,12,0,0.0
+nws,Trianel Windpark Borkum 1,2024,723,0,0.0
+nws,Trianel Windpark Borkum 1,2025,35,0,0.0
+nws,Trianel Windpark Borkum 2,2010,0,0,
+nws,Trianel Windpark Borkum 2,2011,0,0,
+nws,Trianel Windpark Borkum 2,2012,1,0,0.0
+nws,Trianel Windpark Borkum 2,2016,0,0,
+nws,Trianel Windpark Borkum 2,2017,13,0,0.0
+nws,Trianel Windpark Borkum 2,2018,49,0,0.0
+nws,Trianel Windpark Borkum 2,2019,11,0,0.0
+nws,Trianel Windpark Borkum 2,2020,6,0,0.0
+nws,Trianel Windpark Borkum 2,2021,17,0,0.0
+nws,Trianel Windpark Borkum 2,2022,18,0,0.0
+nws,Trianel Windpark Borkum 2,2023,15,0,0.0
+nws,Trianel Windpark Borkum 2,2024,574,0,0.0
+nws,Trianel Windpark Borkum 2,2025,37,0,0.0
+nws,Triton Knoll,2010,0,0,
+nws,Triton Knoll,2011,0,0,
+nws,Triton Knoll,2012,2,0,0.0
+nws,Triton Knoll,2016,0,0,
+nws,Triton Knoll,2017,0,0,
+nws,Triton Knoll,2018,0,0,
+nws,Triton Knoll,2019,0,0,
+nws,Triton Knoll,2020,0,0,
+nws,Triton Knoll,2021,1,0,0.0
+nws,Triton Knoll,2022,0,0,
+nws,Triton Knoll,2023,0,0,
+nws,Triton Knoll,2024,27,27,1.0
+nws,Triton Knoll,2025,4,0,0.0
+nws,Tunm Knob,2010,0,0,
+nws,Tunm Knob,2011,0,0,
+nws,Tunm Knob,2012,1,1,1.0
+nws,Tunm Knob,2016,0,0,
+nws,Tunm Knob,2017,3,3,1.0
+nws,Tunm Knob,2018,0,0,
+nws,Tunm Knob,2019,0,0,
+nws,Tunm Knob,2020,2,2,1.0
+nws,Tunm Knob,2021,2,2,1.0
+nws,Tunm Knob,2022,3,3,1.0
+nws,Tunm Knob,2023,2,2,1.0
+nws,Tunm Knob,2024,38,38,1.0
+nws,Tunm Knob,2025,5,0,0.0
+nws,Veja Mate,2010,8,0,0.0
+nws,Veja Mate,2011,9,0,0.0
+nws,Veja Mate,2012,13,0,0.0
+nws,Veja Mate,2016,0,0,
+nws,Veja Mate,2017,20,20,1.0
+nws,Veja Mate,2018,12,12,1.0
+nws,Veja Mate,2019,16,16,1.0
+nws,Veja Mate,2020,11,11,1.0
+nws,Veja Mate,2021,24,24,1.0
+nws,Veja Mate,2022,7,7,1.0
+nws,Veja Mate,2023,5,5,1.0
+nws,Veja Mate,2024,303,303,1.0
+nws,Veja Mate,2025,13,0,0.0
+nws,Vesterhav Nord,2010,4,0,0.0
+nws,Vesterhav Nord,2011,3,0,0.0
+nws,Vesterhav Nord,2012,6,0,0.0
+nws,Vesterhav Nord,2016,0,0,
+nws,Vesterhav Nord,2017,9,0,0.0
+nws,Vesterhav Nord,2018,3,0,0.0
+nws,Vesterhav Nord,2019,2,0,0.0
+nws,Vesterhav Nord,2020,10,0,0.0
+nws,Vesterhav Nord,2021,3,0,0.0
+nws,Vesterhav Nord,2022,11,0,0.0
+nws,Vesterhav Nord,2023,39,0,0.0
+nws,Vesterhav Nord,2024,274,274,1.0
+nws,Vesterhav Nord,2025,25,0,0.0
+nws,Vesterhav Syd,2010,0,0,
+nws,Vesterhav Syd,2011,0,0,
+nws,Vesterhav Syd,2012,0,0,
+nws,Vesterhav Syd,2016,0,0,
+nws,Vesterhav Syd,2017,5,0,0.0
+nws,Vesterhav Syd,2018,13,0,0.0
+nws,Vesterhav Syd,2019,2,0,0.0
+nws,Vesterhav Syd,2020,1,0,0.0
+nws,Vesterhav Syd,2021,2,0,0.0
+nws,Vesterhav Syd,2022,3,0,0.0
+nws,Vesterhav Syd,2023,48,0,0.0
+nws,Vesterhav Syd,2024,319,319,1.0
+nws,Vesterhav Syd,2025,33,0,0.0
+nws,Walney 1,2010,0,0,
+nws,Walney 1,2011,0,0,
+nws,Walney 1,2012,69,69,1.0
+nws,Walney 1,2016,0,0,
+nws,Walney 1,2017,3,3,1.0
+nws,Walney 1,2018,0,0,
+nws,Walney 1,2019,0,0,
+nws,Walney 1,2020,0,0,
+nws,Walney 1,2021,0,0,
+nws,Walney 1,2022,0,0,
+nws,Walney 1,2023,0,0,
+nws,Walney 1,2024,0,0,
+nws,Walney 1,2025,0,0,
+nws,Walney 2,2010,0,0,
+nws,Walney 2,2011,0,0,
+nws,Walney 2,2012,70,70,1.0
+nws,Walney 2,2016,0,0,
+nws,Walney 2,2017,4,4,1.0
+nws,Walney 2,2018,0,0,
+nws,Walney 2,2019,0,0,
+nws,Walney 2,2020,0,0,
+nws,Walney 2,2021,0,0,
+nws,Walney 2,2022,0,0,
+nws,Walney 2,2023,0,0,
+nws,Walney 2,2024,0,0,
+nws,Walney 2,2025,0,0,
+nws,Walney Extension 3,2010,0,0,
+nws,Walney Extension 3,2011,0,0,
+nws,Walney Extension 3,2012,5,0,0.0
+nws,Walney Extension 3,2016,0,0,
+nws,Walney Extension 3,2017,8,0,0.0
+nws,Walney Extension 3,2018,0,0,
+nws,Walney Extension 3,2019,0,0,
+nws,Walney Extension 3,2020,0,0,
+nws,Walney Extension 3,2021,0,0,
+nws,Walney Extension 3,2022,0,0,
+nws,Walney Extension 3,2023,0,0,
+nws,Walney Extension 3,2024,0,0,
+nws,Walney Extension 3,2025,0,0,
+nws,Walney Extension 4,2010,0,0,
+nws,Walney Extension 4,2011,0,0,
+nws,Walney Extension 4,2012,63,0,0.0
+nws,Walney Extension 4,2016,0,0,
+nws,Walney Extension 4,2017,6,0,0.0
+nws,Walney Extension 4,2018,0,0,
+nws,Walney Extension 4,2019,0,0,
+nws,Walney Extension 4,2020,0,0,
+nws,Walney Extension 4,2021,0,0,
+nws,Walney Extension 4,2022,0,0,
+nws,Walney Extension 4,2023,0,0,
+nws,Walney Extension 4,2024,0,0,
+nws,Walney Extension 4,2025,0,0,
+nws,West of Duddon Sands,2010,0,0,
+nws,West of Duddon Sands,2011,0,0,
+nws,West of Duddon Sands,2012,35,0,0.0
+nws,West of Duddon Sands,2016,0,0,
+nws,West of Duddon Sands,2017,2,2,1.0
+nws,West of Duddon Sands,2018,0,0,
+nws,West of Duddon Sands,2019,0,0,
+nws,West of Duddon Sands,2020,0,0,
+nws,West of Duddon Sands,2021,0,0,
+nws,West of Duddon Sands,2022,0,0,
+nws,West of Duddon Sands,2023,0,0,
+nws,West of Duddon Sands,2024,0,0,
+nws,West of Duddon Sands,2025,0,0,
+nws,Westermost Rough,2010,0,0,
+nws,Westermost Rough,2011,0,0,
+nws,Westermost Rough,2012,9,0,0.0
+nws,Westermost Rough,2016,0,0,
+nws,Westermost Rough,2017,2,2,1.0
+nws,Westermost Rough,2018,0,0,
+nws,Westermost Rough,2019,0,0,
+nws,Westermost Rough,2020,0,0,
+nws,Westermost Rough,2021,0,0,
+nws,Westermost Rough,2022,0,0,
+nws,Westermost Rough,2023,0,0,
+nws,Westermost Rough,2024,2,2,1.0
+nws,Westermost Rough,2025,2,0,0.0
+nws,Wikinger,2010,1,0,0.0
+nws,Wikinger,2011,14,0,0.0
+nws,Wikinger,2012,9,0,0.0
+nws,Wikinger,2016,26,0,0.0
+nws,Wikinger,2017,202,0,0.0
+nws,Wikinger,2018,206,0,0.0
+nws,Wikinger,2019,63,0,0.0
+nws,Wikinger,2020,49,0,0.0
+nws,Wikinger,2021,40,0,0.0
+nws,Wikinger,2022,42,0,0.0
+nws,Wikinger,2023,44,0,0.0
+nws,Wikinger,2024,1160,0,0.0
+nws,Wikinger,2025,137,0,0.0
+baltic,Aberdeen Offshore Wind Farm,2010,2,0,0.0
+baltic,Aberdeen Offshore Wind Farm,2011,0,0,
+baltic,Aberdeen Offshore Wind Farm,2012,102,0,0.0
+baltic,Aberdeen Offshore Wind Farm,2016,0,0,
+baltic,Aberdeen Offshore Wind Farm,2017,14,0,0.0
+baltic,Aberdeen Offshore Wind Farm,2018,0,0,
+baltic,Aberdeen Offshore Wind Farm,2019,0,0,
+baltic,Aberdeen Offshore Wind Farm,2020,0,0,
+baltic,Aberdeen Offshore Wind Farm,2021,2,0,0.0
+baltic,Aberdeen Offshore Wind Farm,2022,0,0,
+baltic,Aberdeen Offshore Wind Farm,2023,0,0,
+baltic,Aberdeen Offshore Wind Farm,2024,23,0,0.0
+baltic,Aberdeen Offshore Wind Farm,2025,3,0,0.0
+baltic,Albatros,2010,2,0,0.0
+baltic,Albatros,2011,0,0,
+baltic,Albatros,2012,0,0,
+baltic,Albatros,2016,0,0,
+baltic,Albatros,2017,10,0,0.0
+baltic,Albatros,2018,12,0,0.0
+baltic,Albatros,2019,32,0,0.0
+baltic,Albatros,2020,8,0,0.0
+baltic,Albatros,2021,11,0,0.0
+baltic,Albatros,2022,6,0,0.0
+baltic,Albatros,2023,7,0,0.0
+baltic,Albatros,2024,275,0,0.0
+baltic,Albatros,2025,29,0,0.0
+baltic,Alpha Ventus,2010,6,0,0.0
+baltic,Alpha Ventus,2011,17,0,0.0
+baltic,Alpha Ventus,2012,17,0,0.0
+baltic,Alpha Ventus,2016,0,0,
+baltic,Alpha Ventus,2017,15,0,0.0
+baltic,Alpha Ventus,2018,33,0,0.0
+baltic,Alpha Ventus,2019,12,0,0.0
+baltic,Alpha Ventus,2020,12,0,0.0
+baltic,Alpha Ventus,2021,30,0,0.0
+baltic,Alpha Ventus,2022,25,0,0.0
+baltic,Alpha Ventus,2023,22,0,0.0
+baltic,Alpha Ventus,2024,656,0,0.0
+baltic,Alpha Ventus,2025,50,0,0.0
+baltic,Amrumbank West,2010,9,0,0.0
+baltic,Amrumbank West,2011,6,0,0.0
+baltic,Amrumbank West,2012,11,0,0.0
+baltic,Amrumbank West,2016,0,0,
+baltic,Amrumbank West,2017,6,0,0.0
+baltic,Amrumbank West,2018,12,0,0.0
+baltic,Amrumbank West,2019,3,0,0.0
+baltic,Amrumbank West,2020,4,0,0.0
+baltic,Amrumbank West,2021,22,0,0.0
+baltic,Amrumbank West,2022,81,0,0.0
+baltic,Amrumbank West,2023,16,0,0.0
+baltic,Amrumbank West,2024,622,0,0.0
+baltic,Amrumbank West,2025,104,0,0.0
+baltic,Anholt,2010,11,0,0.0
+baltic,Anholt,2011,24,0,0.0
+baltic,Anholt,2012,97,0,0.0
+baltic,Anholt,2016,4,4,1.0
+baltic,Anholt,2017,38,38,1.0
+baltic,Anholt,2018,29,29,1.0
+baltic,Anholt,2019,18,18,1.0
+baltic,Anholt,2020,19,19,1.0
+baltic,Anholt,2021,22,22,1.0
+baltic,Anholt,2022,19,19,1.0
+baltic,Anholt,2023,24,24,1.0
+baltic,Anholt,2024,623,623,1.0
+baltic,Anholt,2025,80,0,0.0
+baltic,Arcadis Ost 1,2010,1,0,0.0
+baltic,Arcadis Ost 1,2011,1,0,0.0
+baltic,Arcadis Ost 1,2012,6,0,0.0
+baltic,Arcadis Ost 1,2016,0,0,
+baltic,Arcadis Ost 1,2017,3,0,0.0
+baltic,Arcadis Ost 1,2018,5,0,0.0
+baltic,Arcadis Ost 1,2019,7,0,0.0
+baltic,Arcadis Ost 1,2020,1,0,0.0
+baltic,Arcadis Ost 1,2021,5,0,0.0
+baltic,Arcadis Ost 1,2022,44,0,0.0
+baltic,Arcadis Ost 1,2023,41,8,0.1951219512195122
+baltic,Arcadis Ost 1,2024,690,690,1.0
+baltic,Arcadis Ost 1,2025,100,0,0.0
+baltic,Arkona-Becken Südost,2010,10,0,0.0
+baltic,Arkona-Becken Südost,2011,26,0,0.0
+baltic,Arkona-Becken Südost,2012,19,0,0.0
+baltic,Arkona-Becken Südost,2016,22,0,0.0
+baltic,Arkona-Becken Südost,2017,224,0,0.0
+baltic,Arkona-Becken Südost,2018,262,0,0.0
+baltic,Arkona-Becken Südost,2019,86,0,0.0
+baltic,Arkona-Becken Südost,2020,64,0,0.0
+baltic,Arkona-Becken Südost,2021,41,0,0.0
+baltic,Arkona-Becken Südost,2022,41,0,0.0
+baltic,Arkona-Becken Südost,2023,37,0,0.0
+baltic,Arkona-Becken Südost,2024,1319,0,0.0
+baltic,Arkona-Becken Südost,2025,138,0,0.0
+baltic,Avedøre Holme,2010,55,0,0.0
+baltic,Avedøre Holme,2011,82,0,0.0
+baltic,Avedøre Holme,2012,76,0,0.0
+baltic,Avedøre Holme,2016,12,0,0.0
+baltic,Avedøre Holme,2017,128,0,0.0
+baltic,Avedøre Holme,2018,132,0,0.0
+baltic,Avedøre Holme,2019,149,0,0.0
+baltic,Avedøre Holme,2020,151,0,0.0
+baltic,Avedøre Holme,2021,184,0,0.0
+baltic,Avedøre Holme,2022,178,0,0.0
+baltic,Avedøre Holme,2023,160,0,0.0
+baltic,Avedøre Holme,2024,2791,0,0.0
+baltic,Avedøre Holme,2025,408,0,0.0
+baltic,Baltic Eagle,2010,1,0,0.0
+baltic,Baltic Eagle,2011,7,0,0.0
+baltic,Baltic Eagle,2012,5,0,0.0
+baltic,Baltic Eagle,2016,3,0,0.0
+baltic,Baltic Eagle,2017,31,0,0.0
+baltic,Baltic Eagle,2018,36,0,0.0
+baltic,Baltic Eagle,2019,22,0,0.0
+baltic,Baltic Eagle,2020,4,0,0.0
+baltic,Baltic Eagle,2021,4,0,0.0
+baltic,Baltic Eagle,2022,35,0,0.0
+baltic,Baltic Eagle,2023,81,0,0.0
+baltic,Baltic Eagle,2024,1292,0,0.0
+baltic,Baltic Eagle,2025,271,0,0.0
+baltic,Bard Offshore 1,2010,16,0,0.0
+baltic,Bard Offshore 1,2011,15,0,0.0
+baltic,Bard Offshore 1,2012,22,0,0.0
+baltic,Bard Offshore 1,2016,0,0,
+baltic,Bard Offshore 1,2017,10,0,0.0
+baltic,Bard Offshore 1,2018,15,0,0.0
+baltic,Bard Offshore 1,2019,1,0,0.0
+baltic,Bard Offshore 1,2020,5,0,0.0
+baltic,Bard Offshore 1,2021,13,0,0.0
+baltic,Bard Offshore 1,2022,6,0,0.0
+baltic,Bard Offshore 1,2023,2,0,0.0
+baltic,Bard Offshore 1,2024,167,0,0.0
+baltic,Bard Offshore 1,2025,9,0,0.0
+baltic,Barrow,2010,0,0,
+baltic,Barrow,2011,0,0,
+baltic,Barrow,2012,11,0,0.0
+baltic,Barrow,2016,0,0,
+baltic,Barrow,2017,0,0,
+baltic,Barrow,2018,0,0,
+baltic,Barrow,2019,0,0,
+baltic,Barrow,2020,0,0,
+baltic,Barrow,2021,0,0,
+baltic,Barrow,2022,0,0,
+baltic,Barrow,2023,0,0,
+baltic,Barrow,2024,0,0,
+baltic,Barrow,2025,0,0,
+baltic,Beatrice Offshore Wind Farm,2010,1,0,0.0
+baltic,Beatrice Offshore Wind Farm,2011,0,0,
+baltic,Beatrice Offshore Wind Farm,2012,12,0,0.0
+baltic,Beatrice Offshore Wind Farm,2016,0,0,
+baltic,Beatrice Offshore Wind Farm,2017,3,0,0.0
+baltic,Beatrice Offshore Wind Farm,2018,2,0,0.0
+baltic,Beatrice Offshore Wind Farm,2019,0,0,
+baltic,Beatrice Offshore Wind Farm,2020,0,0,
+baltic,Beatrice Offshore Wind Farm,2021,0,0,
+baltic,Beatrice Offshore Wind Farm,2022,0,0,
+baltic,Beatrice Offshore Wind Farm,2023,0,0,
+baltic,Beatrice Offshore Wind Farm,2024,0,0,
+baltic,Beatrice Offshore Wind Farm,2025,1,0,0.0
+baltic,Belwind phase 1,2010,0,0,
+baltic,Belwind phase 1,2011,0,0,
+baltic,Belwind phase 1,2012,9,0,0.0
+baltic,Belwind phase 1,2016,0,0,
+baltic,Belwind phase 1,2017,1,0,0.0
+baltic,Belwind phase 1,2018,0,0,
+baltic,Belwind phase 1,2019,0,0,
+baltic,Belwind phase 1,2020,0,0,
+baltic,Belwind phase 1,2021,0,0,
+baltic,Belwind phase 1,2022,0,0,
+baltic,Belwind phase 1,2023,0,0,
+baltic,Belwind phase 1,2024,4,0,0.0
+baltic,Belwind phase 1,2025,0,0,
+baltic,Blyth Demo Phase 1,2010,0,0,
+baltic,Blyth Demo Phase 1,2011,0,0,
+baltic,Blyth Demo Phase 1,2012,7,0,0.0
+baltic,Blyth Demo Phase 1,2016,0,0,
+baltic,Blyth Demo Phase 1,2017,1,0,0.0
+baltic,Blyth Demo Phase 1,2018,0,0,
+baltic,Blyth Demo Phase 1,2019,0,0,
+baltic,Blyth Demo Phase 1,2020,0,0,
+baltic,Blyth Demo Phase 1,2021,0,0,
+baltic,Blyth Demo Phase 1,2022,0,0,
+baltic,Blyth Demo Phase 1,2023,0,0,
+baltic,Blyth Demo Phase 1,2024,0,0,
+baltic,Blyth Demo Phase 1,2025,0,0,
+baltic,Borkum Riffgrund 1,2010,6,0,0.0
+baltic,Borkum Riffgrund 1,2011,15,0,0.0
+baltic,Borkum Riffgrund 1,2012,18,0,0.0
+baltic,Borkum Riffgrund 1,2016,0,0,
+baltic,Borkum Riffgrund 1,2017,22,0,0.0
+baltic,Borkum Riffgrund 1,2018,51,0,0.0
+baltic,Borkum Riffgrund 1,2019,13,0,0.0
+baltic,Borkum Riffgrund 1,2020,14,0,0.0
+baltic,Borkum Riffgrund 1,2021,34,0,0.0
+baltic,Borkum Riffgrund 1,2022,22,0,0.0
+baltic,Borkum Riffgrund 1,2023,25,0,0.0
+baltic,Borkum Riffgrund 1,2024,755,0,0.0
+baltic,Borkum Riffgrund 1,2025,56,0,0.0
+baltic,Borkum Riffgrund 2,2010,6,0,0.0
+baltic,Borkum Riffgrund 2,2011,17,0,0.0
+baltic,Borkum Riffgrund 2,2012,18,0,0.0
+baltic,Borkum Riffgrund 2,2016,0,0,
+baltic,Borkum Riffgrund 2,2017,24,0,0.0
+baltic,Borkum Riffgrund 2,2018,61,0,0.0
+baltic,Borkum Riffgrund 2,2019,11,0,0.0
+baltic,Borkum Riffgrund 2,2020,15,0,0.0
+baltic,Borkum Riffgrund 2,2021,33,0,0.0
+baltic,Borkum Riffgrund 2,2022,24,0,0.0
+baltic,Borkum Riffgrund 2,2023,24,0,0.0
+baltic,Borkum Riffgrund 2,2024,722,0,0.0
+baltic,Borkum Riffgrund 2,2025,61,0,0.0
+baltic,Borssele Kavel I and II,2010,0,0,
+baltic,Borssele Kavel I and II,2011,0,0,
+baltic,Borssele Kavel I and II,2012,75,0,0.0
+baltic,Borssele Kavel I and II,2016,0,0,
+baltic,Borssele Kavel I and II,2017,1,0,0.0
+baltic,Borssele Kavel I and II,2018,0,0,
+baltic,Borssele Kavel I and II,2019,0,0,
+baltic,Borssele Kavel I and II,2020,0,0,
+baltic,Borssele Kavel I and II,2021,2,0,0.0
+baltic,Borssele Kavel I and II,2022,0,0,
+baltic,Borssele Kavel I and II,2023,0,0,
+baltic,Borssele Kavel I and II,2024,6,0,0.0
+baltic,Borssele Kavel I and II,2025,0,0,
+baltic,Borssele Kavel III and IV,2010,0,0,
+baltic,Borssele Kavel III and IV,2011,0,0,
+baltic,Borssele Kavel III and IV,2012,77,0,0.0
+baltic,Borssele Kavel III and IV,2016,0,0,
+baltic,Borssele Kavel III and IV,2017,3,0,0.0
+baltic,Borssele Kavel III and IV,2018,0,0,
+baltic,Borssele Kavel III and IV,2019,0,0,
+baltic,Borssele Kavel III and IV,2020,0,0,
+baltic,Borssele Kavel III and IV,2021,2,0,0.0
+baltic,Borssele Kavel III and IV,2022,0,0,
+baltic,Borssele Kavel III and IV,2023,0,0,
+baltic,Borssele Kavel III and IV,2024,10,0,0.0
+baltic,Borssele Kavel III and IV,2025,0,0,
+baltic,Burbo Bank,2010,0,0,
+baltic,Burbo Bank,2011,0,0,
+baltic,Burbo Bank,2012,21,0,0.0
+baltic,Burbo Bank,2016,0,0,
+baltic,Burbo Bank,2017,1,0,0.0
+baltic,Burbo Bank,2018,0,0,
+baltic,Burbo Bank,2019,0,0,
+baltic,Burbo Bank,2020,0,0,
+baltic,Burbo Bank,2021,0,0,
+baltic,Burbo Bank,2022,0,0,
+baltic,Burbo Bank,2023,0,0,
+baltic,Burbo Bank,2024,0,0,
+baltic,Burbo Bank,2025,0,0,
+baltic,Burbo Bank Extension,2010,0,0,
+baltic,Burbo Bank Extension,2011,0,0,
+baltic,Burbo Bank Extension,2012,72,0,0.0
+baltic,Burbo Bank Extension,2016,0,0,
+baltic,Burbo Bank Extension,2017,1,0,0.0
+baltic,Burbo Bank Extension,2018,0,0,
+baltic,Burbo Bank Extension,2019,0,0,
+baltic,Burbo Bank Extension,2020,0,0,
+baltic,Burbo Bank Extension,2021,0,0,
+baltic,Burbo Bank Extension,2022,0,0,
+baltic,Burbo Bank Extension,2023,0,0,
+baltic,Burbo Bank Extension,2024,0,0,
+baltic,Burbo Bank Extension,2025,0,0,
+baltic,Butendiek,2010,0,0,
+baltic,Butendiek,2011,9,0,0.0
+baltic,Butendiek,2012,0,0,
+baltic,Butendiek,2016,1,0,0.0
+baltic,Butendiek,2017,35,0,0.0
+baltic,Butendiek,2018,28,0,0.0
+baltic,Butendiek,2019,27,0,0.0
+baltic,Butendiek,2020,21,0,0.0
+baltic,Butendiek,2021,21,0,0.0
+baltic,Butendiek,2022,19,0,0.0
+baltic,Butendiek,2023,18,0,0.0
+baltic,Butendiek,2024,373,0,0.0
+baltic,Butendiek,2025,36,0,0.0
+baltic,Dan Tysk,2010,1,0,0.0
+baltic,Dan Tysk,2011,11,0,0.0
+baltic,Dan Tysk,2012,8,0,0.0
+baltic,Dan Tysk,2016,1,0,0.0
+baltic,Dan Tysk,2017,24,0,0.0
+baltic,Dan Tysk,2018,23,0,0.0
+baltic,Dan Tysk,2019,23,0,0.0
+baltic,Dan Tysk,2020,26,0,0.0
+baltic,Dan Tysk,2021,34,0,0.0
+baltic,Dan Tysk,2022,25,0,0.0
+baltic,Dan Tysk,2023,18,0,0.0
+baltic,Dan Tysk,2024,499,0,0.0
+baltic,Dan Tysk,2025,18,0,0.0
+baltic,Deutsche Bucht,2010,0,0,
+baltic,Deutsche Bucht,2011,1,0,0.0
+baltic,Deutsche Bucht,2012,2,0,0.0
+baltic,Deutsche Bucht,2016,0,0,
+baltic,Deutsche Bucht,2017,11,0,0.0
+baltic,Deutsche Bucht,2018,10,0,0.0
+baltic,Deutsche Bucht,2019,7,0,0.0
+baltic,Deutsche Bucht,2020,5,0,0.0
+baltic,Deutsche Bucht,2021,12,0,0.0
+baltic,Deutsche Bucht,2022,4,0,0.0
+baltic,Deutsche Bucht,2023,4,0,0.0
+baltic,Deutsche Bucht,2024,144,0,0.0
+baltic,Deutsche Bucht,2025,5,0,0.0
+baltic,Dudgeon,2010,0,0,
+baltic,Dudgeon,2011,0,0,
+baltic,Dudgeon,2012,0,0,
+baltic,Dudgeon,2016,0,0,
+baltic,Dudgeon,2017,13,0,0.0
+baltic,Dudgeon,2018,0,0,
+baltic,Dudgeon,2019,0,0,
+baltic,Dudgeon,2020,0,0,
+baltic,Dudgeon,2021,0,0,
+baltic,Dudgeon,2022,0,0,
+baltic,Dudgeon,2023,0,0,
+baltic,Dudgeon,2024,7,0,0.0
+baltic,Dudgeon,2025,3,0,0.0
+baltic,East Anglia One,2010,0,0,
+baltic,East Anglia One,2011,0,0,
+baltic,East Anglia One,2012,2,0,0.0
+baltic,East Anglia One,2016,0,0,
+baltic,East Anglia One,2017,0,0,
+baltic,East Anglia One,2018,1,0,0.0
+baltic,East Anglia One,2019,0,0,
+baltic,East Anglia One,2020,0,0,
+baltic,East Anglia One,2021,0,0,
+baltic,East Anglia One,2022,0,0,
+baltic,East Anglia One,2023,0,0,
+baltic,East Anglia One,2024,10,0,0.0
+baltic,East Anglia One,2025,0,0,
+baltic,EnBW Hohe See,2010,2,0,0.0
+baltic,EnBW Hohe See,2011,0,0,
+baltic,EnBW Hohe See,2012,0,0,
+baltic,EnBW Hohe See,2016,0,0,
+baltic,EnBW Hohe See,2017,13,0,0.0
+baltic,EnBW Hohe See,2018,29,0,0.0
+baltic,EnBW Hohe See,2019,51,0,0.0
+baltic,EnBW Hohe See,2020,14,0,0.0
+baltic,EnBW Hohe See,2021,10,0,0.0
+baltic,EnBW Hohe See,2022,9,0,0.0
+baltic,EnBW Hohe See,2023,8,0,0.0
+baltic,EnBW Hohe See,2024,282,0,0.0
+baltic,EnBW Hohe See,2025,32,0,0.0
+baltic,EnBW Windpark Baltic 1,2010,74,0,0.0
+baltic,EnBW Windpark Baltic 1,2011,30,18,0.6
+baltic,EnBW Windpark Baltic 1,2012,15,15,1.0
+baltic,EnBW Windpark Baltic 1,2016,0,0,
+baltic,EnBW Windpark Baltic 1,2017,5,5,1.0
+baltic,EnBW Windpark Baltic 1,2018,8,8,1.0
+baltic,EnBW Windpark Baltic 1,2019,7,7,1.0
+baltic,EnBW Windpark Baltic 1,2020,9,9,1.0
+baltic,EnBW Windpark Baltic 1,2021,11,11,1.0
+baltic,EnBW Windpark Baltic 1,2022,23,23,1.0
+baltic,EnBW Windpark Baltic 1,2023,8,8,1.0
+baltic,EnBW Windpark Baltic 1,2024,250,250,1.0
+baltic,EnBW Windpark Baltic 1,2025,25,0,0.0
+baltic,EnBW Windpark Baltic 2,2010,24,0,0.0
+baltic,EnBW Windpark Baltic 2,2011,31,0,0.0
+baltic,EnBW Windpark Baltic 2,2012,21,0,0.0
+baltic,EnBW Windpark Baltic 2,2016,3,3,1.0
+baltic,EnBW Windpark Baltic 2,2017,44,44,1.0
+baltic,EnBW Windpark Baltic 2,2018,40,40,1.0
+baltic,EnBW Windpark Baltic 2,2019,37,37,1.0
+baltic,EnBW Windpark Baltic 2,2020,36,36,1.0
+baltic,EnBW Windpark Baltic 2,2021,52,52,1.0
+baltic,EnBW Windpark Baltic 2,2022,21,21,1.0
+baltic,EnBW Windpark Baltic 2,2023,26,26,1.0
+baltic,EnBW Windpark Baltic 2,2024,582,582,1.0
+baltic,EnBW Windpark Baltic 2,2025,81,0,0.0
+baltic,Frederikshavn Offshore,2010,349,330,0.9455587392550143
+baltic,Frederikshavn Offshore,2011,455,455,1.0
+baltic,Frederikshavn Offshore,2012,453,453,1.0
+baltic,Frederikshavn Offshore,2016,45,45,1.0
+baltic,Frederikshavn Offshore,2017,578,578,1.0
+baltic,Frederikshavn Offshore,2018,561,561,1.0
+baltic,Frederikshavn Offshore,2019,557,557,1.0
+baltic,Frederikshavn Offshore,2020,562,562,1.0
+baltic,Frederikshavn Offshore,2021,557,557,1.0
+baltic,Frederikshavn Offshore,2022,532,532,1.0
+baltic,Frederikshavn Offshore,2023,564,564,1.0
+baltic,Frederikshavn Offshore,2024,5013,5013,1.0
+baltic,Frederikshavn Offshore,2025,791,0,0.0
+baltic,Fécamp,2010,0,0,
+baltic,Fécamp,2011,0,0,
+baltic,Fécamp,2012,4,0,0.0
+baltic,Fécamp,2016,0,0,
+baltic,Fécamp,2017,0,0,
+baltic,Fécamp,2018,0,0,
+baltic,Fécamp,2019,0,0,
+baltic,Fécamp,2020,0,0,
+baltic,Fécamp,2021,0,0,
+baltic,Fécamp,2022,0,0,
+baltic,Fécamp,2023,0,0,
+baltic,Fécamp,2024,0,0,
+baltic,Fécamp,2025,0,0,
+baltic,Galloper,2010,7,0,0.0
+baltic,Galloper,2011,0,0,
+baltic,Galloper,2012,77,0,0.0
+baltic,Galloper,2016,0,0,
+baltic,Galloper,2017,20,0,0.0
+baltic,Galloper,2018,0,0,
+baltic,Galloper,2019,0,0,
+baltic,Galloper,2020,0,0,
+baltic,Galloper,2021,0,0,
+baltic,Galloper,2022,0,0,
+baltic,Galloper,2023,0,0,
+baltic,Galloper,2024,2,0,0.0
+baltic,Galloper,2025,0,0,
+baltic,Gemini,2010,0,0,
+baltic,Gemini,2011,0,0,
+baltic,Gemini,2012,0,0,
+baltic,Gemini,2016,0,0,
+baltic,Gemini,2017,4,0,0.0
+baltic,Gemini,2018,4,0,0.0
+baltic,Gemini,2019,0,0,
+baltic,Gemini,2020,1,0,0.0
+baltic,Gemini,2021,6,0,0.0
+baltic,Gemini,2022,2,0,0.0
+baltic,Gemini,2023,0,0,
+baltic,Gemini,2024,88,0,0.0
+baltic,Gemini,2025,0,0,
+baltic,Global Tech I,2010,1,0,0.0
+baltic,Global Tech I,2011,0,0,
+baltic,Global Tech I,2012,0,0,
+baltic,Global Tech I,2016,0,0,
+baltic,Global Tech I,2017,14,0,0.0
+baltic,Global Tech I,2018,24,0,0.0
+baltic,Global Tech I,2019,50,0,0.0
+baltic,Global Tech I,2020,14,0,0.0
+baltic,Global Tech I,2021,18,0,0.0
+baltic,Global Tech I,2022,11,0,0.0
+baltic,Global Tech I,2023,8,0,0.0
+baltic,Global Tech I,2024,263,0,0.0
+baltic,Global Tech I,2025,31,0,0.0
+baltic,Gode Wind 1 and 2,2010,2,0,0.0
+baltic,Gode Wind 1 and 2,2011,2,0,0.0
+baltic,Gode Wind 1 and 2,2012,2,0,0.0
+baltic,Gode Wind 1 and 2,2016,0,0,
+baltic,Gode Wind 1 and 2,2017,11,0,0.0
+baltic,Gode Wind 1 and 2,2018,7,0,0.0
+baltic,Gode Wind 1 and 2,2019,3,0,0.0
+baltic,Gode Wind 1 and 2,2020,0,0,
+baltic,Gode Wind 1 and 2,2021,9,0,0.0
+baltic,Gode Wind 1 and 2,2022,11,0,0.0
+baltic,Gode Wind 1 and 2,2023,10,0,0.0
+baltic,Gode Wind 1 and 2,2024,764,0,0.0
+baltic,Gode Wind 1 and 2,2025,73,0,0.0
+baltic,Gode Wind 3,2010,1,0,0.0
+baltic,Gode Wind 3,2011,0,0,
+baltic,Gode Wind 3,2012,0,0,
+baltic,Gode Wind 3,2016,0,0,
+baltic,Gode Wind 3,2017,3,0,0.0
+baltic,Gode Wind 3,2018,2,0,0.0
+baltic,Gode Wind 3,2019,2,0,0.0
+baltic,Gode Wind 3,2020,0,0,
+baltic,Gode Wind 3,2021,11,0,0.0
+baltic,Gode Wind 3,2022,7,0,0.0
+baltic,Gode Wind 3,2023,9,0,0.0
+baltic,Gode Wind 3,2024,673,0,0.0
+baltic,Gode Wind 3,2025,56,0,0.0
+baltic,Greater Gabbard,2010,8,0,0.0
+baltic,Greater Gabbard,2011,0,0,
+baltic,Greater Gabbard,2012,122,0,0.0
+baltic,Greater Gabbard,2016,0,0,
+baltic,Greater Gabbard,2017,18,0,0.0
+baltic,Greater Gabbard,2018,0,0,
+baltic,Greater Gabbard,2019,0,0,
+baltic,Greater Gabbard,2020,0,0,
+baltic,Greater Gabbard,2021,0,0,
+baltic,Greater Gabbard,2022,0,0,
+baltic,Greater Gabbard,2023,0,0,
+baltic,Greater Gabbard,2024,2,0,0.0
+baltic,Greater Gabbard,2025,0,0,
+baltic,Gunfleet Sands,2010,0,0,
+baltic,Gunfleet Sands,2011,0,0,
+baltic,Gunfleet Sands,2012,27,0,0.0
+baltic,Gunfleet Sands,2016,0,0,
+baltic,Gunfleet Sands,2017,0,0,
+baltic,Gunfleet Sands,2018,0,0,
+baltic,Gunfleet Sands,2019,0,0,
+baltic,Gunfleet Sands,2020,0,0,
+baltic,Gunfleet Sands,2021,0,0,
+baltic,Gunfleet Sands,2022,0,0,
+baltic,Gunfleet Sands,2023,0,0,
+baltic,Gunfleet Sands,2024,3,0,0.0
+baltic,Gunfleet Sands,2025,0,0,
+baltic,Gwynt y Mor,2010,0,0,
+baltic,Gwynt y Mor,2011,0,0,
+baltic,Gwynt y Mor,2012,71,0,0.0
+baltic,Gwynt y Mor,2016,0,0,
+baltic,Gwynt y Mor,2017,7,0,0.0
+baltic,Gwynt y Mor,2018,0,0,
+baltic,Gwynt y Mor,2019,0,0,
+baltic,Gwynt y Mor,2020,0,0,
+baltic,Gwynt y Mor,2021,0,0,
+baltic,Gwynt y Mor,2022,0,0,
+baltic,Gwynt y Mor,2023,0,0,
+baltic,Gwynt y Mor,2024,0,0,
+baltic,Gwynt y Mor,2025,0,0,
+baltic,Hollandse Kust Noord,2010,0,0,
+baltic,Hollandse Kust Noord,2011,0,0,
+baltic,Hollandse Kust Noord,2012,29,0,0.0
+baltic,Hollandse Kust Noord,2016,0,0,
+baltic,Hollandse Kust Noord,2017,0,0,
+baltic,Hollandse Kust Noord,2018,0,0,
+baltic,Hollandse Kust Noord,2019,0,0,
+baltic,Hollandse Kust Noord,2020,0,0,
+baltic,Hollandse Kust Noord,2021,1,0,0.0
+baltic,Hollandse Kust Noord,2022,1,0,0.0
+baltic,Hollandse Kust Noord,2023,2,0,0.0
+baltic,Hollandse Kust Noord,2024,17,0,0.0
+baltic,Hollandse Kust Noord,2025,2,0,0.0
+baltic,Hollandse Kust Zuid,2010,0,0,
+baltic,Hollandse Kust Zuid,2011,0,0,
+baltic,Hollandse Kust Zuid,2012,137,0,0.0
+baltic,Hollandse Kust Zuid,2016,0,0,
+baltic,Hollandse Kust Zuid,2017,9,0,0.0
+baltic,Hollandse Kust Zuid,2018,0,0,
+baltic,Hollandse Kust Zuid,2019,0,0,
+baltic,Hollandse Kust Zuid,2020,0,0,
+baltic,Hollandse Kust Zuid,2021,3,0,0.0
+baltic,Hollandse Kust Zuid,2022,19,0,0.0
+baltic,Hollandse Kust Zuid,2023,2,0,0.0
+baltic,Hollandse Kust Zuid,2024,66,0,0.0
+baltic,Hollandse Kust Zuid,2025,4,0,0.0
+baltic,Horns Rev I,2010,44,0,0.0
+baltic,Horns Rev I,2011,35,0,0.0
+baltic,Horns Rev I,2012,26,0,0.0
+baltic,Horns Rev I,2016,2,0,0.0
+baltic,Horns Rev I,2017,19,0,0.0
+baltic,Horns Rev I,2018,22,0,0.0
+baltic,Horns Rev I,2019,26,0,0.0
+baltic,Horns Rev I,2020,25,0,0.0
+baltic,Horns Rev I,2021,25,0,0.0
+baltic,Horns Rev I,2022,27,0,0.0
+baltic,Horns Rev I,2023,29,0,0.0
+baltic,Horns Rev I,2024,495,0,0.0
+baltic,Horns Rev I,2025,33,0,0.0
+baltic,Horns Rev II,2010,29,0,0.0
+baltic,Horns Rev II,2011,31,0,0.0
+baltic,Horns Rev II,2012,23,0,0.0
+baltic,Horns Rev II,2016,0,0,
+baltic,Horns Rev II,2017,22,0,0.0
+baltic,Horns Rev II,2018,47,0,0.0
+baltic,Horns Rev II,2019,67,0,0.0
+baltic,Horns Rev II,2020,24,0,0.0
+baltic,Horns Rev II,2021,17,0,0.0
+baltic,Horns Rev II,2022,29,0,0.0
+baltic,Horns Rev II,2023,15,0,0.0
+baltic,Horns Rev II,2024,982,0,0.0
+baltic,Horns Rev II,2025,94,0,0.0
+baltic,Horns Rev III,2010,40,0,0.0
+baltic,Horns Rev III,2011,25,0,0.0
+baltic,Horns Rev III,2012,20,0,0.0
+baltic,Horns Rev III,2016,0,0,
+baltic,Horns Rev III,2017,23,0,0.0
+baltic,Horns Rev III,2018,49,0,0.0
+baltic,Horns Rev III,2019,73,0,0.0
+baltic,Horns Rev III,2020,23,0,0.0
+baltic,Horns Rev III,2021,30,0,0.0
+baltic,Horns Rev III,2022,49,0,0.0
+baltic,Horns Rev III,2023,20,0,0.0
+baltic,Horns Rev III,2024,823,0,0.0
+baltic,Horns Rev III,2025,68,0,0.0
+baltic,Hornsea Project 1,2010,0,0,
+baltic,Hornsea Project 1,2011,0,0,
+baltic,Hornsea Project 1,2012,3,0,0.0
+baltic,Hornsea Project 1,2016,0,0,
+baltic,Hornsea Project 1,2017,1,0,0.0
+baltic,Hornsea Project 1,2018,5,0,0.0
+baltic,Hornsea Project 1,2019,0,0,
+baltic,Hornsea Project 1,2020,4,0,0.0
+baltic,Hornsea Project 1,2021,5,0,0.0
+baltic,Hornsea Project 1,2022,4,0,0.0
+baltic,Hornsea Project 1,2023,1,0,0.0
+baltic,Hornsea Project 1,2024,43,0,0.0
+baltic,Hornsea Project 1,2025,3,0,0.0
+baltic,Hornsea Project 2,2010,0,0,
+baltic,Hornsea Project 2,2011,0,0,
+baltic,Hornsea Project 2,2012,0,0,
+baltic,Hornsea Project 2,2016,0,0,
+baltic,Hornsea Project 2,2017,2,0,0.0
+baltic,Hornsea Project 2,2018,7,0,0.0
+baltic,Hornsea Project 2,2019,0,0,
+baltic,Hornsea Project 2,2020,2,0,0.0
+baltic,Hornsea Project 2,2021,8,0,0.0
+baltic,Hornsea Project 2,2022,3,0,0.0
+baltic,Hornsea Project 2,2023,1,0,0.0
+baltic,Hornsea Project 2,2024,51,0,0.0
+baltic,Hornsea Project 2,2025,2,0,0.0
+baltic,Humber Gateway,2010,0,0,
+baltic,Humber Gateway,2011,0,0,
+baltic,Humber Gateway,2012,30,0,0.0
+baltic,Humber Gateway,2016,0,0,
+baltic,Humber Gateway,2017,3,0,0.0
+baltic,Humber Gateway,2018,0,0,
+baltic,Humber Gateway,2019,0,0,
+baltic,Humber Gateway,2020,0,0,
+baltic,Humber Gateway,2021,2,0,0.0
+baltic,Humber Gateway,2022,0,0,
+baltic,Humber Gateway,2023,0,0,
+baltic,Humber Gateway,2024,9,0,0.0
+baltic,Humber Gateway,2025,4,0,0.0
+baltic,Hywind Scotland Pilot Park,2010,0,0,
+baltic,Hywind Scotland Pilot Park,2011,0,0,
+baltic,Hywind Scotland Pilot Park,2012,1,0,0.0
+baltic,Hywind Scotland Pilot Park,2016,0,0,
+baltic,Hywind Scotland Pilot Park,2017,2,0,0.0
+baltic,Hywind Scotland Pilot Park,2018,0,0,
+baltic,Hywind Scotland Pilot Park,2019,0,0,
+baltic,Hywind Scotland Pilot Park,2020,0,0,
+baltic,Hywind Scotland Pilot Park,2021,0,0,
+baltic,Hywind Scotland Pilot Park,2022,0,0,
+baltic,Hywind Scotland Pilot Park,2023,0,0,
+baltic,Hywind Scotland Pilot Park,2024,11,0,0.0
+baltic,Hywind Scotland Pilot Park,2025,0,0,
+baltic,Inner Dowsing,2010,0,0,
+baltic,Inner Dowsing,2011,0,0,
+baltic,Inner Dowsing,2012,225,0,0.0
+baltic,Inner Dowsing,2016,0,0,
+baltic,Inner Dowsing,2017,0,0,
+baltic,Inner Dowsing,2018,0,0,
+baltic,Inner Dowsing,2019,0,0,
+baltic,Inner Dowsing,2020,0,0,
+baltic,Inner Dowsing,2021,0,0,
+baltic,Inner Dowsing,2022,0,0,
+baltic,Inner Dowsing,2023,0,0,
+baltic,Inner Dowsing,2024,1,0,0.0
+baltic,Inner Dowsing,2025,2,0,0.0
+baltic,Kaskasi,2010,9,0,0.0
+baltic,Kaskasi,2011,6,0,0.0
+baltic,Kaskasi,2012,15,0,0.0
+baltic,Kaskasi,2016,0,0,
+baltic,Kaskasi,2017,13,0,0.0
+baltic,Kaskasi,2018,21,0,0.0
+baltic,Kaskasi,2019,3,0,0.0
+baltic,Kaskasi,2020,10,0,0.0
+baltic,Kaskasi,2021,31,0,0.0
+baltic,Kaskasi,2022,80,0,0.0
+baltic,Kaskasi,2023,14,0,0.0
+baltic,Kaskasi,2024,718,0,0.0
+baltic,Kaskasi,2025,101,0,0.0
+baltic,Kentish Flats,2010,0,0,
+baltic,Kentish Flats,2011,0,0,
+baltic,Kentish Flats,2012,14,0,0.0
+baltic,Kentish Flats,2016,0,0,
+baltic,Kentish Flats,2017,4,0,0.0
+baltic,Kentish Flats,2018,0,0,
+baltic,Kentish Flats,2019,0,0,
+baltic,Kentish Flats,2020,0,0,
+baltic,Kentish Flats,2021,0,0,
+baltic,Kentish Flats,2022,0,0,
+baltic,Kentish Flats,2023,0,0,
+baltic,Kentish Flats,2024,0,0,
+baltic,Kentish Flats,2025,0,0,
+baltic,Kentish Flats Extension,2010,0,0,
+baltic,Kentish Flats Extension,2011,0,0,
+baltic,Kentish Flats Extension,2012,11,0,0.0
+baltic,Kentish Flats Extension,2016,0,0,
+baltic,Kentish Flats Extension,2017,2,0,0.0
+baltic,Kentish Flats Extension,2018,0,0,
+baltic,Kentish Flats Extension,2019,0,0,
+baltic,Kentish Flats Extension,2020,0,0,
+baltic,Kentish Flats Extension,2021,0,0,
+baltic,Kentish Flats Extension,2022,0,0,
+baltic,Kentish Flats Extension,2023,0,0,
+baltic,Kentish Flats Extension,2024,0,0,
+baltic,Kentish Flats Extension,2025,0,0,
+baltic,Kincardine,2010,0,0,
+baltic,Kincardine,2011,0,0,
+baltic,Kincardine,2012,0,0,
+baltic,Kincardine,2016,0,0,
+baltic,Kincardine,2017,0,0,
+baltic,Kincardine,2018,0,0,
+baltic,Kincardine,2019,0,0,
+baltic,Kincardine,2020,0,0,
+baltic,Kincardine,2021,1,0,0.0
+baltic,Kincardine,2022,0,0,
+baltic,Kincardine,2023,0,0,
+baltic,Kincardine,2024,0,0,
+baltic,Kincardine,2025,0,0,
+baltic,Kriegers Flak,2010,23,0,0.0
+baltic,Kriegers Flak,2011,25,0,0.0
+baltic,Kriegers Flak,2012,19,0,0.0
+baltic,Kriegers Flak,2016,5,0,0.0
+baltic,Kriegers Flak,2017,50,0,0.0
+baltic,Kriegers Flak,2018,51,0,0.0
+baltic,Kriegers Flak,2019,45,0,0.0
+baltic,Kriegers Flak,2020,92,0,0.0
+baltic,Kriegers Flak,2021,102,10,0.09803921568627451
+baltic,Kriegers Flak,2022,57,57,1.0
+baltic,Kriegers Flak,2023,44,44,1.0
+baltic,Kriegers Flak,2024,1555,1555,1.0
+baltic,Kriegers Flak,2025,254,0,0.0
+baltic,Lillgrund,2010,17,15,0.8823529411764706
+baltic,Lillgrund,2011,12,12,1.0
+baltic,Lillgrund,2012,13,13,1.0
+baltic,Lillgrund,2016,0,0,
+baltic,Lillgrund,2017,12,12,1.0
+baltic,Lillgrund,2018,8,8,1.0
+baltic,Lillgrund,2019,12,12,1.0
+baltic,Lillgrund,2020,7,7,1.0
+baltic,Lillgrund,2021,6,6,1.0
+baltic,Lillgrund,2022,11,11,1.0
+baltic,Lillgrund,2023,10,10,1.0
+baltic,Lillgrund,2024,281,281,1.0
+baltic,Lillgrund,2025,61,0,0.0
+baltic,Lincs,2010,0,0,
+baltic,Lincs,2011,0,0,
+baltic,Lincs,2012,193,0,0.0
+baltic,Lincs,2016,0,0,
+baltic,Lincs,2017,0,0,
+baltic,Lincs,2018,0,0,
+baltic,Lincs,2019,0,0,
+baltic,Lincs,2020,0,0,
+baltic,Lincs,2021,0,0,
+baltic,Lincs,2022,0,0,
+baltic,Lincs,2023,0,0,
+baltic,Lincs,2024,1,0,0.0
+baltic,Lincs,2025,2,0,0.0
+baltic,London Array,2010,1,0,0.0
+baltic,London Array,2011,0,0,
+baltic,London Array,2012,377,0,0.0
+baltic,London Array,2016,0,0,
+baltic,London Array,2017,1,0,0.0
+baltic,London Array,2018,0,0,
+baltic,London Array,2019,0,0,
+baltic,London Array,2020,0,0,
+baltic,London Array,2021,0,0,
+baltic,London Array,2022,0,0,
+baltic,London Array,2023,0,0,
+baltic,London Array,2024,0,0,
+baltic,London Array,2025,0,0,
+baltic,Lynn,2010,0,0,
+baltic,Lynn,2011,0,0,
+baltic,Lynn,2012,200,0,0.0
+baltic,Lynn,2016,0,0,
+baltic,Lynn,2017,0,0,
+baltic,Lynn,2018,0,0,
+baltic,Lynn,2019,0,0,
+baltic,Lynn,2020,0,0,
+baltic,Lynn,2021,0,0,
+baltic,Lynn,2022,0,0,
+baltic,Lynn,2023,0,0,
+baltic,Lynn,2024,0,0,
+baltic,Lynn,2025,1,0,0.0
+baltic,Meerwind Sued/Ost,2010,0,0,
+baltic,Meerwind Sued/Ost,2011,3,0,0.0
+baltic,Meerwind Sued/Ost,2012,11,0,0.0
+baltic,Meerwind Sued/Ost,2016,0,0,
+baltic,Meerwind Sued/Ost,2017,12,0,0.0
+baltic,Meerwind Sued/Ost,2018,23,0,0.0
+baltic,Meerwind Sued/Ost,2019,3,0,0.0
+baltic,Meerwind Sued/Ost,2020,12,0,0.0
+baltic,Meerwind Sued/Ost,2021,50,0,0.0
+baltic,Meerwind Sued/Ost,2022,44,0,0.0
+baltic,Meerwind Sued/Ost,2023,27,0,0.0
+baltic,Meerwind Sued/Ost,2024,720,0,0.0
+baltic,Meerwind Sued/Ost,2025,77,0,0.0
+baltic,Merkur Offshore,2010,4,0,0.0
+baltic,Merkur Offshore,2011,16,0,0.0
+baltic,Merkur Offshore,2012,17,0,0.0
+baltic,Merkur Offshore,2016,0,0,
+baltic,Merkur Offshore,2017,18,0,0.0
+baltic,Merkur Offshore,2018,67,0,0.0
+baltic,Merkur Offshore,2019,19,0,0.0
+baltic,Merkur Offshore,2020,13,0,0.0
+baltic,Merkur Offshore,2021,30,0,0.0
+baltic,Merkur Offshore,2022,25,0,0.0
+baltic,Merkur Offshore,2023,28,0,0.0
+baltic,Merkur Offshore,2024,798,0,0.0
+baltic,Merkur Offshore,2025,47,0,0.0
+baltic,Mermaid,2010,0,0,
+baltic,Mermaid,2011,0,0,
+baltic,Mermaid,2012,8,0,0.0
+baltic,Mermaid,2016,0,0,
+baltic,Mermaid,2017,1,0,0.0
+baltic,Mermaid,2018,0,0,
+baltic,Mermaid,2019,0,0,
+baltic,Mermaid,2020,0,0,
+baltic,Mermaid,2021,0,0,
+baltic,Mermaid,2022,0,0,
+baltic,Mermaid,2023,0,0,
+baltic,Mermaid,2024,3,0,0.0
+baltic,Mermaid,2025,0,0,
+baltic,Middelgrunden,2010,128,118,0.921875
+baltic,Middelgrunden,2011,132,121,0.9166666666666666
+baltic,Middelgrunden,2012,156,156,1.0
+baltic,Middelgrunden,2016,27,27,1.0
+baltic,Middelgrunden,2017,355,355,1.0
+baltic,Middelgrunden,2018,622,622,1.0
+baltic,Middelgrunden,2019,715,715,1.0
+baltic,Middelgrunden,2020,651,651,1.0
+baltic,Middelgrunden,2021,744,744,1.0
+baltic,Middelgrunden,2022,938,938,1.0
+baltic,Middelgrunden,2023,780,780,1.0
+baltic,Middelgrunden,2024,8766,8766,1.0
+baltic,Middelgrunden,2025,1009,0,0.0
+baltic,Moray East,2010,0,0,
+baltic,Moray East,2011,0,0,
+baltic,Moray East,2012,4,0,0.0
+baltic,Moray East,2016,0,0,
+baltic,Moray East,2017,2,0,0.0
+baltic,Moray East,2018,0,0,
+baltic,Moray East,2019,0,0,
+baltic,Moray East,2020,0,0,
+baltic,Moray East,2021,1,0,0.0
+baltic,Moray East,2022,0,0,
+baltic,Moray East,2023,0,0,
+baltic,Moray East,2024,1,0,0.0
+baltic,Moray East,2025,5,0,0.0
+baltic,Moray West,2010,1,0,0.0
+baltic,Moray West,2011,0,0,
+baltic,Moray West,2012,15,0,0.0
+baltic,Moray West,2016,0,0,
+baltic,Moray West,2017,4,0,0.0
+baltic,Moray West,2018,0,0,
+baltic,Moray West,2019,0,0,
+baltic,Moray West,2020,0,0,
+baltic,Moray West,2021,0,0,
+baltic,Moray West,2022,0,0,
+baltic,Moray West,2023,0,0,
+baltic,Moray West,2024,2,0,0.0
+baltic,Moray West,2025,3,0,0.0
+baltic,Neart na Gaoithe,2010,0,0,
+baltic,Neart na Gaoithe,2011,0,0,
+baltic,Neart na Gaoithe,2012,3,0,0.0
+baltic,Neart na Gaoithe,2016,0,0,
+baltic,Neart na Gaoithe,2017,0,0,
+baltic,Neart na Gaoithe,2018,0,0,
+baltic,Neart na Gaoithe,2019,0,0,
+baltic,Neart na Gaoithe,2020,0,0,
+baltic,Neart na Gaoithe,2021,3,0,0.0
+baltic,Neart na Gaoithe,2022,0,0,
+baltic,Neart na Gaoithe,2023,0,0,
+baltic,Neart na Gaoithe,2024,7,0,0.0
+baltic,Neart na Gaoithe,2025,5,0,0.0
+baltic,Nissum Bredning,2010,339,0,0.0
+baltic,Nissum Bredning,2011,395,0,0.0
+baltic,Nissum Bredning,2012,466,0,0.0
+baltic,Nissum Bredning,2016,66,0,0.0
+baltic,Nissum Bredning,2017,791,0,0.0
+baltic,Nissum Bredning,2018,721,0,0.0
+baltic,Nissum Bredning,2019,770,0,0.0
+baltic,Nissum Bredning,2020,782,0,0.0
+baltic,Nissum Bredning,2021,708,0,0.0
+baltic,Nissum Bredning,2022,715,0,0.0
+baltic,Nissum Bredning,2023,658,0,0.0
+baltic,Nissum Bredning,2024,4184,0,0.0
+baltic,Nissum Bredning,2025,678,0,0.0
+baltic,Nobelwind,2010,0,0,
+baltic,Nobelwind,2011,0,0,
+baltic,Nobelwind,2012,8,0,0.0
+baltic,Nobelwind,2016,0,0,
+baltic,Nobelwind,2017,1,0,0.0
+baltic,Nobelwind,2018,0,0,
+baltic,Nobelwind,2019,0,0,
+baltic,Nobelwind,2020,0,0,
+baltic,Nobelwind,2021,0,0,
+baltic,Nobelwind,2022,0,0,
+baltic,Nobelwind,2023,0,0,
+baltic,Nobelwind,2024,5,0,0.0
+baltic,Nobelwind,2025,0,0,
+baltic,Nordergründe,2010,0,0,
+baltic,Nordergründe,2011,0,0,
+baltic,Nordergründe,2012,0,0,
+baltic,Nordergründe,2016,0,0,
+baltic,Nordergründe,2017,5,0,0.0
+baltic,Nordergründe,2018,1,0,0.0
+baltic,Nordergründe,2019,1,0,0.0
+baltic,Nordergründe,2020,1,0,0.0
+baltic,Nordergründe,2021,0,0,
+baltic,Nordergründe,2022,1,0,0.0
+baltic,Nordergründe,2023,2,0,0.0
+baltic,Nordergründe,2024,69,0,0.0
+baltic,Nordergründe,2025,14,0,0.0
+baltic,Nordsee One,2010,1,0,0.0
+baltic,Nordsee One,2011,0,0,
+baltic,Nordsee One,2012,0,0,
+baltic,Nordsee One,2016,0,0,
+baltic,Nordsee One,2017,12,0,0.0
+baltic,Nordsee One,2018,10,0,0.0
+baltic,Nordsee One,2019,1,0,0.0
+baltic,Nordsee One,2020,0,0,
+baltic,Nordsee One,2021,4,0,0.0
+baltic,Nordsee One,2022,13,0,0.0
+baltic,Nordsee One,2023,4,0,0.0
+baltic,Nordsee One,2024,330,0,0.0
+baltic,Nordsee One,2025,37,0,0.0
+baltic,Nordsee Ost,2010,9,0,0.0
+baltic,Nordsee Ost,2011,7,0,0.0
+baltic,Nordsee Ost,2012,21,0,0.0
+baltic,Nordsee Ost,2016,0,0,
+baltic,Nordsee Ost,2017,14,0,0.0
+baltic,Nordsee Ost,2018,34,0,0.0
+baltic,Nordsee Ost,2019,3,0,0.0
+baltic,Nordsee Ost,2020,15,0,0.0
+baltic,Nordsee Ost,2021,50,0,0.0
+baltic,Nordsee Ost,2022,100,0,0.0
+baltic,Nordsee Ost,2023,30,0,0.0
+baltic,Nordsee Ost,2024,981,0,0.0
+baltic,Nordsee Ost,2025,112,0,0.0
+baltic,North Hoyle,2010,0,0,
+baltic,North Hoyle,2011,0,0,
+baltic,North Hoyle,2012,41,0,0.0
+baltic,North Hoyle,2016,0,0,
+baltic,North Hoyle,2017,1,0,0.0
+baltic,North Hoyle,2018,0,0,
+baltic,North Hoyle,2019,0,0,
+baltic,North Hoyle,2020,0,0,
+baltic,North Hoyle,2021,0,0,
+baltic,North Hoyle,2022,0,0,
+baltic,North Hoyle,2023,0,0,
+baltic,North Hoyle,2024,0,0,
+baltic,North Hoyle,2025,0,0,
+baltic,Norther,2010,0,0,
+baltic,Norther,2011,0,0,
+baltic,Norther,2012,89,0,0.0
+baltic,Norther,2016,0,0,
+baltic,Norther,2017,3,0,0.0
+baltic,Norther,2018,0,0,
+baltic,Norther,2019,0,0,
+baltic,Norther,2020,0,0,
+baltic,Norther,2021,0,0,
+baltic,Norther,2022,0,0,
+baltic,Norther,2023,0,0,
+baltic,Norther,2024,0,0,
+baltic,Norther,2025,0,0,
+baltic,Northwester 2,2010,0,0,
+baltic,Northwester 2,2011,0,0,
+baltic,Northwester 2,2012,8,0,0.0
+baltic,Northwester 2,2016,0,0,
+baltic,Northwester 2,2017,1,0,0.0
+baltic,Northwester 2,2018,0,0,
+baltic,Northwester 2,2019,0,0,
+baltic,Northwester 2,2020,0,0,
+baltic,Northwester 2,2021,0,0,
+baltic,Northwester 2,2022,0,0,
+baltic,Northwester 2,2023,0,0,
+baltic,Northwester 2,2024,3,0,0.0
+baltic,Northwester 2,2025,0,0,
+baltic,Northwind,2010,0,0,
+baltic,Northwind,2011,0,0,
+baltic,Northwind,2012,9,0,0.0
+baltic,Northwind,2016,0,0,
+baltic,Northwind,2017,3,0,0.0
+baltic,Northwind,2018,0,0,
+baltic,Northwind,2019,0,0,
+baltic,Northwind,2020,0,0,
+baltic,Northwind,2021,0,0,
+baltic,Northwind,2022,0,0,
+baltic,Northwind,2023,0,0,
+baltic,Northwind,2024,4,0,0.0
+baltic,Northwind,2025,0,0,
+baltic,Nysted,2010,56,56,1.0
+baltic,Nysted,2011,19,17,0.8947368421052632
+baltic,Nysted,2012,19,19,1.0
+baltic,Nysted,2016,2,2,1.0
+baltic,Nysted,2017,22,22,1.0
+baltic,Nysted,2018,25,25,1.0
+baltic,Nysted,2019,28,28,1.0
+baltic,Nysted,2020,16,16,1.0
+baltic,Nysted,2021,24,24,1.0
+baltic,Nysted,2022,24,24,1.0
+baltic,Nysted,2023,22,22,1.0
+baltic,Nysted,2024,711,711,1.0
+baltic,Nysted,2025,127,0,0.0
+baltic,OWF Egmond aan Zee,2010,0,0,
+baltic,OWF Egmond aan Zee,2011,0,0,
+baltic,OWF Egmond aan Zee,2012,18,0,0.0
+baltic,OWF Egmond aan Zee,2016,0,0,
+baltic,OWF Egmond aan Zee,2017,0,0,
+baltic,OWF Egmond aan Zee,2018,0,0,
+baltic,OWF Egmond aan Zee,2019,0,0,
+baltic,OWF Egmond aan Zee,2020,0,0,
+baltic,OWF Egmond aan Zee,2021,0,0,
+baltic,OWF Egmond aan Zee,2022,0,0,
+baltic,OWF Egmond aan Zee,2023,0,0,
+baltic,OWF Egmond aan Zee,2024,10,0,0.0
+baltic,OWF Egmond aan Zee,2025,0,0,
+baltic,OWF Luchterduinen,2010,0,0,
+baltic,OWF Luchterduinen,2011,0,0,
+baltic,OWF Luchterduinen,2012,46,0,0.0
+baltic,OWF Luchterduinen,2016,0,0,
+baltic,OWF Luchterduinen,2017,1,0,0.0
+baltic,OWF Luchterduinen,2018,0,0,
+baltic,OWF Luchterduinen,2019,0,0,
+baltic,OWF Luchterduinen,2020,0,0,
+baltic,OWF Luchterduinen,2021,2,0,0.0
+baltic,OWF Luchterduinen,2022,6,0,0.0
+baltic,OWF Luchterduinen,2023,0,0,
+baltic,OWF Luchterduinen,2024,11,0,0.0
+baltic,OWF Luchterduinen,2025,1,0,0.0
+baltic,OWF Prinses Amalia,2010,0,0,
+baltic,OWF Prinses Amalia,2011,0,0,
+baltic,OWF Prinses Amalia,2012,33,0,0.0
+baltic,OWF Prinses Amalia,2016,0,0,
+baltic,OWF Prinses Amalia,2017,0,0,
+baltic,OWF Prinses Amalia,2018,0,0,
+baltic,OWF Prinses Amalia,2019,0,0,
+baltic,OWF Prinses Amalia,2020,0,0,
+baltic,OWF Prinses Amalia,2021,0,0,
+baltic,OWF Prinses Amalia,2022,0,0,
+baltic,OWF Prinses Amalia,2023,0,0,
+baltic,OWF Prinses Amalia,2024,7,0,0.0
+baltic,OWF Prinses Amalia,2025,1,0,0.0
+baltic,Ormonde,2010,0,0,
+baltic,Ormonde,2011,0,0,
+baltic,Ormonde,2012,47,0,0.0
+baltic,Ormonde,2016,0,0,
+baltic,Ormonde,2017,1,0,0.0
+baltic,Ormonde,2018,0,0,
+baltic,Ormonde,2019,0,0,
+baltic,Ormonde,2020,0,0,
+baltic,Ormonde,2021,0,0,
+baltic,Ormonde,2022,0,0,
+baltic,Ormonde,2023,0,0,
+baltic,Ormonde,2024,0,0,
+baltic,Ormonde,2025,0,0,
+baltic,Race Bank,2010,0,0,
+baltic,Race Bank,2011,0,0,
+baltic,Race Bank,2012,8,0,0.0
+baltic,Race Bank,2016,0,0,
+baltic,Race Bank,2017,18,0,0.0
+baltic,Race Bank,2018,0,0,
+baltic,Race Bank,2019,0,0,
+baltic,Race Bank,2020,1,0,0.0
+baltic,Race Bank,2021,0,0,
+baltic,Race Bank,2022,0,0,
+baltic,Race Bank,2023,0,0,
+baltic,Race Bank,2024,5,0,0.0
+baltic,Race Bank,2025,1,0,0.0
+baltic,Rampion,2010,0,0,
+baltic,Rampion,2011,0,0,
+baltic,Rampion,2012,12,0,0.0
+baltic,Rampion,2016,0,0,
+baltic,Rampion,2017,9,0,0.0
+baltic,Rampion,2018,0,0,
+baltic,Rampion,2019,0,0,
+baltic,Rampion,2020,0,0,
+baltic,Rampion,2021,0,0,
+baltic,Rampion,2022,0,0,
+baltic,Rampion,2023,0,0,
+baltic,Rampion,2024,0,0,
+baltic,Rampion,2025,0,0,
+baltic,Renland,2010,339,0,0.0
+baltic,Renland,2011,392,0,0.0
+baltic,Renland,2012,467,0,0.0
+baltic,Renland,2016,66,0,0.0
+baltic,Renland,2017,791,0,0.0
+baltic,Renland,2018,724,0,0.0
+baltic,Renland,2019,770,0,0.0
+baltic,Renland,2020,783,0,0.0
+baltic,Renland,2021,706,0,0.0
+baltic,Renland,2022,710,0,0.0
+baltic,Renland,2023,660,0,0.0
+baltic,Renland,2024,4164,0,0.0
+baltic,Renland,2025,656,0,0.0
+baltic,Rentel,2010,0,0,
+baltic,Rentel,2011,0,0,
+baltic,Rentel,2012,86,0,0.0
+baltic,Rentel,2016,0,0,
+baltic,Rentel,2017,5,0,0.0
+baltic,Rentel,2018,0,0,
+baltic,Rentel,2019,0,0,
+baltic,Rentel,2020,0,0,
+baltic,Rentel,2021,0,0,
+baltic,Rentel,2022,0,0,
+baltic,Rentel,2023,0,0,
+baltic,Rentel,2024,3,0,0.0
+baltic,Rentel,2025,0,0,
+baltic,Rhyl Flats,2010,0,0,
+baltic,Rhyl Flats,2011,0,0,
+baltic,Rhyl Flats,2012,30,0,0.0
+baltic,Rhyl Flats,2016,0,0,
+baltic,Rhyl Flats,2017,4,0,0.0
+baltic,Rhyl Flats,2018,0,0,
+baltic,Rhyl Flats,2019,0,0,
+baltic,Rhyl Flats,2020,0,0,
+baltic,Rhyl Flats,2021,0,0,
+baltic,Rhyl Flats,2022,0,0,
+baltic,Rhyl Flats,2023,0,0,
+baltic,Rhyl Flats,2024,0,0,
+baltic,Rhyl Flats,2025,0,0,
+baltic,Riffgat,2010,0,0,
+baltic,Riffgat,2011,1,0,0.0
+baltic,Riffgat,2012,24,0,0.0
+baltic,Riffgat,2016,0,0,
+baltic,Riffgat,2017,0,0,
+baltic,Riffgat,2018,0,0,
+baltic,Riffgat,2019,0,0,
+baltic,Riffgat,2020,0,0,
+baltic,Riffgat,2021,1,0,0.0
+baltic,Riffgat,2022,0,0,
+baltic,Riffgat,2023,0,0,
+baltic,Riffgat,2024,72,0,0.0
+baltic,Riffgat,2025,3,0,0.0
+baltic,Robin Rigg West,2010,0,0,
+baltic,Robin Rigg West,2011,0,0,
+baltic,Robin Rigg West,2012,11,0,0.0
+baltic,Robin Rigg West,2016,0,0,
+baltic,Robin Rigg West,2017,1,0,0.0
+baltic,Robin Rigg West,2018,0,0,
+baltic,Robin Rigg West,2019,0,0,
+baltic,Robin Rigg West,2020,0,0,
+baltic,Robin Rigg West,2021,0,0,
+baltic,Robin Rigg West,2022,0,0,
+baltic,Robin Rigg West,2023,0,0,
+baltic,Robin Rigg West,2024,0,0,
+baltic,Robin Rigg West,2025,0,0,
+baltic,Rodsand II,2010,107,6,0.056074766355140186
+baltic,Rodsand II,2011,32,31,0.96875
+baltic,Rodsand II,2012,23,23,1.0
+baltic,Rodsand II,2016,2,2,1.0
+baltic,Rodsand II,2017,22,22,1.0
+baltic,Rodsand II,2018,23,23,1.0
+baltic,Rodsand II,2019,27,27,1.0
+baltic,Rodsand II,2020,25,25,1.0
+baltic,Rodsand II,2021,40,40,1.0
+baltic,Rodsand II,2022,26,26,1.0
+baltic,Rodsand II,2023,26,26,1.0
+baltic,Rodsand II,2024,1002,1002,1.0
+baltic,Rodsand II,2025,154,0,0.0
+baltic,Saint-Brieuc,2010,0,0,
+baltic,Saint-Brieuc,2011,0,0,
+baltic,Saint-Brieuc,2012,4,0,0.0
+baltic,Saint-Brieuc,2016,0,0,
+baltic,Saint-Brieuc,2017,0,0,
+baltic,Saint-Brieuc,2018,0,0,
+baltic,Saint-Brieuc,2019,0,0,
+baltic,Saint-Brieuc,2020,0,0,
+baltic,Saint-Brieuc,2021,0,0,
+baltic,Saint-Brieuc,2022,0,0,
+baltic,Saint-Brieuc,2023,0,0,
+baltic,Saint-Brieuc,2024,0,0,
+baltic,Saint-Brieuc,2025,0,0,
+baltic,Saint-Nazaire,2010,0,0,
+baltic,Saint-Nazaire,2011,0,0,
+baltic,Saint-Nazaire,2012,6,0,0.0
+baltic,Saint-Nazaire,2016,0,0,
+baltic,Saint-Nazaire,2017,0,0,
+baltic,Saint-Nazaire,2018,0,0,
+baltic,Saint-Nazaire,2019,0,0,
+baltic,Saint-Nazaire,2020,0,0,
+baltic,Saint-Nazaire,2021,0,0,
+baltic,Saint-Nazaire,2022,0,0,
+baltic,Saint-Nazaire,2023,0,0,
+baltic,Saint-Nazaire,2024,0,0,
+baltic,Saint-Nazaire,2025,0,0,
+baltic,Samsa,2010,0,0,
+baltic,Samsa,2011,0,0,
+baltic,Samsa,2012,0,0,
+baltic,Samsa,2016,0,0,
+baltic,Samsa,2017,4,4,1.0
+baltic,Samsa,2018,5,5,1.0
+baltic,Samsa,2019,2,2,1.0
+baltic,Samsa,2020,2,2,1.0
+baltic,Samsa,2021,2,2,1.0
+baltic,Samsa,2022,2,2,1.0
+baltic,Samsa,2023,2,2,1.0
+baltic,Samsa,2024,83,83,1.0
+baltic,Samsa,2025,20,0,0.0
+baltic,Sandbank,2010,3,0,0.0
+baltic,Sandbank,2011,0,0,
+baltic,Sandbank,2012,0,0,
+baltic,Sandbank,2016,2,0,0.0
+baltic,Sandbank,2017,28,0,0.0
+baltic,Sandbank,2018,15,0,0.0
+baltic,Sandbank,2019,12,0,0.0
+baltic,Sandbank,2020,9,0,0.0
+baltic,Sandbank,2021,18,0,0.0
+baltic,Sandbank,2022,15,0,0.0
+baltic,Sandbank,2023,11,0,0.0
+baltic,Sandbank,2024,256,0,0.0
+baltic,Sandbank,2025,14,0,0.0
+baltic,Scroby Sands,2010,0,0,
+baltic,Scroby Sands,2011,0,0,
+baltic,Scroby Sands,2012,113,0,0.0
+baltic,Scroby Sands,2016,0,0,
+baltic,Scroby Sands,2017,15,0,0.0
+baltic,Scroby Sands,2018,0,0,
+baltic,Scroby Sands,2019,0,0,
+baltic,Scroby Sands,2020,0,0,
+baltic,Scroby Sands,2021,0,0,
+baltic,Scroby Sands,2022,0,0,
+baltic,Scroby Sands,2023,0,0,
+baltic,Scroby Sands,2024,8,0,0.0
+baltic,Scroby Sands,2025,0,0,
+baltic,SeaStar,2010,0,0,
+baltic,SeaStar,2011,0,0,
+baltic,SeaStar,2012,10,0,0.0
+baltic,SeaStar,2016,0,0,
+baltic,SeaStar,2017,2,0,0.0
+baltic,SeaStar,2018,0,0,
+baltic,SeaStar,2019,0,0,
+baltic,SeaStar,2020,0,0,
+baltic,SeaStar,2021,0,0,
+baltic,SeaStar,2022,0,0,
+baltic,SeaStar,2023,0,0,
+baltic,SeaStar,2024,6,0,0.0
+baltic,SeaStar,2025,0,0,
+baltic,Seagreen,2010,0,0,
+baltic,Seagreen,2011,0,0,
+baltic,Seagreen,2012,0,0,
+baltic,Seagreen,2016,0,0,
+baltic,Seagreen,2017,0,0,
+baltic,Seagreen,2018,0,0,
+baltic,Seagreen,2019,0,0,
+baltic,Seagreen,2020,0,0,
+baltic,Seagreen,2021,2,0,0.0
+baltic,Seagreen,2022,0,0,
+baltic,Seagreen,2023,0,0,
+baltic,Seagreen,2024,6,0,0.0
+baltic,Seagreen,2025,2,0,0.0
+baltic,Sheringham Shoal,2010,0,0,
+baltic,Sheringham Shoal,2011,0,0,
+baltic,Sheringham Shoal,2012,164,0,0.0
+baltic,Sheringham Shoal,2016,0,0,
+baltic,Sheringham Shoal,2017,2,0,0.0
+baltic,Sheringham Shoal,2018,0,0,
+baltic,Sheringham Shoal,2019,0,0,
+baltic,Sheringham Shoal,2020,0,0,
+baltic,Sheringham Shoal,2021,0,0,
+baltic,Sheringham Shoal,2022,0,0,
+baltic,Sheringham Shoal,2023,0,0,
+baltic,Sheringham Shoal,2024,8,0,0.0
+baltic,Sheringham Shoal,2025,0,0,
+baltic,Sprogo,2010,5,5,1.0
+baltic,Sprogo,2011,5,5,1.0
+baltic,Sprogo,2012,4,4,1.0
+baltic,Sprogo,2016,1,1,1.0
+baltic,Sprogo,2017,19,19,1.0
+baltic,Sprogo,2018,22,22,1.0
+baltic,Sprogo,2019,6,6,1.0
+baltic,Sprogo,2020,1,1,1.0
+baltic,Sprogo,2021,5,5,1.0
+baltic,Sprogo,2022,4,4,1.0
+baltic,Sprogo,2023,1,1,1.0
+baltic,Sprogo,2024,46,46,1.0
+baltic,Sprogo,2025,5,0,0.0
+baltic,Teesside,2010,5,0,0.0
+baltic,Teesside,2011,0,0,
+baltic,Teesside,2012,132,0,0.0
+baltic,Teesside,2016,0,0,
+baltic,Teesside,2017,1,0,0.0
+baltic,Teesside,2018,0,0,
+baltic,Teesside,2019,0,0,
+baltic,Teesside,2020,0,0,
+baltic,Teesside,2021,1,0,0.0
+baltic,Teesside,2022,0,0,
+baltic,Teesside,2023,0,0,
+baltic,Teesside,2024,4,0,0.0
+baltic,Teesside,2025,0,0,
+baltic,Thanet,2010,1,0,0.0
+baltic,Thanet,2011,0,0,
+baltic,Thanet,2012,30,0,0.0
+baltic,Thanet,2016,0,0,
+baltic,Thanet,2017,2,0,0.0
+baltic,Thanet,2018,0,0,
+baltic,Thanet,2019,0,0,
+baltic,Thanet,2020,0,0,
+baltic,Thanet,2021,0,0,
+baltic,Thanet,2022,0,0,
+baltic,Thanet,2023,0,0,
+baltic,Thanet,2024,0,0,
+baltic,Thanet,2025,0,0,
+baltic,Thornton Bank - phase I,2010,0,0,
+baltic,Thornton Bank - phase I,2011,0,0,
+baltic,Thornton Bank - phase I,2012,77,0,0.0
+baltic,Thornton Bank - phase I,2016,0,0,
+baltic,Thornton Bank - phase I,2017,2,0,0.0
+baltic,Thornton Bank - phase I,2018,0,0,
+baltic,Thornton Bank - phase I,2019,0,0,
+baltic,Thornton Bank - phase I,2020,0,0,
+baltic,Thornton Bank - phase I,2021,0,0,
+baltic,Thornton Bank - phase I,2022,0,0,
+baltic,Thornton Bank - phase I,2023,0,0,
+baltic,Thornton Bank - phase I,2024,1,0,0.0
+baltic,Thornton Bank - phase I,2025,0,0,
+baltic,Thornton Bank - phase II and III,2010,0,0,
+baltic,Thornton Bank - phase II and III,2011,0,0,
+baltic,Thornton Bank - phase II and III,2012,89,0,0.0
+baltic,Thornton Bank - phase II and III,2016,0,0,
+baltic,Thornton Bank - phase II and III,2017,4,0,0.0
+baltic,Thornton Bank - phase II and III,2018,0,0,
+baltic,Thornton Bank - phase II and III,2019,0,0,
+baltic,Thornton Bank - phase II and III,2020,0,0,
+baltic,Thornton Bank - phase II and III,2021,0,0,
+baltic,Thornton Bank - phase II and III,2022,0,0,
+baltic,Thornton Bank - phase II and III,2023,0,0,
+baltic,Thornton Bank - phase II and III,2024,4,0,0.0
+baltic,Thornton Bank - phase II and III,2025,0,0,
+baltic,Trianel Windpark Borkum 1,2010,0,0,
+baltic,Trianel Windpark Borkum 1,2011,0,0,
+baltic,Trianel Windpark Borkum 1,2012,5,0,0.0
+baltic,Trianel Windpark Borkum 1,2016,0,0,
+baltic,Trianel Windpark Borkum 1,2017,11,0,0.0
+baltic,Trianel Windpark Borkum 1,2018,55,0,0.0
+baltic,Trianel Windpark Borkum 1,2019,7,0,0.0
+baltic,Trianel Windpark Borkum 1,2020,8,0,0.0
+baltic,Trianel Windpark Borkum 1,2021,24,0,0.0
+baltic,Trianel Windpark Borkum 1,2022,20,0,0.0
+baltic,Trianel Windpark Borkum 1,2023,12,0,0.0
+baltic,Trianel Windpark Borkum 1,2024,723,0,0.0
+baltic,Trianel Windpark Borkum 1,2025,35,0,0.0
+baltic,Trianel Windpark Borkum 2,2010,0,0,
+baltic,Trianel Windpark Borkum 2,2011,0,0,
+baltic,Trianel Windpark Borkum 2,2012,1,0,0.0
+baltic,Trianel Windpark Borkum 2,2016,0,0,
+baltic,Trianel Windpark Borkum 2,2017,13,0,0.0
+baltic,Trianel Windpark Borkum 2,2018,49,0,0.0
+baltic,Trianel Windpark Borkum 2,2019,11,0,0.0
+baltic,Trianel Windpark Borkum 2,2020,6,0,0.0
+baltic,Trianel Windpark Borkum 2,2021,17,0,0.0
+baltic,Trianel Windpark Borkum 2,2022,18,0,0.0
+baltic,Trianel Windpark Borkum 2,2023,15,0,0.0
+baltic,Trianel Windpark Borkum 2,2024,574,0,0.0
+baltic,Trianel Windpark Borkum 2,2025,37,0,0.0
+baltic,Triton Knoll,2010,0,0,
+baltic,Triton Knoll,2011,0,0,
+baltic,Triton Knoll,2012,2,0,0.0
+baltic,Triton Knoll,2016,0,0,
+baltic,Triton Knoll,2017,0,0,
+baltic,Triton Knoll,2018,0,0,
+baltic,Triton Knoll,2019,0,0,
+baltic,Triton Knoll,2020,0,0,
+baltic,Triton Knoll,2021,1,0,0.0
+baltic,Triton Knoll,2022,0,0,
+baltic,Triton Knoll,2023,0,0,
+baltic,Triton Knoll,2024,27,0,0.0
+baltic,Triton Knoll,2025,4,0,0.0
+baltic,Tunm Knob,2010,0,0,
+baltic,Tunm Knob,2011,0,0,
+baltic,Tunm Knob,2012,1,1,1.0
+baltic,Tunm Knob,2016,0,0,
+baltic,Tunm Knob,2017,3,3,1.0
+baltic,Tunm Knob,2018,0,0,
+baltic,Tunm Knob,2019,0,0,
+baltic,Tunm Knob,2020,2,2,1.0
+baltic,Tunm Knob,2021,2,2,1.0
+baltic,Tunm Knob,2022,3,3,1.0
+baltic,Tunm Knob,2023,2,2,1.0
+baltic,Tunm Knob,2024,38,38,1.0
+baltic,Tunm Knob,2025,5,0,0.0
+baltic,Veja Mate,2010,8,0,0.0
+baltic,Veja Mate,2011,9,0,0.0
+baltic,Veja Mate,2012,13,0,0.0
+baltic,Veja Mate,2016,0,0,
+baltic,Veja Mate,2017,20,0,0.0
+baltic,Veja Mate,2018,12,0,0.0
+baltic,Veja Mate,2019,16,0,0.0
+baltic,Veja Mate,2020,11,0,0.0
+baltic,Veja Mate,2021,24,0,0.0
+baltic,Veja Mate,2022,7,0,0.0
+baltic,Veja Mate,2023,5,0,0.0
+baltic,Veja Mate,2024,303,0,0.0
+baltic,Veja Mate,2025,13,0,0.0
+baltic,Vesterhav Nord,2010,4,0,0.0
+baltic,Vesterhav Nord,2011,3,0,0.0
+baltic,Vesterhav Nord,2012,6,0,0.0
+baltic,Vesterhav Nord,2016,0,0,
+baltic,Vesterhav Nord,2017,9,0,0.0
+baltic,Vesterhav Nord,2018,3,0,0.0
+baltic,Vesterhav Nord,2019,2,0,0.0
+baltic,Vesterhav Nord,2020,10,0,0.0
+baltic,Vesterhav Nord,2021,3,0,0.0
+baltic,Vesterhav Nord,2022,11,0,0.0
+baltic,Vesterhav Nord,2023,39,0,0.0
+baltic,Vesterhav Nord,2024,274,0,0.0
+baltic,Vesterhav Nord,2025,25,0,0.0
+baltic,Vesterhav Syd,2010,0,0,
+baltic,Vesterhav Syd,2011,0,0,
+baltic,Vesterhav Syd,2012,0,0,
+baltic,Vesterhav Syd,2016,0,0,
+baltic,Vesterhav Syd,2017,5,0,0.0
+baltic,Vesterhav Syd,2018,13,0,0.0
+baltic,Vesterhav Syd,2019,2,0,0.0
+baltic,Vesterhav Syd,2020,1,0,0.0
+baltic,Vesterhav Syd,2021,2,0,0.0
+baltic,Vesterhav Syd,2022,3,0,0.0
+baltic,Vesterhav Syd,2023,48,0,0.0
+baltic,Vesterhav Syd,2024,319,0,0.0
+baltic,Vesterhav Syd,2025,33,0,0.0
+baltic,Walney 1,2010,0,0,
+baltic,Walney 1,2011,0,0,
+baltic,Walney 1,2012,69,0,0.0
+baltic,Walney 1,2016,0,0,
+baltic,Walney 1,2017,3,0,0.0
+baltic,Walney 1,2018,0,0,
+baltic,Walney 1,2019,0,0,
+baltic,Walney 1,2020,0,0,
+baltic,Walney 1,2021,0,0,
+baltic,Walney 1,2022,0,0,
+baltic,Walney 1,2023,0,0,
+baltic,Walney 1,2024,0,0,
+baltic,Walney 1,2025,0,0,
+baltic,Walney 2,2010,0,0,
+baltic,Walney 2,2011,0,0,
+baltic,Walney 2,2012,70,0,0.0
+baltic,Walney 2,2016,0,0,
+baltic,Walney 2,2017,4,0,0.0
+baltic,Walney 2,2018,0,0,
+baltic,Walney 2,2019,0,0,
+baltic,Walney 2,2020,0,0,
+baltic,Walney 2,2021,0,0,
+baltic,Walney 2,2022,0,0,
+baltic,Walney 2,2023,0,0,
+baltic,Walney 2,2024,0,0,
+baltic,Walney 2,2025,0,0,
+baltic,Walney Extension 3,2010,0,0,
+baltic,Walney Extension 3,2011,0,0,
+baltic,Walney Extension 3,2012,5,0,0.0
+baltic,Walney Extension 3,2016,0,0,
+baltic,Walney Extension 3,2017,8,0,0.0
+baltic,Walney Extension 3,2018,0,0,
+baltic,Walney Extension 3,2019,0,0,
+baltic,Walney Extension 3,2020,0,0,
+baltic,Walney Extension 3,2021,0,0,
+baltic,Walney Extension 3,2022,0,0,
+baltic,Walney Extension 3,2023,0,0,
+baltic,Walney Extension 3,2024,0,0,
+baltic,Walney Extension 3,2025,0,0,
+baltic,Walney Extension 4,2010,0,0,
+baltic,Walney Extension 4,2011,0,0,
+baltic,Walney Extension 4,2012,63,0,0.0
+baltic,Walney Extension 4,2016,0,0,
+baltic,Walney Extension 4,2017,6,0,0.0
+baltic,Walney Extension 4,2018,0,0,
+baltic,Walney Extension 4,2019,0,0,
+baltic,Walney Extension 4,2020,0,0,
+baltic,Walney Extension 4,2021,0,0,
+baltic,Walney Extension 4,2022,0,0,
+baltic,Walney Extension 4,2023,0,0,
+baltic,Walney Extension 4,2024,0,0,
+baltic,Walney Extension 4,2025,0,0,
+baltic,West of Duddon Sands,2010,0,0,
+baltic,West of Duddon Sands,2011,0,0,
+baltic,West of Duddon Sands,2012,35,0,0.0
+baltic,West of Duddon Sands,2016,0,0,
+baltic,West of Duddon Sands,2017,2,0,0.0
+baltic,West of Duddon Sands,2018,0,0,
+baltic,West of Duddon Sands,2019,0,0,
+baltic,West of Duddon Sands,2020,0,0,
+baltic,West of Duddon Sands,2021,0,0,
+baltic,West of Duddon Sands,2022,0,0,
+baltic,West of Duddon Sands,2023,0,0,
+baltic,West of Duddon Sands,2024,0,0,
+baltic,West of Duddon Sands,2025,0,0,
+baltic,Westermost Rough,2010,0,0,
+baltic,Westermost Rough,2011,0,0,
+baltic,Westermost Rough,2012,9,0,0.0
+baltic,Westermost Rough,2016,0,0,
+baltic,Westermost Rough,2017,2,0,0.0
+baltic,Westermost Rough,2018,0,0,
+baltic,Westermost Rough,2019,0,0,
+baltic,Westermost Rough,2020,0,0,
+baltic,Westermost Rough,2021,0,0,
+baltic,Westermost Rough,2022,0,0,
+baltic,Westermost Rough,2023,0,0,
+baltic,Westermost Rough,2024,2,0,0.0
+baltic,Westermost Rough,2025,2,0,0.0
+baltic,Wikinger,2010,1,0,0.0
+baltic,Wikinger,2011,14,0,0.0
+baltic,Wikinger,2012,9,0,0.0
+baltic,Wikinger,2016,26,0,0.0
+baltic,Wikinger,2017,202,0,0.0
+baltic,Wikinger,2018,206,65,0.3155339805825243
+baltic,Wikinger,2019,63,63,1.0
+baltic,Wikinger,2020,49,49,1.0
+baltic,Wikinger,2021,40,40,1.0
+baltic,Wikinger,2022,42,42,1.0
+baltic,Wikinger,2023,44,44,1.0
+baltic,Wikinger,2024,1160,1160,1.0
+baltic,Wikinger,2025,137,0,0.0

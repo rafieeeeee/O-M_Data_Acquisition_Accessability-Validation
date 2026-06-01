@@ -1,0 +1,18 @@
+farm_id,bathymetry_sample_point_id,rows,min_depth_m,median_depth_m,max_depth_m
+Renland,turbine_0006,11107,0.0009651471,0.0009651471,0.0009651471
+Frederikshavn Offshore,turbine_0001,4838,0.0,0.0,0.0
+Avedøre Holme,turbine_0000,2552,0.7404375,0.7404375,0.7404375
+Frederikshavn Offshore,turbine_0002,1840,0.0,0.0,0.0
+Frederikshavn Offshore,turbine_0003,1720,0.0,0.0,0.0
+Frederikshavn Offshore,turbine_0000,1548,0.0,0.0,0.0
+Frederikshavn Offshore,farm_centroid,1071,0.0,0.0,0.0
+Renland,turbine_0000,88,0.54930305,0.54930305,0.54930305
+Renland,turbine_0001,13,0.027594859,0.027594859,0.027594859
+Renland,turbine_0004,5,0.16048352,0.16048352,0.16048352
+Renland,turbine_0005,5,0.5312344,0.5312344,0.5312344
+Renland,farm_centroid,4,0.0827943,0.0827943,0.0827943
+Renland,turbine_0003,4,0.20582251,0.20582251,0.20582251
+London Array,turbine_0027,3,0.89,0.89,0.89
+Renland,turbine_0002,2,0.0005853695,0.0005853695,0.0005853695
+Gunfleet Sands,turbine_0026,1,0.49,0.49,0.49
+London Array,turbine_0118,1,0.5,0.5,0.5

@@ -1,0 +1,11 @@
+analysis_label,subset,hs_threshold_m,rows_with_hs,rows_at_or_below_threshold,share_at_or_below_threshold
+Provisional NORA3-derived Tier A wave-only observed operational envelope,primary_tier_a,1.0,13574,11646,0.8579637542360394
+Provisional NORA3-derived Tier A wave-only observed operational envelope,primary_tier_a,1.5,13574,13259,0.9767938706350375
+Provisional NORA3-derived Tier A wave-only observed operational envelope,primary_tier_a,2.0,13574,13520,0.9960218063945778
+Provisional NORA3-derived Tier A wave-only observed operational envelope,primary_tier_a,2.5,13574,13565,0.9993369677324296
+Provisional NORA3-derived Tier A wave-only observed operational envelope,primary_tier_a,3.0,13574,13571,0.9997789892441432
+Provisional NORA3-derived Tier A wave-only observed operational envelope,sensitivity_all_tiers,1.0,44377,37954,0.8552628613921626
+Provisional NORA3-derived Tier A wave-only observed operational envelope,sensitivity_all_tiers,1.5,44377,42912,0.9669874033846362
+Provisional NORA3-derived Tier A wave-only observed operational envelope,sensitivity_all_tiers,2.0,44377,44003,0.9915722108299344
+Provisional NORA3-derived Tier A wave-only observed operational envelope,sensitivity_all_tiers,2.5,44377,44290,0.9980395249791558
+Provisional NORA3-derived Tier A wave-only observed operational envelope,sensitivity_all_tiers,3.0,44377,44354,0.9994817135002366

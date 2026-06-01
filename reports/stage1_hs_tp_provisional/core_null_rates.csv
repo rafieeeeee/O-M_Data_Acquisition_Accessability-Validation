@@ -1,0 +1,7 @@
+analysis_label,column,present,non_null_count,null_count,null_rate
+Provisional NORA3-derived Tier A wave-only observed operational envelope,active_hs_mean,True,44377,48283,0.5210770559033024
+Provisional NORA3-derived Tier A wave-only observed operational envelope,active_tp_mean,True,44377,48283,0.5210770559033024
+Provisional NORA3-derived Tier A wave-only observed operational envelope,dwell_tier,True,92660,0,0.0
+Provisional NORA3-derived Tier A wave-only observed operational envelope,wind_farm,True,92660,0,0.0
+Provisional NORA3-derived Tier A wave-only observed operational envelope,mmsi,True,92660,0,0.0
+Provisional NORA3-derived Tier A wave-only observed operational envelope,start_utc,True,92660,0,0.0

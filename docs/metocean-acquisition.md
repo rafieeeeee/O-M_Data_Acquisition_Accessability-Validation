@@ -65,14 +65,19 @@ Final workability surfaces require additional parameters beyond wave state.
 - **Source:** Copernicus Marine Service (CMEMS).
 - **Product:** Atlantic-European North West Shelf - Ocean Physics Hindcast (NEMO).
 - **Target Variables:** True Eulerian `uo` and `vo`; speed and flow-to direction are derived locally.
-- **Status:** NWS current pilot, normal recommended scale, and Current Confidence v1 are accepted for source-specific and event-level evidence. The processed NWS hourly current archive covers `125` non-stress-test farm-years under `Data/Processed/metocean/nws_current_timeseries/`, with the manifest at `Data/Processed/metocean/nws_current_timeseries/manifest.csv` and validation under `reports/current_pilot_v1/`. Current Confidence v1 attaches that archive to dwell events at `Data/Processed/metocean/current_confidence_v1/` and reports `16,307` event-scale current assignments from `92,660` dwell events. Baltic historical true-current evidence remains daily/contextual unless a separate historical hourly source is approved. Legacy CMEMS CSV/fallback current paths remain banned as research evidence.
+- **Status:** NWS current pilot, normal recommended scale, and Current Confidence v1 are accepted for source-specific and event-level evidence. The processed NWS hourly current archive covers `125` non-stress-test farm-years under `Data/Processed/metocean/nws_current_timeseries/`, with the manifest at `Data/Processed/metocean/nws_current_timeseries/manifest.csv` and validation under `reports/current_pilot_v1/`. Current Confidence v1 attaches that archive to dwell events at `Data/Processed/metocean/current_confidence_v1/` and reports `16,307` event-scale current assignments from `92,660` dwell events. Baltic historical true-current evidence remains daily/contextual unless a separate historical hourly source is approved. Legacy CMEMS CSV and offline synthetic current paths remain banned as research evidence.
 
 ### Fusion v2 Event Features
 - **Source layers:** Wave Confidence v1, Wind Confidence v1, Current Confidence v1, and EMODnet bathymetry.
 - **Output table:** `Data/Processed/metocean/fusion_v2/dwell_metocean_fusion_v2.parquet`
 - **Validation report:** `reports/metocean_fusion_v2/fusion_v2_validation_report.md`
-- **Status:** accepted as the first combined source-resolved metocean event feature table. Fusion v2 preserves all `92,660` dwell rows, keeps wave/wind/current/bathymetry confidence fields separate, and adds modelling-readiness flags for wave-only, wave+wind, wave+current, wave+wind+current, and high-confidence multivariate subsets.
+- **Status:** accepted as the first combined source-resolved metocean event feature table and provisional Stage 2 input layer. Fusion v2 preserves all `92,660` dwell rows, keeps wave/wind/current/bathymetry confidence fields separate, and adds modelling-readiness flags for wave-only, wave+wind, wave+current, wave+wind+current, and high-confidence multivariate subsets.
 - **Guardrails:** Fusion v2 does not download data, repair wind direction, include stress-test current farm-years, promote Baltic daily current to event-scale evidence, import FINO, rerun NORA3, promote legacy CMEMS currents, infer vessel roles, or make calibrated `P(operation | weather)` claims. Wind direction remains nullable/sensitivity-only; missing current remains null rather than zero.
+
+### Stage 1 / Stage 2 Boundary
+- **Stage 1 status:** an observed/provisional $H_s \times T_p$ workability surface exists for research orientation and simulator lookup experiments. $H_s \times T_p$ is the default preset in the configurable workability surface engine, not the closed definition of workability.
+- **Stage 2 status:** not started. The next modelling branch should use Fusion v2 to compare wave-only, wave+wind speed, wave+current, and wave+wind+current subsets before any calibrated probability model.
+- **Current and direction guardrails:** missing current remains missing/null and must not be treated as zero current. Wind direction is too sparse for broad modelling (`197` direction-ready events) and should remain quarantined or sensitivity-only until a targeted repair is approved.
 
 ## 4. Copernicus NWS Wave Backbone
 
@@ -109,7 +114,7 @@ It is source-specific and must not rebuild or fuse dwell-metocean features.
 - **Assignment logic:** `src/om_pipeline/metocean/bathymetry_assignment.py`
 - **Input requirements:** `analysis/06_rq6_metocean_spatial_resolution/common_metocean_farm_requirements.csv`
 - **Primary source:** EMODnet Bathymetry DTM through the official `depth_sample` REST endpoint
-- **Fallback/cross-check source:** `GEBCO_2026`
+- **Cross-check source:** `GEBCO_2026`
 - **Dry-run QA report:** `analysis/06_rq6_metocean_spatial_resolution/bathymetry_assignment_pilot_report.md`
 - **Full assignment QA report:** `analysis/06_rq6_metocean_spatial_resolution/bathymetry_assignment_full_report.md`
 - **Raw/cache source data:** `Data/Raw/Metocean/Bathymetry/emodnet_depth_samples/`
