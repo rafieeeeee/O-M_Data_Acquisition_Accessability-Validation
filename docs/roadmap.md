@@ -1,7 +1,7 @@
 # Roadmap: Empirical Multi-Parameter Operational Limits for 15MW+ Offshore Wind O&M
 
 ## Thesis Objective
-To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 1.5m$) with a dynamic, multi-parameter ( $H_s, T_p, \theta$, wind, current ) non-linear boundary surface. This model will be "vessel-aware," incorporating dimensions and technology (Gangway/DP) to optimize fleet sizing and O&M costs for 15MW+ offshore wind assets.
+To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 1.5m$) with dynamic, multi-parameter observed workability surfaces over waves, wind speed, current speed, vessel, task, and site context. Directional variables remain secondary until coverage supports them; wind direction is currently too sparse for broad modelling.
 
 ---
 
@@ -39,8 +39,8 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [x] **Metocean Extraction & Upscaling:**
     - [x] Implement cache-aware NORA3 THREDDS extraction.
     - [x] Implement Cubic Spline (scalars) and Circular Vector (direction) upscaling to 10-minutes.
-    - [x] Extend the metocean backbone beyond wave-only NORA3 parameters to include wind and current once the wave backbone passes QA.
-    - [x] Run `extract_metocean.py` across the completed event catalog to generate the expanded wave, wind, and current backbone.
+    - [x] Extend the metocean evidence stack beyond wave-only NORA3 parameters to include accepted wind and true-current confidence layers once the wave backbone passes QA.
+    - [x] Preserve the historical expanded wave/wind/current backbone as local generated evidence, while treating accepted true-current evidence as the NWS `uo`/`vo` archive plus Current Confidence v1.
 - [x] **Data Quality Assurance (QA):**
     - [x] Run row count, schema, missing-value, duplicate, span-continuity, and alignment sanity checks on the NORA3 Backbone. Passing this wave-only QA is a strict gate before wind/current expansion or AIS + metocean join work.
 - [x] **NWS Continuous Wave Backbone:**
@@ -64,6 +64,9 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] Built `Data/Processed/metocean/fusion_v2/dwell_metocean_fusion_v2.parquet`.
     - [x] Preserved all `92,660` dwell rows and joined wave confidence, wind confidence, current confidence, and bathymetry.
     - [x] Validated `13,207` wave+wind+current rows and `9,337` high-confidence multivariate rows.
+- [x] **Stage 1 Observed/Provisional Workability Surface:**
+    - [x] Preserved a configurable workability surface engine with $H_s \times T_p$ as the default preset rather than the closed workability definition.
+    - [x] Kept Stage 1 labelled as observed/provisional and not calibrated `P(operation | weather)`.
 - [x] **The AIS + Metocean Join:**
     - [x] Create a formal module in `src/om_pipeline/` to merge `dwell_events` and the 10-minute backbone based on `found_id` and timestamps.
 - [/] **The "SCADA Handshake" & Feature Engineering:**
@@ -75,16 +78,16 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - `[timestamp | vessel | hs | tp | wave_direction | wind_speed | wind_direction | current_speed | current_direction | status_type_id | label]`
     - Output: `Data/Processed/wind_farm_c_feature_matrix.parquet` (local generated artifact; not committed).
     - QA report: `reports/care_wind_farm_c_confirmation/wfc_feature_matrix_qa.md`
-    - Caveat: current columns use the CMEMS tidal fallback until `copernicusmarine` credentials are configured and extraction is re-run with `--force`.
+    - Caveat: historical generated artifact only; current columns from legacy synthetic paths are not accepted research evidence and must not be used for Fusion v2 or Stage 2.
 - [x] **Wind Farm C Event-Level Aggregation:** Collapsed the 10-minute matrix to one row per CARE event with mean/max/std metocean features, circular directional statistics, SCADA status shares, handshake label shares, and event-level target labels.
     - Script: `scripts/build_wind_farm_c_event_aggregates.py`
     - Output: `Data/Processed/wind_farm_c_event_aggregates.parquet` (local generated artifact; not committed).
     - Current local run: 58 events, 58 columns, 31 CARE normal / 27 CARE anomaly, no aggregate NaNs.
-- [ ] **Wind Farm C External Cross-Checks:** Replace synthetic `min_dist=50m` with real AIS dwell proximity where catalog coverage exists, and re-run currents with real CMEMS reanalysis rather than fallback climatology.
+- [ ] **Wind Farm C External Cross-Checks:** Replace synthetic `min_dist=50m` with real AIS dwell proximity where catalog coverage exists, and rebuild current features only from accepted true `uo`/`vo` products.
 - [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
 - [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
-- [ ] **Stage 2 Fusion v2 Sensitivity:** Use Fusion v2 to compare observed envelopes for wave-only, wave+wind speed, wave+current, and wave+wind+current subsets before any calibrated probability model.
+- [ ] **Stage 2 Fusion v2 Sensitivity:** Not started. Use Fusion v2 to compare observed envelopes for wave-only, wave+wind speed, wave+current, and wave+wind+current subsets before any calibrated probability model.
 
 ---
 
