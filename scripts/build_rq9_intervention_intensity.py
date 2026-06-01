@@ -1,0 +1,137 @@
+"""Build RQ9 farm-level maintenance intervention intensity outputs."""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SRC_ROOT = PROJECT_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from om_pipeline.analysis.rq9_intervention_intensity import (  # noqa: E402
+    ANALYSIS_LABEL,
+    DEFAULT_LONG_DWELL_THRESHOLD_MIN,
+    DEFAULT_RAMP_UP_MONTHS,
+    build_rq9_farm_outputs,
+)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Build farm-level RQ9 maintenance intervention intensity outputs."
+    )
+    parser.add_argument(
+        "--dwell-input",
+        type=Path,
+        default=PROJECT_ROOT
+        / "Data"
+        / "Processed"
+        / "ais_dwell_backfill"
+        / "cross_farm_dwell_weather_features.parquet",
+        help="Existing weather-joined AIS dwell feature parquet.",
+    )
+    parser.add_argument(
+        "--manifest-input",
+        type=Path,
+        default=PROJECT_ROOT
+        / "Data"
+        / "Processed"
+        / "ais_dwell_backfill"
+        / "logs"
+        / "backfill_manifest.csv",
+        help="Existing AIS dwell backfill manifest.",
+    )
+    parser.add_argument(
+        "--turbine-input",
+        type=Path,
+        default=PROJECT_ROOT / "Data" / "Interim" / "European_Turbine_Coordinates.csv",
+        help="Existing turbine coordinate table used for farm-level turbine counts.",
+    )
+    parser.add_argument(
+        "--processed-output-dir",
+        type=Path,
+        default=PROJECT_ROOT
+        / "Data"
+        / "Processed"
+        / "analysis"
+        / "rq9_intervention_intensity",
+        help="Derived farm-level intensity output directory.",
+    )
+    parser.add_argument(
+        "--report-output-dir",
+        type=Path,
+        default=PROJECT_ROOT / "reports" / "rq9_intervention_intensity",
+        help="RQ9 report output directory.",
+    )
+    parser.add_argument(
+        "--long-dwell-threshold-min",
+        type=float,
+        default=DEFAULT_LONG_DWELL_THRESHOLD_MIN,
+        help="Duration threshold for long Tier A/B candidate interventions.",
+    )
+    parser.add_argument(
+        "--ramp-up-months",
+        type=int,
+        default=DEFAULT_RAMP_UP_MONTHS,
+        help=(
+            "Months after latest turbine commissioning month to keep in "
+            "commissioning/ramp-up phase before steady operational classification."
+        ),
+    )
+    args = parser.parse_args()
+
+    outputs = build_rq9_farm_outputs(
+        dwell_path=args.dwell_input,
+        manifest_path=args.manifest_input,
+        turbine_path=args.turbine_input,
+        processed_output_dir=args.processed_output_dir,
+        report_output_dir=args.report_output_dir,
+        long_dwell_threshold_min=args.long_dwell_threshold_min,
+        ramp_up_months=args.ramp_up_months,
+    )
+
+    validation = outputs.validation
+    print(ANALYSIS_LABEL)
+    print("This is intervention intensity, not failure rate.")
+    print(f"Farm rows: {validation['farm_output_rows']}")
+    print(f"Observed farm-years: {validation['observed_years_total']:.3f}")
+    print(
+        "Commissioning/ramp-up observed farm-years: "
+        f"{validation['commissioning_observed_years_total']:.3f}"
+    )
+    print(
+        "Steady operational observed farm-years: "
+        f"{validation['steady_observed_years_total']:.3f}"
+    )
+    print(
+        "Observed farm-years range: "
+        f"{validation['observed_years_min']:.3f} - {validation['observed_years_max']:.3f}"
+    )
+    print(f"Operational window known farms: {validation['operational_window_known_farm_count']}")
+    print(f"Candidate intervention count: {validation['candidate_intervention_count_total']}")
+    print(
+        "Pre-operational candidate count excluded: "
+        f"{validation['pre_operational_candidate_count_total']}"
+    )
+    print(
+        "Commissioning/ramp-up candidate count: "
+        f"{validation['commissioning_candidate_count_total']}"
+    )
+    print(f"Steady operational candidate count: {validation['steady_candidate_count_total']}")
+    print(f"Tier A count: {validation['tier_a_visit_count_total']}")
+    print(f"Tier B count: {validation['tier_b_visit_count_total']}")
+    print(f"Long dwell count: {validation['long_dwell_count_total']}")
+    print(f"Farm output: {outputs.files['farm_intervention_intensity_csv']}")
+    print(f"Validation summary: {outputs.files['validation_summary_csv']}")
+    print(f"Methodology report: {outputs.files['methodology_report_md']}")
+    print(f"Sanity audit: {outputs.files['sanity_audit_md']}")
+    print(f"Top/bottom audit: {outputs.files['top_bottom_csv']}")
+    print(f"Sensitivity audit: {outputs.files['sensitivity_csv']}")
+
+
+if __name__ == "__main__":
+    main()
