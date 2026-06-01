@@ -22,6 +22,13 @@ from om_pipeline.analysis.rq9_turbine_exposure import (
     build_turbine_exposure_report,
     build_turbine_intervention_intensity,
 )
+from om_pipeline.analysis.rq9_turbine_characteristics import (
+    build_characteristics_rates,
+    build_characteristics_report,
+    capacity_band,
+    hub_height_band,
+    rotor_diameter_band,
+)
 
 
 def _sample_turbines() -> pd.DataFrame:
@@ -306,5 +313,104 @@ def test_exposure_report_and_outputs_use_intervention_terminology():
 
     assert "maintenance intervention intensity" in report
     assert "failure_rate" not in report
+    assert "failure rate" not in report.lower()
     assert all("failure_rate" not in column for column in denominator.columns)
     assert all("failure_rate" not in column for column in intensity.columns)
+
+
+def _sample_turbine_intensity_for_characteristics() -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "wind_farm": ["Alpha", "Alpha", "Bravo", "Bravo", "Charlie"],
+            "oem_manufacturer": ["MakerA", "MakerA", "MakerB", "MakerB", "MakerC"],
+            "turbine_model": ["A-8", "A-8", "B-6", "B-6", "C-12"],
+            "rated_capacity_mw": [8.0, 8.0, 6.0, 6.0, 12.0],
+            "rotor_diameter_m": [164.0, 164.0, 150.0, 150.0, 220.0],
+            "hub_height_m": [108.0, 108.0, 95.0, 95.0, 140.0],
+            "commissioning_year": [2018, 2018, 2020, 2020, 2024],
+            "turbine_age_band_at_observation_end": [
+                "3_to_7_years",
+                "3_to_7_years",
+                "3_to_7_years",
+                "3_to_7_years",
+                "0_to_2_years",
+            ],
+            "sea_basin": ["North Sea", "North Sea", "Baltic", "Baltic", "other"],
+            "country": ["Netherlands", "Netherlands", "Germany", "Germany", "France"],
+            "observed_steady_years": [5.0, 5.0, 3.0, 0.5, 0.2],
+            "steady_high_event_count": [2, 0, 1, 1, 0],
+            "steady_high_duplicate_adjusted_event_count": [2.0, 0.0, 0.5, 1.0, 0.0],
+            "steady_high_medium_event_count": [3, 1, 2, 1, 0],
+            "steady_high_medium_duplicate_adjusted_event_count": [
+                3.0,
+                1.0,
+                1.5,
+                1.0,
+                0.0,
+            ],
+        }
+    )
+
+
+def test_characteristic_banding_helpers():
+    assert capacity_band(2.9) == "lt_3_mw"
+    assert capacity_band(3.6) == "3_to_4_9_mw"
+    assert capacity_band(6.0) == "5_to_7_9_mw"
+    assert capacity_band(8.4) == "8_to_9_9_mw"
+    assert capacity_band(14.0) == "10_plus_mw"
+    assert capacity_band(None) == "unknown"
+    assert rotor_diameter_band(99.0) == "lt_100_m"
+    assert rotor_diameter_band(126.0) == "100_to_129_m"
+    assert rotor_diameter_band(150.0) == "130_to_159_m"
+    assert rotor_diameter_band(164.0) == "160_to_179_m"
+    assert rotor_diameter_band(222.0) == "180_plus_m"
+    assert hub_height_band(68.0) == "lt_70_m"
+    assert hub_height_band(80.0) == "70_to_89_m"
+    assert hub_height_band(100.0) == "90_to_109_m"
+    assert hub_height_band(120.0) == "110_to_129_m"
+    assert hub_height_band(140.0) == "130_plus_m"
+
+
+def test_characteristics_rates_apply_minimum_exposure_and_rates():
+    rates = build_characteristics_rates(_sample_turbine_intensity_for_characteristics())
+    by_key = rates.set_index(["characteristic", "characteristic_value", "exposure_threshold"])
+    maker_a = by_key.loc[("oem_manufacturer", "MakerA", "min_3yr")]
+    maker_b = by_key.loc[("oem_manufacturer", "MakerB", "min_3yr")]
+
+    assert maker_a["turbine_count"] == 2
+    assert maker_a["observed_steady_turbine_years"] == 10.0
+    assert maker_a["high_confidence_event_count"] == 2
+    assert maker_a["primary_duplicate_adjusted_intervention_intensity_per_turbine_year"] == 0.2
+    assert maker_a["sensitivity_duplicate_adjusted_intervention_intensity_per_turbine_year"] == 0.4
+    assert maker_a["zero_event_turbine_count"] == 1
+    assert maker_a["zero_event_turbine_share"] == 0.5
+    assert maker_b["turbine_count"] == 1
+    assert "MakerC" not in set(
+        rates.loc[
+            rates["characteristic"].eq("oem_manufacturer")
+            & rates["exposure_threshold"].eq("min_3yr"),
+            "characteristic_value",
+        ]
+    )
+
+
+def test_characteristics_report_uses_intervention_terminology():
+    rates = build_characteristics_rates(_sample_turbine_intensity_for_characteristics())
+    report = build_characteristics_report(
+        rates,
+        rates.head(0).assign(
+            comparison_focus=pd.Series(dtype="string"),
+            primary_rank=pd.Series(dtype="Int64"),
+        ),
+        {
+            "turbine_rows": 5,
+            "observed_steady_years_total": 13.7,
+            "high_confidence_event_count": 4,
+            "high_medium_event_count": 7,
+            "robust_exploratory_rows": 0,
+        },
+    )
+
+    assert "maintenance intervention intensity" in report
+    assert "failure_rate" not in report
+    assert "failure rate" not in report.lower()
