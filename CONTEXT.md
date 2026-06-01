@@ -32,6 +32,13 @@ Current modelling boundary: Stage 1 exists as an observed/provisional workabilit
 - **Vessel Classification & Taxonomy:** The system no longer derives operational vessel classes from vessel length, vessel name, or keyword heuristics. Authoritative vessel taxonomy is now sourced directly from the raw AIS / DMA fleet registry ship type field. Continuous vessel length is retained separately as `vessel_length_m` and is used strictly for exploratory filtering, not for programmatic classification.
 - **Legacy Compatibility:** The legacy `vessel_class` column remains solely for backward compatibility with existing scripts, reports, and unit tests. It acts as a direct alias of the raw ship type label/value and must not be interpreted as a derived operational class. CTV, SOV, HLV, jack-up, or crane role categories are not derived or inferred dynamically unless provided by a validated external registry. Missing physical dimension data is backfilled from a local DuckDB offline fleet registry.
 
+### RQ9 Maintenance Intervention Intensity
+- **Interpretation Boundary:** RQ9 uses AIS dwell behaviour as maintenance intervention-intensity evidence, not confirmed failure-rate evidence. A vessel visit is not automatically a failure; true failure inference requires SCADA, fault-log, work-order, or equivalent validation.
+- **Evidence Levels:** The RQ9 evidence ladder separates observation coverage, vessel presence, candidate intervention, repeated/long intervention, SCADA-linked intervention, and confirmed failure. Levels based only on AIS support intervention intensity, not validated faults.
+- **Farm and Turbine Outputs:** Farm-level phase-separated intervention intensity, turbine feasibility, turbine denominator/exposure v1, and turbine characteristics comparisons now exist under `Data/Processed/analysis/rq9_intervention_intensity/` and `reports/rq9_intervention_intensity/`.
+- **Sea-Basin Caveat:** `sea_basin` is a geographic grouping label, not a physical exposure metric. The Baltic/North Sea contrast is strong in the AIS-derived intervention-intensity proxy, but it remains entangled with country/farm composition, vessel concentration, assignment geometry, CTV/SOV detectability, and AIS observability bias.
+- **AIS Observability Bias:** Direct AIS receiver/source geometry is not available in the current RQ9 tables. Receiver station, terrestrial/satellite flag, receiver coordinates, distance-to-nearest receiver, or accepted offshore-distance proxies are required before treating sea-basin differences as operational or reliability differences.
+
 ## Data Pipeline Architecture
 
 ### Funnel Approach (Hybrid)

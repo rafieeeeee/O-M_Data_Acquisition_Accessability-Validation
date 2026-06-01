@@ -51,14 +51,28 @@ Numerators must preserve the distinction between vessel presence, candidate inte
 
 ## Planned Outputs
 
-The first implementation will build derived analysis products only:
+The RQ9 workstream builds derived analysis products only:
 
 - `Data/Processed/analysis/rq9_intervention_intensity/farm_intervention_intensity.csv`
-- `Data/Processed/analysis/rq9_intervention_intensity/turbine_intervention_intensity.csv`
+- `Data/Processed/analysis/rq9_intervention_intensity/turbine_intervention_events_v0.csv`
+- `Data/Processed/analysis/rq9_intervention_intensity/turbine_exposure_denominator.csv`
+- `Data/Processed/analysis/rq9_intervention_intensity/turbine_intervention_intensity_v1.csv`
+- `Data/Processed/analysis/rq9_intervention_intensity/turbine_characteristics_rates.csv`
 - `reports/rq9_intervention_intensity/validation_summary.csv`
 - `reports/rq9_intervention_intensity/methodology_report.md`
+- `reports/rq9_intervention_intensity/sea_basin_observability_audit.md`
+- `reports/rq9_intervention_intensity/ais_observability_bias_audit.md`
 
-These outputs are not created in this methodology/spec commit.
+These outputs remain AIS-derived maintenance intervention-intensity products. They are not confirmed failure-rate products and should not drive simulator demand multipliers without the stated validation caveats.
+
+## Current Implementation Status
+
+- Farm-level phase-separated maintenance intervention intensity exists, with commissioning/ramp-up and steady-operational months separated.
+- Turbine-level feasibility exists for Tier A nearest-turbine assignment, with high-confidence `<=200 m` evidence primary and `<=500 m` high+medium evidence sensitivity only.
+- Turbine denominator/exposure v1 exists, using commissioning-aware steady-operational observed turbine-years.
+- Turbine characteristics comparison v1 exists for OEM, model, capacity, rotor diameter, hub height, commissioning/age, sea basin, country, and farm groupings.
+- The Baltic/North Sea sea-basin gap is strong in the AIS-derived intervention-intensity proxy, but it is not causal or thesis-safe as an operational/reliability signal yet.
+- AIS observability bias, CTV/SOV detectability, missing vessel enrichment, country/farm structure, and direct AIS receiver-distance metadata remain key caveats.
 
 ## First Implementation Increment
 
