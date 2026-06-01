@@ -15,6 +15,7 @@ if str(SRC_ROOT) not in sys.path:
 from om_pipeline.analysis.rq9_intervention_intensity import (  # noqa: E402
     ANALYSIS_LABEL,
     DEFAULT_LONG_DWELL_THRESHOLD_MIN,
+    DEFAULT_RAMP_UP_MONTHS,
     build_rq9_farm_outputs,
 )
 
@@ -72,6 +73,15 @@ def main() -> None:
         default=DEFAULT_LONG_DWELL_THRESHOLD_MIN,
         help="Duration threshold for long Tier A/B candidate interventions.",
     )
+    parser.add_argument(
+        "--ramp-up-months",
+        type=int,
+        default=DEFAULT_RAMP_UP_MONTHS,
+        help=(
+            "Months after latest turbine commissioning month to keep in "
+            "commissioning/ramp-up phase before steady operational classification."
+        ),
+    )
     args = parser.parse_args()
 
     outputs = build_rq9_farm_outputs(
@@ -81,6 +91,7 @@ def main() -> None:
         processed_output_dir=args.processed_output_dir,
         report_output_dir=args.report_output_dir,
         long_dwell_threshold_min=args.long_dwell_threshold_min,
+        ramp_up_months=args.ramp_up_months,
     )
 
     validation = outputs.validation
@@ -88,6 +99,14 @@ def main() -> None:
     print("This is intervention intensity, not failure rate.")
     print(f"Farm rows: {validation['farm_output_rows']}")
     print(f"Observed farm-years: {validation['observed_years_total']:.3f}")
+    print(
+        "Commissioning/ramp-up observed farm-years: "
+        f"{validation['commissioning_observed_years_total']:.3f}"
+    )
+    print(
+        "Steady operational observed farm-years: "
+        f"{validation['steady_observed_years_total']:.3f}"
+    )
     print(
         "Observed farm-years range: "
         f"{validation['observed_years_min']:.3f} - {validation['observed_years_max']:.3f}"
@@ -98,6 +117,11 @@ def main() -> None:
         "Pre-operational candidate count excluded: "
         f"{validation['pre_operational_candidate_count_total']}"
     )
+    print(
+        "Commissioning/ramp-up candidate count: "
+        f"{validation['commissioning_candidate_count_total']}"
+    )
+    print(f"Steady operational candidate count: {validation['steady_candidate_count_total']}")
     print(f"Tier A count: {validation['tier_a_visit_count_total']}")
     print(f"Tier B count: {validation['tier_b_visit_count_total']}")
     print(f"Long dwell count: {validation['long_dwell_count_total']}")

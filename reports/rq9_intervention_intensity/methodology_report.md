@@ -8,7 +8,7 @@ This report describes farm-level maintenance intervention intensity from existin
 
 - Existing AIS dwell/weather feature table.
 - Existing AIS backfill manifest.
-- Existing turbine coordinate table, used for farm-level turbine counts and commissioning-derived operational windows.
+- Existing turbine coordinate table, used for farm-level turbine counts and commissioning-derived lifecycle phases.
 - No AIS extraction rerun.
 - No metocean extraction rerun.
 
@@ -17,15 +17,21 @@ This report describes farm-level maintenance intervention intensity from existin
 - `success` and `success_no_ais_in_bbox` count as observed months.
 - `success_no_ais_in_bbox` is observed zero activity, not missing data.
 - `skipped_missing_source` is excluded from the observed denominator.
-- When commissioning dates are available, manifest months before the farm operational start month are excluded from the observed denominator.
-- If commissioning metadata is missing, AIS source coverage is used as a fallback denominator and confidence is lowered.
+- When commissioning dates are available, manifest months are split into `pre_operational`, `commissioning_ramp_up`, and `steady_operational` phases.
+- The default ramp-up buffer is 6 months after the latest parsed turbine commissioning month.
+- Pre-operational months are excluded from the operational denominator.
+- Commissioning/ramp-up months are reported separately from steady-operational months.
+- If commissioning metadata is missing, AIS source coverage is used as a `unknown_phase` fallback denominator and confidence is lowered.
 
 ## Numerator Policy
 
 - Tier A and Tier B dwells are candidate intervention evidence, not fault labels.
-- Candidate dwell rows before the farm operational start month are excluded from the numerator and retained as `pre_operational_candidate_count`.
+- Candidate dwell rows are split into pre-operational, commissioning/ramp-up, steady operational, and unknown phases.
+- Pre-operational candidates are retained as `pre_operational_candidate_count`.
+- Commissioning/ramp-up candidates are separated from steady operational candidates because early-life work can reflect testing, handover, snagging, warranty work, and campaign activity rather than mature maintenance demand.
 - Long dwells are Tier A/B candidate interventions at or above the configured duration threshold.
 - Duplicate groups are adjusted through derived fractional counts without destructive deletion.
+- `steady_intervention_intensity_per_farm_year` is the simulator-facing provisional source. Commissioning activity should be modelled separately or excluded from generic mature-operational demand multipliers.
 
 ## Output Inventory
 
@@ -37,11 +43,15 @@ This report describes farm-level maintenance intervention intensity from existin
 
 - Farm rows: 113
 - Observed farm-years: 986.500
+- Commissioning/ramp-up observed farm-years: 44.583
+- Steady operational observed farm-years: 941.917
 - Observed farm-years range: 0.000 to 15.000
 - Operational window known farms: 113
 - Operational window unknown farms: 0
 - Candidate intervention count: 13545
 - Pre-operational candidate count excluded: 4020
+- Commissioning/ramp-up candidate count: 537
+- Steady operational candidate count: 13008
 - Tier A count: 11972
 - Tier B count: 1573
 - Long dwell count: 11656

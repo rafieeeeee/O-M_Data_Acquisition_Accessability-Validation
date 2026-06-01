@@ -21,19 +21,34 @@ OBSERVED_STATUSES = frozenset({"success", "success_no_ais_in_bbox"})
 MISSING_SOURCE_STATUS = "skipped_missing_source"
 CANDIDATE_TIERS = frozenset({"Tier A", "Tier B"})
 DEFAULT_LONG_DWELL_THRESHOLD_MIN = 120.0
+DEFAULT_RAMP_UP_MONTHS = 6
+RAMP_UP_SENSITIVITY_MONTHS = (0, 6, 12)
 
 FARM_INTENSITY_COLUMNS = [
     "analysis_label",
     "farm_id",
     "turbine_count",
+    "farm_commissioning_start_month",
+    "farm_commissioning_end_month",
+    "ramp_up_months",
+    "steady_operational_start_month",
     "operational_start_month",
     "operational_start_source",
     "operational_window_known",
     "total_manifest_months",
     "pre_operational_manifest_months",
+    "commissioning_manifest_months",
+    "steady_manifest_months",
+    "unknown_phase_manifest_months",
     "manifest_months",
     "observed_months",
     "observed_years",
+    "commissioning_observed_months",
+    "commissioning_observed_years",
+    "steady_observed_months",
+    "steady_observed_years",
+    "unknown_phase_observed_months",
+    "unknown_phase_observed_years",
     "success_months",
     "success_no_ais_in_bbox_months",
     "skipped_missing_source_months",
@@ -47,14 +62,26 @@ FARM_INTENSITY_COLUMNS = [
     "long_dwell_count",
     "unique_vessel_count",
     "pre_operational_candidate_count",
+    "commissioning_candidate_count",
+    "steady_candidate_count",
+    "unknown_phase_candidate_count",
+    "commissioning_long_dwell_count",
+    "steady_long_dwell_count",
+    "unknown_phase_long_dwell_count",
     "candidate_date_missing_count",
     "duplicate_adjustment_available",
     "duplicate_candidate_row_count",
     "duplicate_group_adjusted_candidate_count",
+    "commissioning_duplicate_adjusted_count",
+    "steady_duplicate_adjusted_count",
+    "unknown_phase_duplicate_adjusted_count",
     "duplicate_adjustment_delta",
     "candidate_interventions_per_observed_farm_year",
     "long_dwell_interventions_per_observed_farm_year",
+    "commissioning_intervention_intensity_per_farm_year",
+    "steady_intervention_intensity_per_farm_year",
     "confidence_class",
+    "recommended_simulator_use",
 ]
 
 
@@ -66,6 +93,19 @@ class RQ9FarmOutputs:
     report_output_dir: Path
     files: dict[str, Path]
     validation: dict[str, Any]
+
+
+OPERATIONAL_METADATA_COLUMNS = [
+    "farm_id",
+    "turbine_count",
+    "farm_commissioning_start_month",
+    "farm_commissioning_end_month",
+    "ramp_up_months",
+    "steady_operational_start_month",
+    "operational_start_month",
+    "operational_start_source",
+    "operational_window_known",
+]
 
 
 def _require_columns(df: pd.DataFrame, required: set[str], context: str) -> None:
@@ -133,22 +173,65 @@ def _format_month_start(series: pd.Series) -> pd.Series:
     return parsed.dt.to_period("M").dt.strftime("%Y-%m")
 
 
+def _add_months(series: pd.Series, months: int) -> pd.Series:
+    parsed = pd.to_datetime(series, errors="coerce")
+    periods = parsed.dt.to_period("M")
+    shifted = periods + int(months)
+    return shifted.dt.to_timestamp()
+
+
+def _assign_lifecycle_phase(frame: pd.DataFrame, month_column: str) -> pd.Series:
+    """Classify a farm-month row into commissioning-aware RQ9 lifecycle phase."""
+    month_start = pd.to_datetime(frame[month_column], errors="coerce")
+    commissioning_start = pd.to_datetime(
+        frame.get("farm_commissioning_start_month"),
+        errors="coerce",
+    )
+    steady_start = pd.to_datetime(
+        frame.get("steady_operational_start_month"),
+        errors="coerce",
+    )
+    operational_window_known = frame.get("operational_window_known")
+    if operational_window_known is None:
+        known = pd.Series(False, index=frame.index)
+    else:
+        known = operational_window_known.fillna(False).astype(bool)
+
+    phase = pd.Series("unknown_phase", index=frame.index, dtype="string")
+    classifiable = (
+        known
+        & month_start.notna()
+        & commissioning_start.notna()
+        & steady_start.notna()
+    )
+    phase.loc[classifiable & (month_start < commissioning_start)] = "pre_operational"
+    phase.loc[
+        classifiable
+        & (month_start >= commissioning_start)
+        & (month_start < steady_start)
+    ] = "commissioning_ramp_up"
+    phase.loc[classifiable & (month_start >= steady_start)] = "steady_operational"
+    return phase
+
+
 def _merge_operational_metadata(
     frame: pd.DataFrame,
     operational_metadata: pd.DataFrame | None,
 ) -> pd.DataFrame:
     if operational_metadata is None or operational_metadata.empty:
         frame = frame.copy()
+        frame["turbine_count"] = pd.NA
+        frame["farm_commissioning_start_month"] = pd.NA
+        frame["farm_commissioning_end_month"] = pd.NA
+        frame["ramp_up_months"] = DEFAULT_RAMP_UP_MONTHS
+        frame["steady_operational_start_month"] = pd.NA
         frame["operational_start_month"] = pd.NA
         frame["operational_start_source"] = "missing_turbine_metadata"
         frame["operational_window_known"] = False
         return frame
 
     metadata_columns = [
-        "farm_id",
-        "operational_start_month",
-        "operational_start_source",
-        "operational_window_known",
+        column for column in OPERATIONAL_METADATA_COLUMNS if column in operational_metadata.columns
     ]
     metadata = operational_metadata[metadata_columns].copy()
     metadata["farm_id"] = metadata["farm_id"].astype("string")
@@ -156,6 +239,7 @@ def _merge_operational_metadata(
     merged["operational_start_source"] = merged["operational_start_source"].fillna(
         "missing_turbine_metadata"
     )
+    merged["ramp_up_months"] = merged["ramp_up_months"].fillna(DEFAULT_RAMP_UP_MONTHS).astype(int)
     merged["operational_window_known"] = (
         merged["operational_window_known"].where(
             merged["operational_window_known"].notna(),
@@ -206,15 +290,12 @@ def read_turbine_coordinates(path: Path) -> pd.DataFrame:
     return df
 
 
-def build_farm_operational_metadata(turbines: pd.DataFrame | None) -> pd.DataFrame:
+def build_farm_operational_metadata(
+    turbines: pd.DataFrame | None,
+    ramp_up_months: int = DEFAULT_RAMP_UP_MONTHS,
+) -> pd.DataFrame:
     """Return farm-level turbine counts and operational start metadata."""
-    columns = [
-        "farm_id",
-        "turbine_count",
-        "operational_start_month",
-        "operational_start_source",
-        "operational_window_known",
-    ]
+    columns = OPERATIONAL_METADATA_COLUMNS
     if turbines is None or turbines.empty:
         return pd.DataFrame(columns=columns)
     _require_columns(turbines, {"wind_farm"}, "RQ9 turbine coordinates")
@@ -230,20 +311,33 @@ def build_farm_operational_metadata(turbines: pd.DataFrame | None) -> pd.DataFra
         working.groupby("farm_id", dropna=False)
         .agg(
             turbine_count=("farm_id", "size"),
-            _operational_start_dt=("_commissioning_month", "min"),
+            _commissioning_start_dt=("_commissioning_month", "min"),
+            _commissioning_end_dt=("_commissioning_month", "max"),
             commissioning_date_parseable_count=("_commissioning_month", "count"),
         )
         .reset_index()
     )
-    metadata["operational_start_month"] = _format_month_start(
-        metadata["_operational_start_dt"]
+    metadata["farm_commissioning_start_month"] = _format_month_start(
+        metadata["_commissioning_start_dt"]
+    )
+    metadata["farm_commissioning_end_month"] = _format_month_start(
+        metadata["_commissioning_end_dt"]
     )
     metadata["operational_window_known"] = (
         metadata["commissioning_date_parseable_count"].fillna(0).astype(int) > 0
     )
+    metadata["ramp_up_months"] = int(ramp_up_months)
+    metadata["_steady_operational_start_dt"] = _add_months(
+        metadata["_commissioning_end_dt"],
+        int(ramp_up_months),
+    )
+    metadata["steady_operational_start_month"] = _format_month_start(
+        metadata["_steady_operational_start_dt"]
+    )
+    metadata["operational_start_month"] = metadata["farm_commissioning_start_month"]
     metadata["operational_start_source"] = np.where(
         metadata["operational_window_known"],
-        "turbine_commissioning_date_earliest",
+        "turbine_commissioning_date_range",
         "missing_commissioning_date",
     )
     metadata["turbine_count"] = metadata["turbine_count"].astype(int)
@@ -278,13 +372,7 @@ def build_manifest_denominator(
         {"year": status_sets["year"], "month": status_sets["month"], "day": 1},
         errors="coerce",
     )
-    status_sets["_operational_start_dt"] = _parse_month_start(
-        status_sets["operational_start_month"]
-    )
-    status_sets["within_operational_window"] = (
-        status_sets["_operational_start_dt"].isna()
-        | (status_sets["month_start"] >= status_sets["_operational_start_dt"])
-    )
+    status_sets["lifecycle_phase"] = _assign_lifecycle_phase(status_sets, "month_start")
     status_sets["is_observed"] = status_sets["status_set"].map(
         lambda statuses: bool(OBSERVED_STATUSES.intersection(statuses))
     )
@@ -298,30 +386,51 @@ def build_manifest_denominator(
     status_sets["has_other_status"] = ~(
         status_sets["is_observed"] | status_sets["has_missing_source"]
     )
+    status_sets["pre_operational_month"] = status_sets["lifecycle_phase"].eq(
+        "pre_operational"
+    )
+    status_sets["commissioning_month"] = status_sets["lifecycle_phase"].eq(
+        "commissioning_ramp_up"
+    )
+    status_sets["steady_month"] = status_sets["lifecycle_phase"].eq("steady_operational")
+    status_sets["unknown_phase_month"] = status_sets["lifecycle_phase"].eq("unknown_phase")
+    status_sets["in_reported_denominator"] = ~status_sets["pre_operational_month"]
     status_sets["observed_in_window"] = (
-        status_sets["within_operational_window"] & status_sets["is_observed"]
+        status_sets["in_reported_denominator"] & status_sets["is_observed"]
+    )
+    status_sets["commissioning_observed"] = (
+        status_sets["commissioning_month"] & status_sets["is_observed"]
+    )
+    status_sets["steady_observed"] = status_sets["steady_month"] & status_sets["is_observed"]
+    status_sets["unknown_phase_observed"] = (
+        status_sets["unknown_phase_month"] & status_sets["is_observed"]
     )
     status_sets["success_in_window"] = (
-        status_sets["within_operational_window"] & status_sets["has_success"]
+        status_sets["in_reported_denominator"] & status_sets["has_success"]
     )
     status_sets["success_no_ais_in_window"] = (
-        status_sets["within_operational_window"] & status_sets["has_success_no_ais"]
+        status_sets["in_reported_denominator"] & status_sets["has_success_no_ais"]
     )
     status_sets["missing_source_in_window"] = (
-        status_sets["within_operational_window"] & status_sets["has_missing_source"]
+        status_sets["in_reported_denominator"] & status_sets["has_missing_source"]
     )
     status_sets["other_status_in_window"] = (
-        status_sets["within_operational_window"] & status_sets["has_other_status"]
+        status_sets["in_reported_denominator"] & status_sets["has_other_status"]
     )
-    status_sets["pre_operational_month"] = ~status_sets["within_operational_window"]
 
     denominator = (
         status_sets.groupby("farm_id", dropna=False)
         .agg(
             total_manifest_months=("month_label", "nunique"),
             pre_operational_manifest_months=("pre_operational_month", "sum"),
-            manifest_months=("within_operational_window", "sum"),
+            commissioning_manifest_months=("commissioning_month", "sum"),
+            steady_manifest_months=("steady_month", "sum"),
+            unknown_phase_manifest_months=("unknown_phase_month", "sum"),
+            manifest_months=("in_reported_denominator", "sum"),
             observed_months=("observed_in_window", "sum"),
+            commissioning_observed_months=("commissioning_observed", "sum"),
+            steady_observed_months=("steady_observed", "sum"),
+            unknown_phase_observed_months=("unknown_phase_observed", "sum"),
             success_months=("success_in_window", "sum"),
             success_no_ais_in_bbox_months=("success_no_ais_in_window", "sum"),
             skipped_missing_source_months=("missing_source_in_window", "sum"),
@@ -345,8 +454,14 @@ def build_manifest_denominator(
     count_columns = [
         "total_manifest_months",
         "pre_operational_manifest_months",
+        "commissioning_manifest_months",
+        "steady_manifest_months",
+        "unknown_phase_manifest_months",
         "manifest_months",
         "observed_months",
+        "commissioning_observed_months",
+        "steady_observed_months",
+        "unknown_phase_observed_months",
         "success_months",
         "success_no_ais_in_bbox_months",
         "skipped_missing_source_months",
@@ -355,6 +470,13 @@ def build_manifest_denominator(
     for column in count_columns:
         denominator[column] = denominator[column].fillna(0).astype(int)
     denominator["observed_years"] = denominator["observed_months"] / 12.0
+    denominator["commissioning_observed_years"] = (
+        denominator["commissioning_observed_months"] / 12.0
+    )
+    denominator["steady_observed_years"] = denominator["steady_observed_months"] / 12.0
+    denominator["unknown_phase_observed_years"] = (
+        denominator["unknown_phase_observed_months"] / 12.0
+    )
     denominator["coverage_share"] = _safe_divide(
         denominator["observed_months"],
         denominator["manifest_months"],
@@ -382,29 +504,22 @@ def build_farm_numerators(
     else:
         candidates["_event_month_start"] = pd.NaT
         candidates["_candidate_date_missing"] = True
-    candidates["_operational_start_dt"] = _parse_month_start(
-        candidates["operational_start_month"]
+    candidates["lifecycle_phase"] = _assign_lifecycle_phase(
+        candidates,
+        "_event_month_start",
     )
-    candidates["_has_operational_start"] = (
-        candidates["operational_window_known"] & candidates["_operational_start_dt"].notna()
-    )
-    candidates["_operational_candidate"] = True
-    dated_with_start = candidates["_has_operational_start"] & candidates[
-        "_event_month_start"
-    ].notna()
-    candidates.loc[dated_with_start, "_operational_candidate"] = (
-        candidates.loc[dated_with_start, "_event_month_start"]
-        >= candidates.loc[dated_with_start, "_operational_start_dt"]
-    )
-    candidates["_pre_operational_candidate"] = ~candidates["_operational_candidate"]
+    phase_count_source = candidates.copy()
+    phase_count_source["_pre_operational_candidate"] = phase_count_source[
+        "lifecycle_phase"
+    ].eq("pre_operational")
     pre_operational_counts = (
-        candidates.groupby("farm_id", dropna=False)
+        phase_count_source.groupby("farm_id", dropna=False)
         .agg(
             pre_operational_candidate_count=("_pre_operational_candidate", "sum"),
             candidate_date_missing_count=("_candidate_date_missing", "sum"),
         )
         .reset_index()
-        if not candidates.empty
+        if not phase_count_source.empty
         else pd.DataFrame(
             columns=[
                 "farm_id",
@@ -413,7 +528,7 @@ def build_farm_numerators(
             ]
         )
     )
-    candidates = candidates.loc[candidates["_operational_candidate"]].copy()
+    candidates = candidates.loc[~candidates["lifecycle_phase"].eq("pre_operational")].copy()
 
     duplicate_columns_available = {"duplicate_group_id", "possible_cross_farm_duplicate"}.issubset(
         candidates.columns
@@ -445,17 +560,27 @@ def build_farm_numerators(
                 "unique_vessel_count",
                 "duplicate_candidate_row_count",
                 "duplicate_group_adjusted_candidate_count",
+                "commissioning_candidate_count",
+                "steady_candidate_count",
+                "unknown_phase_candidate_count",
+                "commissioning_long_dwell_count",
+                "steady_long_dwell_count",
+                "unknown_phase_long_dwell_count",
+                "commissioning_duplicate_adjusted_count",
+                "steady_duplicate_adjusted_count",
+                "unknown_phase_duplicate_adjusted_count",
             ]
         )
     else:
+        candidates["_long_dwell_candidate"] = candidates["duration_min"] >= long_dwell_threshold_min
         grouped = candidates.groupby("farm_id", dropna=False)
         numerators = grouped.agg(
             tier_a_visit_count=("dwell_tier", lambda values: int((values == "Tier A").sum())),
             tier_b_visit_count=("dwell_tier", lambda values: int((values == "Tier B").sum())),
             candidate_intervention_count=("dwell_tier", "size"),
             long_dwell_count=(
-                "duration_min",
-                lambda values: int((values >= long_dwell_threshold_min).sum()),
+                "_long_dwell_candidate",
+                "sum",
             ),
             unique_vessel_count=(
                 "mmsi",
@@ -467,9 +592,55 @@ def build_farm_numerators(
             duplicate_group_adjusted_candidate_count=("_candidate_weight", "sum"),
         ).reset_index()
 
+        phase_counts = (
+            candidates.groupby(["farm_id", "lifecycle_phase"], dropna=False)
+            .size()
+            .unstack(fill_value=0)
+            .rename(
+                columns={
+                    "commissioning_ramp_up": "commissioning_candidate_count",
+                    "steady_operational": "steady_candidate_count",
+                    "unknown_phase": "unknown_phase_candidate_count",
+                }
+            )
+            .reset_index()
+        )
+        phase_long_counts = (
+            candidates.groupby(["farm_id", "lifecycle_phase"], dropna=False)[
+                "_long_dwell_candidate"
+            ]
+            .sum()
+            .unstack(fill_value=0)
+            .rename(
+                columns={
+                    "commissioning_ramp_up": "commissioning_long_dwell_count",
+                    "steady_operational": "steady_long_dwell_count",
+                    "unknown_phase": "unknown_phase_long_dwell_count",
+                }
+            )
+            .reset_index()
+        )
+        phase_adjusted = (
+            candidates.groupby(["farm_id", "lifecycle_phase"], dropna=False)[
+                "_candidate_weight"
+            ]
+            .sum()
+            .unstack(fill_value=0.0)
+            .rename(
+                columns={
+                    "commissioning_ramp_up": "commissioning_duplicate_adjusted_count",
+                    "steady_operational": "steady_duplicate_adjusted_count",
+                    "unknown_phase": "unknown_phase_duplicate_adjusted_count",
+                }
+            )
+            .reset_index()
+        )
+        for frame in [phase_counts, phase_long_counts, phase_adjusted]:
+            numerators = numerators.merge(frame, on="farm_id", how="left")
+
     numerators = numerators.merge(pre_operational_counts, on="farm_id", how="outer")
 
-    for column in [
+    integer_columns = [
         "tier_a_visit_count",
         "tier_b_visit_count",
         "candidate_intervention_count",
@@ -477,16 +648,30 @@ def build_farm_numerators(
         "unique_vessel_count",
         "duplicate_candidate_row_count",
         "pre_operational_candidate_count",
+        "commissioning_candidate_count",
+        "steady_candidate_count",
+        "unknown_phase_candidate_count",
+        "commissioning_long_dwell_count",
+        "steady_long_dwell_count",
+        "unknown_phase_long_dwell_count",
         "candidate_date_missing_count",
-    ]:
-        if column in numerators.columns:
-            numerators[column] = numerators[column].fillna(0).astype(int)
+    ]
+    for column in integer_columns:
+        if column not in numerators.columns:
+            numerators[column] = 0
+        numerators[column] = numerators[column].fillna(0).astype(int)
 
-    if "duplicate_group_adjusted_candidate_count" in numerators.columns:
-        numerators["duplicate_group_adjusted_candidate_count"] = pd.to_numeric(
-            numerators["duplicate_group_adjusted_candidate_count"],
-            errors="coerce",
-        ).fillna(0.0)
+    adjusted_columns = [
+        "duplicate_group_adjusted_candidate_count",
+        "commissioning_duplicate_adjusted_count",
+        "steady_duplicate_adjusted_count",
+        "unknown_phase_duplicate_adjusted_count",
+    ]
+    for column in adjusted_columns:
+        if column not in numerators.columns:
+            numerators[column] = 0.0
+        numerators[column] = pd.to_numeric(numerators[column], errors="coerce").fillna(0.0)
+
     numerators["duplicate_adjustment_available"] = bool(duplicate_columns_available)
     numerators["duplicate_adjustment_delta"] = (
         numerators["candidate_intervention_count"]
@@ -500,6 +685,15 @@ def build_farm_numerators(
             pre_operational_counts["pre_operational_candidate_count"].sum()
         )
         if "pre_operational_candidate_count" in pre_operational_counts
+        else 0,
+        "commissioning_candidate_count": int(numerators["commissioning_candidate_count"].sum())
+        if "commissioning_candidate_count" in numerators
+        else 0,
+        "steady_candidate_count": int(numerators["steady_candidate_count"].sum())
+        if "steady_candidate_count" in numerators
+        else 0,
+        "unknown_phase_candidate_count": int(numerators["unknown_phase_candidate_count"].sum())
+        if "unknown_phase_candidate_count" in numerators
         else 0,
         "candidate_date_missing_count": int(
             pre_operational_counts["candidate_date_missing_count"].sum()
@@ -519,7 +713,7 @@ def assign_confidence_class(row: pd.Series) -> str:
     """Assign a transparent coverage and evidence confidence class."""
     observed_months = int(row.get("observed_months", 0) or 0)
     coverage_share = row.get("coverage_share")
-    candidate_count = int(row.get("candidate_intervention_count", 0) or 0)
+    candidate_count = int(row.get("steady_candidate_count", 0) or 0)
     operational_window_known = bool(row.get("operational_window_known", False))
     if observed_months <= 0:
         return "low_coverage"
@@ -538,14 +732,36 @@ def assign_confidence_class(row: pd.Series) -> str:
     return "low_coverage"
 
 
+def assign_recommended_simulator_use(row: pd.Series) -> str:
+    """Recommend how farm-level evidence can be used by RQ12 simulators."""
+    steady_years = row.get("steady_observed_years")
+    steady_count = int(row.get("steady_candidate_count", 0) or 0)
+    commissioning_count = int(row.get("commissioning_candidate_count", 0) or 0)
+    operational_window_known = bool(row.get("operational_window_known", False))
+    coverage_share = row.get("coverage_share")
+    if pd.isna(steady_years) or float(steady_years) < 1.0:
+        return "insufficient_steady_coverage"
+    if not operational_window_known or pd.isna(coverage_share) or float(coverage_share) < 0.80:
+        return "validation_required"
+    if commissioning_count > steady_count and (steady_count <= 2 or commissioning_count >= 10):
+        return "commissioning_separate_module"
+    if steady_count > 0:
+        return "steady_operational_only"
+    return "validation_required"
+
+
 def build_farm_intervention_intensity(
     manifest: pd.DataFrame,
     dwell: pd.DataFrame,
     turbines: pd.DataFrame | None = None,
     long_dwell_threshold_min: float = DEFAULT_LONG_DWELL_THRESHOLD_MIN,
+    ramp_up_months: int = DEFAULT_RAMP_UP_MONTHS,
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     """Build farm-level maintenance intervention intensity from existing tables."""
-    operational_metadata = build_farm_operational_metadata(turbines)
+    operational_metadata = build_farm_operational_metadata(
+        turbines,
+        ramp_up_months=ramp_up_months,
+    )
     denominator = build_manifest_denominator(
         manifest,
         operational_metadata=operational_metadata,
@@ -569,7 +785,14 @@ def build_farm_intervention_intensity(
     result = result.merge(operational_metadata, on="farm_id", how="left", suffixes=("", "_meta"))
     result["analysis_label"] = ANALYSIS_LABEL
 
-    for column in ["operational_start_month", "operational_start_source"]:
+    for column in [
+        "farm_commissioning_start_month",
+        "farm_commissioning_end_month",
+        "ramp_up_months",
+        "steady_operational_start_month",
+        "operational_start_month",
+        "operational_start_source",
+    ]:
         meta_column = f"{column}_meta"
         if meta_column in result.columns:
             result[column] = result[column].where(result[column].notna(), result[meta_column])
@@ -590,8 +813,14 @@ def build_farm_intervention_intensity(
     zero_count_columns = [
         "total_manifest_months",
         "pre_operational_manifest_months",
+        "commissioning_manifest_months",
+        "steady_manifest_months",
+        "unknown_phase_manifest_months",
         "manifest_months",
         "observed_months",
+        "commissioning_observed_months",
+        "steady_observed_months",
+        "unknown_phase_observed_months",
         "success_months",
         "success_no_ais_in_bbox_months",
         "skipped_missing_source_months",
@@ -602,6 +831,12 @@ def build_farm_intervention_intensity(
         "long_dwell_count",
         "unique_vessel_count",
         "pre_operational_candidate_count",
+        "commissioning_candidate_count",
+        "steady_candidate_count",
+        "unknown_phase_candidate_count",
+        "commissioning_long_dwell_count",
+        "steady_long_dwell_count",
+        "unknown_phase_long_dwell_count",
         "candidate_date_missing_count",
         "duplicate_candidate_row_count",
     ]
@@ -611,15 +846,27 @@ def build_farm_intervention_intensity(
         result[column] = result[column].fillna(0).astype(int)
 
     result["observed_years"] = result["observed_months"] / 12.0
+    result["commissioning_observed_years"] = result["commissioning_observed_months"] / 12.0
+    result["steady_observed_years"] = result["steady_observed_months"] / 12.0
+    result["unknown_phase_observed_years"] = result["unknown_phase_observed_months"] / 12.0
     result["coverage_share"] = _safe_divide(result["observed_months"], result["manifest_months"])
     result["operational_start_source"] = result["operational_start_source"].fillna(
         "missing_turbine_metadata"
     )
     result["operational_window_known"] = result["operational_window_known"].fillna(False).astype(bool)
+    result["ramp_up_months"] = result["ramp_up_months"].fillna(ramp_up_months).astype(int)
     result["duplicate_group_adjusted_candidate_count"] = pd.to_numeric(
         result["duplicate_group_adjusted_candidate_count"],
         errors="coerce",
     ).fillna(result["candidate_intervention_count"].astype(float))
+    for column in [
+        "commissioning_duplicate_adjusted_count",
+        "steady_duplicate_adjusted_count",
+        "unknown_phase_duplicate_adjusted_count",
+    ]:
+        if column not in result.columns:
+            result[column] = 0.0
+        result[column] = pd.to_numeric(result[column], errors="coerce").fillna(0.0)
     if "duplicate_adjustment_available" not in result.columns:
         result["duplicate_adjustment_available"] = bool(
             numerator_metrics["duplicate_adjustment_available"]
@@ -645,7 +892,16 @@ def build_farm_intervention_intensity(
         result["long_dwell_count"],
         result["observed_years"],
     )
+    result["commissioning_intervention_intensity_per_farm_year"] = _safe_divide(
+        result["commissioning_candidate_count"],
+        result["commissioning_observed_years"],
+    )
+    result["steady_intervention_intensity_per_farm_year"] = _safe_divide(
+        result["steady_candidate_count"],
+        result["steady_observed_years"],
+    )
     result["confidence_class"] = result.apply(assign_confidence_class, axis=1)
+    result["recommended_simulator_use"] = result.apply(assign_recommended_simulator_use, axis=1)
 
     for column in ["first_observed_month", "last_observed_month"]:
         if column not in result.columns:
@@ -699,8 +955,30 @@ def build_validation_summary(
         "pre_operational_manifest_months_total": int(
             farm_intensity["pre_operational_manifest_months"].sum()
         ),
+        "commissioning_manifest_months_total": int(
+            farm_intensity["commissioning_manifest_months"].sum()
+        ),
+        "steady_manifest_months_total": int(farm_intensity["steady_manifest_months"].sum()),
+        "unknown_phase_manifest_months_total": int(
+            farm_intensity["unknown_phase_manifest_months"].sum()
+        ),
         "observed_months_total": int(farm_intensity["observed_months"].sum()),
         "observed_years_total": float(farm_intensity["observed_years"].sum()),
+        "commissioning_observed_months_total": int(
+            farm_intensity["commissioning_observed_months"].sum()
+        ),
+        "commissioning_observed_years_total": float(
+            farm_intensity["commissioning_observed_years"].sum()
+        ),
+        "steady_observed_months_total": int(
+            farm_intensity["steady_observed_months"].sum()
+        ),
+        "steady_observed_years_total": float(
+            farm_intensity["steady_observed_years"].sum()
+        ),
+        "unknown_phase_observed_months_total": int(
+            farm_intensity["unknown_phase_observed_months"].sum()
+        ),
         "manifest_months_total": int(farm_intensity["manifest_months"].sum()),
         "denominator_coverage_share": float(
             farm_intensity["observed_months"].sum() / farm_intensity["manifest_months"].sum()
@@ -725,11 +1003,22 @@ def build_validation_summary(
         "pre_operational_candidate_count_total": int(
             farm_intensity["pre_operational_candidate_count"].sum()
         ),
+        "commissioning_candidate_count_total": int(
+            farm_intensity["commissioning_candidate_count"].sum()
+        ),
+        "steady_candidate_count_total": int(farm_intensity["steady_candidate_count"].sum()),
+        "unknown_phase_candidate_count_total": int(
+            farm_intensity["unknown_phase_candidate_count"].sum()
+        ),
         "candidate_date_missing_count_total": int(
             farm_intensity["candidate_date_missing_count"].sum()
         ),
         "operational_candidate_rows": int(numerator_metrics["operational_candidate_rows"]),
         "long_dwell_count_total": int(farm_intensity["long_dwell_count"].sum()),
+        "commissioning_long_dwell_count_total": int(
+            farm_intensity["commissioning_long_dwell_count"].sum()
+        ),
+        "steady_long_dwell_count_total": int(farm_intensity["steady_long_dwell_count"].sum()),
         "unique_candidate_vessel_farm_sum": int(farm_intensity["unique_vessel_count"].sum()),
         "duplicate_adjustment_available": bool(
             numerator_metrics["duplicate_adjustment_available"]
@@ -739,6 +1028,12 @@ def build_validation_summary(
             farm_intensity["duplicate_adjustment_delta"].sum()
         ),
         "long_dwell_threshold_min": float(numerator_metrics["long_dwell_threshold_min"]),
+        "ramp_up_months": int(farm_intensity["ramp_up_months"].mode().iloc[0])
+        if not farm_intensity.empty
+        else DEFAULT_RAMP_UP_MONTHS,
+        "recommended_simulator_use_counts": _value_counts_dict(
+            farm_intensity["recommended_simulator_use"]
+        ),
     }
     rows = [{"metric": key, "value": _jsonable(value)} for key, value in metrics.items()]
     return pd.DataFrame(rows), _jsonable(metrics)
@@ -766,7 +1061,7 @@ def write_methodology_report(
         "- Existing AIS dwell/weather feature table.",
         "- Existing AIS backfill manifest.",
         "- Existing turbine coordinate table, used for farm-level turbine counts and "
-        "commissioning-derived operational windows.",
+        "commissioning-derived lifecycle phases.",
         "- No AIS extraction rerun.",
         "- No metocean extraction rerun.",
         "",
@@ -775,18 +1070,29 @@ def write_methodology_report(
         "- `success` and `success_no_ais_in_bbox` count as observed months.",
         "- `success_no_ais_in_bbox` is observed zero activity, not missing data.",
         "- `skipped_missing_source` is excluded from the observed denominator.",
-        "- When commissioning dates are available, manifest months before the farm "
-        "operational start month are excluded from the observed denominator.",
+        "- When commissioning dates are available, manifest months are split into "
+        "`pre_operational`, `commissioning_ramp_up`, and `steady_operational` phases.",
+        f"- The default ramp-up buffer is {metrics['ramp_up_months']} months after the "
+        "latest parsed turbine commissioning month.",
+        "- Pre-operational months are excluded from the operational denominator.",
+        "- Commissioning/ramp-up months are reported separately from steady-operational months.",
         "- If commissioning metadata is missing, AIS source coverage is used as a "
-        "fallback denominator and confidence is lowered.",
+        "`unknown_phase` fallback denominator and confidence is lowered.",
         "",
         "## Numerator Policy",
         "",
         "- Tier A and Tier B dwells are candidate intervention evidence, not fault labels.",
-        "- Candidate dwell rows before the farm operational start month are excluded "
-        "from the numerator and retained as `pre_operational_candidate_count`.",
+        "- Candidate dwell rows are split into pre-operational, commissioning/ramp-up, "
+        "steady operational, and unknown phases.",
+        "- Pre-operational candidates are retained as `pre_operational_candidate_count`.",
+        "- Commissioning/ramp-up candidates are separated from steady operational "
+        "candidates because early-life work can reflect testing, handover, snagging, "
+        "warranty work, and campaign activity rather than mature maintenance demand.",
         "- Long dwells are Tier A/B candidate interventions at or above the configured duration threshold.",
         "- Duplicate groups are adjusted through derived fractional counts without destructive deletion.",
+        "- `steady_intervention_intensity_per_farm_year` is the simulator-facing "
+        "provisional source. Commissioning activity should be modelled separately "
+        "or excluded from generic mature-operational demand multipliers.",
         "",
         "## Output Inventory",
         "",
@@ -798,6 +1104,10 @@ def write_methodology_report(
         "",
         f"- Farm rows: {metrics['farm_output_rows']}",
         f"- Observed farm-years: {metrics['observed_years_total']:.3f}",
+        f"- Commissioning/ramp-up observed farm-years: "
+        f"{metrics['commissioning_observed_years_total']:.3f}",
+        f"- Steady operational observed farm-years: "
+        f"{metrics['steady_observed_years_total']:.3f}",
         f"- Observed farm-years range: {metrics['observed_years_min']:.3f} to "
         f"{metrics['observed_years_max']:.3f}",
         f"- Operational window known farms: {metrics['operational_window_known_farm_count']}",
@@ -805,6 +1115,9 @@ def write_methodology_report(
         f"- Candidate intervention count: {metrics['candidate_intervention_count_total']}",
         f"- Pre-operational candidate count excluded: "
         f"{metrics['pre_operational_candidate_count_total']}",
+        f"- Commissioning/ramp-up candidate count: "
+        f"{metrics['commissioning_candidate_count_total']}",
+        f"- Steady operational candidate count: {metrics['steady_candidate_count_total']}",
         f"- Tier A count: {metrics['tier_a_visit_count_total']}",
         f"- Tier B count: {metrics['tier_b_visit_count_total']}",
         f"- Long dwell count: {metrics['long_dwell_count_total']}",
@@ -880,33 +1193,31 @@ def _operational_candidate_dwell(dwell: pd.DataFrame, farm_intensity: pd.DataFra
         candidates["_event_month_start"] = pd.NaT
 
     metadata = farm_intensity[
-        ["farm_id", "operational_start_month", "operational_window_known"]
+        [
+            "farm_id",
+            "farm_commissioning_start_month",
+            "farm_commissioning_end_month",
+            "steady_operational_start_month",
+            "operational_window_known",
+        ]
     ].copy()
     metadata["farm_id"] = metadata["farm_id"].astype("string")
     candidates = candidates.merge(metadata, on="farm_id", how="left")
-    candidates["_operational_start_dt"] = _parse_month_start(
-        candidates["operational_start_month"]
-    )
-    has_start = candidates["operational_window_known"].fillna(False).astype(bool) & candidates[
-        "_operational_start_dt"
-    ].notna()
-    has_event_date = candidates["_event_month_start"].notna()
-    eligible = pd.Series(True, index=candidates.index)
-    eligible.loc[has_start & has_event_date] = (
-        candidates.loc[has_start & has_event_date, "_event_month_start"]
-        >= candidates.loc[has_start & has_event_date, "_operational_start_dt"]
-    )
-    return candidates.loc[eligible].copy()
+    candidates["lifecycle_phase"] = _assign_lifecycle_phase(candidates, "_event_month_start")
+    return candidates.loc[~candidates["lifecycle_phase"].eq("pre_operational")].copy()
 
 
 def build_sanity_audit_outputs(
     farm_intensity: pd.DataFrame,
     dwell: pd.DataFrame,
+    manifest: pd.DataFrame,
+    turbines: pd.DataFrame,
     report_output_dir: Path,
     long_dwell_threshold_min: float,
     farm_output_path: Path,
     validation_output_path: Path,
     methodology_report_path: Path,
+    ramp_up_sensitivity_months: tuple[int, ...] = RAMP_UP_SENSITIVITY_MONTHS,
 ) -> dict[str, Path]:
     """Write farm-level sanity audit, top/bottom, and sensitivity outputs."""
     report_output_dir.mkdir(parents=True, exist_ok=True)
@@ -916,9 +1227,9 @@ def build_sanity_audit_outputs(
         analysis["tier_a_visit_count"],
         analysis["observed_years"],
     )
-    analysis["duplicate_adjusted_rate"] = _safe_divide(
-        analysis["duplicate_group_adjusted_candidate_count"],
-        analysis["observed_years"],
+    analysis["steady_duplicate_adjusted_rate"] = _safe_divide(
+        analysis["steady_duplicate_adjusted_count"],
+        analysis["steady_observed_years"],
     )
     analysis["tier_b_share"] = _safe_divide(
         analysis["tier_b_visit_count"],
@@ -926,104 +1237,114 @@ def build_sanity_audit_outputs(
     ).fillna(0.0)
 
     operational_candidates = _operational_candidate_dwell(dwell, farm_intensity)
+    steady_candidates = operational_candidates.loc[
+        operational_candidates["lifecycle_phase"].eq("steady_operational")
+    ]
     strict_long = (
-        operational_candidates.loc[operational_candidates["duration_min"] >= stricter_threshold]
+        steady_candidates.loc[steady_candidates["duration_min"] >= stricter_threshold]
         .groupby("farm_id")
         .size()
-        .rename("long_strict_count")
+        .rename("steady_long_strict_count")
         .reset_index()
     )
     analysis = analysis.merge(strict_long, on="farm_id", how="left")
-    analysis["long_strict_count"] = analysis["long_strict_count"].fillna(0).astype(int)
-    analysis["long_strict_rate"] = _safe_divide(
-        analysis["long_strict_count"],
-        analysis["observed_years"],
+    analysis["steady_long_strict_count"] = (
+        analysis["steady_long_strict_count"].fillna(0).astype(int)
+    )
+    analysis["steady_long_strict_rate"] = _safe_divide(
+        analysis["steady_long_strict_count"],
+        analysis["steady_observed_years"],
     )
 
     rank_columns = [
         "farm_id",
         "turbine_count",
-        "operational_start_month",
+        "farm_commissioning_start_month",
+        "farm_commissioning_end_month",
+        "steady_operational_start_month",
         "observed_years",
+        "commissioning_observed_years",
+        "steady_observed_years",
         "coverage_share",
         "candidate_intervention_count",
-        "duplicate_group_adjusted_candidate_count",
-        "duplicate_adjustment_delta",
-        "candidate_interventions_per_observed_farm_year",
+        "commissioning_candidate_count",
+        "steady_candidate_count",
+        "commissioning_intervention_intensity_per_farm_year",
+        "steady_intervention_intensity_per_farm_year",
+        "steady_duplicate_adjusted_count",
+        "steady_duplicate_adjusted_rate",
         "pre_operational_candidate_count",
         "confidence_class",
+        "recommended_simulator_use",
     ]
     top = analysis.sort_values(
-        ["candidate_interventions_per_observed_farm_year", "candidate_intervention_count"],
+        ["steady_intervention_intensity_per_farm_year", "steady_candidate_count"],
         ascending=[False, False],
         na_position="last",
     ).head(20)
     top = top.copy()
-    top.insert(0, "audit_category", "top_20_candidate_intensity")
+    top.insert(0, "audit_category", "top_20_steady_operational_intensity")
     top.insert(1, "rank", range(1, len(top) + 1))
     bottom = analysis.sort_values(
-        ["candidate_interventions_per_observed_farm_year", "candidate_intervention_count"],
+        ["steady_intervention_intensity_per_farm_year", "steady_candidate_count"],
         ascending=[True, True],
         na_position="last",
     ).head(20)
     bottom = bottom.copy()
-    bottom.insert(0, "audit_category", "bottom_20_candidate_intensity")
+    bottom.insert(0, "audit_category", "bottom_20_steady_operational_intensity")
     bottom.insert(1, "rank", range(1, len(bottom) + 1))
+    commissioning_top = analysis.sort_values(
+        ["commissioning_intervention_intensity_per_farm_year", "commissioning_candidate_count"],
+        ascending=[False, False],
+        na_position="last",
+    ).head(20)
+    commissioning_top = commissioning_top.copy()
+    commissioning_top.insert(0, "audit_category", "top_20_commissioning_intensity")
+    commissioning_top.insert(1, "rank", range(1, len(commissioning_top) + 1))
     top_bottom = pd.concat(
-        [top[["audit_category", "rank"] + rank_columns], bottom[["audit_category", "rank"] + rank_columns]],
+        [
+            top[["audit_category", "rank"] + rank_columns],
+            bottom[["audit_category", "rank"] + rank_columns],
+            commissioning_top[["audit_category", "rank"] + rank_columns],
+        ],
         ignore_index=True,
     )
 
-    scenario_specs = [
-        (
-            "tier_a_only",
-            "Tier A candidate visits only",
-            np.nan,
-            analysis["tier_a_visit_count"],
-            "Tier A only candidate intervention evidence.",
-        ),
-        (
-            "tier_a_plus_tier_b",
-            "Tier A plus Tier B candidate visits",
-            np.nan,
-            analysis["candidate_intervention_count"],
-            "Current raw numerator for candidate intervention intensity.",
-        ),
-        (
-            f"long_dwell_{long_dwell_threshold_min:g}_min",
-            f"Long dwell candidates >= {long_dwell_threshold_min:g} min",
-            long_dwell_threshold_min,
-            analysis["long_dwell_count"],
-            "Current long-dwell numerator from committed farm output.",
-        ),
-        (
-            f"long_dwell_{stricter_threshold:g}_min",
-            f"Long dwell candidates >= {stricter_threshold:g} min",
-            stricter_threshold,
-            analysis["long_strict_count"],
-            "Read-only sensitivity from existing dwell feature table; no extraction rerun.",
-        ),
-    ]
     sensitivity_frames: list[pd.DataFrame] = []
-    for scenario, label, threshold, counts, notes in scenario_specs:
-        frame = analysis[
+    for sensitivity_ramp_up in ramp_up_sensitivity_months:
+        scenario_intensity, _ = build_farm_intervention_intensity(
+            manifest=manifest,
+            dwell=dwell,
+            turbines=turbines,
+            long_dwell_threshold_min=long_dwell_threshold_min,
+            ramp_up_months=int(sensitivity_ramp_up),
+        )
+        frame = scenario_intensity[
             [
                 "farm_id",
-                "operational_start_month",
+                "farm_commissioning_start_month",
+                "farm_commissioning_end_month",
+                "steady_operational_start_month",
+                "ramp_up_months",
                 "observed_years",
+                "commissioning_observed_years",
+                "steady_observed_years",
                 "coverage_share",
+                "commissioning_candidate_count",
+                "steady_candidate_count",
+                "commissioning_intervention_intensity_per_farm_year",
+                "steady_intervention_intensity_per_farm_year",
                 "confidence_class",
+                "recommended_simulator_use",
             ]
         ].copy()
-        frame.insert(0, "scenario", scenario)
-        frame.insert(1, "scenario_label", label)
-        frame["long_dwell_threshold_min"] = threshold
-        frame["event_count"] = counts.values
-        frame["events_per_observed_farm_year"] = _safe_divide(
-            frame["event_count"],
-            frame["observed_years"],
+        frame.insert(0, "scenario", f"ramp_up_{int(sensitivity_ramp_up)}_months")
+        frame.insert(
+            1,
+            "scenario_label",
+            f"Steady operational starts {int(sensitivity_ramp_up)} months after latest turbine commissioning month",
         )
-        frame["notes"] = notes
+        frame["notes"] = "Read-only ramp-up sensitivity from existing manifest and dwell tables."
         sensitivity_frames.append(frame)
     sensitivity = pd.concat(sensitivity_frames, ignore_index=True)
 
@@ -1031,35 +1352,55 @@ def build_sanity_audit_outputs(
     for scenario in sensitivity["scenario"].unique():
         rows = sensitivity.loc[sensitivity["scenario"] == scenario]
         top_row = rows.sort_values(
-            "events_per_observed_farm_year",
+            "steady_intervention_intensity_per_farm_year",
             ascending=False,
             na_position="last",
         ).iloc[0]
         sensitivity_summary_rows.append(
             {
                 "scenario": scenario,
-                "total_events": rows["event_count"].sum(),
-                "mean_rate_per_farm_year": rows["events_per_observed_farm_year"].mean(),
-                "median_rate_per_farm_year": rows["events_per_observed_farm_year"].median(),
-                "p95_rate_per_farm_year": rows["events_per_observed_farm_year"].quantile(0.95),
-                "max_rate_per_farm_year": rows["events_per_observed_farm_year"].max(),
+                "ramp_up_months": int(rows["ramp_up_months"].iloc[0]),
+                "commissioning_observed_years_total": rows[
+                    "commissioning_observed_years"
+                ].sum(),
+                "steady_observed_years_total": rows["steady_observed_years"].sum(),
+                "commissioning_candidate_count_total": rows[
+                    "commissioning_candidate_count"
+                ].sum(),
+                "steady_candidate_count_total": rows["steady_candidate_count"].sum(),
+                "steady_mean_rate_per_farm_year": rows[
+                    "steady_intervention_intensity_per_farm_year"
+                ].mean(),
+                "steady_median_rate_per_farm_year": rows[
+                    "steady_intervention_intensity_per_farm_year"
+                ].median(),
+                "steady_p95_rate_per_farm_year": rows[
+                    "steady_intervention_intensity_per_farm_year"
+                ].quantile(0.95),
+                "steady_max_rate_per_farm_year": rows[
+                    "steady_intervention_intensity_per_farm_year"
+                ].max(),
                 "top_farm": top_row["farm_id"],
             }
         )
     sensitivity_summary = pd.DataFrame(sensitivity_summary_rows)
 
-    high_event_count_cutoff = analysis["candidate_intervention_count"].quantile(0.90)
+    high_event_count_cutoff = analysis["steady_candidate_count"].quantile(0.90)
     high_event_low_coverage = analysis.loc[
-        (analysis["candidate_intervention_count"] >= high_event_count_cutoff)
+        (analysis["steady_candidate_count"] >= high_event_count_cutoff)
         & (analysis["coverage_share"] < 0.80)
     ].copy()
     high_coverage_near_zero = analysis.loc[
         (analysis["coverage_share"] >= 0.90)
-        & (analysis["candidate_interventions_per_observed_farm_year"].fillna(0) <= 0.2)
+        & (analysis["steady_intervention_intensity_per_farm_year"].fillna(0) <= 0.2)
     ].copy()
-    no_observed_after_start = analysis.loc[analysis["observed_months"] == 0].copy()
+    insufficient_steady_coverage = analysis.loc[analysis["steady_observed_months"] < 12].copy()
     implausibly_high = analysis.loc[
-        analysis["candidate_interventions_per_observed_farm_year"] > 50.0
+        analysis["steady_intervention_intensity_per_farm_year"] > 50.0
+    ].copy()
+    commissioning_driven = analysis.loc[
+        (analysis["commissioning_candidate_count"] > analysis["steady_candidate_count"])
+        & (analysis["commissioning_candidate_count"] >= 10)
     ].copy()
     fractional = analysis.loc[
         (analysis["duplicate_group_adjusted_candidate_count"] % 1).abs() > 1e-9
@@ -1067,11 +1408,13 @@ def build_sanity_audit_outputs(
     high_dup_delta = analysis.sort_values("duplicate_adjustment_delta", ascending=False).head(10)
     unknown_operational = analysis.loc[~analysis["operational_window_known"]].copy()
 
-    current_long_total = analysis["long_dwell_count"].sum()
-    strict_long_total = analysis["long_strict_count"].sum()
+    current_long_total = analysis["steady_long_dwell_count"].sum()
+    strict_long_total = analysis["steady_long_strict_count"].sum()
     strict_drop = current_long_total - strict_long_total
     strict_drop_share = strict_drop / current_long_total if current_long_total else 0.0
     candidate_total = analysis["candidate_intervention_count"].sum()
+    steady_candidate_total = analysis["steady_candidate_count"].sum()
+    commissioning_candidate_total = analysis["commissioning_candidate_count"].sum()
     tier_b_total = analysis["tier_b_visit_count"].sum()
     tier_b_share = tier_b_total / candidate_total if candidate_total else 0.0
     duplicate_delta_total = analysis["duplicate_adjustment_delta"].sum()
@@ -1092,54 +1435,73 @@ This audit reviews the farm-level maintenance intervention intensity outputs for
 
 - Farm-level only; turbine-level intervention intensity is not implemented here.
 - Inputs audited: `{farm_output_path}`, `{validation_output_path}`, `{methodology_report_path}`.
+- Farm months and candidate dwells are split into pre-operational, commissioning/ramp-up, steady-operational, and unknown phases.
+- Default ramp-up buffer: {int(analysis['ramp_up_months'].mode().iloc[0]) if not analysis.empty else DEFAULT_RAMP_UP_MONTHS} months after the latest parsed turbine commissioning month.
+- Ramp-up sensitivity scenarios: {", ".join(str(value) for value in ramp_up_sensitivity_months)} months.
 - Stricter long-dwell sensitivity reads the existing dwell feature table in memory through the RQ9 builder. No AIS extraction or metocean extraction was rerun.
-- Current long-dwell threshold: {long_dwell_threshold_min:g} minutes.
-- Stricter long-dwell threshold used for this audit: {stricter_threshold:g} minutes.
 
 ## Key Totals
 
 | Metric | Value |
 | --- | --- |
 | Farm rows | {len(analysis)} |
-| Observed farm-years | {analysis['observed_years'].sum():.3f} |
+| Observed farm-years, all non-pre-operational phases | {analysis['observed_years'].sum():.3f} |
+| Commissioning/ramp-up observed farm-years | {analysis['commissioning_observed_years'].sum():.3f} |
+| Steady operational observed farm-years | {analysis['steady_observed_years'].sum():.3f} |
 | Observed farm-years min / median / max | {analysis['observed_years'].min():.3f} / {analysis['observed_years'].median():.3f} / {analysis['observed_years'].max():.3f} |
 | Raw candidate interventions, Tier A + Tier B | {int(candidate_total)} |
-| Pre-operational candidate rows excluded | {int(analysis['pre_operational_candidate_count'].sum())} |
+| Pre-operational candidate rows preserved separately | {int(analysis['pre_operational_candidate_count'].sum())} |
+| Commissioning/ramp-up candidate interventions | {int(commissioning_candidate_total)} |
+| Steady operational candidate interventions | {int(steady_candidate_total)} |
 | Tier A candidate visits | {int(analysis['tier_a_visit_count'].sum())} |
 | Tier B candidate visits | {int(tier_b_total)} |
 | Tier B share of raw candidates | {tier_b_share:.1%} |
-| Current long-dwell count | {int(current_long_total)} |
-| Stricter long-dwell count | {int(strict_long_total)} |
+| Current steady long-dwell count | {int(current_long_total)} |
+| Stricter steady long-dwell count | {int(strict_long_total)} |
 | Duplicate-adjusted candidate total | {analysis['duplicate_group_adjusted_candidate_count'].sum():.3f} |
 | Duplicate adjustment delta | {duplicate_delta_total:.3f} ({duplicate_delta_share:.1%} of raw candidates) |
 
-## Top 20 Candidate Intensities
+## Top 20 Steady Operational Intensities
 
-{_audit_markdown_table(top, ['farm_id', 'operational_start_month', 'observed_years', 'coverage_share', 'candidate_intervention_count', 'candidate_interventions_per_observed_farm_year', 'pre_operational_candidate_count', 'duplicate_group_adjusted_candidate_count', 'duplicate_adjustment_delta', 'confidence_class'])}
+{_audit_markdown_table(top, ['farm_id', 'farm_commissioning_end_month', 'steady_operational_start_month', 'steady_observed_years', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'commissioning_candidate_count', 'pre_operational_candidate_count', 'coverage_share', 'confidence_class', 'recommended_simulator_use'])}
 
-## Bottom 20 Candidate Intensities
+## Bottom 20 Steady Operational Intensities
 
-{_audit_markdown_table(bottom, ['farm_id', 'operational_start_month', 'observed_years', 'coverage_share', 'candidate_intervention_count', 'candidate_interventions_per_observed_farm_year', 'pre_operational_candidate_count', 'duplicate_group_adjusted_candidate_count', 'duplicate_adjustment_delta', 'confidence_class'])}
+{_audit_markdown_table(bottom, ['farm_id', 'farm_commissioning_end_month', 'steady_operational_start_month', 'steady_observed_years', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'commissioning_candidate_count', 'pre_operational_candidate_count', 'coverage_share', 'confidence_class', 'recommended_simulator_use'])}
+
+## Top 20 Commissioning/Ramp-Up Intensities
+
+{_audit_markdown_table(commissioning_top, ['farm_id', 'farm_commissioning_start_month', 'farm_commissioning_end_month', 'commissioning_observed_years', 'commissioning_candidate_count', 'commissioning_intervention_intensity_per_farm_year', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'coverage_share', 'recommended_simulator_use'])}
 
 ## Coverage And Denominator Checks
 
-Observed farm-years now vary by farm operational start month. This corrects the v1 global-window issue where every farm had the same 15.0 observed farm-years.
+Observed farm-years now vary by commissioning-derived lifecycle phase. Commissioning/ramp-up months are not part of the steady operational denominator used for provisional simulator demand support.
+
+All non-pre-operational observed farm-years:
 
 {_audit_markdown_table(_audit_describe(analysis['observed_years']))}
 
-Coverage share distribution after operational-window filtering:
+Steady operational observed farm-years:
+
+{_audit_markdown_table(_audit_describe(analysis['steady_observed_years']))}
+
+Coverage share distribution after phase-aware operational-window filtering:
 
 {_audit_markdown_table(_audit_describe(analysis['coverage_share'].dropna()))}
 
 Operational-window unknown farms:
 
-{_audit_markdown_table(unknown_operational, ['farm_id', 'observed_years', 'coverage_share', 'candidate_intervention_count', 'confidence_class'])}
+{_audit_markdown_table(unknown_operational, ['farm_id', 'observed_years', 'unknown_phase_observed_years', 'unknown_phase_candidate_count', 'coverage_share', 'confidence_class', 'recommended_simulator_use'])}
 
 ## Event Count Distributions
 
-Raw Tier A/B candidate counts:
+Steady operational candidate counts:
 
-{_audit_markdown_table(_audit_describe(analysis['candidate_intervention_count']))}
+{_audit_markdown_table(_audit_describe(analysis['steady_candidate_count']))}
+
+Commissioning/ramp-up candidate counts:
+
+{_audit_markdown_table(_audit_describe(analysis['commissioning_candidate_count']))}
 
 Duplicate-adjusted candidate counts:
 
@@ -1161,41 +1523,51 @@ Largest duplicate adjustment deltas:
 
 {_audit_markdown_table(analysis['confidence_class'].value_counts().rename_axis('confidence_class').reset_index(name='farm_count'))}
 
-## Sensitivity Checks
+## Recommended Simulator Use
+
+{_audit_markdown_table(analysis['recommended_simulator_use'].value_counts().rename_axis('recommended_simulator_use').reset_index(name='farm_count'))}
+
+## Ramp-Up Sensitivity Checks
 
 {_audit_markdown_table(sensitivity_summary)}
 
-Switching from Tier A + Tier B to Tier A only removes {int(tier_b_total)} candidate visits ({tier_b_share:.1%} of the raw numerator). Tightening long dwell from {long_dwell_threshold_min:g} to {stricter_threshold:g} minutes removes {int(strict_drop)} long-dwell candidates ({strict_drop_share:.1%} of the current long-dwell numerator).
+Tightening steady long dwell from {long_dwell_threshold_min:g} to {stricter_threshold:g} minutes removes {int(strict_drop)} long-dwell candidates ({strict_drop_share:.1%} of the current steady long-dwell numerator). Ramp-up sensitivity should be reviewed before any RQ12 demand multiplier uses the steady operational field.
 
 ## Red Flags
 
-### Implausibly High Raw Rates
+### Implausibly High Steady Operational Rates
 
-Farms above 50 raw candidate interventions per observed farm-year need manual review before use as absolute simulator demand. They may represent intense operational activity, commissioning-period activity, duplicate-proximal activity, or repeated vessel behavior rather than maintenance demand.
+Farms above 50 steady candidate interventions per observed steady farm-year need manual review before use as absolute simulator demand. They may represent short-denominator effects, residual early-life activity, duplicate-proximal activity, or repeated vessel behavior rather than mature maintenance demand.
 
-{_audit_markdown_table(implausibly_high, ['farm_id', 'operational_start_month', 'observed_years', 'candidate_intervention_count', 'candidate_interventions_per_observed_farm_year', 'long_dwell_count', 'long_dwell_interventions_per_observed_farm_year', 'coverage_share', 'confidence_class'])}
+{_audit_markdown_table(implausibly_high, ['farm_id', 'farm_commissioning_end_month', 'steady_operational_start_month', 'steady_observed_years', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'steady_long_dwell_count', 'coverage_share', 'confidence_class', 'recommended_simulator_use'])}
 
-### High Event Counts With Low Coverage
+### High Steady Event Counts With Low Coverage
 
-Using candidate count >= the 90th percentile ({high_event_count_cutoff:.1f}) and coverage < 80%, these farms have high event evidence but weak observed-source denominator support.
+Using steady candidate count >= the 90th percentile ({high_event_count_cutoff:.1f}) and coverage < 80%, these farms have high event evidence but weak observed-source denominator support.
 
-{_audit_markdown_table(high_event_low_coverage, ['farm_id', 'operational_start_month', 'observed_years', 'candidate_intervention_count', 'candidate_interventions_per_observed_farm_year', 'coverage_share', 'confidence_class'])}
+{_audit_markdown_table(high_event_low_coverage, ['farm_id', 'steady_observed_years', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'coverage_share', 'confidence_class', 'recommended_simulator_use'])}
 
-### No Observed Coverage After Operational Start
+### Insufficient Steady Operational Coverage
 
-These farms have commissioning-derived operational months in the manifest, but none of those months have observed AIS source coverage. Their pre-operational candidates are preserved separately and should not be treated as operational maintenance signal.
+These farms have less than one observed steady operational farm-year. Their commissioning and pre-operational evidence is preserved separately and should not be used as generic mature-operational maintenance signal.
 
-{_audit_markdown_table(no_observed_after_start, ['farm_id', 'operational_start_month', 'manifest_months', 'observed_months', 'candidate_intervention_count', 'pre_operational_candidate_count', 'confidence_class'])}
+{_audit_markdown_table(insufficient_steady_coverage, ['farm_id', 'steady_operational_start_month', 'steady_manifest_months', 'steady_observed_months', 'steady_candidate_count', 'commissioning_candidate_count', 'pre_operational_candidate_count', 'recommended_simulator_use'])}
 
-### High Coverage With Zero Or Near-Zero Signal
+### Commissioning-Driven Activity
 
-These farms have coverage >= 90% and <= 0.2 raw candidate interventions per observed farm-year. They should not be interpreted as having no maintenance demand without external validation.
+These farms have more commissioning/ramp-up candidates than steady candidates. That pattern should feed a separate commissioning-demand module or remain excluded from generic mature-operational demand multipliers.
 
-{_audit_markdown_table(high_coverage_near_zero, ['farm_id', 'operational_start_month', 'observed_years', 'candidate_intervention_count', 'candidate_interventions_per_observed_farm_year', 'coverage_share', 'confidence_class'])}
+{_audit_markdown_table(commissioning_driven, ['farm_id', 'commissioning_observed_years', 'commissioning_candidate_count', 'commissioning_intervention_intensity_per_farm_year', 'steady_observed_years', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'recommended_simulator_use'])}
+
+### High Coverage With Zero Or Near-Zero Steady Signal
+
+These farms have coverage >= 90% and <= 0.2 steady candidate interventions per observed steady farm-year. They should not be interpreted as having no maintenance demand without external validation.
+
+{_audit_markdown_table(high_coverage_near_zero, ['farm_id', 'steady_observed_years', 'steady_candidate_count', 'steady_intervention_intensity_per_farm_year', 'coverage_share', 'confidence_class', 'recommended_simulator_use'])}
 
 ## Simulator-Use Assessment
 
-The corrected output is more plausible as a farm-level maintenance intervention intensity screen and as a relative evidence layer for RQ12 simulator inputs. It still should not be used as a confirmed fault-driven process. Remaining guardrails are operational-window quality for newly commissioned farms, outlier review for very high rates, and external SCADA/fault/work-order validation before calibrating true fault demand.
+The phase-separated output is more suitable as a farm-level maintenance intervention intensity screen and as a relative evidence layer for RQ12 simulator inputs. Only `steady_intervention_intensity_per_farm_year` should be considered for a generic mature-operational demand multiplier, and even then it remains provisional until external SCADA/fault/work-order validation. Commissioning/ramp-up activity should be kept separate.
 """
     audit_path.write_text(report, encoding="utf-8")
     return {
@@ -1212,6 +1584,7 @@ def build_rq9_farm_outputs(
     processed_output_dir: Path,
     report_output_dir: Path,
     long_dwell_threshold_min: float = DEFAULT_LONG_DWELL_THRESHOLD_MIN,
+    ramp_up_months: int = DEFAULT_RAMP_UP_MONTHS,
 ) -> RQ9FarmOutputs:
     """Build farm-level RQ9 maintenance intervention intensity outputs."""
     processed_output_dir.mkdir(parents=True, exist_ok=True)
@@ -1227,6 +1600,7 @@ def build_rq9_farm_outputs(
         dwell=dwell,
         turbines=turbines,
         long_dwell_threshold_min=long_dwell_threshold_min,
+        ramp_up_months=ramp_up_months,
     )
     validation_summary, validation_metrics = build_validation_summary(
         manifest=manifest,
@@ -1256,6 +1630,8 @@ def build_rq9_farm_outputs(
     audit_files = build_sanity_audit_outputs(
         farm_intensity=farm_intensity,
         dwell=dwell,
+        manifest=manifest,
+        turbines=turbines,
         report_output_dir=report_output_dir,
         long_dwell_threshold_min=long_dwell_threshold_min,
         farm_output_path=files["farm_intervention_intensity_csv"],

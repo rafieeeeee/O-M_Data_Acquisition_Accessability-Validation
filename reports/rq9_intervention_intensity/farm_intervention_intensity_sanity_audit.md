@@ -6,80 +6,112 @@ This audit reviews the farm-level maintenance intervention intensity outputs for
 
 - Farm-level only; turbine-level intervention intensity is not implemented here.
 - Inputs audited: `/Volumes/Extreme SSD/01_ACTIVE_PROJECTS/O&M_Data_Acquisition_Accessability&Validation/Data/Processed/analysis/rq9_intervention_intensity/farm_intervention_intensity.csv`, `/Volumes/Extreme SSD/01_ACTIVE_PROJECTS/O&M_Data_Acquisition_Accessability&Validation/reports/rq9_intervention_intensity/validation_summary.csv`, `/Volumes/Extreme SSD/01_ACTIVE_PROJECTS/O&M_Data_Acquisition_Accessability&Validation/reports/rq9_intervention_intensity/methodology_report.md`.
+- Farm months and candidate dwells are split into pre-operational, commissioning/ramp-up, steady-operational, and unknown phases.
+- Default ramp-up buffer: 6 months after the latest parsed turbine commissioning month.
+- Ramp-up sensitivity scenarios: 0, 6, 12 months.
 - Stricter long-dwell sensitivity reads the existing dwell feature table in memory through the RQ9 builder. No AIS extraction or metocean extraction was rerun.
-- Current long-dwell threshold: 120 minutes.
-- Stricter long-dwell threshold used for this audit: 240 minutes.
 
 ## Key Totals
 
 | Metric | Value |
 | --- | --- |
 | Farm rows | 113 |
-| Observed farm-years | 986.500 |
+| Observed farm-years, all non-pre-operational phases | 986.500 |
+| Commissioning/ramp-up observed farm-years | 44.583 |
+| Steady operational observed farm-years | 941.917 |
 | Observed farm-years min / median / max | 0.000 / 9.250 / 15.000 |
 | Raw candidate interventions, Tier A + Tier B | 13545 |
-| Pre-operational candidate rows excluded | 4020 |
+| Pre-operational candidate rows preserved separately | 4020 |
+| Commissioning/ramp-up candidate interventions | 537 |
+| Steady operational candidate interventions | 13008 |
 | Tier A candidate visits | 11972 |
 | Tier B candidate visits | 1573 |
 | Tier B share of raw candidates | 11.6% |
-| Current long-dwell count | 11656 |
-| Stricter long-dwell count | 10167 |
+| Current steady long-dwell count | 11162 |
+| Stricter steady long-dwell count | 9742 |
 | Duplicate-adjusted candidate total | 13021.333 |
 | Duplicate adjustment delta | 523.667 (3.9% of raw candidates) |
 
-## Top 20 Candidate Intensities
+## Top 20 Steady Operational Intensities
 
-| farm_id | operational_start_month | observed_years | coverage_share | candidate_intervention_count | candidate_interventions_per_observed_farm_year | pre_operational_candidate_count | duplicate_group_adjusted_candidate_count | duplicate_adjustment_delta | confidence_class |
+| farm_id | farm_commissioning_end_month | steady_operational_start_month | steady_observed_years | steady_candidate_count | steady_intervention_intensity_per_farm_year | commissioning_candidate_count | pre_operational_candidate_count | coverage_share | confidence_class | recommended_simulator_use |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Kriegers Flak | 2021-09 | 2022-03 | 2.917 | 1042 | 357.257 | 4 | 140 | 0.788 | low_coverage | validation_required |
+| Arcadis Ost 1 | 2023-12 | 2024-06 | 0.667 | 182 | 273 | 75 | 50 | 0.56 | low_coverage | insufficient_steady_coverage |
+| Kaskasi | 2023-03 | 2023-09 | 1.417 | 201 | 141.882 | 4 | 49 | 0.676 | low_coverage | validation_required |
+| Vesterhav Syd | 2024-03 | 2024-09 | 0.417 | 58 | 139.2 | 149 | 32 | 0.5 | low_coverage | insufficient_steady_coverage |
+| Wikinger | 2018-10 | 2019-04 | 5.833 | 752 | 128.914 | 27 | 197 | 0.874 | high_observed_signal | steady_operational_only |
+| Vesterhav Nord | 2024-03 | 2024-09 | 0.417 | 51 | 122.4 | 141 | 30 | 0.5 | low_coverage | insufficient_steady_coverage |
+| Merkur Offshore | 2019-06 | 2019-12 | 5.167 | 459 | 88.839 | 7 | 71 | 0.861 | high_observed_signal | steady_operational_only |
+| Horns Rev III | 2019-08 | 2020-02 | 5 | 440 | 88 | 14 | 93 | 0.857 | high_observed_signal | steady_operational_only |
+| Anholt | 2013-09 | 2014-03 | 10.833 | 792 | 73.108 | 0 | 88 | 0.919 | high_observed_signal | steady_operational_only |
+| EnBW Windpark Baltic 2 | 2015-10 | 2016-04 | 8.75 | 637 | 72.8 | 0 | 65 | 0.902 | high_observed_signal | steady_operational_only |
+| Arkona-Becken Südost | 2019-01 | 2019-07 | 5.583 | 398 | 71.284 | 9 | 144 | 0.869 | high_observed_signal | steady_operational_only |
+| Butendiek | 2015-08 | 2016-02 | 8.917 | 480 | 53.832 | 0 | 6 | 0.904 | high_observed_signal | steady_operational_only |
+| Dan Tysk | 2015-04 | 2015-10 | 9.25 | 481 | 52 | 0 | 8 | 0.907 | high_observed_signal | steady_operational_only |
+| Rodsand II | 2010-10 | 2011-04 | 13.75 | 649 | 47.2 | 8 | 79 | 0.934 | high_observed_signal | steady_operational_only |
+| Amrumbank West | 2015-10 | 2016-04 | 8.75 | 362 | 41.371 | 0 | 19 | 0.902 | high_observed_signal | steady_operational_only |
+| Gode Wind 1 and 2 | 2016-09 | 2017-03 | 7.917 | 324 | 40.926 | 0 | 2 | 0.902 | high_observed_signal | steady_operational_only |
+| Horns Rev I | 2002-12 | 2003-06 | 15 | 587 | 39.133 | 0 | 0 | 0.938 | high_observed_signal | steady_operational_only |
+| Sandbank | 2017-01 | 2017-07 | 7.583 | 289 | 38.11 | 14 | 2 | 0.898 | high_observed_signal | steady_operational_only |
+| Meerwind Sued/Ost | 2014-12 | 2015-06 | 9.583 | 361 | 37.67 | 0 | 7 | 0.91 | high_observed_signal | steady_operational_only |
+| Horns Rev II | 2010-01 | 2010-07 | 14.5 | 532 | 36.69 | 7 | 0 | 0.938 | high_observed_signal | steady_operational_only |
+
+## Bottom 20 Steady Operational Intensities
+
+| farm_id | farm_commissioning_end_month | steady_operational_start_month | steady_observed_years | steady_candidate_count | steady_intervention_intensity_per_farm_year | commissioning_candidate_count | pre_operational_candidate_count | coverage_share | confidence_class | recommended_simulator_use |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Blyth Demo Phase 1 | 2018-06 | 2018-12 | 6.167 | 0 | 0 | 0 | 3 | 0.879 | high_observed_zero | validation_required |
+| Burbo Bank Extension | 2017-04 | 2017-10 | 7.333 | 0 | 0 | 0 | 10 | 0.895 | high_observed_zero | validation_required |
+| Fécamp | 2024-05 | 2024-11 | 0.25 | 0 | 0 | 0 | 0 | 0.45 | low_coverage | insufficient_steady_coverage |
+| Kincardine | 2021-10 | 2022-04 | 2.833 | 0 | 0 | 0 | 0 | 0.784 | low_signal_ambiguous | validation_required |
+| Norther | 2019-06 | 2019-12 | 5.167 | 0 | 0 | 0 | 4 | 0.861 | high_observed_zero | validation_required |
+| Northwester 2 | 2020-05 | 2020-11 | 4.25 | 0 | 0 | 0 | 0 | 0.838 | high_observed_zero | validation_required |
+| Northwind | 2014-06 | 2014-12 | 10.083 | 0 | 0 | 0 | 0 | 0.914 | high_observed_zero | validation_required |
+| Rampion | 2018-11 | 2019-05 | 5.75 | 0 | 0 | 0 | 13 | 0.872 | high_observed_zero | validation_required |
+| Saint-Brieuc | 2024-05 | 2024-11 | 0.25 | 0 | 0 | 0 | 2 | 0.45 | low_coverage | insufficient_steady_coverage |
+| Saint-Nazaire | 2022-11 | 2023-05 | 1.75 | 0 | 0 | 0 | 0 | 0.711 | low_signal_ambiguous | validation_required |
+| Teesside | 2014-04 | 2014-10 | 10.25 | 0 | 0 | 0 | 28 | 0.915 | high_observed_zero | validation_required |
+| Walney Extension 3 | 2018-09 | 2019-03 | 5.917 | 0 | 0 | 0 | 6 | 0.875 | high_observed_zero | validation_required |
+| Walney Extension 4 | 2018-09 | 2019-03 | 5.917 | 0 | 0 | 0 | 18 | 0.875 | high_observed_zero | validation_required |
+| London Array | 2013-04 | 2013-10 | 11.25 | 1 | 0.089 | 0 | 310 | 0.922 | high_observed_signal | steady_operational_only |
+| Lincs | 2013-09 | 2014-03 | 10.833 | 1 | 0.092 | 0 | 137 | 0.919 | high_observed_signal | steady_operational_only |
+| Nobelwind | 2017-05 | 2017-11 | 7.25 | 1 | 0.138 | 1 | 4 | 0.894 | high_observed_signal | steady_operational_only |
+| Galloper | 2018-04 | 2018-10 | 6.333 | 1 | 0.158 | 0 | 29 | 0.882 | high_observed_signal | steady_operational_only |
+| Avedøre Holme | 2011-12 | 2012-06 | 12.583 | 2 | 0.159 | 0 | 2 | 0.929 | high_observed_signal | steady_operational_only |
+| Walney 2 | 2012-06 | 2012-12 | 12.083 | 2 | 0.166 | 5 | 28 | 0.926 | high_observed_signal | commissioning_separate_module |
+| Aberdeen Offshore Wind Farm | 2018-09 | 2019-03 | 5.917 | 1 | 0.169 | 0 | 2 | 0.875 | high_observed_signal | steady_operational_only |
+
+## Top 20 Commissioning/Ramp-Up Intensities
+
+| farm_id | farm_commissioning_start_month | farm_commissioning_end_month | commissioning_observed_years | commissioning_candidate_count | commissioning_intervention_intensity_per_farm_year | steady_candidate_count | steady_intervention_intensity_per_farm_year | coverage_share | recommended_simulator_use |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Kriegers Flak | 2021-09 | 3.417 | 0.788 | 1046 | 306.146 | 140 | 1046 | 0 | low_coverage |
-| Vesterhav Syd | 2024-03 | 0.917 | 0.5 | 207 | 225.818 | 32 | 207 | 0 | low_coverage |
-| Arcadis Ost 1 | 2023-12 | 1.167 | 0.56 | 257 | 220.286 | 50 | 257 | 0 | low_coverage |
-| Vesterhav Nord | 2024-03 | 0.917 | 0.5 | 192 | 209.455 | 30 | 192 | 0 | low_coverage |
-| Wikinger | 2018-10 | 6.333 | 0.874 | 779 | 123 | 197 | 777 | 2 | high_observed_signal |
-| Kaskasi | 2023-03 | 1.917 | 0.676 | 205 | 106.957 | 49 | 160.167 | 44.833 | low_coverage |
-| Horns Rev III | 2019-08 | 5.5 | 0.857 | 454 | 82.545 | 93 | 451.5 | 2.5 | high_observed_signal |
-| Merkur Offshore | 2019-06 | 5.667 | 0.861 | 466 | 82.235 | 71 | 365.5 | 100.5 | high_observed_signal |
-| Anholt | 2013-09 | 11.333 | 0.919 | 792 | 69.882 | 88 | 792 | 0 | high_observed_signal |
-| EnBW Windpark Baltic 2 | 2015-10 | 9.25 | 0.902 | 637 | 68.865 | 65 | 637 | 0 | high_observed_signal |
-| Arkona-Becken Südost | 2019-01 | 6.083 | 0.869 | 407 | 66.904 | 144 | 405 | 2 | high_observed_signal |
-| Butendiek | 2015-08 | 9.417 | 0.904 | 480 | 50.973 | 6 | 480 | 0 | high_observed_signal |
-| Dan Tysk | 2015-04 | 9.75 | 0.907 | 481 | 49.333 | 8 | 481 | 0 | high_observed_signal |
-| Rodsand II | 2010-10 | 14.25 | 0.934 | 657 | 46.105 | 79 | 656 | 1 | high_observed_signal |
-| Amrumbank West | 2015-10 | 9.25 | 0.902 | 362 | 39.135 | 19 | 321.167 | 40.833 | high_observed_signal |
-| Horns Rev I | 2002-12 | 15 | 0.938 | 587 | 39.133 | 0 | 587 | 0 | high_observed_signal |
-| Gode Wind 1 and 2 | 2016-09 | 8.417 | 0.902 | 324 | 38.495 | 2 | 324 | 0 | high_observed_signal |
-| Sandbank | 2017-01 | 8.083 | 0.898 | 303 | 37.485 | 2 | 303 | 0 | high_observed_signal |
-| Gode Wind 3 | 2025-02 | 0.083 | 0.091 | 3 | 36 | 324 | 3 | 0 | low_coverage |
-| Horns Rev II | 2010-01 | 15 | 0.938 | 539 | 35.933 | 0 | 536.5 | 2.5 | high_observed_signal |
-
-## Bottom 20 Candidate Intensities
-
-| farm_id | operational_start_month | observed_years | coverage_share | candidate_intervention_count | candidate_interventions_per_observed_farm_year | pre_operational_candidate_count | duplicate_group_adjusted_candidate_count | duplicate_adjustment_delta | confidence_class |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Blyth Demo Phase 1 | 2018-06 | 6.667 | 0.879 | 0 | 0 | 3 | 0 | 0 | high_observed_zero |
-| Burbo Bank Extension | 2017-04 | 7.833 | 0.895 | 0 | 0 | 10 | 0 | 0 | high_observed_zero |
-| Fécamp | 2024-05 | 0.75 | 0.45 | 0 | 0 | 0 | 0 | 0 | low_coverage |
-| Hollandse Kust Zuid | 2024-12 | 0.25 | 0.231 | 0 | 0 | 43 | 0 | 0 | low_coverage |
-| Kincardine | 2021-10 | 3.333 | 0.784 | 0 | 0 | 0 | 0 | 0 | low_signal_ambiguous |
-| Norther | 2019-06 | 5.667 | 0.861 | 0 | 0 | 4 | 0 | 0 | high_observed_zero |
-| Northwester 2 | 2020-05 | 4.75 | 0.838 | 0 | 0 | 0 | 0 | 0 | high_observed_zero |
-| Northwind | 2014-06 | 10.583 | 0.914 | 0 | 0 | 0 | 0 | 0 | high_observed_zero |
-| Rampion | 2018-11 | 6.25 | 0.872 | 0 | 0 | 13 | 0 | 0 | high_observed_zero |
-| Saint-Brieuc | 2024-05 | 0.75 | 0.45 | 0 | 0 | 2 | 0 | 0 | low_coverage |
-| Saint-Nazaire | 2022-11 | 2.25 | 0.711 | 0 | 0 | 0 | 0 | 0 | low_signal_ambiguous |
-| Teesside | 2014-04 | 10.75 | 0.915 | 0 | 0 | 28 | 0 | 0 | high_observed_zero |
-| Walney Extension 3 | 2018-09 | 6.417 | 0.875 | 0 | 0 | 6 | 0 | 0 | high_observed_zero |
-| Walney Extension 4 | 2018-09 | 6.417 | 0.875 | 0 | 0 | 18 | 0 | 0 | high_observed_zero |
-| London Array | 2013-04 | 11.75 | 0.922 | 1 | 0.085 | 310 | 1 | 0 | high_observed_signal |
-| Lincs | 2013-09 | 11.333 | 0.919 | 1 | 0.088 | 137 | 1 | 0 | high_observed_signal |
-| Galloper | 2018-04 | 6.833 | 0.882 | 1 | 0.146 | 29 | 0.5 | 0.5 | high_observed_signal |
-| Avedøre Holme | 2011-12 | 13.083 | 0.929 | 2 | 0.153 | 2 | 2 | 0 | high_observed_signal |
-| Aberdeen Offshore Wind Farm | 2018-09 | 6.417 | 0.875 | 1 | 0.156 | 2 | 1 | 0 | high_observed_signal |
-| Rentel | 2018-12 | 6.167 | 0.871 | 1 | 0.162 | 7 | 1 | 0 | high_observed_signal |
+| Vesterhav Syd | 2024-03 | 2024-03 | 0.5 | 149 | 298 | 58 | 139.2 | 0.5 | insufficient_steady_coverage |
+| Vesterhav Nord | 2024-03 | 2024-03 | 0.5 | 141 | 282 | 51 | 122.4 | 0.5 | insufficient_steady_coverage |
+| Arcadis Ost 1 | 2023-12 | 2023-12 | 0.5 | 75 | 150 | 182 | 273 | 0.56 | insufficient_steady_coverage |
+| Wikinger | 2018-10 | 2018-10 | 0.5 | 27 | 54 | 752 | 128.914 | 0.874 | steady_operational_only |
+| Ormonde | 2012-02 | 2012-02 | 0.5 | 22 | 44 | 3 | 0.242 | 0.928 | commissioning_separate_module |
+| Gode Wind 3 | 2025-02 | 2025-02 | 0.083 | 3 | 36 | 0 |  | 0.091 | insufficient_steady_coverage |
+| EnBW Windpark Baltic 1 | 2011-05 | 2011-05 | 0.5 | 15 | 30 | 247 | 18.759 | 0.932 | steady_operational_only |
+| Horns Rev III | 2019-08 | 2019-08 | 0.5 | 14 | 28 | 440 | 88 | 0.857 | steady_operational_only |
+| Sandbank | 2017-01 | 2017-01 | 0.5 | 14 | 28 | 289 | 38.11 | 0.898 | steady_operational_only |
+| Arkona-Becken Südost | 2019-01 | 2019-01 | 0.5 | 9 | 18 | 398 | 71.284 | 0.869 | steady_operational_only |
+| Rodsand II | 2010-10 | 2010-10 | 0.5 | 8 | 16 | 649 | 47.2 | 0.934 | steady_operational_only |
+| Horns Rev II | 2010-01 | 2010-01 | 0.5 | 7 | 14 | 532 | 36.69 | 0.938 | steady_operational_only |
+| Merkur Offshore | 2019-06 | 2019-06 | 0.5 | 7 | 14 | 459 | 88.839 | 0.861 | steady_operational_only |
+| Alpha Ventus | 2010-04 | 2010-04 | 0.5 | 6 | 12 | 296 | 20.772 | 0.937 | steady_operational_only |
+| Veja Mate | 2017-05 | 2017-05 | 0.5 | 5 | 10 | 58 | 8 | 0.894 | steady_operational_only |
+| Walney 2 | 2012-06 | 2012-06 | 0.5 | 5 | 10 | 2 | 0.166 | 0.926 | commissioning_separate_module |
+| Hornsea Project 1 | 2019-12 | 2019-12 | 0.5 | 4 | 8 | 29 | 6.214 | 0.849 | steady_operational_only |
+| Kaskasi | 2023-03 | 2023-03 | 0.5 | 4 | 8 | 201 | 141.882 | 0.676 | validation_required |
+| Kriegers Flak | 2021-09 | 2021-09 | 0.5 | 4 | 8 | 1042 | 357.257 | 0.788 | validation_required |
+| Albatros | 2020-01 | 2020-01 | 0.5 | 3 | 6 | 54 | 11.782 | 0.847 | steady_operational_only |
 
 ## Coverage And Denominator Checks
 
-Observed farm-years now vary by farm operational start month. This corrects the v1 global-window issue where every farm had the same 15.0 observed farm-years.
+Observed farm-years now vary by commissioning-derived lifecycle phase. Commissioning/ramp-up months are not part of the steady operational denominator used for provisional simulator demand support.
+
+All non-pre-operational observed farm-years:
 
 | metric | value |
 | --- | --- |
@@ -94,7 +126,22 @@ Observed farm-years now vary by farm operational start month. This corrects the 
 | max | 15 |
 | total | 986.5 |
 
-Coverage share distribution after operational-window filtering:
+Steady operational observed farm-years:
+
+| metric | value |
+| --- | --- |
+| count | 113 |
+| min | 0 |
+| p05 | 0.25 |
+| p25 | 4.75 |
+| median | 8.75 |
+| p75 | 13.167 |
+| p90 | 15 |
+| p95 | 15 |
+| max | 15 |
+| total | 941.917 |
+
+Coverage share distribution after phase-aware operational-window filtering:
 
 | metric | value |
 | --- | --- |
@@ -115,7 +162,7 @@ _None._
 
 ## Event Count Distributions
 
-Raw Tier A/B candidate counts:
+Steady operational candidate counts:
 
 | metric | value |
 | --- | --- |
@@ -123,12 +170,27 @@ Raw Tier A/B candidate counts:
 | min | 0 |
 | p05 | 0 |
 | p25 | 2 |
-| median | 15 |
-| p75 | 140 |
-| p90 | 424.6 |
-| p95 | 558.2 |
-| max | 1046 |
-| total | 13545 |
+| median | 12 |
+| p75 | 135 |
+| p90 | 422.8 |
+| p95 | 554 |
+| max | 1042 |
+| total | 13008 |
+
+Commissioning/ramp-up candidate counts:
+
+| metric | value |
+| --- | --- |
+| count | 113 |
+| min | 0 |
+| p05 | 0 |
+| p25 | 0 |
+| median | 0 |
+| p75 | 0 |
+| p90 | 6.8 |
+| p95 | 14.4 |
+| max | 149 |
+| total | 537 |
 
 Duplicate-adjusted candidate counts:
 
@@ -188,70 +250,98 @@ Largest duplicate adjustment deltas:
 | high_observed_zero | 9 |
 | low_signal_ambiguous | 3 |
 
-## Sensitivity Checks
+## Recommended Simulator Use
 
-| scenario | total_events | mean_rate_per_farm_year | median_rate_per_farm_year | p95_rate_per_farm_year | max_rate_per_farm_year | top_farm |
-| --- | --- | --- | --- | --- | --- | --- |
-| tier_a_only | 11972 | 18.934 | 1.441 | 93.637 | 225.818 | Vesterhav Syd |
-| tier_a_plus_tier_b | 13545 | 21.799 | 1.621 | 95.972 | 306.146 | Kriegers Flak |
-| long_dwell_120_min | 11656 | 18.563 | 1.473 | 83.885 | 216 | Vesterhav Syd |
-| long_dwell_240_min | 10167 | 16.039 | 1.212 | 75.198 | 195.273 | Vesterhav Syd |
+| recommended_simulator_use | farm_count |
+| --- | --- |
+| steady_operational_only | 83 |
+| validation_required | 16 |
+| insufficient_steady_coverage | 12 |
+| commissioning_separate_module | 2 |
 
-Switching from Tier A + Tier B to Tier A only removes 1573 candidate visits (11.6% of the raw numerator). Tightening long dwell from 120 to 240 minutes removes 1489 long-dwell candidates (12.8% of the current long-dwell numerator).
+## Ramp-Up Sensitivity Checks
+
+| scenario | ramp_up_months | commissioning_observed_years_total | steady_observed_years_total | commissioning_candidate_count_total | steady_candidate_count_total | steady_mean_rate_per_farm_year | steady_median_rate_per_farm_year | steady_p95_rate_per_farm_year | steady_max_rate_per_farm_year | top_farm |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ramp_up_0_months | 0 | 0 | 986.5 | 0 | 13545 | 21.799 | 1.621 | 95.972 | 306.146 | Kriegers Flak |
+| ramp_up_6_months | 6 | 44.583 | 941.917 | 537 | 13008 | 22.189 | 1.55 | 110.654 | 357.257 | Kriegers Flak |
+| ramp_up_12_months | 12 | 88.333 | 898.167 | 943 | 12602 | 21.23 | 1.526 | 93.097 | 424.552 | Kriegers Flak |
+
+Tightening steady long dwell from 120 to 240 minutes removes 1420 long-dwell candidates (12.7% of the current steady long-dwell numerator). Ramp-up sensitivity should be reviewed before any RQ12 demand multiplier uses the steady operational field.
 
 ## Red Flags
 
-### Implausibly High Raw Rates
+### Implausibly High Steady Operational Rates
 
-Farms above 50 raw candidate interventions per observed farm-year need manual review before use as absolute simulator demand. They may represent intense operational activity, commissioning-period activity, duplicate-proximal activity, or repeated vessel behavior rather than maintenance demand.
+Farms above 50 steady candidate interventions per observed steady farm-year need manual review before use as absolute simulator demand. They may represent short-denominator effects, residual early-life activity, duplicate-proximal activity, or repeated vessel behavior rather than mature maintenance demand.
 
-| farm_id | operational_start_month | observed_years | candidate_intervention_count | candidate_interventions_per_observed_farm_year | long_dwell_count | long_dwell_interventions_per_observed_farm_year | coverage_share | confidence_class |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Anholt | 2013-09 | 11.333 | 792 | 69.882 | 747 | 65.912 | 0.919 | high_observed_signal |
-| Arcadis Ost 1 | 2023-12 | 1.167 | 257 | 220.286 | 237 | 203.143 | 0.56 | low_coverage |
-| Arkona-Becken Südost | 2019-01 | 6.083 | 407 | 66.904 | 392 | 64.438 | 0.869 | high_observed_signal |
-| Butendiek | 2015-08 | 9.417 | 480 | 50.973 | 443 | 47.044 | 0.904 | high_observed_signal |
-| EnBW Windpark Baltic 2 | 2015-10 | 9.25 | 637 | 68.865 | 582 | 62.919 | 0.902 | high_observed_signal |
-| Horns Rev III | 2019-08 | 5.5 | 454 | 82.545 | 415 | 75.455 | 0.857 | high_observed_signal |
-| Kaskasi | 2023-03 | 1.917 | 205 | 106.957 | 174 | 90.783 | 0.676 | low_coverage |
-| Kriegers Flak | 2021-09 | 3.417 | 1046 | 306.146 | 620 | 181.463 | 0.788 | low_coverage |
-| Merkur Offshore | 2019-06 | 5.667 | 466 | 82.235 | 390 | 68.824 | 0.861 | high_observed_signal |
-| Vesterhav Nord | 2024-03 | 0.917 | 192 | 209.455 | 175 | 190.909 | 0.5 | low_coverage |
-| Vesterhav Syd | 2024-03 | 0.917 | 207 | 225.818 | 198 | 216 | 0.5 | low_coverage |
-| Wikinger | 2018-10 | 6.333 | 779 | 123 | 716 | 113.053 | 0.874 | high_observed_signal |
+| farm_id | farm_commissioning_end_month | steady_operational_start_month | steady_observed_years | steady_candidate_count | steady_intervention_intensity_per_farm_year | steady_long_dwell_count | coverage_share | confidence_class | recommended_simulator_use |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Anholt | 2013-09 | 2014-03 | 10.833 | 792 | 73.108 | 747 | 0.919 | high_observed_signal | steady_operational_only |
+| Arcadis Ost 1 | 2023-12 | 2024-06 | 0.667 | 182 | 273 | 163 | 0.56 | low_coverage | insufficient_steady_coverage |
+| Arkona-Becken Südost | 2019-01 | 2019-07 | 5.583 | 398 | 71.284 | 383 | 0.869 | high_observed_signal | steady_operational_only |
+| Butendiek | 2015-08 | 2016-02 | 8.917 | 480 | 53.832 | 443 | 0.904 | high_observed_signal | steady_operational_only |
+| Dan Tysk | 2015-04 | 2015-10 | 9.25 | 481 | 52 | 405 | 0.907 | high_observed_signal | steady_operational_only |
+| EnBW Windpark Baltic 2 | 2015-10 | 2016-04 | 8.75 | 637 | 72.8 | 582 | 0.902 | high_observed_signal | steady_operational_only |
+| Horns Rev III | 2019-08 | 2020-02 | 5 | 440 | 88 | 401 | 0.857 | high_observed_signal | steady_operational_only |
+| Kaskasi | 2023-03 | 2023-09 | 1.417 | 201 | 141.882 | 170 | 0.676 | low_coverage | validation_required |
+| Kriegers Flak | 2021-09 | 2022-03 | 2.917 | 1042 | 357.257 | 616 | 0.788 | low_coverage | validation_required |
+| Merkur Offshore | 2019-06 | 2019-12 | 5.167 | 459 | 88.839 | 384 | 0.861 | high_observed_signal | steady_operational_only |
+| Vesterhav Nord | 2024-03 | 2024-09 | 0.417 | 51 | 122.4 | 49 | 0.5 | low_coverage | insufficient_steady_coverage |
+| Vesterhav Syd | 2024-03 | 2024-09 | 0.417 | 58 | 139.2 | 56 | 0.5 | low_coverage | insufficient_steady_coverage |
+| Wikinger | 2018-10 | 2019-04 | 5.833 | 752 | 128.914 | 691 | 0.874 | high_observed_signal | steady_operational_only |
 
-### High Event Counts With Low Coverage
+### High Steady Event Counts With Low Coverage
 
-Using candidate count >= the 90th percentile (424.6) and coverage < 80%, these farms have high event evidence but weak observed-source denominator support.
+Using steady candidate count >= the 90th percentile (422.8) and coverage < 80%, these farms have high event evidence but weak observed-source denominator support.
 
-| farm_id | operational_start_month | observed_years | candidate_intervention_count | candidate_interventions_per_observed_farm_year | coverage_share | confidence_class |
+| farm_id | steady_observed_years | steady_candidate_count | steady_intervention_intensity_per_farm_year | coverage_share | confidence_class | recommended_simulator_use |
 | --- | --- | --- | --- | --- | --- | --- |
-| Kriegers Flak | 2021-09 | 3.417 | 1046 | 306.146 | 0.788 | low_coverage |
+| Kriegers Flak | 2.917 | 1042 | 357.257 | 0.788 | low_coverage | validation_required |
 
-### No Observed Coverage After Operational Start
+### Insufficient Steady Operational Coverage
 
-These farms have commissioning-derived operational months in the manifest, but none of those months have observed AIS source coverage. Their pre-operational candidates are preserved separately and should not be treated as operational maintenance signal.
+These farms have less than one observed steady operational farm-year. Their commissioning and pre-operational evidence is preserved separately and should not be used as generic mature-operational maintenance signal.
 
-| farm_id | operational_start_month | manifest_months | observed_months | candidate_intervention_count | pre_operational_candidate_count | confidence_class |
+| farm_id | steady_operational_start_month | steady_manifest_months | steady_observed_months | steady_candidate_count | commissioning_candidate_count | pre_operational_candidate_count | recommended_simulator_use |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Arcadis Ost 1 | 2024-06 | 19 | 8 | 182 | 75 | 50 | insufficient_steady_coverage |
+| Baltic Eagle | 2026-01 | 0 | 0 | 0 | 0 | 1235 | insufficient_steady_coverage |
+| Fécamp | 2024-11 | 14 | 3 | 0 | 0 | 0 | insufficient_steady_coverage |
+| Gode Wind 3 | 2025-08 | 5 | 0 | 0 | 3 | 324 | insufficient_steady_coverage |
+| Hollandse Kust Noord | 2024-06 | 19 | 8 | 7 | 0 | 7 | insufficient_steady_coverage |
+| Hollandse Kust Zuid | 2025-06 | 7 | 0 | 0 | 0 | 43 | insufficient_steady_coverage |
+| Moray West | 2025-10 | 3 | 0 | 0 | 0 | 10 | insufficient_steady_coverage |
+| Neart na Gaoithe | 2026-01 | 0 | 0 | 0 | 0 | 13 | insufficient_steady_coverage |
+| Saint-Brieuc | 2024-11 | 14 | 3 | 0 | 0 | 2 | insufficient_steady_coverage |
+| Seagreen | 2024-04 | 21 | 10 | 8 | 0 | 2 | insufficient_steady_coverage |
+| Vesterhav Nord | 2024-09 | 16 | 5 | 51 | 141 | 30 | insufficient_steady_coverage |
+| Vesterhav Syd | 2024-09 | 16 | 5 | 58 | 149 | 32 | insufficient_steady_coverage |
+
+### Commissioning-Driven Activity
+
+These farms have more commissioning/ramp-up candidates than steady candidates. That pattern should feed a separate commissioning-demand module or remain excluded from generic mature-operational demand multipliers.
+
+| farm_id | commissioning_observed_years | commissioning_candidate_count | commissioning_intervention_intensity_per_farm_year | steady_observed_years | steady_candidate_count | steady_intervention_intensity_per_farm_year | recommended_simulator_use |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Ormonde | 0.5 | 22 | 44 | 12.417 | 3 | 0.242 | commissioning_separate_module |
+| Vesterhav Nord | 0.5 | 141 | 282 | 0.417 | 51 | 122.4 | insufficient_steady_coverage |
+| Vesterhav Syd | 0.5 | 149 | 298 | 0.417 | 58 | 139.2 | insufficient_steady_coverage |
+
+### High Coverage With Zero Or Near-Zero Steady Signal
+
+These farms have coverage >= 90% and <= 0.2 steady candidate interventions per observed steady farm-year. They should not be interpreted as having no maintenance demand without external validation.
+
+| farm_id | steady_observed_years | steady_candidate_count | steady_intervention_intensity_per_farm_year | coverage_share | confidence_class | recommended_simulator_use |
 | --- | --- | --- | --- | --- | --- | --- |
-| Baltic Eagle | 2025-07 | 6 | 0 | 0 | 1235 | low_coverage |
-| Moray West | 2025-04 | 9 | 0 | 0 | 10 | low_coverage |
-| Neart na Gaoithe | 2025-07 | 6 | 0 | 0 | 13 | low_coverage |
-
-### High Coverage With Zero Or Near-Zero Signal
-
-These farms have coverage >= 90% and <= 0.2 raw candidate interventions per observed farm-year. They should not be interpreted as having no maintenance demand without external validation.
-
-| farm_id | operational_start_month | observed_years | candidate_intervention_count | candidate_interventions_per_observed_farm_year | coverage_share | confidence_class |
-| --- | --- | --- | --- | --- | --- | --- |
-| Avedøre Holme | 2011-12 | 13.083 | 2 | 0.153 | 0.929 | high_observed_signal |
-| Lincs | 2013-09 | 11.333 | 1 | 0.088 | 0.919 | high_observed_signal |
-| London Array | 2013-04 | 11.75 | 1 | 0.085 | 0.922 | high_observed_signal |
-| Northwind | 2014-06 | 10.583 | 0 | 0 | 0.914 | high_observed_zero |
-| Teesside | 2014-04 | 10.75 | 0 | 0 | 0.915 | high_observed_zero |
-| Thornton Bank - phase II and III | 2013-09 | 11.333 | 2 | 0.176 | 0.919 | high_observed_signal |
-| West of Duddon Sands | 2014-10 | 10.25 | 2 | 0.195 | 0.911 | high_observed_signal |
+| Avedøre Holme | 12.583 | 2 | 0.159 | 0.929 | high_observed_signal | steady_operational_only |
+| Lincs | 10.833 | 1 | 0.092 | 0.919 | high_observed_signal | steady_operational_only |
+| London Array | 11.25 | 1 | 0.089 | 0.922 | high_observed_signal | steady_operational_only |
+| Northwind | 10.083 | 0 | 0 | 0.914 | high_observed_zero | validation_required |
+| Teesside | 10.25 | 0 | 0 | 0.915 | high_observed_zero | validation_required |
+| Thornton Bank - phase II and III | 10.833 | 2 | 0.185 | 0.919 | high_observed_signal | steady_operational_only |
+| Walney 2 | 12.083 | 2 | 0.166 | 0.926 | high_observed_signal | commissioning_separate_module |
 
 ## Simulator-Use Assessment
 
-The corrected output is more plausible as a farm-level maintenance intervention intensity screen and as a relative evidence layer for RQ12 simulator inputs. It still should not be used as a confirmed fault-driven process. Remaining guardrails are operational-window quality for newly commissioned farms, outlier review for very high rates, and external SCADA/fault/work-order validation before calibrating true fault demand.
+The phase-separated output is more suitable as a farm-level maintenance intervention intensity screen and as a relative evidence layer for RQ12 simulator inputs. Only `steady_intervention_intensity_per_farm_year` should be considered for a generic mature-operational demand multiplier, and even then it remains provisional until external SCADA/fault/work-order validation. Commissioning/ramp-up activity should be kept separate.
