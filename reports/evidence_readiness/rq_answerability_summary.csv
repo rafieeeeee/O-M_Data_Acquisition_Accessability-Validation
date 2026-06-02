@@ -1,0 +1,13 @@
+rq_number,answerability,missing_layers,recommended_next_action
+RQ1,partial,broad SCADA/non-operation denominator,Use observed envelope only; add failed/non-operation denominator before access probability.
+RQ2,blocked,vessel registry/access metadata,"Prioritize vessel registry enrichment for length, beam, draft, and access technology."
+RQ3,blocked,vessel registry/access metadata,Add authoritative vessel build year and registry provenance before trend claims.
+RQ4,partial,broad SCADA/non-operation denominator,Confine to local CARE validation slices until failed/short-attempt labels are broader.
+RQ5,blocked,full trajectory tracks; vessel registry/access metadata,Recover voyage/port-gap trajectories and registry labels before campaign claims.
+RQ6,ready,,Proceed with source-aware sensitivity; keep wind direction and current coverage limitations explicit.
+RQ7,blocked,external market/curtailment data,Add curtailment/market source and restrict current work to validation design.
+RQ8,blocked,wake model inputs,Define wake/value inputs and broaden SCADA linkage beyond local CARE slices.
+RQ9,blocked,direct AIS receiver/source geometry; fault/work-order logs,Keep as intervention-intensity evidence; add receiver/source controls and fault/work-order validation.
+RQ10,blocked,external oil and gas benchmark data,Identify accepted O&G benchmark source before comparison.
+RQ11,partial,solar/light features; vessel registry/access metadata,Add deterministic light features and registry enrichment before safety-practice interpretation.
+RQ12,partial,vessel registry/access metadata,Run simulator ablations only after vessel metadata and validation labels are explicit.

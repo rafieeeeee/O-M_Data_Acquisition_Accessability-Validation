@@ -39,6 +39,13 @@ Current modelling boundary: Stage 1 exists as an observed/provisional workabilit
 - **Sea-Basin Caveat:** `sea_basin` is a geographic grouping label, not a physical exposure metric. The Baltic/North Sea contrast is strong in the AIS-derived intervention-intensity proxy, but it remains entangled with country/farm composition, vessel concentration, assignment geometry, CTV/SOV detectability, and AIS observability bias.
 - **AIS Observability Bias:** Direct AIS receiver/source geometry is not available in the current RQ9 tables. Receiver station, terrestrial/satellite flag, receiver coordinates, distance-to-nearest receiver, or accepted offshore-distance proxies are required before treating sea-basin differences as operational or reliability differences.
 
+### Evidence Readiness Foundation
+- **Purpose:** `analysis/00_data_foundation/EVIDENCE_READINESS_METHODOLOGY.md` and `src/om_pipeline/analysis/evidence_readiness.py` define a pre-analysis evidence-readiness layer across AIS, turbine metadata, metocean, vessel metadata, geography, and SCADA/event validation. The layer describes answerability before new RQ modelling starts.
+- **Observation Units:** The first audit uses farm-month, turbine-month, dwell/event, and vessel-month concepts. Farm-months come from the AIS backfill manifest; turbine-months inherit farm-month source status and add turbine assignment evidence where available.
+- **Coverage vs Observability:** `success` and `success_no_ais_in_bbox` are observed AIS source coverage. `skipped_missing_source` is missing source evidence, not a zero-event month. Observed-zero months remain separate from source-missing months.
+- **Direct vs Proxy Evidence:** AIS dwell/events are candidate intervention evidence. They are not confirmed failures. Direct receiver/source metadata is still absent; top-MMSI concentration, high-confidence assignment share, event density, and observed-zero share are only proxy observability controls.
+- **First Audit Outputs:** The first readiness matrices are written under `Data/Processed/analysis/evidence_readiness/`; report summaries are under `reports/evidence_readiness/`. The first RQ readiness pass marks RQ6 as ready for source-aware sensitivity, RQ1/RQ4/RQ11/RQ12 as partial, and RQ2/RQ3/RQ5/RQ7/RQ8/RQ9/RQ10 as blocked pending missing layers.
+
 ## Data Pipeline Architecture
 
 ### Funnel Approach (Hybrid)
