@@ -127,7 +127,7 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] Built farm-level phase-separated AIS-derived maintenance intervention intensity with commissioning/ramp-up and steady-operational periods separated.
     - [x] Built turbine-level feasibility, denominator/exposure v1, and turbine characteristics comparison v1 using high-confidence Tier A `<=200 m` assignment as primary evidence and high+medium `<=500 m` as sensitivity only.
     - [x] Audited the Baltic/North Sea contrast and preserved the key caveat: `sea_basin` is a geographic grouping, not a physical exposure metric or confirmed reliability signal.
-    - [x] Added an AIS observability bias audit showing no direct receiver/source geometry fields in current RQ9 tables; receiver station, terrestrial/satellite flag, receiver coordinates, distance-to-nearest receiver, or accepted offshore-distance proxies remain required before basin claims are thesis-safe.
+    - [x] Added an AIS observability bias audit showing no per-vessel-message receiver assignment in current RQ9 tables; raw `Type of mobile = Base Station` AIS records provide observed base-station geometry as a source-geometry control, but vessel pings still need receiver-station linkage before basin claims are thesis-safe.
     - [ ] Next RQ9 research step: test whether intervention intensity varies by turbine age/capacity/OEM after controlling for farm, basin, and observability.
 
 ---

@@ -23,6 +23,8 @@ EVIDENCE_READINESS_CONTEXT_CHECKS = (
             "`skipped_missing_source` is missing source evidence",
             "RQ6 as ready only for source-aware metocean sensitivity/readiness work",
             "RQ2/RQ3/RQ5/RQ7/RQ8/RQ9/RQ10 as blocked",
+            "within country/sea-basin/year-month strata",
+            "evidence consistent with geographical AIS observability bias",
         ),
     ),
     ContextCheck(
@@ -55,6 +57,44 @@ EVIDENCE_READINESS_CONTEXT_CHECKS = (
             "RQ6 is ready only for source-aware metocean sensitivity/readiness work",
             "RQ9 remains blocked for failure claims",
             "Validation is localized to CARE Wind Farm B/C mappings",
+        ),
+    ),
+    ContextCheck(
+        "analysis/00_data_foundation/AIS_RECEIVER_DISTANCE_OBSERVABILITY_AUDIT.md",
+        (
+            "/opt/anaconda3/bin/python scripts/build_ais_observability_bias.py",
+            "Only per-message receiver assignment can directly test receiver-distance bias",
+            "`skipped_missing_source` is missing source evidence",
+            "Observed AIS base-station geometry is reported separately",
+            "Matched Base-Station Distance Diagnostic",
+            "`insufficient_matched_strata`",
+        ),
+    ),
+    ContextCheck(
+        "reports/evidence_readiness/ais_receiver_distance_observability_report.md",
+        (
+            "Only per-message receiver assignment can directly test receiver-distance bias",
+            "`Data source type` is source-channel evidence",
+            "`Type of mobile = Base Station` rows are direct AIS base-station geometry reference",
+            "`skipped_missing_source` is missing source evidence",
+            "Do not infer receiver locations from vessel positions",
+            "Do not claim the nearest observed base station received a vessel ping",
+            "Matched Base-Station Distance Diagnostic",
+            "observed-source farm-months only",
+            "Nearest observed AIS base station remains a source-geometry control only",
+            "RQ9 remains blocked for failure claims",
+        ),
+    ),
+    ContextCheck(
+        "docs/adr/0032-ais-observability-bias-audit.md",
+        (
+            "Tier 1a per-message receiver assignment",
+            "Tier 1b direct AIS source-geometry reference",
+            "`Data source type`",
+            "Require explicit provenance",
+            "country/sea-basin/year-month strata",
+            "evidence consistent with geographical AIS observability bias",
+            "not failure rate",
         ),
     ),
 )
