@@ -2,7 +2,9 @@ import pandas as pd
 
 from om_pipeline.analysis.evidence_readiness import (
     build_farm_metadata,
+    build_geographic_coverage_summary,
     build_farm_month_evidence_matrix,
+    build_report_text,
     build_rq_readiness_matrix,
     build_turbine_month_evidence_matrix,
     classify_rq_answerability,
@@ -223,3 +225,59 @@ def test_no_failure_rate_claim_is_made_from_ais_only_evidence():
 
     assert not contains_ais_only_failure_rate_claim(allowed_boundary)
     assert contains_ais_only_failure_rate_claim(prohibited)
+
+
+def test_report_preserves_reproducibility_and_missingness_semantics():
+    farm_matrix = _farm_matrix()
+    turbine_matrix = build_turbine_month_evidence_matrix(
+        farm_matrix,
+        turbine_exposure=_turbine_exposure(),
+        turbine_events=_events(),
+    )
+    rq_matrix = build_rq_readiness_matrix(
+        {
+            "ais_manifest": True,
+            "ais_dwell": True,
+            "metocean_fusion_v2": True,
+            "wave": True,
+            "wind_speed": True,
+            "current": True,
+            "bathymetry": True,
+            "turbine_metadata": True,
+            "vessel_metadata": False,
+            "scada_validation": True,
+            "direct_ais_receiver_metadata": False,
+            "fault_work_orders": False,
+        }
+    )
+    validation = {
+        "farm_month_rows": len(farm_matrix),
+        "turbine_month_rows": len(turbine_matrix),
+        "observed_source_months": int(farm_matrix["observed_source_month_flag"].sum()),
+        "skipped_missing_source_months": int(farm_matrix["skipped_missing_source_flag"].sum()),
+        "observed_zero_months": int(farm_matrix["zero_event_despite_coverage"].sum()),
+        "vessel_metadata_available_months": int(farm_matrix["vessel_metadata_available"].sum()),
+        "wave_available_months": int(farm_matrix["metocean_wave_available"].sum()),
+        "wind_speed_available_months": int(farm_matrix["metocean_wind_speed_available"].sum()),
+        "wind_direction_available_months": int(farm_matrix["metocean_wind_direction_available"].sum()),
+        "current_available_months": int(farm_matrix["metocean_current_available"].sum()),
+        "bathymetry_available_months": int(farm_matrix["metocean_bathymetry_available"].sum()),
+        "scada_validation_available_months": int(farm_matrix["scada_validation_available"].sum()),
+    }
+
+    report = build_report_text(
+        farm_matrix,
+        turbine_matrix,
+        build_geographic_coverage_summary(farm_matrix),
+        rq_matrix,
+        validation,
+    )
+
+    assert "/opt/anaconda3/bin/python scripts/build_evidence_readiness.py" in report
+    assert "`success` and `success_no_ais_in_bbox` are observed AIS source coverage" in report
+    assert "`success_no_ais_in_bbox` is observed zero-event evidence" in report
+    assert "`skipped_missing_source` is missing source evidence" in report
+    assert "RQ6 is ready only for source-aware metocean sensitivity/readiness work" in report
+    assert "RQ9 remains blocked for failure claims" in report
+    assert "Validation is localized to CARE Wind Farm B/C mappings" in report
+    assert not contains_ais_only_failure_rate_claim(report)

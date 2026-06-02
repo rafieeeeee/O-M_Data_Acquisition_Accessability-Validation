@@ -22,6 +22,8 @@ integrates existing evidence and preserves missingness semantics.
    turbine-month, and RQ readiness matrices.
 2. Add methodology and reporting under `analysis/00_data_foundation/` and
    `reports/evidence_readiness/`.
+   The builder is the source of truth for the generated report and ignored
+   processed matrices.
 3. Treat `success` and `success_no_ais_in_bbox` as observed AIS source coverage.
    Treat `skipped_missing_source` as missing source evidence, not zero-event
    evidence.
@@ -41,6 +43,6 @@ integrates existing evidence and preserves missingness semantics.
   reliability claims.
 - Missing source months, missing currents, missing wind direction, and missing
   vessel metadata remain visible rather than being silently converted to zeros.
-- The first RQ-ready path is source-aware metocean sensitivity work (RQ6);
-  RQ9 remains blocked for failure claims until receiver/source controls and
-  fault/work-order validation exist.
+- The first RQ-ready path is source-aware metocean sensitivity/readiness work
+  (RQ6) only; RQ9 remains blocked for failure claims until receiver/source
+  controls and fault/work-order validation exist.

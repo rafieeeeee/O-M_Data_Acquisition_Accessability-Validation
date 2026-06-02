@@ -4,7 +4,7 @@ RQ2,blocked,vessel registry/access metadata,"Prioritize vessel registry enrichme
 RQ3,blocked,vessel registry/access metadata,Add authoritative vessel build year and registry provenance before trend claims.
 RQ4,partial,broad SCADA/non-operation denominator,Confine to local CARE validation slices until failed/short-attempt labels are broader.
 RQ5,blocked,full trajectory tracks; vessel registry/access metadata,Recover voyage/port-gap trajectories and registry labels before campaign claims.
-RQ6,ready,,Proceed with source-aware sensitivity; keep wind direction and current coverage limitations explicit.
+RQ6,ready,,Proceed only with source-aware metocean sensitivity/readiness work; keep wind direction and current coverage limitations explicit.
 RQ7,blocked,external market/curtailment data,Add curtailment/market source and restrict current work to validation design.
 RQ8,blocked,wake model inputs,Define wake/value inputs and broaden SCADA linkage beyond local CARE slices.
 RQ9,blocked,direct AIS receiver/source geometry; fault/work-order logs,Keep as intervention-intensity evidence; add receiver/source controls and fault/work-order validation.

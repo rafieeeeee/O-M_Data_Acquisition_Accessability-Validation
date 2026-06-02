@@ -10,6 +10,23 @@ cannot answer.
 This layer does not rerun AIS extraction, rerun metocean extraction, modify raw
 or interim source data, clean data, or start new modelling.
 
+## Reproducibility
+
+The source of truth for the audit is `scripts/build_evidence_readiness.py` and
+`src/om_pipeline/analysis/evidence_readiness.py`. Rebuild from the repository
+root with:
+
+```bash
+/opt/anaconda3/bin/python scripts/build_evidence_readiness.py
+```
+
+The processed matrices under `Data/Processed/analysis/evidence_readiness/` are
+derived outputs and may be ignored by git. They should be regenerated from the
+existing local AIS, turbine, metocean, RQ9, vessel, and SCADA artifacts rather
+than hand-edited or committed as source. The tracked files under
+`reports/evidence_readiness/` are generated summaries from the same builder and
+should be refreshed after source or input changes.
+
 ## Observation Units
 
 - `farm-month`: one wind farm and one calendar month from the AIS backfill
@@ -105,7 +122,8 @@ Proxy evidence is useful but not definitive:
 - `RQ5`: AIS dwell/event evidence, full trajectory/port-gap evidence, and vessel
   registry/access metadata.
 - `RQ6`: Fusion v2 metocean event features, wave, wind speed, current, and
-  bathymetry evidence, with source-domain caveats.
+  bathymetry evidence. It is ready only for source-aware metocean
+  sensitivity/readiness work, not calibrated access-probability claims.
 - `RQ7`: SCADA state flags plus external curtailment or market data.
 - `RQ8`: SCADA events, turbine metadata, and wake/value inputs.
 - `RQ9`: AIS intervention-intensity evidence, turbine metadata, direct AIS
@@ -123,7 +141,8 @@ Proxy evidence is useful but not definitive:
   dwell/event evidence.
 - Treat `skipped_missing_source` as missing source evidence, not zero.
 - Keep missing current, missing wind direction, and missing vessel metadata as
-  null/false readiness flags. Do not impute physical zero values.
+  null feature values and false readiness flags. Do not impute physical zero
+  values or unknown-but-present vessel enrichment.
 - Keep direct AIS receiver/source geometry absent unless receiver station,
   terrestrial/satellite channel, receiver coordinates, or equivalent metadata is
   present.
