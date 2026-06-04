@@ -6,20 +6,20 @@
 
 ## Current Decision
 
-Fusion v2 is accepted as the first source-resolved multi-parameter event feature table.
+Fusion v2 is accepted as the first source-resolved multi-parameter event feature table. The Fusion v2 evidence-readiness audit is complete and recommends `proceed_with_restrictions`.
 
-The next increment should be Stage 2 modelling sensitivity:
+Stage 2 has not started. The next increment may be Stage 2 modelling sensitivity only under restricted claim boundaries:
 
 ```text
-Fusion v1 wave-only
-Fusion v2 wave + wind speed
-Fusion v2 wave + event-scale current
-Fusion v2 wave + wind speed + event-scale current
+wave-only primary sensitivity lane
+wave + wind-speed primary sensitivity lane
+current-aware NWS-domain / coverage-limited sensitivity only
+wave + wind speed + current NWS-domain / coverage-limited sensitivity only
 high-confidence subset only
-depth-warning sensitivity
+depth-warning exclusion/sensitivity required
 ```
 
-Do not start with a calibrated `P(operation | weather)` model. First test whether wind speed and event-scale current materially change the observed workability envelope relative to wave-only Fusion v1.
+Do not start with a calibrated `P(operation | weather)` model. First test whether wind speed materially changes the observed workability envelope relative to wave-only evidence, and treat event-scale current as a coverage-limited NWS-domain sensitivity rather than a headline cross-domain predictor.
 
 ## Accepted Inputs
 
@@ -41,6 +41,8 @@ fusion_v2_logic=src/om_pipeline/metocean/metocean_fusion_v2.py
 fusion_v2_cli=scripts/build_metocean_fusion_v2.py
 fusion_v2_tests=tests/test_metocean_fusion_v2.py
 decision_record=docs/adr/0029-metocean-fusion-v2-multiparameter-event-features.md
+readiness_report=reports/fusion_v2_evidence_readiness/readiness_report.md
+readiness_summary=Data/Processed/metocean/fusion_v2_evidence_readiness/readiness_summary.json
 ```
 
 ## Validation Snapshot
@@ -76,6 +78,14 @@ wave_wind_current_bathymetry_mixed_confidence=3870
 wave_current_bathymetry_no_wind=2721
 ```
 
+Evidence-readiness audit result:
+
+```text
+recommendation=proceed_with_restrictions
+caveats=partial_event_scale_current_coverage, wind_direction_sensitivity_only, depth_warning_sensitivity_required
+stage2_started=False
+```
+
 ## Modelling Guardrails
 
 - Missing current means no accepted NWS event-scale current evidence. It must not be interpreted as zero current.
@@ -87,6 +97,14 @@ wave_current_bathymetry_no_wind=2721
 - Baltic historical true-current evidence is daily/contextual and must not be promoted to event-scale current.
 - FINO remains validation-planning only; no FINO observations are imported.
 - Vessel length can be used as a continuous exploratory feature but must not be converted into CTV/SOV roles.
+
+## Restricted Stage 2 Claim Policy
+
+- Wave-only and wave+wind-speed comparisons can be primary sensitivity lanes.
+- Current-aware comparisons must be labelled NWS-domain and coverage-limited sensitivity only.
+- Wind direction is excluded from primary predictors.
+- Depth-warning exclusion or sensitivity treatment is required.
+- No calibrated `P(operation | weather)` claim is supported by Fusion v2 readiness evidence.
 
 ## Useful Commands
 
@@ -118,7 +136,7 @@ Run validation tests:
 
 ## Next Increment Recommendation
 
-Create a Stage 2 modelling sensitivity increment that writes report-only or clearly labelled exploratory artefacts, for example:
+Create a restricted Stage 2 modelling sensitivity increment that writes report-only or clearly labelled exploratory artefacts, for example:
 
 ```text
 reports/stage2_metocean_sensitivity/
@@ -128,16 +146,16 @@ Data/Processed/metocean/stage2_sensitivity/
 The first question should be:
 
 ```text
-Do wind speed and event-scale current change the observed Tier A workability envelope compared with wave-only Fusion v1?
+Do wind speed, and separately NWS-domain event-scale current, change the observed Tier A workability envelope compared with wave-only evidence?
 ```
 
 Recommended comparisons:
 
-1. Tier A wave-only Fusion v1 envelope.
+1. Tier A wave-only envelope.
 2. Tier A Fusion v2 wave + wind-speed-ready events.
-3. Tier A Fusion v2 wave + event-scale-current events.
-4. Tier A Fusion v2 wave + wind speed + current.
+3. Tier A Fusion v2 wave + event-scale-current events, labelled NWS-domain and coverage-limited.
+4. Tier A Fusion v2 wave + wind speed + current, labelled NWS-domain and coverage-limited.
 5. High-confidence multivariate subset.
-6. Depth-warning excluded subset.
+6. Depth-warning excluded and depth-warning sensitivity subsets.
 
 Hold back targeted wind-direction repair and stress-test current farm-years until the speed/current sensitivity result shows whether they are worth the extra evidence work.

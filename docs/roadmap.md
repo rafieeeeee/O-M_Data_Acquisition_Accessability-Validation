@@ -64,6 +64,10 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] Built `Data/Processed/metocean/fusion_v2/dwell_metocean_fusion_v2.parquet`.
     - [x] Preserved all `92,660` dwell rows and joined wave confidence, wind confidence, current confidence, and bathymetry.
     - [x] Validated `13,207` wave+wind+current rows and `9,337` high-confidence multivariate rows.
+- [x] **Fusion v2 Evidence-Readiness Audit:**
+    - [x] Completed the report-only readiness audit for Stage 2 inputs.
+    - [x] Recorded recommendation `proceed_with_restrictions` with caveats `partial_event_scale_current_coverage`, `wind_direction_sensitivity_only`, and `depth_warning_sensitivity_required`.
+    - [x] Kept the audit non-modelling: no envelope comparison, calibrated `P(operation | weather)`, Fusion v2 rebuild, FINO import, repair, or download.
 - [x] **Stage 1 Observed/Provisional Workability Surface:**
     - [x] Preserved a configurable workability surface engine with $H_s \times T_p$ as the default preset rather than the closed workability definition.
     - [x] Kept Stage 1 labelled as observed/provisional and not calibrated `P(operation | weather)`.
@@ -87,7 +91,7 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
 - [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
-- [ ] **Stage 2 Fusion v2 Sensitivity:** Not started. Use Fusion v2 to compare observed envelopes for wave-only, wave+wind speed, wave+current, and wave+wind+current subsets before any calibrated probability model.
+- [ ] **Stage 2 Fusion v2 Sensitivity:** Not started. Use restricted claims: wave-only and wave+wind-speed can be primary sensitivity lanes; current-aware comparisons are NWS-domain and coverage-limited sensitivity only; wind direction is excluded from primary predictors; depth-warning exclusion/sensitivity is required; no calibrated `P(operation | weather)` claim is supported.
 
 ---
 
