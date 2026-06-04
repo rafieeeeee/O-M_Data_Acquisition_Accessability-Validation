@@ -82,6 +82,30 @@ def test_context_sweep_requires_governance_support_docs(tmp_path: Path):
     assert "Missing context file: docs/adr/0031-stable-mainline-spec-driven-governance.md" in issues
 
 
+def test_context_sweep_requires_research_question_register_docs(tmp_path: Path):
+    (tmp_path / "AGENTS.md").write_text("", encoding="utf-8")
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs" / "adr").mkdir()
+    (tmp_path / "start_here").mkdir()
+    (tmp_path / "docs" / "README.md").write_text("", encoding="utf-8")
+    (tmp_path / "docs" / "governance.md").write_text("", encoding="utf-8")
+    (tmp_path / "docs" / "context-authority-map.md").write_text("", encoding="utf-8")
+    (tmp_path / "docs" / "branch-exit-checklist.md").write_text("", encoding="utf-8")
+    (tmp_path / "docs" / "adr" / "0031-stable-mainline-spec-driven-governance.md").write_text(
+        "",
+        encoding="utf-8",
+    )
+    (tmp_path / "start_here" / "00_start_here.md").write_text("", encoding="utf-8")
+    (tmp_path / "start_here" / "01_project_state_summary.md").write_text("", encoding="utf-8")
+
+    issues = run_context_sweep(tmp_path)
+
+    assert "Missing context file: docs/research-questions/README.md" in issues
+    assert "Missing context file: docs/research-questions/rq-register.md" in issues
+    assert "Missing context file: docs/research-questions/templates/rq-analysis-plan-template.md" in issues
+    assert "Missing context file: docs/research-questions/templates/rq-exit-report-template.md" in issues
+
+
 def test_status_guardrail_checks_report_missing_authoritative_phrases(tmp_path: Path):
     context_file = tmp_path / "CONTEXT.md"
     context_file.write_text("Stage 2 is the next planned modelling step and has not started\n", encoding="utf-8")

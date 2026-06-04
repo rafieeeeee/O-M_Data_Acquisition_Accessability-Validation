@@ -10,6 +10,7 @@ This repository is designed for autonomous and semi-autonomous development by AI
 - **Modular Logic:** Prefer placing core business logic in `src/om_pipeline/`. Keep `scripts/` as thin CLI wrappers.
 - **Spec-Driven Increments:** Every meaningful increment must start from a short plan/spec, run on a topic branch, carry validation evidence, update context docs where project meaning changes, and end with explicit review/sign-off before merge.
 - **Stable Mainline:** Do not work directly on `main`. `main` is the stable integration baseline; merge only after validation and review, then delete the completed topic branch.
+- **Research-Question Control:** Research analysis must start from `docs/research-questions/rq-register.md` and an RQ analysis plan with evidence boundaries, validation checks, output paths, and exit-report expectations.
 
 ## Governance
 
@@ -41,6 +42,7 @@ Meaningful increments follow this staged path:
 - `docs/governance.md`: The staged increment workflow, definition of done, and branch policy.
 - `docs/context-authority-map.md`: Source-of-truth map for status, evidence boundaries, and derived summaries.
 - `docs/branch-exit-checklist.md`: Required sign-off checklist before merging meaningful increments.
+- `docs/research-questions/README.md`: Research-question register, analysis-plan templates, evidence-boundary rules, and targeted-unblocker policy.
 - `docs/adr/0031-stable-mainline-spec-driven-governance.md`: Decision record for stable-mainline, spec-driven governance.
 - `docs/adr/`: Records of technical decisions.
 - `docs/roadmap.md`: The project's progression and future goals.
