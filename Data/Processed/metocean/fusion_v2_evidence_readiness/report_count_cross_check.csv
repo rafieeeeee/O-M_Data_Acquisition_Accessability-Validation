@@ -1,0 +1,11 @@
+report_label,audit_key,report_count,audit_count,matches
+Output rows,all_events,92660,92660,True
+Wave rows,has_wave,83901,83901,True
+Wind speed rows,has_wind_speed,75380,75380,True
+Wind direction rows,has_wind_direction,197,197,True
+Current rows,has_current,16307,16307,True
+Wave + wind speed + current + bathymetry rows,model_ready_wave_wind_current,13207,13207,True
+High-confidence multivariate rows,model_ready_high_confidence,9337,9337,True
+Tier A total,tier_a_total,15264,15264,True
+Tier A with wave + wind + current,tier_a_model_ready_wave_wind_current,4552,4552,True
+High-confidence Tier A subset,tier_a_model_ready_high_confidence,3402,3402,True

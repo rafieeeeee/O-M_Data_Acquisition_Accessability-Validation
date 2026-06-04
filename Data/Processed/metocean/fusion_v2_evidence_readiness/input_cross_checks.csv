@@ -1,0 +1,6 @@
+input_name,input_path,rows,row_count_matches_fusion,has_dwell_id,duplicate_dwell_id_rows,dwell_id_order_matches_fusion,dwell_id_set_matches_fusion
+dwell_weather,Data/Processed/ais_dwell_backfill/cross_farm_dwell_weather_features.parquet,92660,True,True,0.0,True,True
+wave_confidence,Data/Processed/metocean/fusion_v1_source_agreement/wave_event_confidence.parquet,92660,True,True,0.0,False,True
+wind_confidence,Data/Processed/metocean/wind_confidence_v1/wind_event_confidence.parquet,92660,True,True,0.0,True,True
+current_confidence,Data/Processed/metocean/current_confidence_v1/current_event_confidence.parquet,92660,True,True,0.0,True,True
+bathymetry,Data/Processed/metocean/bathymetry/site_bathymetry_points.parquet,6642,False,False,,,

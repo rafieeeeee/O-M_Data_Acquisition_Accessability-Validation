@@ -12,7 +12,9 @@ The active objective is no longer only the Wikinger/Baltic pilot. The current ha
 2. Completed NWS wave hindcast backbone for North Sea and overlap farms.
 3. Completed Baltic Copernicus native-hourly wave archive for the Baltic farms in scope.
 
-Stage 1 now exists as an observed/provisional workability surface. Its default view is $H_s \times T_p$, but the surface engine is configurable for additional metocean and grouping dimensions. Stage 2 is next and has not started; it should use Fusion v2 to compare wave-only, wave+wind speed, wave+current, and wave+wind+current slices before any calibrated probability model.
+Stage 1 now exists as an observed/provisional workability surface. Its default view is $H_s \times T_p$, but the surface engine is configurable for additional metocean and grouping dimensions. Stage 2 is next and has not started. The Fusion v2 evidence-readiness audit is complete and recommends `proceed_with_restrictions`, with caveats `partial_event_scale_current_coverage`, `wind_direction_sensitivity_only`, and `depth_warning_sensitivity_required`.
+
+The next Stage 2 work must use restricted claims: wave-only and wave+wind-speed can be primary sensitivity lanes; current-aware comparisons are NWS-domain and coverage-limited sensitivity only; wind direction is excluded from primary predictors; depth-warning exclusion or sensitivity is required; and no calibrated `P(operation | weather)` claim is supported.
 
 RQ9 now has a completed local turbine-feasibility workstream for AIS-derived maintenance intervention intensity, not confirmed failure rate. Farm-level phase-separated intervention intensity, turbine-level feasibility, turbine denominator/exposure v1, turbine characteristics comparison v1, sea-basin observability audits, and an AIS observability bias audit are available under:
 

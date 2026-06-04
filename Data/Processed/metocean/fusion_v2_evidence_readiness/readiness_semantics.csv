@@ -1,0 +1,6 @@
+readiness_flag,actual_true_count,expected_true_count,mismatch_count
+model_ready_wave_only,83901,83901,0
+model_ready_wave_wind,71134,71134,0
+model_ready_wave_current,15928,15928,0
+model_ready_wave_wind_current,13207,13207,0
+model_ready_high_confidence,9337,9337,0

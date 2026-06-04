@@ -1,0 +1,12 @@
+subset,tier_a_event_count,share_of_tier_a
+all_events,15264,1.0
+has_wave,14606,0.9568920335429769
+has_wind_speed,13708,0.8980607966457023
+has_wind_direction,34,0.0022274633123689725
+has_current,5358,0.35102201257861637
+has_bathymetry,15264,1.0
+model_ready_wave_only,14606,0.9568920335429769
+model_ready_wave_wind,13668,0.8954402515723271
+model_ready_wave_current,5308,0.3477463312368973
+model_ready_wave_wind_current,4552,0.29821802935010483
+model_ready_high_confidence,3402,0.22287735849056603
