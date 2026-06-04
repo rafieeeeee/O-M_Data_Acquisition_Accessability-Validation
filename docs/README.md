@@ -9,6 +9,7 @@ Use this file as the first stop when orienting a new agent or returning to the p
 - [Governance](governance.md): Spec-driven increment workflow, definition of done, and branch policy.
 - [Context authority map](context-authority-map.md): Source-of-truth map for status, evidence boundaries, and derived summaries.
 - [Branch exit checklist](branch-exit-checklist.md): Merge-readiness and branch-deletion sign-off template.
+- [Increment specs](increments/README.md): Spec-first plans for meaningful increments before implementation starts.
 - [Roadmap](roadmap.md): Phase-level project status and next technical milestones.
 - [Thesis methodology](thesis-methodology.md): Methods-facing explanation of sampling, filters, limitations, and validation.
 - [Provenance](provenance.md): Source lineage and pilot-run acquisition metadata.
