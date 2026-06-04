@@ -68,6 +68,11 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
     - [x] Completed the report-only readiness audit for Stage 2 inputs.
     - [x] Recorded recommendation `proceed_with_restrictions` with caveats `partial_event_scale_current_coverage`, `wind_direction_sensitivity_only`, and `depth_warning_sensitivity_required`.
     - [x] Kept the audit non-modelling: no envelope comparison, calibrated `P(operation | weather)`, Fusion v2 rebuild, FINO import, repair, or download.
+- [x] **RQ01 Restricted Stage 2 Fusion v2 Sensitivity:**
+    - [x] Accepted restricted descriptive sensitivity result under `reports/rq01_stage2_workability_sensitivity/`.
+    - [x] Finding: wave + wind speed shows no material screened difference from wave-only; current-aware and high-confidence multivariate lanes show material screened differences.
+    - [x] Kept current-aware findings NWS-domain / coverage-limited sensitivity only, not general European causal evidence.
+    - [x] Kept Stage 2 descriptive/observed-envelope only; no calibrated `P(operation | weather)` model has been built or accepted.
 - [x] **Stage 1 Observed/Provisional Workability Surface:**
     - [x] Preserved a configurable workability surface engine with $H_s \times T_p$ as the default preset rather than the closed workability definition.
     - [x] Kept Stage 1 labelled as observed/provisional and not calibrated `P(operation | weather)`.
@@ -91,7 +96,8 @@ To replace legacy, single-parameter vessel workability heuristics (e.g., $H_s < 
 - [ ] **Feature Matrix Construction — Wikinger (BLOCKED):** Requires Wikinger SCADA/DPR data. Unblocks after Wikinger log sourcing.
 - [ ] **Master Feature Matrix:** Merge Wind Farm B, C, and Wikinger slices into a unified training CSV/Parquet:
     - `[Timestamp | Vessel_Specs | Hs | Tp | Wave_Direction | Wind | Current | Vessel_Heading | Target_Status]`
-- [ ] **Stage 2 Fusion v2 Sensitivity:** Not started. Use restricted claims: wave-only and wave+wind-speed can be primary sensitivity lanes; current-aware comparisons are NWS-domain and coverage-limited sensitivity only; wind direction is excluded from primary predictors; depth-warning exclusion/sensitivity is required; no calibrated `P(operation | weather)` claim is supported.
+- [ ] **Stage 2 Follow-On Interpretation / Analysis:** Use the accepted RQ01 result as the basis for thesis-facing interpretation or a follow-on analysis explaining why current-aware lanes differ. Keep restricted claims: current-aware comparisons are NWS-domain and coverage-limited sensitivity only; wind direction is excluded from primary predictors; depth-warning exclusion/sensitivity is required; no calibrated `P(operation | weather)` claim is supported.
+    - Calibrated Stage 2 probability modelling: Not started.
 
 ---
 

@@ -23,3 +23,14 @@
   rebuild, wind/current repair, or missing-current-to-zero interpretation.
 - Generated outputs are pending review. They are not yet accepted final RQ
   findings or durable project-context conclusions.
+
+## 2026-06-04: Restricted Result Reviewed And Accepted
+
+- RQ01 restricted descriptive sensitivity result was reviewed and accepted.
+- Accepted finding: wave + wind speed shows no material screened difference
+  from wave-only, while current-aware and high-confidence multivariate lanes
+  show material screened differences.
+- Restricted interpretation: current-aware findings are NWS-domain /
+  coverage-limited sensitivity only, not general European causal evidence.
+- Stage 2 remains descriptive/observed-envelope only. No calibrated
+  `P(operation | weather)` model has been built or accepted.
