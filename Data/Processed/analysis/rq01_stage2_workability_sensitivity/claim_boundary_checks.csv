@@ -1,0 +1,12 @@
+check,status,severity,issue_count,evidence
+required_columns_present,pass,integrity,0,Fusion v2 contains every RQ01 required column.
+duplicate_dwell_identity,pass,integrity,0,RQ01 requires unique dwell_id rows.
+missing_current_null_not_zero,pass,integrity,0,"Rows without event-scale current must retain null current values, not zero-filled values."
+wave_only_tier_a_nonzero,pass,integrity,0,Primary wave-only Tier A lane must be non-empty.
+wave_wind_speed_tier_a_nonzero,pass,integrity,0,Primary wave + wind-speed Tier A lane must be non-empty.
+current_lanes_nonzero_but_restricted,pass,integrity,0,Current-aware lanes are available but remain NWS-domain / coverage-limited sensitivity only.
+wind_direction_excluded_from_primary_predictors,pass,claim_boundary,0,Lane feature columns do not include wind-direction fields.
+current_lanes_labelled_restricted,pass,claim_boundary,0,Current-aware lanes are explicitly labelled restricted sensitivity.
+readiness_restrictions_inherited,pass,claim_boundary,0,RQ01 inherits the Fusion v2 evidence-readiness restricted recommendation and caveats.
+depth_warning_sensitivity_present,pass,claim_boundary,0,RQ01 emits depth-warning exclusion and sensitivity subsets.
+no_calibrated_probability_claim,pass,claim_boundary,0,"Outputs are observed-envelope descriptive sensitivity only, not P(operation | weather)."
