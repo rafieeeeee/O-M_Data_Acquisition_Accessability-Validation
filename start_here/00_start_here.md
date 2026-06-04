@@ -16,6 +16,7 @@ The ultimate authority on all domain and engineering contracts is maintained in 
 * **[docs/governance.md](../docs/governance.md)**: Spec-driven increment workflow, stable-main branch policy, validation gates, acceptance/sign-off, and branch cleanup rules.
 * **[docs/context-authority-map.md](../docs/context-authority-map.md)**: Source-of-truth map for repeated status claims, evidence boundaries, and derived summaries.
 * **[docs/branch-exit-checklist.md](../docs/branch-exit-checklist.md)**: Required merge-readiness and branch-deletion sign-off checklist.
+* **[docs/research-questions/README.md](../docs/research-questions/README.md)**: Research-question register, analysis-plan templates, evidence-boundary rules, and targeted-unblocker policy.
 
 ### 2. Operational Planning & Design Notes
 * **[docs/README.md](../docs/README.md)**: The global documentation map of the repository.
@@ -49,6 +50,7 @@ These are the fastest orientation facts for the current repository state:
 * **FINO validation planning:** dry-run access and station-to-farm proximity planning exists at `analysis/06_rq6_metocean_spatial_resolution/fino_metadata_access_plan.md`; a report-only native export inspector exists at `scripts/inspect_fino_export.py`; no FINO time-series import has been run.
 * **NORA3 sidecar cache:** joined checkpoint batches are written to `Data/Processed/metocean/nora3_joined_cache/` while the downloader is active.
 * **Governance:** `main` is the stable integration baseline. Meaningful increments use topic branches, plan/spec first, validation evidence, context updates where meaning changes, acceptance/sign-off before merge, and branch deletion after merge. Use the authority map before editing repeated status claims.
+* **Research-question control:** start analysis work from the RQ register and an accepted analysis plan; targeted data-source work should unblock a named RQ claim rather than become a general precondition.
 
 ---
 
@@ -60,3 +62,4 @@ To quickly ramp up on current progress and prepare for immediate work, navigate 
 * **[docs/governance.md](../docs/governance.md)**: Increment template, staged workflow, definition of done, and Git control policy.
 * **[docs/context-authority-map.md](../docs/context-authority-map.md)**: Authority map for status and claim-boundary updates.
 * **[docs/branch-exit-checklist.md](../docs/branch-exit-checklist.md)**: Branch sign-off template before merge.
+* **[docs/research-questions/README.md](../docs/research-questions/README.md)**: RQ register, planning templates, and exit-report expectations.

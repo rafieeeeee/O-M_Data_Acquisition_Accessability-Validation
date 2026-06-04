@@ -10,6 +10,7 @@ Use this file as the first stop when orienting a new agent or returning to the p
 - [Context authority map](context-authority-map.md): Source-of-truth map for status, evidence boundaries, and derived summaries.
 - [Branch exit checklist](branch-exit-checklist.md): Merge-readiness and branch-deletion sign-off template.
 - [Increment specs](increments/README.md): Spec-first plans for meaningful increments before implementation starts.
+- [Research-question register](research-questions/README.md): RQ planning index, analysis-plan templates, evidence boundaries, and targeted-unblocker policy.
 - [Roadmap](roadmap.md): Phase-level project status and next technical milestones.
 - [Thesis methodology](thesis-methodology.md): Methods-facing explanation of sampling, filters, limitations, and validation.
 - [Provenance](provenance.md): Source lineage and pilot-run acquisition metadata.
@@ -39,6 +40,7 @@ Use this file as the first stop when orienting a new agent or returning to the p
 - `main` is the stable integration baseline. Meaningful work happens on topic branches, is validated and reviewed before merge, and the completed branch is deleted after merge.
 - Meaningful increments require a short plan/spec, implementation against that spec, validation evidence, documentation/context updates where project meaning changes, review notes, and acceptance/sign-off.
 - Use the context authority map before changing repeated status claims; update authority files and derived summaries in the same increment where project meaning changes.
+- Use the research-question register before starting analysis work; each RQ needs an analysis plan, evidence boundary, validation plan, and exit report.
 - The AIS source backfill helper processes farm-candidate slices first by quarter (`Jan/Apr/Jul/Oct`) and can then backfill the remaining months.
 - The dwell runner now supports dynamic `european_master` and `germany` clusters resolved from `Data/Interim/European_Turbine_Coordinates.csv`; use `--resume` for broad harvests.
 - Stage 1 exists as an observed/provisional workability surface. Its default view is $H_s \times T_p$, implemented as a configurable preset rather than the complete workability definition.
