@@ -1,0 +1,15 @@
+guardrail,status,issue_count,evidence,severity
+required_columns_present,pass,0,Fusion v2 has every column required by the readiness audit.,integrity
+dwell_row_identity_preserved,pass,0,Fusion v2 dwell_id order matches the accepted dwell-weather input.,integrity
+duplicate_dwell_identity,pass,0,Fusion v2 should contain no duplicate dwell_id rows.,integrity
+readiness_flag_semantics,pass,0,Canonical readiness flags match column masks from ADR 0029.,integrity
+missing_current_null_not_zero,pass,0,Missing-current zero-like rows: 0.,integrity
+wind_direction_quarantined,pass,0,Wind direction is usable only for A_speed_direction rows.,integrity
+high_confidence_multivariate_nonzero,pass,0,High-confidence multivariate subset must be non-empty.,integrity
+tier_a_high_confidence_nonzero,pass,0,Tier A high-confidence multivariate subset must be non-empty.,integrity
+partial_event_scale_current_coverage,caveat,76353,Missing current remains missing; current-aware claims require restrictions.,restriction
+wind_direction_sensitivity_only,caveat,75183,Wind direction is much narrower than wind-speed-ready evidence.,restriction
+depth_warning_sensitivity_required,caveat,57521,Rows with <=10 m depth warnings require exclusion or sensitivity treatment.,restriction
+fusion_v2_claim_boundary,pass,0,Audit is report-only readiness; it makes no calibrated access-probability claim.,claim_boundary
+fino_not_imported,pass,0,Audit does not read FINO observations.,claim_boundary
+baltic_daily_current_not_promoted,pass,0,Audit uses Fusion v2 event-scale current flags only.,claim_boundary

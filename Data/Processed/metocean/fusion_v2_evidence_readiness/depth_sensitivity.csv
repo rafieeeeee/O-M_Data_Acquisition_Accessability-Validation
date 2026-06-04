@@ -1,0 +1,7 @@
+subset,event_count,depth_warning_le_10m_count,depth_warning_le_10m_share,after_excluding_depth_warning_count,tier_a_event_count,tier_a_after_excluding_depth_warning_count
+all_events,92660,57521,0.6207748758903519,35139,15264,12703
+model_ready_wave_only,83901,50985,0.6076804805663818,32916,14606,12132
+model_ready_wave_wind,71134,41605,0.584882053589001,29529,13668,11257
+model_ready_wave_current,15928,134,0.008412857860371672,15794,5308,5299
+model_ready_wave_wind_current,13207,110,0.008328916483682896,13097,4552,4543
+model_ready_high_confidence,9337,0,0.0,9337,3402,3402

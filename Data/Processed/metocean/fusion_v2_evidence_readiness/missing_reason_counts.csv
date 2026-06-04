@@ -1,0 +1,15 @@
+metocean_missing_reason,event_count
+missing_nws_current_partition; depth_warning_le_10m,41495
+missing_nws_current_partition,16432
+none,13097
+no_active_nora3_wind_records; missing_nws_current_partition; depth_warning_le_10m,9356
+missing_wave; missing_nws_current_partition; depth_warning_le_10m,4213
+no_active_nora3_wind_records,2697
+missing_wave; no_active_nora3_wind_records; missing_nws_current_partition; depth_warning_le_10m,2323
+missing_wave; no_active_nora3_wind_records; missing_nws_current_partition,1811
+no_active_nora3_wind_records; missing_nws_current_partition,689
+missing_wave; no_active_nora3_wind_records,379
+depth_warning_le_10m,110
+missing_wave; missing_nws_current_partition,33
+no_active_nora3_wind_records; depth_warning_le_10m,24
+wind_speed_missing_in_active_fields; missing_nws_current_partition,1

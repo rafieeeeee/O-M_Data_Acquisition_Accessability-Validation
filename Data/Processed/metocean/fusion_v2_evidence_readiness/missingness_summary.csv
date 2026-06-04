@@ -1,0 +1,9 @@
+field,missing_count,missing_share,zero_count
+selected_hs_mean,8759,0.09452838333693071,1082
+selected_tp_mean,8759,0.09452838333693071,0
+wind_speed_mean,17280,0.18648823656378158,0
+wind_direction_deg_mean,92463,0.9978739477660263,0
+current_u_mean,76353,0.8240125188862508,13
+current_v_mean,76353,0.8240125188862508,16
+current_speed_mean,76353,0.8240125188862508,0
+water_depth_m,0,0.0,11017

@@ -1,0 +1,408 @@
+{
+  "analysis_label": "Fusion v2 evidence-readiness audit",
+  "current_ready_versus_current_missing_summary": {
+    "current_missing": {
+      "event_count": 76353,
+      "share_of_all": 0.8240125188862508,
+      "tier_a_event_count": 9906,
+      "top_5_audit_year_count": 54876,
+      "top_5_audit_year_share": 0.7187143923617932,
+      "top_5_source_domain_count": 72063,
+      "top_5_source_domain_share": 0.9438136026089348,
+      "top_5_wind_farm_count": 53047,
+      "top_5_wind_farm_share": 0.6947598653621992,
+      "top_audit_year": "2024",
+      "top_audit_year_count": 35982,
+      "top_audit_year_share": 0.4712584967191859,
+      "top_source_domain": "wave=nws; wind=NORA3; current=missing_current",
+      "top_source_domain_count": 33628,
+      "top_source_domain_share": 0.4404280119969091,
+      "top_wind_farm": "Middelgrunden",
+      "top_wind_farm_count": 15023,
+      "top_wind_farm_share": 0.19675716736735951,
+      "unique_audit_year": 13,
+      "unique_source_domain": 7,
+      "unique_wind_farm": 112
+    },
+    "current_ready": {
+      "event_count": 16307,
+      "share_of_all": 0.17598748111374918,
+      "tier_a_event_count": 5358,
+      "top_5_audit_year_count": 15285,
+      "top_5_audit_year_share": 0.9373275280554363,
+      "top_5_source_domain_count": 16307,
+      "top_5_source_domain_share": 1.0,
+      "top_5_wind_farm_count": 5283,
+      "top_5_wind_farm_share": 0.3239713006684246,
+      "top_audit_year": "2024",
+      "top_audit_year_count": 13681,
+      "top_audit_year_share": 0.8389648617158275,
+      "top_source_domain": "wave=nws; wind=NORA3; current=NWS",
+      "top_source_domain_count": 12066,
+      "top_source_domain_share": 0.7399276384374809,
+      "top_wind_farm": "Horns_Rev_II",
+      "top_wind_farm_count": 1286,
+      "top_wind_farm_share": 0.07886183847427485,
+      "unique_audit_year": 12,
+      "unique_source_domain": 4,
+      "unique_wind_farm": 43
+    }
+  },
+  "depth_warning_sensitivity_result": {
+    "all_events": {
+      "after_excluding_depth_warning_count": 35139,
+      "depth_warning_le_10m_count": 57521,
+      "depth_warning_le_10m_share": 0.6207748758903519,
+      "event_count": 92660,
+      "tier_a_after_excluding_depth_warning_count": 12703,
+      "tier_a_event_count": 15264
+    },
+    "model_ready_high_confidence": {
+      "after_excluding_depth_warning_count": 9337,
+      "depth_warning_le_10m_count": 0,
+      "depth_warning_le_10m_share": 0.0,
+      "event_count": 9337,
+      "tier_a_after_excluding_depth_warning_count": 3402,
+      "tier_a_event_count": 3402
+    },
+    "model_ready_wave_current": {
+      "after_excluding_depth_warning_count": 15794,
+      "depth_warning_le_10m_count": 134,
+      "depth_warning_le_10m_share": 0.008412857860371672,
+      "event_count": 15928,
+      "tier_a_after_excluding_depth_warning_count": 5299,
+      "tier_a_event_count": 5308
+    },
+    "model_ready_wave_only": {
+      "after_excluding_depth_warning_count": 32916,
+      "depth_warning_le_10m_count": 50985,
+      "depth_warning_le_10m_share": 0.6076804805663818,
+      "event_count": 83901,
+      "tier_a_after_excluding_depth_warning_count": 12132,
+      "tier_a_event_count": 14606
+    },
+    "model_ready_wave_wind": {
+      "after_excluding_depth_warning_count": 29529,
+      "depth_warning_le_10m_count": 41605,
+      "depth_warning_le_10m_share": 0.584882053589001,
+      "event_count": 71134,
+      "tier_a_after_excluding_depth_warning_count": 11257,
+      "tier_a_event_count": 13668
+    },
+    "model_ready_wave_wind_current": {
+      "after_excluding_depth_warning_count": 13097,
+      "depth_warning_le_10m_count": 110,
+      "depth_warning_le_10m_share": 0.008328916483682896,
+      "event_count": 13207,
+      "tier_a_after_excluding_depth_warning_count": 4543,
+      "tier_a_event_count": 4552
+    }
+  },
+  "final_recommendation": "proceed_with_restrictions",
+  "input_paths": {
+    "bathymetry": "Data/Processed/metocean/bathymetry/site_bathymetry_points.parquet",
+    "current_confidence": "Data/Processed/metocean/current_confidence_v1/current_event_confidence.parquet",
+    "dwell_weather": "Data/Processed/ais_dwell_backfill/cross_farm_dwell_weather_features.parquet",
+    "fusion_v2": "Data/Processed/metocean/fusion_v2/dwell_metocean_fusion_v2.parquet",
+    "fusion_v2_validation_report": "reports/metocean_fusion_v2/fusion_v2_validation_report.md",
+    "wave_confidence": "Data/Processed/metocean/fusion_v1_source_agreement/wave_event_confidence.parquet",
+    "wind_confidence": "Data/Processed/metocean/wind_confidence_v1/wind_event_confidence.parquet"
+  },
+  "integrity_failures": [],
+  "key_caveats": [
+    "partial_event_scale_current_coverage",
+    "wind_direction_sensitivity_only",
+    "depth_warning_sensitivity_required"
+  ],
+  "output_paths": {
+    "processed_output_dir": "Data/Processed/metocean/fusion_v2_evidence_readiness",
+    "readiness_report_md": "reports/fusion_v2_evidence_readiness/readiness_report.md",
+    "readiness_summary_json": "Data/Processed/metocean/fusion_v2_evidence_readiness/readiness_summary.json",
+    "report_output_dir": "reports/fusion_v2_evidence_readiness"
+  },
+  "readiness_subset_counts": {
+    "all_events": {
+      "event_count": 92660,
+      "share_of_all": 1.0,
+      "source_column": "",
+      "subset_type": "guardrail_indicator"
+    },
+    "has_bathymetry": {
+      "event_count": 92660,
+      "share_of_all": 1.0,
+      "source_column": "has_bathymetry",
+      "subset_type": "guardrail_indicator"
+    },
+    "has_current": {
+      "event_count": 16307,
+      "share_of_all": 0.17598748111374918,
+      "source_column": "has_current",
+      "subset_type": "guardrail_indicator"
+    },
+    "has_wave": {
+      "event_count": 83901,
+      "share_of_all": 0.9054716166630693,
+      "source_column": "has_wave",
+      "subset_type": "guardrail_indicator"
+    },
+    "has_wind_direction": {
+      "event_count": 197,
+      "share_of_all": 0.002126052233973667,
+      "source_column": "has_wind_direction",
+      "subset_type": "guardrail_indicator"
+    },
+    "has_wind_speed": {
+      "event_count": 75380,
+      "share_of_all": 0.8135117634362184,
+      "source_column": "has_wind_speed",
+      "subset_type": "guardrail_indicator"
+    },
+    "model_ready_high_confidence": {
+      "event_count": 9337,
+      "share_of_all": 0.10076624217569609,
+      "source_column": "model_ready_high_confidence",
+      "subset_type": "canonical_readiness_flag"
+    },
+    "model_ready_wave_current": {
+      "event_count": 15928,
+      "share_of_all": 0.1718972587955968,
+      "source_column": "model_ready_wave_current",
+      "subset_type": "canonical_readiness_flag"
+    },
+    "model_ready_wave_only": {
+      "event_count": 83901,
+      "share_of_all": 0.9054716166630693,
+      "source_column": "model_ready_wave_only",
+      "subset_type": "canonical_readiness_flag"
+    },
+    "model_ready_wave_wind": {
+      "event_count": 71134,
+      "share_of_all": 0.7676883229009281,
+      "source_column": "model_ready_wave_wind",
+      "subset_type": "canonical_readiness_flag"
+    },
+    "model_ready_wave_wind_current": {
+      "event_count": 13207,
+      "share_of_all": 0.142531836822793,
+      "source_column": "model_ready_wave_wind_current",
+      "subset_type": "canonical_readiness_flag"
+    }
+  },
+  "report_count_cross_check": [
+    {
+      "audit_count": 92660,
+      "audit_key": "all_events",
+      "matches": true,
+      "report_count": 92660,
+      "report_label": "Output rows"
+    },
+    {
+      "audit_count": 83901,
+      "audit_key": "has_wave",
+      "matches": true,
+      "report_count": 83901,
+      "report_label": "Wave rows"
+    },
+    {
+      "audit_count": 75380,
+      "audit_key": "has_wind_speed",
+      "matches": true,
+      "report_count": 75380,
+      "report_label": "Wind speed rows"
+    },
+    {
+      "audit_count": 197,
+      "audit_key": "has_wind_direction",
+      "matches": true,
+      "report_count": 197,
+      "report_label": "Wind direction rows"
+    },
+    {
+      "audit_count": 16307,
+      "audit_key": "has_current",
+      "matches": true,
+      "report_count": 16307,
+      "report_label": "Current rows"
+    },
+    {
+      "audit_count": 13207,
+      "audit_key": "model_ready_wave_wind_current",
+      "matches": true,
+      "report_count": 13207,
+      "report_label": "Wave + wind speed + current + bathymetry rows"
+    },
+    {
+      "audit_count": 9337,
+      "audit_key": "model_ready_high_confidence",
+      "matches": true,
+      "report_count": 9337,
+      "report_label": "High-confidence multivariate rows"
+    },
+    {
+      "audit_count": 15264,
+      "audit_key": "tier_a_total",
+      "matches": true,
+      "report_count": 15264,
+      "report_label": "Tier A total"
+    },
+    {
+      "audit_count": 4552,
+      "audit_key": "tier_a_model_ready_wave_wind_current",
+      "matches": true,
+      "report_count": 4552,
+      "report_label": "Tier A with wave + wind + current"
+    },
+    {
+      "audit_count": 3402,
+      "audit_key": "tier_a_model_ready_high_confidence",
+      "matches": true,
+      "report_count": 3402,
+      "report_label": "High-confidence Tier A subset"
+    }
+  ],
+  "restriction_caveats": [
+    "partial_event_scale_current_coverage",
+    "wind_direction_sensitivity_only",
+    "depth_warning_sensitivity_required"
+  ],
+  "tier_a_subset_counts": {
+    "all_events": {
+      "share_of_tier_a": 1.0,
+      "tier_a_event_count": 15264
+    },
+    "has_bathymetry": {
+      "share_of_tier_a": 1.0,
+      "tier_a_event_count": 15264
+    },
+    "has_current": {
+      "share_of_tier_a": 0.35102201257861637,
+      "tier_a_event_count": 5358
+    },
+    "has_wave": {
+      "share_of_tier_a": 0.9568920335429769,
+      "tier_a_event_count": 14606
+    },
+    "has_wind_direction": {
+      "share_of_tier_a": 0.0022274633123689725,
+      "tier_a_event_count": 34
+    },
+    "has_wind_speed": {
+      "share_of_tier_a": 0.8980607966457023,
+      "tier_a_event_count": 13708
+    },
+    "model_ready_high_confidence": {
+      "share_of_tier_a": 0.22287735849056603,
+      "tier_a_event_count": 3402
+    },
+    "model_ready_wave_current": {
+      "share_of_tier_a": 0.3477463312368973,
+      "tier_a_event_count": 5308
+    },
+    "model_ready_wave_only": {
+      "share_of_tier_a": 0.9568920335429769,
+      "tier_a_event_count": 14606
+    },
+    "model_ready_wave_wind": {
+      "share_of_tier_a": 0.8954402515723271,
+      "tier_a_event_count": 13668
+    },
+    "model_ready_wave_wind_current": {
+      "share_of_tier_a": 0.29821802935010483,
+      "tier_a_event_count": 4552
+    }
+  },
+  "timestamp_utc": "2026-06-04T10:21:08Z",
+  "top_5_farm_concentration": {
+    "all_events": 0.5724908266781783,
+    "model_ready_high_confidence": 0.3722823176609189,
+    "model_ready_wave_current": 0.3316800602712205,
+    "model_ready_wave_only": 0.5552615582650982,
+    "model_ready_wave_wind": 0.526161891641128,
+    "model_ready_wave_wind_current": 0.3473915347921557
+  },
+  "top_farm_concentration": {
+    "all_events": {
+      "top_5_farm_count": 53047,
+      "top_5_farm_share": 0.5724908266781783,
+      "top_farm": "Middelgrunden",
+      "top_farm_count": 15023,
+      "top_farm_share": 0.16213036909130155
+    },
+    "model_ready_high_confidence": {
+      "top_5_farm_count": 3476,
+      "top_5_farm_share": 0.3722823176609189,
+      "top_farm": "Nordsee_Ost",
+      "top_farm_count": 851,
+      "top_farm_share": 0.091142765342187
+    },
+    "model_ready_wave_current": {
+      "top_5_farm_count": 5283,
+      "top_5_farm_share": 0.3316800602712205,
+      "top_farm": "Horns_Rev_II",
+      "top_farm_count": 1286,
+      "top_farm_share": 0.08073832245102963
+    },
+    "model_ready_wave_only": {
+      "top_5_farm_count": 46587,
+      "top_5_farm_share": 0.5552615582650982,
+      "top_farm": "Middelgrunden",
+      "top_farm_count": 14493,
+      "top_farm_share": 0.17273929988915507
+    },
+    "model_ready_wave_wind": {
+      "top_5_farm_count": 37428,
+      "top_5_farm_share": 0.526161891641128,
+      "top_farm": "Middelgrunden",
+      "top_farm_count": 11151,
+      "top_farm_share": 0.15676048022042904
+    },
+    "model_ready_wave_wind_current": {
+      "top_5_farm_count": 4588,
+      "top_5_farm_share": 0.3473915347921557,
+      "top_farm": "Horns_Rev_II",
+      "top_farm_count": 1146,
+      "top_farm_share": 0.08677216627545999
+    }
+  },
+  "wind_direction_quarantine_result": [
+    {
+      "evidence": "Wind direction is usable only for A_speed_direction rows.",
+      "guardrail": "wind_direction_quarantined",
+      "issue_count": 0,
+      "severity": "integrity",
+      "status": "pass"
+    }
+  ],
+  "year_concentration": {
+    "all_events": {
+      "top_year": "2024",
+      "top_year_count": 49663,
+      "top_year_share": 0.5359702136844378
+    },
+    "model_ready_high_confidence": {
+      "top_year": "2024",
+      "top_year_count": 7772,
+      "top_year_share": 0.832387276427118
+    },
+    "model_ready_wave_current": {
+      "top_year": "2024",
+      "top_year_count": 13357,
+      "top_year_share": 0.8385861376192868
+    },
+    "model_ready_wave_only": {
+      "top_year": "2024",
+      "top_year_count": 47610,
+      "top_year_share": 0.5674544999463653
+    },
+    "model_ready_wave_wind": {
+      "top_year": "2024",
+      "top_year_count": 38329,
+      "top_year_share": 0.5388281271965586
+    },
+    "model_ready_wave_wind_current": {
+      "top_year": "2024",
+      "top_year_count": 11043,
+      "top_year_share": 0.8361474975391837
+    }
+  }
+}
