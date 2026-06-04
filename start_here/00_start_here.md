@@ -13,6 +13,9 @@ The ultimate authority on all domain and engineering contracts is maintained in 
 ### 1. Root-Level Mandates
 * **[CONTEXT.md](../CONTEXT.md)**: The absolute domain authority. Details Automatic Identification System (AIS) extraction models, the 10-minute Temporal backbone, metocean interpolation, and SCADA de-anonymization.
 * **[AGENTS.md](../AGENTS.md)**: The core mandates, rules of engagement, and workflow requirements for semi-autonomous development.
+* **[docs/governance.md](../docs/governance.md)**: Spec-driven increment workflow, stable-main branch policy, validation gates, acceptance/sign-off, and branch cleanup rules.
+* **[docs/context-authority-map.md](../docs/context-authority-map.md)**: Source-of-truth map for repeated status claims, evidence boundaries, and derived summaries.
+* **[docs/branch-exit-checklist.md](../docs/branch-exit-checklist.md)**: Required merge-readiness and branch-deletion sign-off checklist.
 
 ### 2. Operational Planning & Design Notes
 * **[docs/README.md](../docs/README.md)**: The global documentation map of the repository.
@@ -20,11 +23,11 @@ The ultimate authority on all domain and engineering contracts is maintained in 
 * **[docs/thesis-methodology.md](../docs/thesis-methodology.md)**: Academic-facing explanations of spatial filters, sampling methods, and validation constraints.
 * **[docs/provenance.md](../docs/provenance.md)**: Source database lineage and pilot run metadata.
 * **[docs/adr/](../docs/adr/)**: Architectural Decision Records (ADRs) tracking significant design modifications.
-* **[docs/adr/0014-european-dwell-harvest.md](../docs/adr/0014-european-dwell-harvest.md)**: Current decision record for broad European/German dwell-event harvesting from the turbine coordinate table.
+* **[docs/adr/0031-stable-mainline-spec-driven-governance.md](../docs/adr/0031-stable-mainline-spec-driven-governance.md)**: Decision record for stable-mainline, spec-driven governance.
+* **[start_here/01_project_state_summary.md](01_project_state_summary.md)**: Current execution state for broad AIS dwell harvests, metocean archives, Fusion v2, and run safety notes.
 * **[docs/adr/0016-empirical-workability-surface-modeling.md](../docs/adr/0016-empirical-workability-surface-modeling.md)**: Current Stage 1 workability surface contract; $H_s \times T_p$ is the default preset, not the closed model.
-* **[docs/adr/0019-common-regional-metocean-extraction-methodology.md](../docs/adr/0019-common-regional-metocean-extraction-methodology.md)**: Decision record for the shared NWS/Baltic continuous metocean requirements planner.
 * **[docs/adr/0029-metocean-fusion-v2-multiparameter-event-features.md](../docs/adr/0029-metocean-fusion-v2-multiparameter-event-features.md)**: Decision record for the accepted Fusion v2 multi-parameter event feature table.
-* **[COMMON_METOCEAN_EXTRACTION_METHODOLOGY.md](../analysis/06_rq6_metocean_spatial_resolution/COMMON_METOCEAN_EXTRACTION_METHODOLOGY.md)**: Authoritative executable contract for Agent 2 / NWS and Agent 3 / Baltic metocean planning.
+* **[common_requirements.py](../src/om_pipeline/metocean/common_requirements.py)**: Executable common requirements contract for NWS/Baltic continuous metocean planning.
 * **[docs/metocean-acquisition.md](../docs/metocean-acquisition.md)**: Current storage map and acquisition status for NORA3, NWS, and Baltic wave archives.
 * **[docs/agent-handoff-metocean-fusion-v2.md](../docs/agent-handoff-metocean-fusion-v2.md)**: Current handover for Stage 2 modelling after Fusion v2.
 
@@ -45,6 +48,7 @@ These are the fastest orientation facts for the current repository state:
 * **Stage 2 modelling:** not started. The next branch should compare Fusion v2 wave-only, wave+wind speed, wave+current, and wave+wind+current subsets before any calibrated probability model.
 * **FINO validation planning:** dry-run access and station-to-farm proximity planning exists at `analysis/06_rq6_metocean_spatial_resolution/fino_metadata_access_plan.md`; a report-only native export inspector exists at `scripts/inspect_fino_export.py`; no FINO time-series import has been run.
 * **NORA3 sidecar cache:** joined checkpoint batches are written to `Data/Processed/metocean/nora3_joined_cache/` while the downloader is active.
+* **Governance:** `main` is the stable integration baseline. Meaningful increments use topic branches, plan/spec first, validation evidence, context updates where meaning changes, acceptance/sign-off before merge, and branch deletion after merge. Use the authority map before editing repeated status claims.
 
 ---
 
@@ -53,5 +57,6 @@ These are the fastest orientation facts for the current repository state:
 To quickly ramp up on current progress and prepare for immediate work, navigate through the companion index files in this directory:
 
 * **[01_project_state_summary.md](01_project_state_summary.md)**: Audit map of completed pipeline runs, current manifests, and metocean archive status.
-* **[02_incremental_dev_guide.md](02_incremental_dev_guide.md)**: Playbook for monitoring and extending the broad European dwell harvest without breaking resumability.
-* **[03_domain_map_cheat_sheet.md](03_domain_map_cheat_sheet.md)**: Rapid index of spatial boundaries, verified dwell tier thresholds, and SCADA shifts.
+* **[docs/governance.md](../docs/governance.md)**: Increment template, staged workflow, definition of done, and Git control policy.
+* **[docs/context-authority-map.md](../docs/context-authority-map.md)**: Authority map for status and claim-boundary updates.
+* **[docs/branch-exit-checklist.md](../docs/branch-exit-checklist.md)**: Branch sign-off template before merge.

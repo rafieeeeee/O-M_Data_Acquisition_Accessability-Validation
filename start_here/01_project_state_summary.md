@@ -33,6 +33,8 @@ These files are month-level sources, not per-farm sources. One source slice can 
 
 The turbine coordinate file confirms the expanded scope includes German wind farms: **1,637 German turbine rows across 30 German wind farms**, including Alpha Ventus, Trianel Windpark Borkum 1, Trianel Windpark Borkum 2, Wikinger, Baltic Eagle, and others.
 
+Governance handoff: meaningful increments now use the stable-mainline workflow in `docs/governance.md`. Before changing repeated status claims, use `docs/context-authority-map.md` to identify authority files and derived summaries. Before merge, complete `docs/branch-exit-checklist.md`.
+
 ---
 
 ## Pipeline Run State
