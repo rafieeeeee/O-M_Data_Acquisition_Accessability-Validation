@@ -3,10 +3,11 @@
 ## Executive Summary
 
 - Analysis recommendation: `restricted_descriptive_sensitivity_ready_for_review`
-- Run timestamp UTC: `2026-06-04T14:57:12Z`
+- Run timestamp UTC: `2026-06-04T15:01:24Z`
 - Scope: restricted descriptive sensitivity of observed Tier A envelopes.
 - This report does not train models, estimate calibrated `P(operation | weather)`, rebuild Fusion v2, download data, import FINO, repair wind/current evidence, or treat missing current as zero.
 - Wave-only and wave+wind-speed are primary lanes. Current-aware lanes are NWS-domain / coverage-limited sensitivity only.
+- Current appears to change the observed envelope in the screened subsets, but current-aware lanes are NWS-domain / coverage-limited sensitivity results, not general cross-European causal evidence.
 - Wind direction is excluded from primary predictors. Depth-warning exclusion and depth-warning-only sensitivity subsets are emitted.
 
 ## Materiality Screen
