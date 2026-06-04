@@ -8,6 +8,22 @@ This repository is designed for autonomous and semi-autonomous development by AI
 - **Context Preservation:** Always update `CONTEXT.md` when introducing new domain concepts (e.g., a new sensor type or a change in "dwell" definitions).
 - **Decision Tracking:** Every significant architectural change or "hack" must be documented in `docs/adr/`.
 - **Modular Logic:** Prefer placing core business logic in `src/om_pipeline/`. Keep `scripts/` as thin CLI wrappers.
+- **Spec-Driven Increments:** Every meaningful increment must start from a short plan/spec, run on a topic branch, carry validation evidence, update context docs where project meaning changes, and end with explicit review/sign-off before merge.
+- **Stable Mainline:** Do not work directly on `main`. `main` is the stable integration baseline; merge only after validation and review, then delete the completed topic branch.
+
+## Governance
+
+A **meaningful increment** is any change that affects domain meaning, pipeline behavior, data products, analysis conclusions, validation policy, governance, or user handoff. Tiny typo/link-only fixes may use a lighter path, but they still must not happen directly on `main`.
+
+Meaningful increments follow this staged path:
+
+1. **Plan / Design / Spec:** Define purpose, scope, assumptions, expected outputs, affected files or data products, and validation approach before implementation.
+2. **Implementation:** Make code, model, analysis, or documentation changes against the approved spec.
+3. **Validation:** Run relevant tests, pipeline slices, context sweep, link checks, and evidence/readiness checks.
+4. **Documentation / Context Update:** Update `CONTEXT.md`, ADRs, generated reports, `start_here`, or handoff docs where project meaning, decisions, or user workflow changes.
+5. **Review / Next Steps / Roadmap:** Record what changed, what remains unresolved or blocked, and what should be tackled next.
+6. **Acceptance / Sign-off:** Confirm the increment meets the spec, validation passed, and the branch is ready to merge.
+7. **Git Control:** Merge to `main` only after acceptance, then remove the completed topic branch.
 
 ## Workflow
 
@@ -22,5 +38,9 @@ This repository is designed for autonomous and semi-autonomous development by AI
 ## Documentation Pointers
 
 - `CONTEXT.md`: The source of truth for the O&M domain and data pipeline.
+- `docs/governance.md`: The staged increment workflow, definition of done, and branch policy.
+- `docs/context-authority-map.md`: Source-of-truth map for status, evidence boundaries, and derived summaries.
+- `docs/branch-exit-checklist.md`: Required sign-off checklist before merging meaningful increments.
+- `docs/adr/0031-stable-mainline-spec-driven-governance.md`: Decision record for stable-mainline, spec-driven governance.
 - `docs/adr/`: Records of technical decisions.
 - `docs/roadmap.md`: The project's progression and future goals.
